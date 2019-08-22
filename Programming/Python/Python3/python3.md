@@ -1,3 +1,21 @@
+# Table Of Contents
+
+* [Introduction](#introduction)
+* [Setting up Python](#setting-up-python)
+    * [Installing Python](#installing-python)
+        * [Installing Python on Windows](#installing-python-on-windows)
+        * [Installing Python on Debian](#installing-python-on-debian)
+    * [The Python env (virtual environment)](#the-python-env-virtual-environment)
+    * [Installing additional modules](#installing-additional-python-modules)
+    * [Interesting Python modules](#interesting-python-modules)
+* [Tools](#tools)
+    * [IDE's](#ides)
+        * [PyCharm](#pycharm)
+        * [Eclipse with PyDev](#eclipse-with-pydev)
+        * [Vim](#vim)
+    * [Python tools](#python-tools)
+        * [ipython](#ipython)
+
 # Introduction
 
 Python is a programming language that is very well know. Python is used by well know and big enterprises. For example, Google, Nasa make extensively use of Python.
@@ -6,7 +24,7 @@ Python is awesome if you quickly need to script somethings. Python is the must h
 
 # Setting up Python
 
-Setting up Python on your computer, tabled or smartphone is easy. Most GNU/Linux come with Python pre installed. On Microsoft Windows, however, you need to install Python manually.
+Setting up Python on your computer, tablet or smartphone is easy. Most GNU/Linux come with Python pre installed. On Microsoft Windows, however, you need to install Python manually.
 
 ## Installing Python
 
@@ -26,7 +44,7 @@ Installing Python on a `Debian GNU/Linux` computer is very easy. The installing 
 
 I have always be a great fan of aptitude to install my packages. To install Python with aptitude:
 
-    aptitude install python
+    aptitude install python3
 
 ## The Python env (virtual environment)
 
@@ -99,6 +117,10 @@ There's tons of tools available for Python.
 
 ## IDE's
 
+IDE stand for Integrated Development Environment. Somehow, an IDE is comparable to an advanced text editor. The features an IDE have could have, depend of the IDE you use and for the language the IDE has been initially made for. An IDE can for example autocomplete code while you are typing. Most of the time it has a debugger integrated into it and some tools to speed up your programming workflow.
+
+An IDE is meant to be to make life of an programmer easier.
+
 ### Pycharm
 
 Pycharm is an awesome Python IDE. At my opinion, Pycharm is currently one of the best IDE's that is available on the marked for the moment.
@@ -113,11 +135,11 @@ Eclipse is a general purpose IDE writen in Java. Pydev is some extra Python addo
 
 ### Vim
 
-Vim has some plugins to help when writting Python code
+Vim has some plugins to help when witting Python code
 ...
 
-### Python tools
+## Python tools
 
-#### ipython
+### ipython
 
 ipython is an enhanced shell for Python which has autocomplete features.
