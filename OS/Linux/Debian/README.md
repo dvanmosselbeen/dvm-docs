@@ -95,6 +95,6 @@ Just by running the command `aptitude`, you will start the UI interface.
 | aptitude | Package manager |
 | apt-listchanges | List the changes... |
 | apt-listbugs | ... |
-| screen | See the dedicated [screen page](../tools/screen.md).|
+| screen | See the dedicated [screen page](../Tools/screen.md).|
 | htop | Process monitoring tool. |
 | tightvncserver | ... |
