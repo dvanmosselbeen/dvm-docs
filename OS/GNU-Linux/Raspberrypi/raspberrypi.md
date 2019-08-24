@@ -6,8 +6,10 @@ This document is specific for the Raspberry PI Model 3 B or higher.
 
 * [Introduction](#introduction)
 * [Things specific to Raspberry](#things-specific-to-raspberry)
+    *[Raspbian specific tools]()
     * [STOP killing that SD card](#stop-killing-that-sd-card-)
-* [Jessie to Buster migration](#jessie-to-buster-migration)
+* [Migrations Logs](#migrations-logs)
+    * [Jessie to Buster migration](#jessie-to-buster-migration)
 * [Other notes not categorised](#other-notes-not-categorised)
 * [Resources](#resources)
 
@@ -32,6 +34,17 @@ As Debian is installed (on that micro SD card), using Raspberry is like using De
 The default username for the `pi` user account is `raspberry`. There's no password set for the `root` user and to get root access you should use the `sudo` command. Thus to pass to a `root shell`, from the `pi` user account you should type this: `sudo su`. You will switch to the root user without being asked for the root password, because there's none. From there, you can define a password if desired with the `passwd` command, which i strongly recommend.
 
 The Raspberry i have bought came with a micro SD card with Raspberry (Debian) pre installed. If you know about the Debian operating system, or any other GNU/Linux distribution based on Debian, then you will find your way.
+
+## Raspbian specific tools
+
+| Command | Description |
+|---|---|
+| raspi-config | A dedicated CLI UI tool to adjust settings that are specific to Raspbian. That tool is a bit comparable with the dpkg-reconfigure |
+| raspi-gpio | |
+| raspistill | |
+| raspivid | |
+| raspividyuv | |
+| raspiyuv | |
 
 ## STOP killing that SD card !
 
@@ -58,19 +71,42 @@ Like i said before, Raspberry is gadget, no offence meant, but you should be awa
 
 But don't worry to much, there are solutions like mentioned above ! So, stop using your Raspberry and it won't kill your expensive SD card !
 
-As alternative, you can look to install "Noobs" (read, raspbian) to an external hard disk drive. Yes, you read it good, install it to another "hard disk" than your SD card. With one stone, you will hit 2 targets. Using raspberry with an external (powered over USB, instead of a wall plug), you will avoid to kill your SD card within a few months. But the most "visible" improvement would be visible when seeing that the boot up & co is much faster on an external drive that the SD card.
+As alternative, you can look to install `Noobs` (read, raspbian) to an external hard disk drive. Yes, you read it good, install it to another "hard disk" than your SD card. With one stone, you will hit 2 targets. Using raspberry with an external (powered over USB, instead of a wall plug), you will avoid to kill your SD card within a few months. But the most "visible" improvement would be visible when seeing that the boot up & co is much faster on an external drive that the SD card.
 
-# Jessie to Buster migration
+# Migrations logs
 
-There's not much to tell about this migration. Except that `apt-get` failed at some dependencies issues with `udev` and `systemd` (iirc). I had got a message on the end of the failing log that i should run `apt-get -f install`, which i did and didn't got any issues later on. Or at least, didn't discovered anything wrong.
+## Jessie to Buster migration
 
-To proceed the upgrade to the newer release, we should follow the instructions on the website of Raspberry or at Debian side.
+As of writing this, august 2019, `Debian version 10` with the code name `Buster` is the current stable release.
+
+When i acquired the Raspberrypi with a kit, i got a `Noobs` SD card of 16 GB and installed `Raspbian`. At that time it was `Debian version 8` with code name `Jessie`. It isn't that wise to migrate a system by jumping over a release but it is doable.
+
+There's not much to tell about this migration. Except that `apt-get` failed at some dependencies issues with `udev` and `systemd` (iirc). I had got a message on the end of the failing log that i should run `apt-get -f install`, which i did and didn't got any issues later on. Or at least, didn't discovered anything wrong. Both `udev` and `systemd` packages are still installed, so all seems fine to me.
+
+To proceed the upgrade to the newer release, we should follow the instructions on the website of Raspberry or at Debian side, which i had found after my migration :-P  See here: https://www.raspberrypi.org/documentation/raspbian/updating.md
  
 What i recall from memory (wrote this document file after the migration), i ran these commands:
 
-    sed -i "s/jessie/buster/"
+Edit the `/etc/apt/sources.list` and replace every occurrences of `jessie` with `buster`. You can use the `sed -i "s/jessie/buster/" /etc/apt/sources.list` trick but it's wise to open that file and edit by hand, so that you see what's currently in that file. After all, it's a Debian derivation. So i have the following in the `/etc/apt/sources.list` file:
+
+    deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi
+    # Uncomment line below then 'apt-get update' to enable 'apt-get source'
+    #deb-src http://archive.raspbian.org/raspbian/ buster main contrib non-free rpi
+
+Raspberry has also made a dedicated `/etc/apt/sources.list.d/raspi.list` (which Debian doesn't have) and which needs to be edited too. There you should also replace every occurrences of the word `jessie` to `buster`. Additionally the word `staging` should be removed as this isn't available anymore. So the content of `/etc/apt/sources.list.d/raspi.list` should look like this
+
+    deb http://archive.raspberrypi.org/debian/ buster main ui
+    # Uncomment line below then 'apt-get update' to enable 'apt-get source'
+    #deb-src http://archive.raspberrypi.org/debian/ buster main ui
+
+Now 
+
     apt-get update
     apt-get dist-upgrade
+
+I also got another failing issue and the error told to run `apt --fix-broken install` which i did.
+
+Once the upgrade done, restart to raspberry, to be sure everything is ok.
 
 # Other notes not categorised
 
