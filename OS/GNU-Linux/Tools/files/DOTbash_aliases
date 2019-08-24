@@ -1,0 +1,3 @@
+
+# My custom aliases
+alias ll="ls -lah"
