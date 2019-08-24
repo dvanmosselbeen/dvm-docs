@@ -6,11 +6,11 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 
 1. [Introduction](#introduction)
 1. [General information](#general-information)
-    1. [Releases (Versions)](#releases-versions)
+    * [Releases (Versions)](#releases-versions)
 1. [The package manager](#the-package-manager)
-    1. [apt](#apt)
-    1. [aptitude](#aptitude)
-1. [Interesting apps](#interesting-apps)
+    * [apt](#apt)
+    * [aptitude](#aptitude)
+1. [Interesting apps](#interesting-packages)
 
 # Introduction
 
@@ -45,13 +45,13 @@ These days, with a big internet line, it's common to use the `netinst` method. W
 
 # The package manager
 
-You can easily manage your package with the apt-get, apt-cache tools.
+You can easily manage your package with the `apt` tools, which is a collection of tools including `apt-get`, `apt-cache` etc.
 
-There's also aptitude which i strongly recommend.
+There's also `aptitude` which i strongly recommend but is not so user friendly at all. If you don't want to bother, `apt` is just fine and you don' need `aptitude`. Beside apt and aptitude, theirs a un numerous number of other applications, command line or with a graphical interface.
 
 ## apt
 
-`apt-get` is the default package manager on Debian. There are other package managers available such as `aptitude`.
+`apt-get` is the default package manager on Debian. There are other package managers available such as `aptitude` etc but in this section we will try to show you how much `apt` rules!
 
 Before searching or installing anything with `apt-get`, we need to retrieve it's new list of packages:
 
@@ -87,8 +87,15 @@ Just by running the command `aptitude`, you will start the UI interface.
 | dpkg -L <package> | Show the content of a deb package. ||
 | df -h | |
 | which python | Return the location of the file. |
+| shutdown -h now | Shutdown the computer.|
+| reboot | Reboot the computer.|
+| apt-get -f install | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
+| `apt autoremove` | Remove packages that where installed by other packages ant that aren't used anymore.|
+| `adduser <username>` | To create a new user on your system. You|
+| `service fail2ban status` | To check if fail2ban service is been running. |
+| dmesg | Shows some logs on the console.|
 
-# Interesting apps
+# Interesting packages
 
 | Application | Description |
 |---|---|
@@ -98,3 +105,18 @@ Just by running the command `aptitude`, you will start the UI interface.
 | screen | See the dedicated [screen page](../Tools/screen.md).|
 | htop | Process monitoring tool. |
 | tightvncserver | ... |
+| irssi | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
+| fail2ban | Some security tools that watch the (abusive) login attempts and take action. |
+
+# Getting more help
+
+The trick on a GNU/Linux system is to find your way on how you should find information.
+
+You can try to look to what files are been installed with the concerned application:
+
+    dpkg -L <packagename>
+
+Before adding a new user, look on how you should do:
+
+    man adduser
+
