@@ -2,6 +2,45 @@
 
 Just a bunch of notes i have specific to Microsoft Windows 10.
 
+# Table of Contents
+
+* [Useful command line tools](#useful-command-line-tools)
+* [Apps i like for Windows](#apps-i-like-for-windows)
+
+# Useful command line tools
+
+| Command | Description |
+|---|---|
+| `ipconfig /all` | Give informations about the network. |
+| `ipconfig /release` | Release it's ip, if in dhcp mode. |
+| `ipconfig /renew` | Renew it's ip, if in dhcp mode.|
+| `ipconfig /flushdns` | Flush the dns cache. |
+| `hostname` | Get hostname. |
+| `ping <hostname or ip>` | Say hello to another computer. |
+| `tracert` | To trace and follow your network connection. |
+| `pathping <hostname or ip>` | A tools which use and combine the best parts of ping and tracert.|
+| `getmac` | To get your MAC address of your network cards. |
+| `arp` | Address Resolution Cache, most common usage is `arp -a`. |
+| `nslookup <hostname>` | Used for checking DNS record entries. |
+| `nbtstat` | Diagnostic tool for troubleshooting NetBIOS issues.|
+| `net` | Used for managing users, services, shares etc. |
+| `route` | Manipulates network routing tables. |
+| `tasklist` | Used to list all processes. |
+| `taskkill` | Used to kill a process. |
+| `netstat` | Display information about tcp and udp connections and ports. See `netstat -an`.|
+| `sfc /scennow` | Scan system files for errors. |
+| `driverquery` | Return a list of drivers. For example `driverquery -v` will return verbose information of all drivers installed on your system.|
+| `fc` | File compare. `diff` is way more useful that `fc`. |
+| `powercfg` | To manage and track your power usage (electric consumption). Some useful usages are: `powercfg /a`, `powercfg hibernate on`, `powercfg hibernate off`, `powercfg /devicequery s1_supported`. `powercfg /lastwake` will show you what devices last woke up your computer. Useful if you computer wake up for unknown reasons. This needs to be done with a (cmd) console that has been launched with admin rights. For this, right click on the Command prompt shortcut and select `Run as administrator`.|
+| `powercfg/energy` | This will create a (html) statistics page of the energy usage, very interesting for laptops. Needs also to be run as administrator in a shell.|
+| `powercfg /batteryreport` | Same as above, but then an battery report. |
+| `shutdown` | `shutdown /r /o` will restart your computer and launches the `Advanced Start Options menu`, this is where you can access the `Safe Mode` and the Windows recovery utilities. This is very handy when you are troubleshooting some issues.|
+| `systeminfo` | Returns a bunch of interesting system information. Use `systeminfo /s` followed by the host name of a computer on your local network, to remotely grab the information for that system. This may require additional syntax elements for the domain, user name, and password, like this: `systeminfo /s [host_name] /u [domain]\[user_name] /p [user_password]` |
+| `assoc` | Returns a list with the curent file associations. For example, `assoc .txt` will show you to which type txt belongs too.  `assoc .txt=` will change the file association for text files to whatever program you enter after the equal sign. |
+| clip | The clipboard for command use. This program is very useful if you want to get the output of a program pasted in your clipboard. You need to pipe stuff to the `clip` program to be able to use it. For example: `systeminfo <PIPE_CHARACTER> clip`. Which will send the output of the command `systeminfo` in your clipboard. So now you can paste that somewhere else. The `PIPE_CHARACTER` character gets eaten by the Markdown markup language i use and the pipe character is the only character we can't escape with Markdown. Sorry for that. It's the character that you can get by pressing `alt+124`.|
+| `pkgmgr /iu:"TelnetClient"` | To install the `TelnetClient`. `pkgmgr` is deprecated on Windows 10, use `dism` instead.|
+| cipher | `cipher` is used to permanently delete files that where already deleted. So that they can't be recovered anymore with special recovery software. You should be aware that when you delete files, these files aren't deleted, but the reference is. The used space by the old files are then marked as being free space, and is then eventually allocated to future new data and thus the old data will then be eventually overwritten. As long as the system doesn't overwrite the old data, then the old data can be easily recovered. The `cipher` command wipes a directory by writing some random data to it, in the hope that the old data can't be recovered. It still can be recovered but way more harder and with another type of recovery tools. `cipher` doesn't delete files that "still exist" (which reference still exist in the FAT, File Allocation Table). For example, `cipher /w:c` will wipe free space on the `C:` drive, without deleting existing data.|
+
 # Apps i like for Windows
 
 Here's a list of applications i like to use on a Microsoft Windows operating system.
