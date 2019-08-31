@@ -1,3 +1,19 @@
+# Pycharm
+
+# Table of Contents
+
+* [Introduction](#introduction)
+* [Like and dislike](#like-and-dislike)
+    * [What i like about PyCharm](#what-i-like-about-pycharm)
+* [Quick Usage and tips](#quick-usage-and-tips)
+* [Blender specific things](#blender-specific-things)
+    * [Configuring PyCharm to create blender addons](#configuring-pycharm-to-create-blender-addons)
+    * [Blender autocompletion](#blender-autocompletion)
+        * [Blender version 2.79b](#blender-version-279b)
+        * [Blender version 2.80](#blender-version-280)
+
+# Introduction
+
 PyCharm is an awesome powerfull IDE for writting Python code. PyCharm itself is written in Java. This IDE commes in 2 versions. A Community (free) version and a Professional (paid) version. The community version has all the features a general Python coder need. However, the Professional (paid) versions has some more features.
 
 You can download Pycharm here: https://www.jetbrains.com/pycharm/
@@ -6,7 +22,7 @@ You can download Pycharm here: https://www.jetbrains.com/pycharm/
 
 For the moment, PyCharm is the IDE i like the most. It has all the features i want, it's easy to use. So here's my list about what i like about PyCharm:
 
-## What i like about Pycharm
+## What i like about PyCharm
 
 * Cross platform. Works on Microsoft Windows 10 as well as on Debian (testing) GNU/Linux.
 * Good and correct code autocompletion.
@@ -35,7 +51,7 @@ In any directory in the file manager, you can right click and in the context men
 
 Here you will find things specific to Blender. Mind configuration setup, tips and tricks...
 
-## Configuring Pycharm to create Blender addons
+## Configuring PyCharm to create Blender addons
 
 On Microsoft Windows, Blender addons and scripts are located at `C:\Program Files\Blender Foundation\blender-2.80-windows64\2.80\scripts\` (system wide) and at `C:\Users\david\AppData\Roaming\Blender Foundation\Blender\2.80_PREV\scripts\` (user side). So, if we write new Blender addons, we could put our stuff there.
 
