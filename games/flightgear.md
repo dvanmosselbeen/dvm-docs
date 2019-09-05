@@ -24,6 +24,10 @@ However, you should be aware that FlightGear is available in different release v
 
 Installing FlightGear on Windows is easy. You have multiples options to chose which version you want to download. I recommend to install the minimalist (without fgdata) Nightly installer and clone the fgdata.
 
+See here how to download both methods:
+
+https://www.flightgear.org/download/daily-build-download/
+
 ## Installing FlightGear on Debian GNU/Linux
 
 You can use your package manager to install (an older version of) FlightGear or make use of that `download_and_compile` script.
