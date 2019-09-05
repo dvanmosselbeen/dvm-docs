@@ -125,9 +125,7 @@ An IDE is meant to be to make life of an programmer easier.
 
 Pycharm is an awesome Python IDE. At my opinion, Pycharm is currently one of the best IDE's that is available on the marked for the moment.
 
-Pycharm comme in 2 different versions, the (Free) community version and the paid version.
-
-The Free version does more as it job and that's what i'm using.
+Pycharm come in 2 different versions, the (Free) community version and the paid version. The Free version does more as it job and that's what i'm using. See the [dedicated PyCharm page](pycharm.md).
 
 ### Eclipse with PyDev
 
