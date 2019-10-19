@@ -1,8 +1,10 @@
------
+---
+description: Record your screen with the tools available in Microsoft Windows
+keywords: screen record recording capture microsoft windows nvidia experience xbox tool alt+z win+g
+title: Screen recording
 created: 31-08-2019 09:53:00
 modified: 31-08-2019 09:53:00
-description: Record your screen with the tools available in Microsoft Windows
------
+---
 
 # Screen recording
 

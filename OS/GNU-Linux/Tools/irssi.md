@@ -7,6 +7,10 @@ This document is dedicated to the awesome console based IRC client `irssi`.
 * [Introduction](#introduction)
 * [Setup and configuring irssi](#set-up-and-configuring-irssi)
 * [Usage](#usage)
+* [Setting up a theme](#setting-up-a-theme)
+* [Script](#scripts)
+    * [Spell check](#spell-check)
+* [Ressources](#resources)
 
 # Introduction
 
@@ -69,6 +73,76 @@ I like using the `agon` theme and is the theme i have always used:
 Set (apply) the theme:
 
     /set theme agon
+
+# Scripts
+
+The irssi (Perl) scripts should be put into `~/.irssi/scripts`. If you want them to load automatically put them into `~/.irssi/scripts/autorun`.
+
+* `/script` displays a list of all loaded scripts and full paths to their source files
+* `/script load [script]` loads the specified script. Irssi expects all scripts to be located in the `~/.irssi/scripts/` directory. If you have stored a script in a subdirectory of `~/.irssi/scripts/`, you need to specify that in the load command. Scripts placed in the `~/.irssi/scripts/autorun/` directory are loaded when Irssi starts.
+* `/script unload [script]` unloads the specified script
+* `/script exec [script]` runs the specified script once
+* `/script reset` unloads all scripts and resets the Perl interpreter.
+
+## Spell check
+
+### (i)spell
+
+Source from: https://blog.schmichael.com/2008/11/05/spell-checking-in-irssi/
+
+Firstly, install the required apps:
+
+    sudo apt-get install ispell liblingua-ispell-perl
+
+Download the (Perl) spell script:
+    
+    $ cd ~/.irssi/scripts/
+    $ wget http://scripts.irssi.org/scripts/spell.pl
+
+We now need to adjust the path of ispell bin in the spell.pl script. (See line 130).
+
+    sed -i "s@/usr/local/bin/ispell@/usr/bin/ispell@" spell.pl
+
+Now load the stuff
+
+    /script load spell.pl
+
+Bind some key to the spell checker (alt+s)    
+
+    /bind meta-s /_spellcheck
+    /set spell_max_guesses 3
+
+### (a)spell check
+
+Install the required apps:
+
+    apt-get install aspell aspell-en aspell-fr aspell-nl
+    apt-get install libtext-aspell-perl
+
+Get the required irssi scripts:
+
+    cd ~/.irssi/scripts/autorun/
+
+    wget https://scripts.irssi.org/scripts/aspell.pl
+    wget https://scripts.irssi.org/scripts/aspell_complete.pl
+
+Load the script:
+
+    /script load
+
+Bind some key (alt+c) to the spell checker:
+
+    /bind meta-c /spellcheck
+
+## Other interesting scripts
+
+See also:  https://scripts.irssi.org/
+
+* [trackbar.pl](http://scripts.irssi.org/scripts/trackbar.pl) generates a horizontal rule in a channel to mark the last time you viewed this channel’s window. This is useful if you are monitoring a number of channels and would like to be reminded of the last time you viewed this window.
+* [go.pl](http://scripts.irssi.org/scripts/go.pl) provides advanced completion for accessing windows with a /go command that offers tab completion for all windows, and is even able to complete based on character combinations from the middle of the channel or private message names.
+* [nickcolor.pl](http://scripts.irssi.org/scripts/nickcolor.pl) colorizes the nicknames of all members of a channel, based on activity and join time, in an effort to make the flow of conversation a bit easier to read.
+* [screen_away.pl](http://scripts.irssi.org/scripts/screen_away.pl) automatically detects if your Irssi session resides within an attached or detached screen session. If your screen session is detached, this plugin will set your status to away. When you reattach to the session, the plugin unsets the away status.
+* [highlite.pl](http://scripts.irssi.org/scripts/highlite.pl) collects in one window all channel events like joins, parts, and quits.
 
 # Resources
 

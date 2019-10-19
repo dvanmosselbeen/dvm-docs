@@ -1,3 +1,10 @@
+---
+description: 
+keywords: register a dll ocx file registry
+title: Register a dll file
+created:
+---
+
 # Windows 10
 
 Just a bunch of notes i have specific to Microsoft Windows 10.
@@ -80,3 +87,19 @@ Here's a list of applications i like to use on a Microsoft Windows operating sys
 | [FileZila](https://filezilla-project.org/) | A ftp client. |
 | [Darktable](https://www.darktable.org) | The open source alternative for Adobe LightRoom. I still use LightRoom and it's what i use, but i like some features Darktable has and i keep looking at it's features time by time. And Darktable is finally available for Windows !|
 | [Scribus](https://www.scribus.net/) | A page layout program. |
+| Adobe Creative Cloud ||
+| git ||
+| vlc ||
+| mp3tag ||
+| [Spybot Search & Destroy](https://www.safer-networking.org/download/) | Tool to scan the computer for malicious stuff.|
+| [Malwarebytes](https://malwarebytes.com) | Remove spyware. |
+| XAMPP | Webserver & database. |
+
+# Games
+
+| Name | Description|
+|---|---|
+| FlightGear | Open source Flight Simulator. |
+| X-Plane | Pay Flight Simulator. ||
+| ROR | Body & physics based simulator game. Essentially trucks, cars ... |
+ 
