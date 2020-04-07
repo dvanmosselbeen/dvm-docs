@@ -1,6 +1,10 @@
 # GIT
-
+---
+title: GIT
+description: Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. 
 Created: 2020-04-07 10:22:00
+keywords: git programming source code
+---
 
 GIT is a serious tool for developers who want to keep track of their source code changes. With this i will make it clear from the start that this tool is essentially very useful for non-binary data.
 
