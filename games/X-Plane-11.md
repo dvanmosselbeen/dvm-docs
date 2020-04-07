@@ -1,6 +1,17 @@
 # X-Plane 11
 
 Created: 2020-04-07 10:29:00
+-----
+title: X-Plane 11
+
+description: A page dedicated to X-Plane 11 Flight simulator.
+
+created: 02-12-2011
+
+keywords: X-Plane, xplane, 11, simulator, simulation, flight
+
+-----
+
 
 X-Plane is some advanced flight simulator. This is some payware flight simulator. However, you can download a demo to try it out. For not even $59.99 you can have a full copy for personal use.
 

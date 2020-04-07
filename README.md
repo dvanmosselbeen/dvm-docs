@@ -22,9 +22,13 @@ For the moment, the metadata should be on the beginning of the file and should c
 
     -----
     title: <The title of the file>
+    
     description: <A description of the file>
+    
     created: <Year-Month-Day>
+    
     keywords: <Foo>, <Bar>, <Baz>
+    
     lang: en
     -----
 
