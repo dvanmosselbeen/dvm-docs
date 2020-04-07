@@ -4,8 +4,9 @@ Created: 2013-07-18 17:03:55
 
 This article sum up IDE's there's available.
 
-*   Eclipse
-*   [Code :: Blocks](http://www.codeblocks.org) -
-*   [Orwell Dev-C++](http://sourceforge.net/projects/orwelldevcpp/) - A maintained version of Dev-C++
+ * [PyCharm](https://www.jetbrains.com/pycharm/) - Essentially made for Python programming but also useful as general purpose IDE which then you don't fully benefit of all features PyCharm has to offer.
+ * Eclipse
+ * [Code :: Blocks](http://www.codeblocks.org) -
+ * [Orwell Dev-C++](http://sourceforge.net/projects/orwelldevcpp/) - A maintained version of Dev-C++
 
 ...
