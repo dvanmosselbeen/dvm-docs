@@ -18,6 +18,11 @@ clear from the start that this tool is essentially very useful for non-binary da
 
 ## GIT quick reference
 
+There are different tools available to work with GIT. There is a command line interface tool (Git Bash) and GUI 
+tools. He we describe the CLI tools
+
+### General GIT references
+
 Clone a repository:
 
 	git clone https://github.com/dvanmosselbeen/Rans-S-6S-Coyote-II-For-X-Plane.git
@@ -41,6 +46,31 @@ Check out a branch.
 Fetch the latest data:
 
 	git pull
+
+### Create a new repository and push it to the git hoster
+
+First of all, we need to create a repository on the github web interface. On that interface once the repository 
+created, it will give you information on how to push the data to the web hoster. Which resume like the following: 
+
+Initialise a directory to be used as a git repository:
+
+    git init
+
+Add all the files
+
+    git add *
+    
+Optionally link it to a git hoster like github:
+
+    git commit -m "Initial commit"
+
+Set the origin:
+
+    git remote add origin https://github.com/dvanmosselbeen/flightgear-belgian-custom-scenery-for-xplane.git
+
+Pus the local data to the GIT hoster:
+
+    git push -u origin master
 
 ## Github
 
