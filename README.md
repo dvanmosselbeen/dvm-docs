@@ -22,13 +22,10 @@ For the moment, the metadata should be on the beginning of the file and should c
 
     -----
     title: <The title of the file>
-    
     description: <A description of the file>
-    
-    created: <Year-Month-Day>
-    
+    created: <Year-Month-Day hh:mm:ss> (ex: 28-11-2007 13:36:29)
+    modified: <Year-Month-Day hh:mm:ss> (ex: 28-11-2007 13:36:29)
     keywords: <Foo>, <Bar>, <Baz>
-    
     lang: en
     -----
 
