@@ -1,11 +1,13 @@
----
-description: This page talk about sqlobject.
-keywords: 
+-----
 title: SQLObject
-created: 25-01-2008
----
+description: This page talk about sqlobject.
+created: 25-01-2008 00:00:00
+modified: 25-01-2008 00:00:00
+keywords: database, website, orm, internet
+lang: en
+-----
 
-Get informations of a model:
+Get information of a model:
 
     sqlobject-admin
 

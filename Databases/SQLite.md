@@ -1,9 +1,11 @@
----
-description: 
-keywords: sqlite database
+-----
 title: SQLite
-created: 28-11-2007
----
+description: This article is about SQLite
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: database, website, internet, orm
+lang: en
+-----
 
 Introduction
 ============

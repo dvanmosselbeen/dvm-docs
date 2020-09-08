@@ -1,9 +1,11 @@
----
-description: 
-keywords: 
+-----
 title: MySQL Reference
-created: 28-11-2007
----
+description: A little MySQL reference.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: database, mysql, website, internet
+lang: en
+-----
 
 Introduction
 ============

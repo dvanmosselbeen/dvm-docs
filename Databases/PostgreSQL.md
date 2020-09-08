@@ -1,9 +1,14 @@
 ---
-description: This article talk about postgresql.
-keywords: 
-title: Postresql
-created: 28-11-2007
+title: PostgreSQL Reference
+description: A little PostgreSQL reference.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00 
+keywords: database, mysql, website, internet
+lang: en
 ---
+
+PostgreSQL
+==========
 
 Introduction
 ============

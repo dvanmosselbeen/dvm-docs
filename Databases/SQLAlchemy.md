@@ -1,9 +1,11 @@
----
-description: This article talk about sqlalchemy.
-keywords: sqlalchemy database orm
+-----
 title: SQLAlchemy
-created: 12-03-2010
----
+description: This article talk about sqlalchemy.
+created: 12-03-2010 00:00:00
+modified: 12-03-2010 00:00:00
+keywords: sqlalchemy, database, orm, website, internet
+lang: en
+-----
 
 Introduction
 ============
