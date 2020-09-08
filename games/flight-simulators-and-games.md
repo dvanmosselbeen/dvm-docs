@@ -1,17 +1,15 @@
-# Flight simulators & Games
-
 -----
 title: Flight simulators & games
-
 description: A page dedicated to Flight simulator and aviation related games.
-
-created: 02-12-2011
-
+created: 12-02-2011 00:00:00
+modified: 12-02-2011 00:00:00
 keywords: FlightGear, flight, simulator, fgfs, xplane, Microsoft flight simulator
-
+lang: en
 -----
 
-*This page list different flight simulator and flight games.*
+# Flight simulators & Games
+
+This page list different flight simulator and flight games.
 
 - [FlightGear FlightS Simulator](http://www.flightgear.org) - An open source flight simulator. See the dedicated [FlightGear Page](flightgear.mdigh).
 - Microsoft Flight Simulator 94 -

@@ -1,3 +1,12 @@
+-----
+title: FlightGear Flight Simulator
+description: This page is dedicated to the FlightGear Flight Simulator.
+created: 06-03-2011 00:00:00
+modified: 06-03-2011 00:00:00
+keywords: aviation, aircraft, simulator, scenery
+lang: en
+-----
+
 # FlightGear Flight Simulator
 
 FlightGear is an awesome flight simulator which is extremely configurable.

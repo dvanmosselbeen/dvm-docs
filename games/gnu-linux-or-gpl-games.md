@@ -1,16 +1,17 @@
----
-description: 
-keywords: gnu linux gpl games
-title: 'GNU/Linux or GPL games'
-created: 28-11-2007
----
+-----
+title: GNU Linux or GPL games
+description: This page is dedicated to GNU Linux or GPL games.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: gnu, linux, gpl, games
+lang: en
+-----
 
 This article assemble some nice games i like on a GNU/Linux box. These
 games are available on my Debian GNU/Linux distribution. Some games may
 have his own section too, but it will be linked to it then.
 
-Racing
-======
+## Racing
 
 -   [Torcs](http://torcs.sourceforge.net) - Racing games. See Speed
     Dreams for a fork.
@@ -18,28 +19,24 @@ Racing
 -   [Speed Dreams](http://www.speed-dreams.org) - Fork of Torcs but with
     better graphics.
 
-Simulator
-=========
+## Simulator
 
 -   [FlightGear Flight Simulator](http://www.flightgear.org) - Probably
     the best and most complete open source flight simulator available.
 -   [Rigs Of Rods](http://www.rigsofrods.com) - Is an open source
     similator based on soft-body physics.
 
-Sport
-=====
+## Sport
 
 -   xmoto
 -   Foobillard
 -   billardgl
 
-Firs Person Shooter (FPS)
-=========================
+## Firs Person Shooter (FPS)
 
 -   quake2
 
-Available on Debian
-===================
+## Available on Debian
 
 -   mazeofgalious
 -   liquidwar
@@ -82,21 +79,18 @@ Available on Debian
 -   [scorched](http://www.scorched3d.co.uk/)
 -   [warzone2100](http://wz2100.net/) -
 
-Games i like
-------------
+## Games i like
 
 -   [boswar](http://www.boswars.org/)
 -   [pokerth](http://www.pokerth.net/)
 -   [ri-li](http://ri-li.sourceforge.net/)
 
-Recently installed and testing
-------------------------------
+## Recently installed and testing
 
 -   [adonthell](http://adonthell.linuxgames.com/)
 -   airstrike
 
-Other not available in the Debian Stable/Testing repo
-=====================================================
+## Other not available in the Debian Stable/Testing repo
 
 -   [](http://wz2100.net/)[dangerdeep](http://dangerdeep.sourceforge.net/) -
     Only in Sid atm.
@@ -105,8 +99,7 @@ Other not available in the Debian Stable/Testing repo
     packages and other are available on the webiste.
 -   [unknown-horizons](http://www.unknown-horizons.org/)
 
- Resources
-==========
+## Resources
 
  See:
 <http://www.tuxarena.com/2011/12/6-great-free-open-source-games-to-fetch-after-installing-ubuntu/>

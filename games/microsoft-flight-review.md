@@ -1,9 +1,11 @@
----
-description: 
-keywords: microsoft flight review
+-----
 title: Microsoft Flight review
-created: 10-03-2012
----
+description: This page is dedicated to the Microsoft Flight aviation simulator. 
+created: 10-03-2012 00:00:00
+modified: 10-03-2012 00:00:00
+keywords: aviation, aircraft, scenery, simulator, simulation, microsoft, flight, review
+lang: en
+-----
 
 *Microsoft Flight is the next generation flight simulator. It is meant
 to be replace the fabuouse Microsoft Flight X simulator. To be a joke,

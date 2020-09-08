@@ -1,17 +1,21 @@
----
-description: 
-keywords: ict computer pc support 3D modelling photography open source graphics
+-----
 title: Nice FlightGear aircrafts
-created: 08-12-2011
----
+description: A list of interesting and nice aircrafts for FlightGear Flight Simulator.
+keywords: ict computer pc support 3D modelling photography open source graphics
+created: 12-08-2011 00:00:00
+modified: 12-08-2011 00:00:00
+keywords aircraft, simulator, aviation, scenerie, flightgear 
+lang: en
+-----
+
+# Introduction 
 
 This is my own list of prefered aircrafts that are available in the
 FlightGear Flight Simulators. Just my little list of favorite aircrafts
 or some details i like about some specific aircraft. My list is split by
 aircraft type, which you can checkout on the table of content.
 
-General Aviation
-================
+## General Aviation
 
 -   A6M2-jsbsim - See the aircraft specific CTRM+SHIFT+M for the
     monitoring tool.
@@ -61,8 +65,7 @@ General Aviation
 -   zlt-nt - some cool airship
 -   a24 - Interesting model. Can land on wheels as on water.
 
-Airliners {#airliners style="text-align: justify;"}
-=========
+## Airliners
 
 -   ATR-72-500
 -   CRJ - There are diff models, the 700 seems to be very nice (see
@@ -84,8 +87,7 @@ Airliners {#airliners style="text-align: justify;"}
     available in some version (ER & LR).
 -   A380 ?? and that A320 ?? family
 
-Helicopters
-===========
+## Helicopters
 
 -   aircrane -
 -   alouette2-easy, alouette2F-easy - There\'s also a alouette2 and
@@ -104,8 +106,7 @@ Helicopters
 -   s76c - Have an awesome cockpit
 -   uh1 - A bit hard to fly but cool model.
 
-Fighters
-========
+## Fighters
 
 -   typhoon-2
 -   f-14b - Must be the top fighter in fgfs.
@@ -125,16 +126,15 @@ Fighters
 -   P-51D (JSBSIM) - Very nice aircraft. Hard to land with it (see
     sudden stall).
 
-ULM & gliders
-=============
+## ULM & gliders
+
 
 -   dragonfly
 -   flash2a - Note the inversed up/down movements.
 -   ask13 - Very nice one!
 -   sf25b (Scheibe SF-25B Falke) - Very nice glider with an engine.
 
-Cars and other
-==============
+## Cars and other
 
 -   jeep - Interesting one, could be an example to create some airports
     verhicule

@@ -1,24 +1,23 @@
----
-description:
-keywords: 
+-----
 title: Microsoft Flight Simulator X (FSX)
-created: 16-11-2011
----
+description: This page is dedicated to FSX.
+created: 16-11-2011 00:00:00
+modified: 16-11-2011 00:00:00
+keywords: aviation, simulator, simulation, aircraft, FSX
+lang: en
+-----
 
 Microsoft Flight Simulator X is the most well know flight simulator for
 Microsoft Windows Operating systems.
 
-Quick tips
-==========
+## Quick tips
 
 -   To get he menu in FSX press the alt key.
 -   To show the frame rate (fps) shift+z
 
-FSX sceneries about Belgium
-===========================
+## FSX sceneries about Belgium
 
-Freeware sceneries
-------------------
+## Freeware sceneries
 
 -   [EBGB](http://jancuypers.be/flightsimcorner/EBGB2012.html) - Very
     well done photorealistic airfield!
@@ -33,16 +32,14 @@ Freeware sceneries
     download.
 -   [www.freewarescenery.com/fsx/belgium.html](http://www.freewarescenery.com/fsx/belgium.html)
 
-Payware sceneries
------------------
+## Payware sceneries
 
 -   [Brussels](http://en.shop.aerosoft.com/eshop.php?action=article_list&shopfilter_category=Flight%20Simulation&s_design=DEFAULT)
 -   [FullTerrain](http://fullterrain.com/freeware.html) - Made some very
     awesome payware sceneries. Note the link point to the few freeware
     sceneries they made.
 
-Working on Flight Simulator X
-=============================
+## Working on Flight Simulator X
 
 Before you can start deveoping stuff from Microsoft Flight Simulator you
 may need to install some tools. Not all tools needs to be installed:
@@ -59,22 +56,19 @@ may need to install some tools. Not all tools needs to be installed:
 
 -   <http://www.fsdeveloper.com>
 
-Awesome FSX (youtube) videos
-============================
+## Awesome FSX (youtube) videos
 
 -   [FSX Film capabilities](http://www.youtube.com/watch?v=TwfxbvtQQIQ)
 -   [Munich](http://www.youtube.com/watch?v=9OcYlQD5H2I)
 -   [Chicago](http://www.youtube.com/watch?v=crOPgg1Y8HY)
 
-Awesome (youtube) videos of some other concurents
-=================================================
+## Awesome (youtube) videos of some other concurents
 
 -   [VFR flying in Zwitserland](http://www.youtube.com/watch?v=3K_rBhHb9x8) (AeroFly
     FS)
 -   [New kids in the blocs](http://www.youtube.com/watch?v=KAZwLM_mVzo&feature=player_embedded)
     (AeroFly FS)
 
-Resources
-=========
+## Resources
 
 -   [http://www.fsdownload.com](http://www.fsdownload.com/)
