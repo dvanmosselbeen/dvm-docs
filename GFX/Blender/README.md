@@ -1,3 +1,12 @@
+-----
+title: Blender
+description: A little file containing various notes related to Blender.
+created: 00-00-0000 00:00:00
+modified: 00-00-0000 00:00:00
+keywords: blender, 3D, GFX, graphics
+lang: en
+-----
+
 This directory will contain information related to Blender.
 
 # Programming
