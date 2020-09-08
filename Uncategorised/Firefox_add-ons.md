@@ -1,8 +1,10 @@
 -----
-created: 28-09-2012 21:19:53
-modified: 
+title: Firefox Add-ons
 description: This page talk about firefox add-ons
-keywords: firefox iceweasel add-ons addons
+created: 28-09-2012 21:19:53
+modified: 28-09-2012 21:19:53
+keywords: firefox, iceweasel, add-ons, addons
+lang: en
 -----
 
 # Firefox add-ons

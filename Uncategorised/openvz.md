@@ -1,21 +1,24 @@
----
+-----
+title: Openvz Reference
 description: openvz is virtualisation tool that permit you to create virtual computers.
-keywords: 
-title: Openvz
-created: 01-01-2012
-modified: 01-01-2012
+created: 01-01-2012 00:00:00
+modified: 01-01-2012 00:00:00
+keywords: openvz, virtualisation 
+lang: en
 ---
 
-# Introduction
+# Openvz Reference
+
+## Introduction
 
 This article talk about another great application to run virtual
 computers. It\'s similar like `qemu` in a way, but it's many more,
 it's more comparable to`Xen` or `vmware` server.
 
-# Installing openvz
+## Installing openvz
 
 This is probably the most easiest virtual computing system to setup and
-to use. It\'s peace of cake!
+to use. It's peace of cake!
 
 Get the kernel image of the openvz website <http://download.openvz.org/kernel/debian/etch/> and install it with:
 
@@ -24,7 +27,7 @@ Get the kernel image of the openvz website <http://download.openvz.org/kernel/de
 Once the kernel image installed, reboot your computer and use that
 `openvz`kernel.
 
-# Setting up a virtual machine
+## Setting up a virtual machine
 
 Download a template distribution , the easiest way to start. See <http://download.openvz.org/template/precreated/> i took the debian-3.1-i386-minimal.tar.gz and place it in `/var/lib/vz/templates/cache/`
 
@@ -122,7 +125,7 @@ Delete the configuration of a virtual machine:
 
     vzctl destroy <id>
 
-# Installing a graphical environment
+## Installing a graphical environment
 
 In this article i install a lightweight graphical environment.
 
@@ -134,12 +137,12 @@ Note, the `fluxbox`,`fluxconf` and `xdm` are optional. I choice these
 because these are very light, and because i like it so much `fluxbox`
 :-)
 
-# Installing a vncserver inside the virtual computer
+## Installing a vncserver inside the virtual computer
 
 In this article i use `tightvncserver`. It\'s very easy to setup and to
 use.
 
-# tightvnc server side
+## tightvnc server side
 
     aptitude install tightvncserver
 
@@ -149,7 +152,7 @@ Start the vncserver:
 
 It ask you to enter a password and you need to confirm the password.
 
-# tightvnc client side
+## tightvnc client side
 
 We need to install a vnc viewer to make a connection to a vnc server.
 
@@ -163,7 +166,7 @@ Enter the password.
 
 A window goes open and you get your desktop.
 
-# Remarks
+## Remarks
 
 I have hit the quota bug while playing with the `openvz` :-s Default
 there is a quota limit of 1 GB for the virtual computers. That have
@@ -171,7 +174,7 @@ block me when i tried the `gentoo` stage 3 template. The problem is
 fixed in a recent version of the`vzquota`. (I need to research the exact
 number of the app).
 
-# Resources
+## Resources
 
 - <http://openvz.org>
 - <http://www.howtoforge.com/debian_etch_openvz>

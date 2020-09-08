@@ -1,9 +1,15 @@
----
-description: 
-keywords: web framework python php templates
-title: Web frameworks
-created: 26-11-2010
----
+-----
+title: Web Frameworks
+description: This page list references to different web frameworks.
+created: 26-11-2010 00:00:00
+modified: 26-11-2010 00:00:00
+keywords: web, framework, python, php, templates
+lang: en
+-----
+
+# Web Frameworks
+
+## Introduction 
 
 *This page list all web framworks i found and have take a closer look to
 it. This list won\'t sum all existing web frameworks that there are
@@ -19,10 +25,7 @@ easy way to process templates, a login system, dabase connection,
 database queries etc. In fact, the functionalities you will have at your
 disposal depend of how complex the web framework is.
 
-Python Web frameworks
-=====================
-
- 
+## Python Web frameworks
 
 See also: <http://wiki.python.org/moin/WebFrameworks>.
 
@@ -41,13 +44,11 @@ See also: <http://wiki.python.org/moin/WebFrameworks>.
 - werkzeug - <http://werkzeug.pocoo.org>
 - flask - <http://flask.pocoo.org>
 
-PHP web frameworks
-==================
+## PHP web frameworks
 
 - CakePHP
 - CodeIgniter
 
-Other
-=====
+## Other
 
 - Ruby on Rails

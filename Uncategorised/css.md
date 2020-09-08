@@ -1,9 +1,13 @@
----
-description: This page talk about css.
-keywords: css
+-----
 title: CSS
-created: 16-01-2008
----
+description: This page talk about css.
+created: 16-01-2008 00:00:00
+modified: 16-01-2008 00:00:00
+keywords: css, webdev, html, development, programing, website
+lang: en
+-----
+
+# CSS
 
 A little css file example:
 
@@ -15,8 +19,6 @@ A little css file example:
         background: white;
         border: 0px;
     }
-
- 
 
 The first one is used for the id tag, the second for a class.
 

@@ -1,10 +1,13 @@
----
+-----
+title: GNU/Linux distributions i have try
 description: This article talk about the distributions i have try.
-keywords: 
-title: 'GNU/Linux distributions i have try'
-created: 01-01-2012
-modified: 
----
+created: 01-01-2012 00:00:00
+modified: 01-01-2012 00:00:00 
+keywords: gnu, linux, os 
+lang: en
+-----
+
+# GNU/Linux distributions i have try
 
 This is a little list of the distribution that i have tested. Actually,
 this list are really not good set up and very not complete\...I must

@@ -1,9 +1,11 @@
----
-description: 
-keywords: 
+-----
 title: HTML
-created 28-11-2007
----
+description: HTML reference 
+created 28-11-2007 00:00:00
+modified 28-11-2007 00:00:00
+keywords: html, website
+lang: en 
+-----
 
 Create static web pages with the Hypertext Markup Language.
 

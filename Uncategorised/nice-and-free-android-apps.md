@@ -1,9 +1,13 @@
----
+-----
+title: Nice and free Android apps
 description: This page list a few nice Android apps.
 keywords: android google apps market
-title: Nice and free Android apps
-created: 07-12-2011
----
+created: 07-12-2011 00:00:00
+modified: 07-12-2011 00:00:00
+lang: en
+-----
+
+# Nice and free Android apps
 
 There are tons and tons of
 different types of tools (applications) available on the Android Market

@@ -1,9 +1,13 @@
----
-description: 
-keywords: 
+-----
 title: Les projets dont je souhaiterait travailler
-created: 24-02-2011
----
+description: notes about the projects i want to work on.
+created: 24-02-2011 00:00:00
+modified: 24-02-2011 00:00:00
+keywords: projects
+lang: en
+-----
+
+# Les projets dont je souhaiterait travailler
 
 ***Une liste de projet que je me verrait bien crée un jours. Mais faute
 de temps probablement ca prendrait un long moment peut-etre avant que je

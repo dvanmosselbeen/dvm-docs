@@ -1,17 +1,21 @@
----
-description: 
-keywords: 
-title: LFS
-created: 18-01-2008
----
+-----
+title: LFS Reference
+description: My little Linux From Scratch Reference
+created: 18-01-2008 00:00:00
+modified: 18-01-2008 00:00:00
+keywords, gnu, linux, kernel, programming
+lang: en
+-----
+
+# LFS Reference
 
 This page talk about the Linux From Scratch and Beyond Linux From
 Scratch
 
 **Merge the info of \~/Docs/local\_svn/shared\_codes/lfs/notes**
 
-Introduction
-============
+## Introduction
+
 
 This page is not going to replace the great documentation of the Linux
 From Scratch project and Beyond Linux From Scratch, but provide some
@@ -25,8 +29,7 @@ virtual machine. I usevmware-server for this test here, because it\'s
 fee to use and is fast. Not that i recommend, or want that you use
 vmware-server!
 
-Using the Live CD
-=================
+## Using the Live CD
 
 At the time of writing this page, i used the live
 CDlfslivecd-x86-6.3-r2145.iso. Using the LFS live cd has some
@@ -85,8 +88,7 @@ Now that the live cd is up and running, i recommend to make use of
 screen. If you don\'t have any experience with screen, i suggest to read
 my \[screen\] (screen) page. screen is a must have and must know tool!
 
-Copying the needed sources from the live CD
-===========================================
+## Copying the needed sources from the live CD
 
 Like the sources and patches are on the live CD, we don\'t need to
 download these from the net. But instead, copy these the the
@@ -94,8 +96,7 @@ download these from the net. But instead, copy these the the
 
     cp /lfs-sources/* $LFS/sources
 
-The Standard Build Unit SBU check
-=================================
+## The Standard Build Unit SBU check
 
     time { CC="gcc -B/usr/bin/" ../binutils-2.17/configure --prefix=/tools \
         --disable-nls --disable-werror && make && make install; }
@@ -112,8 +113,7 @@ To list directory, to easy remove it:
 
 Follow the instructions like noted in the book till chapter 6.
 
-Using software to track installed files with paco
-=================================================
+## Using software to track installed files with paco
 
 I use \[paco\] (<http://paco.sourceforge.net/>) to track the files i
 install when compiling some software from source. This tool help me to
@@ -167,8 +167,7 @@ support. Keep in mind that paco will not log all files, because some
 where already logged. So for some packages, you should need to first
 remove it of your system and install it again.
 
-Locales
-=======
+## Locales
 
 In chapter 6.9. Glibc-2.5.1 i added some more locales:
 
@@ -179,11 +178,9 @@ Or you could run the follow command to install all locales at once:
 
     make localedata/install-locales
 
-Some other extra info during the LFS setup
-==========================================
+## Some other extra info during the LFS setup
 
-vim
----
+### vim
 
     tar xf vim-7.1.tar.bz2
     tar xf vim-7.1-lang.tar.gz
@@ -192,8 +189,7 @@ then
 
     cd vim71
 
-Kernel compiling
-----------------
+### Kernel compiling
 
     make LANG=nl_BE.utf8 LC_ALL= menuconfig
 
@@ -236,14 +232,12 @@ and there:
     Transparent decompression extension
     UDF file system suppor
 
-Before rebooting
-================
+## Before rebooting
 
 Before ending the LFS part of the book, there\'s a few extra packages i
 install. Like wget, screen and ssh. See the BLFS book.
 
-After the reboot
-================
+## After the reboot
 
 If the system boot up, as first, i\'m happy :-p Not that it is hard to
 get the whole procedure done right.
@@ -256,8 +250,7 @@ thatpaco has put it in his database.
 
 And then delete some lines \...
 
-BLFS part
-=========
+## BLFS part
 
 Like i installed the LFS in a virtual computer, it\'s easy to copy and
 paste the needed directory. Once you add this to vmware and start it you
@@ -286,8 +279,7 @@ You should also change the hostname /etc/sysconfig/network and
 
 Then reboot and watch if everything is been ok now.
 
-zsh
----
+### zsh
 
 Install PCRE-6.7 first!
 
@@ -315,8 +307,7 @@ Change the default shell for the wanted users:
 
     chsh
 
-Some other useful things
-========================
+## Some other useful things
 
 Some other useful things that are specific or not to the LFS setup.
 
@@ -326,8 +317,7 @@ Log all output of a command, including errors:
 
     command > output.txt 2>&1
 
-See for
-=======
+## See for
 
 -   glibc stuff
     -   ldconfig - Configures the dynamic linker runtime bindings
@@ -351,25 +341,21 @@ See for
 
 -   Building a static library
 
-Starting stopping services
---------------------------
+## Starting stopping services
 
     /etc/rc.d/init.d/network restart
 
-Resources
-=========
+## Resources
 
 - <http://www.linuxfromscratch.org/>
 
-LFS artwork
-===========
+## LFS artwork
 
 - [http://www.linuxfromscratch.org/\~gerard/lfslogos/](http://www.linuxfromscratch.org/%7Egerard/lfslogos/)
 - <http://berzerkula.no-ip.org/>
 - <http://cblfs.cross-lfs.org/index.php/Main_Page>
 
-Interesting hints
-=================
+## Interesting hints
 
 - [mail server setup](http://www.linuxfromscratch.org/hints/downloads/files/mail.txt)
 - [managing multiple kernels](http://www.linuxfromscratch.org/hints/downloads/files/multi-kernel-versions.txt)
@@ -388,13 +374,11 @@ Interesting hints
 - [LFS cd remastering howto](http://www.linuxfromscratch.org/hints/downloads/files/lfscd-remastering-howto.txt)
 - [full hints list](http://www.linuxfromscratch.org/hints/list.html)
 
-Mirrors
-=======
+## Mirrors
 
 - <http://ftp.osuosl.org/pub/lfs/>
 
-Things to check for
-===================
+## Things to check for
 
 - 7.6. Configuring the Linux Console - Check to setup the console
     according to the locales.

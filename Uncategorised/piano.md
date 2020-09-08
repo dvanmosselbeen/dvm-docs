@@ -1,11 +1,15 @@
 -----
+title: Piano stuff
+description: A little file containing various notes related to piano.
 created: 07-06-2012 21:19:53
-modified: 
-description: 
-keywords: piano music
+modified: 07-06-2012 21:19:53
+keywords: piano, music
+lang: en
 -----
 
-# Learn music
+# Piano stuff
+
+## Learn music
 
 Search for "cours de solfege" on google.
 
@@ -16,7 +20,7 @@ http://www.nicedays.net/solfege/
 http://fr.wikipedia.org/wiki/Solf%C3%A8ge
 http://www.theoriedelamusique.com/pageprincipale.html
 
-# Youtube piano music
+## Youtube piano music
 
 Search for the keyword "piano music" on youtube.
 
@@ -35,11 +39,11 @@ Search for the keyword "piano music" on youtube.
 * Frederic Chopin - Nocturne in C sharp minor - http://www.youtube.com/watch?v=lg_HAMLitjY
 * Some great pianist with lot's (496 atm) music videos! - http://www.youtube.com/user/vkgoeswild#g/u
 
-# General classic music on youtube
+## General classic music on youtube
 
-http://www.youtube.com/watch?v=ETGO6QEjx9Q
-http://www.youtube.com/watch?v=SkmDfUca85Q
+* http://www.youtube.com/watch?v=ETGO6QEjx9Q
+* http://www.youtube.com/watch?v=SkmDfUca85Q
 
-# Software
-http://www.01net.com/telecharger/windows/Loisirs/musique/fiches/36729.html
-http://vmpk.sourceforge.net/
+## Software
+* http://www.01net.com/telecharger/windows/Loisirs/musique/fiches/36729.html
+* http://vmpk.sourceforge.net/

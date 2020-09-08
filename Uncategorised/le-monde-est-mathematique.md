@@ -1,9 +1,13 @@
 ---
-description: 
-keywords: 
-title: Le monde est mathématique
-created: 12-10-2011
+title: Le monde est mathématique (notes)
+description: Little notes while reading the books "Le monde est mathématique"
+created: 12-10-2011 00:00:00
+modified: 12-10-2011 00:00:00
+keywords: math
+lang: en
 ---
+
+# Le monde est mathématique (notes)
 
 Quelques petites notes prisent durant mon explorations dans les maths en suivant la serie de 30 livres "[Le monde est mathématique](http://www.lesoir.be/services/minisites/collectionMath/)"
 qui est publier en hebdomadaire par le journal [Le Soir](http://www.lesoir.be). Le but n\'est nulement de reecrire le contenue, mais est juste une petie aide memoire est quelque petit notes. C'est une collection de livre qui sort
@@ -15,7 +19,7 @@ qui est publier en hebdomadaire par le journal [Le Soir](http://www.lesoir.be). 
 5.  La Secte des nombres
 6.  La Quatrième Dimension
 
-# Termes mathématiques
+## Termes mathématiques
 
 - `La somme` -
 - `La différence` - 
@@ -36,7 +40,7 @@ qui est publier en hebdomadaire par le journal [Le Soir](http://www.lesoir.be). 
 - `hypoténuse` - Côté opposé à l\'angle droit d\'un triangle
     rectangle. 
 
-# Nombre d'or
+## Nombre d'or
 
 Les formules des métaux: 
 
@@ -45,7 +49,7 @@ Les formules des métaux: 
 - **Nombre d\'argent**: 1 + 2√ =
 - **Nombre de bronze**: 3+13√/3 =
 
-# Relation du nombre d\'or et la suite de Fibonacci
+## Relation du nombre d\'or et la suite de Fibonacci
 
     Φ^3^ = 2Φ + 1
     Φ^4^ = 3Φ + 2
@@ -55,7 +59,7 @@ Les formules des métaux: 
     Φ^8^ = 21Φ + 13
     ...
 
-# Modulo
+## Modulo
 
 Comment calculer 512 modulo 12?
 
@@ -72,7 +76,7 @@ Le résultat s\'écrit alors
     512 ≡ 8 (mod 12)
 
 
-# Ressources
+## Ressources
 
 * Le site du \"[Le monde sest mathématique](http://www.lesoir.be/services/minisites/collectionMath/)\"
 * Le module turtle de python (voir import turtle) ou encore kturtle pour exercer les math, voir même dessiner avec les math.

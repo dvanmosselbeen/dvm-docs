@@ -1,13 +1,15 @@
----
-description: 
+-----
 title: pyguicms to joomla migration notes
-keywords:
-created: 01-01-2012
-modified: 
----
+description: This file contains some notes about my pyguicms to joomla migration.
+created: 01-01-2012 00:00:00
+modified: 01-01-2012 00:00:00
+keywords: pyguicms, joomla, cms, php, programing, website, internet, webserver
+lang: en 
+-----
 
-Categories of articles that are migrated
-========================================
+# pyguicms to joomla migration notes
+
+## Categories of articles that are migrated
 
 All articles are copied to the new (dvanmosselbeen.be) website. But
 previously published articles are now set as unpublished and need a
@@ -37,8 +39,7 @@ review.
 -   Tools
 -   Web Dev
 
-Markup tips
-===========
+## Markup tips
 
 It happen that there\'s a glitch when copy pasting data. the \<code\>
 tags needs to be removed in the source of the copied data. In vim this

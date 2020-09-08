@@ -1,9 +1,11 @@
----
-description: 
+-----
 title: Gentoo
-created: 01-01-2012
-modified: 
----
+description: Gentoo reference
+created: 01-01-2012 00:00:00
+modified: 01-01-2012 00:00:00
+keywords: gentoo, gnu, linux
+lang: en
+-----
 
 # Introduction
 

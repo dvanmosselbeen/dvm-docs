@@ -1,10 +1,11 @@
----
-description: Software Sweet Software
-keywords: 
+-----
 title: About scratchi
-created: 28-11-2007
-modified: 
----
+description: Software Sweet Software
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: programming, python
+lang: en 
+-----
 
 scracthi is a supybot ircbot that run on `#debian-nl` on freenode\'s
 network. A little nice tool to aid the people on the irc channel. The
