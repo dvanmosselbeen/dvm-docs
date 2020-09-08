@@ -7,16 +7,16 @@ keywords: database, mysql, website, internet
 lang: en
 -----
 
-Introduction
-============
+# MySQL Reference
+
+## Introduction
 
 This article give some tips and tricks about MySQL. This article is
 ideal for people have little experience with `MySQL` and want to know a
 bit more about it.
 
 
-Setting up the root password
-============================
+## Setting up the root password
 
 When we just installed `MySQL`, we need to define the root password!
 It\'s the first thing to do! If you not define an good password, someone
@@ -52,8 +52,7 @@ That identify you as root user and go in the `mysql` table.
 Not forget to replace the `new_password_we_want` password with one we
 want.
 
-Connecting to the MySQL server
-==============================
+## Connecting to the MySQL server
 
 Now that you have an account on the `MySQL` server, it\'s a good thing
 now to try to connect to it. We need to do it in the command line
@@ -76,8 +75,7 @@ Now we need to enter all the commando\'s of `MySQL` there after that
 `mysql>`prompt! The most commands you need to enter it in the mysql
 shell.
 
-See which database are available
-================================
+## See which database are available
 
 We can see which existing database there are available with the command:
 
@@ -99,8 +97,7 @@ he are allowed to do. It\'s important to not mess up that database. So i
 recommend you to not play with that table as for long you really know
 what you\'re doing.
 
-Exporting the data
-==================
+## Exporting the data
 
 It\'s good to keep an copy of you\'re data. Sometimes you want to keep
 the security, keeping an backup before change some things on the
@@ -118,8 +115,7 @@ If you need to import from version 4.1 to 4.0
 
     mysqldump --compatible=mysql40 -u DBUSER -p DBNAME > dbname.sql
 
-Importing the data
-==================
+## Importing the data
 
 You can easily import existing data, thinking to data that are stored on
 another `MySQL` server that you want to move to you\'re production
@@ -131,8 +127,7 @@ If you need to add the data on an remote \'MySQL\' server:
 
     mysql -u DBUSER -p -h DBSERVER dbname < dbname.sql
 
-Delete a database
-=================
+## Delete a database
 
 Deleting an database, is an question of an command. Be sure you are
 deleting the correct database because there are not asked to confirm the
@@ -143,24 +138,21 @@ you can always restore the database you have just deleted.
 
 Replace `database_name` with the database you want to delete.
 
-Create a database
-=================
+## Create a database
 
     CREATE DATABASE database_name;
 
 Replace `database_name` with the database name you want to give to that
 database.
 
-Using a database
-================
+## Using a database
 
 Once in the command line interface of the `MySQL` server, you probably
 need to choose an database where you would like to work on.
 
     USE database_name
 
-Create a table
-==============
+## Create a table
 
     CREATE TABLE name_table (
     -> name_column1 column1_type column1_details,
@@ -191,29 +183,25 @@ An example of an complete table:
 -   The fourth line to the seventh line are the same, just the fields
     name differ. We create an field an set it to the type \'TEXT\'.
 
-Show the tables inside a database
-=================================
+## Show the tables inside a database
 
 Need an command to see wich table are inside an database? Use this:
 
     SHOW TABLES;
 
-Getting the description of a table
-==================================
+## Getting the description of a table
 
 To get an description of the fields of an table:
 
     DESCRIBE table_name;
 
-Delete a table
-==============
+## Delete a table
 
 To delete an table inside an database:
 
     DROPTABLE table_name;
 
-Insert data into the table
-==========================
+## Insert data into the table
 
 Adding data into the table could be done in different ways. Like in this
 article we have already create an database `Guestbook` for demonstration
@@ -282,8 +270,7 @@ Method 2:
 Remember that we need to enter the VALUES in the same order like the
 fields (on line 2) are entered.
 
-View the data of the table
-==========================
+## View the data of the table
 
     SELECT * FROM Guestbook;
 
@@ -302,13 +289,11 @@ But we can ask to only show the x first characters of an column:
 
     SELECT ID, GDate, GName, Gemail, Gurl LEFT(GMessage,25)
 
-Count the numbers of rows in a table
-====================================
+## Count the numbers of rows in a table
 
     SELECT COUNT(*) FROM Guestbook;
 
-Updating information in a table
-===============================
+## Updating information in a table
 
     UPDATE Guestbook SET GDate="2006-06-09" WHERE ID=1;
 
@@ -318,8 +303,7 @@ we change all the fields matching the word `good`.
     UPDATE Guestbook SET GDate="2006-06-09"
     -> WHERE GMessage LIKE "%good%";
 
-Deleting fields in a table or the table in question
-===================================================
+## Deleting fields in a table or the table in question
 
 You need to are very careful when you would like to delete some things.
 Because if you forget to enter somethings you delete the whole table!

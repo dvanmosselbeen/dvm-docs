@@ -7,22 +7,21 @@ keywords: sqlalchemy, database, orm, website, internet
 lang: en
 -----
 
-Introduction
-============
+# SQLAlchemy
+
+## Introduction
 
 This article wouldn\'t be complete but tries to be a little reference
 for those who are working with sqlalchemy. And at the same time, this
 article is growing while i\'m learning sqlalchemy. So probably there
 will be some errors and things not clear or probably wrong at all.
 
-Terms
-=====
+## Terms
 
 - ORM - Object Relational Mapper
 - DDL - Data Definition Language, see <http://en.wikipedia.org/wiki/Data_Definition_Language%3E>
 
-The declarative way (the short hand)
-====================================
+## The declarative way (the short hand)
 
 Example:
 
@@ -42,28 +41,24 @@ Example:
             self.pagename = pagename
             self.data = data
 
-Relations
-=========
+## Relations
 
-One to many relation
---------------------
+### One to many relation
 
-\...
 
-Many to many relation
----------------------
+...
 
-\...
+### Many to many relation
 
-Additional tools
-================
+...
+
+## Additional tools
 
 There are several extensions and plugins to SQLAlchemy including:
 declarative, Migrate, Elixir, SQLSoup, django-sqlalchemy, DBSprockets,
 FormAlchemy, and z3c.sqlalchemy.
 
-Resources
-=========
+## Resources
 
 - Official website - <http://www.sqlalchemy.org>
 - <http://www.rmunn.com/sqlalchemy-tutorial/tutorial.html> - this is for sqlalchemy version 0.2!!! but nice tut!

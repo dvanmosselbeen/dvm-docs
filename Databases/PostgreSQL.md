@@ -7,11 +7,9 @@ keywords: database, mysql, website, internet
 lang: en
 ---
 
-PostgreSQL
-==========
+# PostgreSQL
 
-Introduction
-============
+## Introduction
 
 You can get many informations on the website of postgresql. Mostly all
 informations here are probably on the website of postgresq, so this
@@ -20,14 +18,12 @@ you a little introduction or help you where you have previously failed.
 As usual, these notes are based on some experimentations with postgresql
 on a Debian box.
 
-Used terms
-==========
+## Used terms
 
 - `cluster`: A collection of databases managed by a single PostgreSQL
     server instance constitutes a database cluster.
 
-Installing configure postgresql and tools
-=========================================
+## Installing configure postgresql and tools
 
 Installing postgresql:
 
@@ -133,8 +129,7 @@ We should now create a db:
 
     # First switch from root user to postgres! su postgres # The next on should inform that the db already exist createdb $USER # Should also inform the user exist createuser $USER Shall the new role be a superuser? (y/n) y
 
-Backporting postgresql stuff
-=================================================================
+## Backporting postgresql stuff
 
 To backport any stuff, you may need to have build-essential installed
 on your system. So start installing this if you want to backport
@@ -158,8 +153,7 @@ Update the package list:
 
 We should now create a directory somewhere and cd into it.
 
-Backporting postgresql-8.3
---------------------------
+## Backporting postgresql-8.3
 
 To create the postgresql 8.3 backport on a stable box we first need to
 backport and install tcl 8.5 with the follow command:
@@ -224,8 +218,7 @@ If you take a look, the following files and directories are created:
 
 This all take up to 535 MB disk space.
 
-Backporting phppgadmin
-----------------------
+## Backporting phppgadmin
 
 Prepared and build the needed stuff:
 
@@ -234,8 +227,7 @@ Prepared and build the needed stuff:
     apt-get -b source phppgadmin
     dpkg -i phppgadmin_4.2-1_all.deb
 
-Defining the password for the \'postgres\' user
-===============================================
+## Defining the password for the \'postgres\' user
 
 As root user:
 
@@ -248,8 +240,7 @@ password.
 You can switch to the postgres user with \'su postgres\' when you are
 root user on the system.*
 
-Creating the database cluster
-=============================
+## Creating the database cluster
 
 *You shouldn\'t do this part if you installed postgres from the debian
 package. You can follow these instruction if you want to create an
@@ -269,8 +260,7 @@ in/usr/local/pgsql/data or /var/lib/pgsql/data:
 use ofinitdb. Once done, you can make use of createdb to create more
 databases. I have make use of initdb without createdb.
 
-Creating a postgresql user account
-==================================
+## Creating a postgresql user account
 
 With this i mean a user that will be able to log into postgresql.
 
@@ -317,8 +307,7 @@ should define a password for the newly created user account:
 
 Exit now the psql shell with typing \\q.
 
-Creating a database in the cli
-==============================
+## Creating a database in the cli
 
 *Postgresql has another view of databases, in database we can create a
 database.*
@@ -357,13 +346,11 @@ You can also specify some options when creating a database:
 
     createdb -p 5000 -h eden -E LATIN1 -e demo
 
-Delete a database in the cli
-============================
+## Delete a database in the cli
 
     dropdb mytestdb
 
-Starting the database server
-============================
+## Starting the database server
 
 On a Debian GNU/Linux box you can make use of the startup script that is
 automatically create to start, stop and restart the postgresqlservices.
@@ -391,8 +378,7 @@ If you get an error like this:
 Probably thepostmaster are already running then. Stop the service
 (/etc/init.d/postgresql stop) before an try to start the database again.
 
-The interactive interpreter
-===========================
+## The interactive interpreter
 
     psql -u postgres
 
@@ -400,21 +386,18 @@ then you get the postgresql shell:
 
     postgres=#
 
-Creating a database
--------------------
+## Creating a database
 
     CREATE DATABASE somedbname
         WITH ENCODING='UTF8'
             OWNER=someuser;
 
-Create a new schema
--------------------
+## Create a new schema
 
     CREATE SCHEMA mytestschema
         AUTHORIZATION someuser;
 
-Creating a table
-----------------
+## Creating a table
 
     CREATE TABLE weather (
         city            varchar(80),
@@ -464,13 +447,11 @@ If you may need to add some more columns:
     ALTER TABLE testschema.users
        ADD COLUMN last_name text[] NOT NULL;
 
-Deleting a table
-----------------
+## Deleting a table
 
     DROP TABLE <tablename>;
 
-Insert data into a table
-------------------------
+## Insert data into a table
 
     INSERT INTO weather VALUES ('San Francisco', 46, 50, 0.25, '1994-11-27');
     INSERT INTO cities VALUES ('San Francisco', '(-194.0, 53.0)');
@@ -491,13 +472,11 @@ Or you can import some data with:
     INSERT INTO contacts.users (id, first_name, last_name)
         VALUES (3, 'Andy', 'Van Mosselbeen');
 
-Importing data
---------------
+## Importing data
 
     \i basics.sql
 
-Selecting
----------
+## Selecting
 
     SELECT * FROM contacts.users;
 
@@ -509,8 +488,7 @@ Which output:
       2 | David      | Van Mosselbeen
     (2 rows)
 
-Deleting records
-----------------
+## Deleting records
 
     DELETE FROM weather WHERE city = 'Hayward';
 
@@ -518,15 +496,13 @@ To delete all records from a table:
 
     DELETE FROM tablename;
 
-Updating records
-----------------
+## Updating records
 
     UPDATE weather
         SET temp_hi = temp_hi - 2,  temp_lo = temp_lo - 2
         WHERE date > '1994-11-28';
 
-Transactions
-------------
+## Transactions
 
     BEGIN;
     UPDATE accounts SET balance = balance - 100.00
@@ -548,8 +524,7 @@ With some savepoints in an transaction:
         WHERE name = 'Wally';
     COMMIT;
 
-Creating a view
----------------
+## Creating a view
 
     CREATE VIEW comedies AS
         SELECT *
@@ -571,20 +546,17 @@ Or you can even specify the wanted fields of the VIEW:
 
     SELECT first_name FROM contacts.vm;
 
-Joins between different tables
-------------------------------
+## Joins between different tables
 
 \...
 
-Change database
-===============
+## Change database
 
 Go into another database:
 
     \c <dbname>
 
-Get help at the interactive psql shell
---------------------------------------
+## Get help at the interactive psql shell
 
 For psql help:
 
@@ -598,8 +570,7 @@ To get help on GRANT:
 
     \h GRANT
 
-See all the databases
-=====================
+## See all the databases
 
 There are 2 ways:
 
@@ -610,8 +581,7 @@ Or:
     postgres=# select * from pg_database;
     # That output some stuff
 
-Some other little info\'s
-=========================
+## Some other little info\'s
 
 Changing of database:
 
@@ -673,15 +643,13 @@ To execute some external sql file:
 
 \...
 
-Some useful software
-====================
+## Some useful software
 
 -   pgadmin3 - graphical administration tool for PostgreSQL
 -   phppgadmin - Set of PHP scripts to administrate PostgreSQL over the
     WWW
 
-Some related Python modules
----------------------------
+## Some related Python modules
 
 Some useful modules to use if we need to make a Python program that need
 to talk with the postgresql database.
@@ -692,8 +660,7 @@ to talk with the postgresql database.
 -   sqlalchemy
 -   sqlobject
 
-Postgresql with OpenOffice.org Base
-===================================
+## Postgresql with OpenOffice.org Base
 
 The advantage to use openOffice as frontend on database is that the data
 is stored centrally on a computer. The data and functionality is kept
@@ -726,8 +693,7 @@ database.
 
 You are now ready to play with OpenOffice.org Base :-)
 
-Resources
-=========
+## Resources
 
 - http://www.postgresql.org/
 - http://www.planetpostgresql.org/

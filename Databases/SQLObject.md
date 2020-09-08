@@ -11,11 +11,9 @@ Get information of a model:
 
     sqlobject-admin
 
-Relations
-=========
+## Relations
 
-One-to-many
------------
+### One-to-many
 
 A person can have multiples addresses:
 
@@ -39,8 +37,7 @@ filling in new info with:
     Address(street='123 W Main St', city='Smallsville',
             state='MN', zip='55407', person=p)
 
-Many-to-many
-------------
+### Many-to-many
 
     class User(SQLObject):
         class sqlmeta:
@@ -76,7 +73,6 @@ Filling in informations:
     editor.users
     [<User 1 username='bob'>, <User 2 username='tim'>]
 
-See also
-========
+## See also
 
 - sqlalchemy - This is another ORM, see <http://www.sqlalchemy.org>.

@@ -7,8 +7,9 @@ keywords: database, website, internet, orm
 lang: en
 -----
 
-Introduction
-============
+# SQLite
+
+## Introduction
 
 If we don\'t need a sophisticated client/server database system, no
 multiple clients access, `sqlite` is the thing. It\'s easy to use, easy
@@ -21,15 +22,13 @@ libraries to make use of sqlite.
 We can use lower or capital letters. To make the stuff more clear here,
 we use capital for the commands.
 
-Installing SQLite
-=================
+## Installing SQLite
 
 SQLite is available for different platforms. There is sqlite and
 sqlite3. Databases created with the later one will be not compatible
 with the oldersqlite version.
 
-Installing SQLite on Debian GNU/Linux (and others)
---------------------------------------------------
+## Installing SQLite on Debian GNU/Linux (and others)
 
 We first always update the list of packages and then upgrade all the
 packages before installing new software. We also install the additional
@@ -59,15 +58,13 @@ source. Most likely like:
     # As root user
     make install
 
-Installing SQLite on Microsoft Windows {#windows}
---------------------------------------
+## Installing SQLite on Microsoft Windows {#windows}
 
 Download the binary file and place it somewhere. Most likely in the
 **C:\\Program Files\\SQLite3\\** and add that path to the path variable.
 
 
-Read the documentation {#checking-the-docs}
-======================
+## Read the documentation {#checking-the-docs}
 
 Like we have installed the `sqlite3-doc` packages on my debian box.
 It\'s best that we first read the doc. The docs are located
@@ -87,8 +84,7 @@ Get help:
 
     sqlite> EXPLAIN SELECT * FROM contacts;
 
-Datatypes
-=========
+## Datatypes
 
 - `NULL` - The value is a NULL value.
 - `INTEGER` - The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes
@@ -98,8 +94,7 @@ Datatypes
 - `TEXT` - The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16-LE).
 - `BLOB` - The value is a blob of data, stored exactly as it was input.
 
-SQLite in the cli
-=================
+## SQLite in the cli
 
 You can use `sqlite` in your shell or maybe want you access it in an
 simple shell script. Also useful to export or import some data in the
@@ -137,8 +132,7 @@ Some examples:
     1           foo         bar
     2           baz         buu
 
-Create and execute a query file
-===============================
+## Create and execute a query file
 
 Create a file `query.sql` and put the following:
 
@@ -158,8 +152,7 @@ Fetch a particular row:
 
     $ sqlite3 test.sqlite3 "SELECT names FROM groups"
 
-Creating a database
--------------------
+## Creating a database
 
 If we not specify a database name, the database will be are made
 in-memory, some time it is useful for test routines. But keep in mind
@@ -169,11 +162,9 @@ create the first table in the database.
 
     $ sqlite3 test.db
 
-In the sqlite interactive interpreter
-=====================================
+## In the sqlite interactive interpreter
 
-Creating a table
-----------------
+## Creating a table
 
     sqlite> CREATE TABLE contacts (
         id integer primary key,
@@ -185,8 +176,7 @@ With integer primary key, we make an auto increment way. Useful so that
 we later not specify an id, it automatically set a number higher as the
 highest id.
 
-Insert data in the table
-------------------------
+## Insert data in the table
 
 Here\'s an example:
 
@@ -210,8 +200,7 @@ When inserting, we can also define the order of the data we add:
     sqlite> INSERT INTO contacts (age,id,name) VALUES (14, NULL, 'foo';
 
 
-Select data from a table
-------------------------
+## Select data from a table
 
 We get all the columns:
 
@@ -259,8 +248,7 @@ Get all the different addresses of a contact:
     SELECT address.street from contacts contacts, contact_address, address WHERE 
     contacts.first_name=="David" AND contact_address.contact_id=contact_address.address_id;
 
-Delete data from a table
-------------------------
+## Delete data from a table
 
     sqlite> DELETE FROM contacts WHERE age>15;
 
@@ -272,13 +260,11 @@ Delete all records of a table:
 
     sqlite> DELETE FROM contacts;
 
-Update data from a table
-------------------------
+## Update data from a table
 
     sqlite> UPDATE contacts SET age = '14' WHERE name == 'foo';
 
-Add a new column to an existing table
--------------------------------------
+## Add a new column to an existing table
 
 Say you have a table with as sql and want to add a nem column:
 
@@ -313,8 +299,7 @@ Begin:
     DROP TABLE actors_backup;
     COMMIT;
 
-Let\'s get a better output
---------------------------
+## Let's get a better output
 
 The data will be split into columns.
 
@@ -329,20 +314,18 @@ Show the header (columns names):
 NOTE: `.mode col` and `.header on` are to improve the visibility. Once
 it\'s activated, it still leave so long you not exit `sqlite`.
 
-Create an index and a view
---------------------------
+## Create an index and a view
 
     sqlite> CREATE INDEX contacts_idx ON test (value);
     sqlite> CREATE VIEW schema AS SELECT * FROM sqlite_master;
 
-See the new table that are created
-----------------------------------
+## See the new table that are created
+
 
     sqlite> .tables
     sqlite> schema  contacts
 
-See the content of the schema table
------------------------------------
+## See the content of the schema table
 
     sqlite> select * from schema;
 
@@ -399,8 +382,7 @@ are specified all the tables are showed:
     13          Goto        0           1                     
     14          Noop        0           0
 
-Exporting (backup) data of a database
--------------------------------------
+## Exporting (backup) data of a database
 
 To export stuff, we use the `.dump`, default the output is displayed on
 screen, so we need to define to export to an file. The `.dumpt` is the
@@ -421,8 +403,7 @@ You can easy export a `sqlite` database to `sqlite3`:
 
     $ sqlite contacts.sqlite ".dump" | sqlite3 contacts.sqlite3
 
-Importing data into a database
-------------------------------
+## Importing data into a database
 
     sqlite> .read exported_data.sql
 
@@ -436,8 +417,7 @@ When developing a database layout, it will be good to create a file that
 contains all the tables and eventually another file that contains some
 default data.
 
-Creating SQL files
-------------------
+## Creating SQL files
 
 Create some file `contacts_tables.sql` and add the following:
 
@@ -457,18 +437,15 @@ Create another file called `contacts_data.sql` and add the following:
 
 Then import it like note in the `importing` chapter.
 
-Drop
-----
+## Drop
 
     sqlite> drop table contacts;
 
-Like
-----
+## Like
 
     sqlite> select * from contacts where value like '%oo%';
 
-Date and time commands
-======================
+## Date and time commands
 
     sqlite> select datetime('now','localtime','+1.5 hours','-10 minutes');
     2008-01-23 02:36:58
@@ -517,15 +494,13 @@ Here\'s an example:
     sqlite> select strftime("%d/%m/%Y %H:%M:%S %s %w %W",'now','localtime');
     23/01/2008 01:22:30 1201051351 3 03
 
-SQLite and Python
-=================
+## SQLite and Python
 
 There are some `Python` modules to access the content of a `sqlite`
 database. So that you easy can program an application that do some
 things with the`sqlite` database. Take a look on this website http://www.devshed.com/c/a/Python/Using-SQLite-in-Python/2/.
 
-Other commands to see for
-=========================
+## Other commands to see for
 
 -   `select * from sqlite_master;`
 -   `cat ~/.sqlite_history`
@@ -536,8 +511,7 @@ The following will be interesting to run some saved queries:
 
     sqlite> .read some.sql
 
-Other useful commands
-=====================
+## Other useful commands
 
 Download `sqlite_analyzer` from `sqlite` website.
 
@@ -560,8 +534,7 @@ I not past the output like it\'s really big. But try it on the test
 database us have made. Also read the latest part of the report, it give
 you the `SQL`syntax to produce the same stats.
 
-Detect the SQLite version of a database
----------------------------------------
+## Detect the SQLite version of a database
 
 On a nix box you can easy use the following command:
 
@@ -579,14 +552,12 @@ That output:
 
     test.sqlite3: SQLite 3.x database
 
-Vacum
------
+## Vacum
 
     sqlite test.db VACUM
     $ cp test.db test.backup
 
-SQLite Tools
-============
+## SQLite Tools
 
 - [Sqlite3 analyzer](http://www.sqlite.org/)
 - [Sqliteman](http://sqliteman.com/)
@@ -596,8 +567,7 @@ SQLite Tools
 - See also [this website](http://www.sqlite.org/cvstrac/wiki?p=SqliteTools).
 
 
-Resources
-=========
+## Resources
 
 - <http://sqlite.org/lang.html>
 - <http://www.sqlite.org/cvstrac/wiki>
