@@ -40,3 +40,8 @@ Many files have the same creation time. This is due the fact that some files are
 several times in the past. Mind the different websites i have got.
 
 * created: 2012-12-15 00:00:00: Means files created before this date. This dates back at some migration point.
+
+## TODO
+
+* Add Meta data to each md file.
+* Create a script that check each md file to ensure it respect the meta data.
