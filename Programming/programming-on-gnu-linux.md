@@ -1,16 +1,23 @@
-# Programming on gnu linux
+-----
+title: Programming on GNU / Linux
+description: This page is dedicated to GNU/Linux
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords: gnu, linux, programming 
+lang: be
+-----
 
-created: 2012-12-15 00:00:00
+# Programming on gnu linux
 
 This page talk about some general programming on a `GNU/Linux box`. Setting up a working development environment. Talking about the required toys to play. Take also a look to the other programming related pages.
 
 The content of this page is mainly based on the old book `Linux Programming Unleased` and this page content should be modified before releasing.
 
-# Introduction
+## Introduction
 
 There may many reason to program on a `GNU/Linux` box as that many to program on a `Microsoft Windows` box.
 
-# GNU cc
+## GNU cc
 
 `GNU cc` is know as `gcc`.
 
@@ -40,7 +47,7 @@ and that will output:
 
     Hello, Linux programming world!
 
-# Make
+## Make
 
     make clean
     make

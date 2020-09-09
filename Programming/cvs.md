@@ -1,10 +1,15 @@
+-----
+title: CVS
+description: This article talk about CVS.
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords: programming, development
+lang: be
+-----
+
 # CVS 
 
-created: 2012-12-15 00:00:00
-
-This article talk about cvs.
-
-# Introduction
+## Introduction
 
 On you're `Debian` system you can easy get some good informations. Go to the location:
 
@@ -25,7 +30,7 @@ To get local an copy of an project
 
 The project is downloaded in to the current directory where we actually are. So use the `pwd` before. Then we need now to enter in the directory we have downloaded to work on the files locally, after modify the files. We want to upload the different.
 
-# To commit the new local changes to the server
+## To commit the new local changes to the server
 
     cvs commit cli_addressbook.py
 

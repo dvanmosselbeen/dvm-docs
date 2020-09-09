@@ -1,8 +1,13 @@
+-----
+title: Gonzui
+description: This article talk about how i have setup gonzui and how i use it on a Debian box. 
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords: programming, tool, development
+lang: be
+-----
+
 # Gonzui
-
-created: 2012-12-15 00:00:00
-
-This article talk about how i have setup gonzui and how i use it on a Debian box.
 
 # Introduction
 

@@ -1,16 +1,21 @@
-# Perl
+-----
+title: Perl Reference
+description: This article talk about Perl programming.
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords: perl, programming
+lang: en
+-----
 
-created: 2012-12-15 00:00:00
+# Perl Reference
 
-This article talk about Perl programming.
-
-# Playing with Perl in the interpreter
+## Playing with Perl in the interpreter
 
 Open a shell and type `perl`. You are then in the `Perl` interpreter.
 
 Type whatever you want and then `ctrl+d` to execute the statements.
 
-# Let's Play with the interpreter
+## Let's Play with the interpreter
 
     $myVar = 'Hello world\n';
     print $myVar;
@@ -41,7 +46,7 @@ That output:
     343
     1
 
-# Creating a Perl script
+## Creating a Perl script
 
 A Perl script is the same code you have enter in the interpreter. Because of the interpreter lose the code you have entered each time you quit it, you want probably write down some code i a file and execute that file.
 
@@ -58,7 +63,7 @@ Make the script executable for everyone:
 
 Then you can execute the script without specifying the program. Like we can execute it with 'perl myScript.pl'. We can also rename it so that the script have no more a extension.
 
-# If
+## If
 
     $a = 7;
     $b = 3;
@@ -104,7 +109,7 @@ output:
     7 is more than 3
     3 is not more than 7
 
-# Arrays
+## Arrays
 
     @array = (1, 2, 3, 4, 5);
     foreach $number (@array) {
@@ -160,6 +165,6 @@ That output:
     5
     6
 
-# Resources
+## Resources
 
 *   Nice Perl movie introductions: [http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries](http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries)

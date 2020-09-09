@@ -1,14 +1,21 @@
-# Subversion
+-----
+title: Subversion
+description: Subversion Reference
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords:
+lang: en
+-----
 
-created: 2012-12-15 00:00:00
+# Subversion Reference
 
 This is a quick reference for Subversion users. I consider this more as a short tutorial to subversion.
 
-# Introduction
+## Introduction
 
 If you know nothing about `Subversion`, it's best that you read this article from the top to the bottom. But i still recommend you to read the [Subversion book](http://svnbook.red-bean.com) like i not talk about each topic of it. This article is more an quick reference. If you are planning to use `Subversion`, sure you need to read the `Subversion` book before or after having read this article. Experienced user would take what these needs. I hope this article can help you a bit. You can also get a bit of support on the `Freenode` IRC network on the `#svn` channel.
 
-# Why using Subversion?
+## Why using Subversion?
 
 If you are a programmer and write many codes or documentation. Sometimes you need to get back to an old version of a file because an old function you have modified suddenly cause to many problems. Or you need a tool to work together with some different people on the same project.
 
@@ -18,7 +25,7 @@ One change the code and submit it to the reposition. You are the second that goi
 
 It's can be compared to CVS (concurrent revisions system). But it's another one application.
 
-# Create a new repository in a directory
+## Create a new repository in a directory
 
 First we need to setup a reposition somewhere. Create a temp directory in you're home directory or where you want so that you can test the reposition there. After doing some tests we can delete it easily. To create a reposition type the following:
 
@@ -32,7 +39,7 @@ The reposition are created. I can suggest you to look, and only look to the file
 
 _We have set here all the file in in an subdirectory of the`/tmp/my_new_svn_project` folder. All data there would be delete after a reboot. So it's really not the ideal place to store data that you want to keep. In this case, it's ideal to set it there, so that when we reboot the computer loose all traces of it and the files are gone._
 
-# Creating a new project
+## Creating a new project
 
 To create a new project, we do that locally on an system, in a temp dir or so. On another directory where you have made that new reposition. Then we commit the new project to the reposition. When creating files, it must be have the following structure:
 
@@ -45,7 +52,7 @@ To create a new project, we do that locally on an system, in a temp dir or so. O
 
 Now that we have some files, it's time to add the new project to the reposition.
 
-# Add a new project to the reposite
+## Add a new project to the reposite
 
 Like we already have create the files that we want to store in the`Subversion`, we are now able to do add these files to the repository:
 
@@ -56,7 +63,7 @@ You need to pay attention that you been made an sub project on the `svn`repositi
 
 **Look good to the 3 slashes!**
 
-# Get a local copy of a project
+## Get a local copy of a project
 
 Like there is now a project stored in the `Subversion`, we need to get a copy of the files we want to modify. After we have modify the files locally, you need to upload (commit) these changes so that it's again stored in the`Subversion`.
 
@@ -64,7 +71,7 @@ Like there is now a project stored in the `Subversion`, we need to get a copy of
 
 Take care the we have take the `trunk`, a sub directory of the project. A Now we are ready to modify the files locally on the system. Depending on the tools you use, but i'm sure you know what you need to do. So take you're favorite text editor or tools and modify a bit some files.
 
-# To get a copy of the whole repository
+## To get a copy of the whole repository
 
 Sometimes you want a copy of the whole reposition.
 
@@ -92,7 +99,7 @@ To run an external diff program, here on with color and pipe it to less with col
 
     svn diff --diff-cmd colordiff | less -R
 
-# To get the log of the project
+## To get the log of the project
 
 The following will span your console with all the logs since the start:
 
@@ -106,7 +113,7 @@ A log of a range:
 
     svn log -r 5860:5868
 
-# Commit all files you have change locally to reposition
+## Commit all files you have change locally to reposition
 
     svn commit
 
@@ -116,7 +123,7 @@ To bring your working copy up-to-date with the repo after you commit the local c
 
 If you change some files locally and not commit these, these changes are lost!
 
-# Getting an old version
+## Getting an old version
 
 Sometimes you need to get an old version of a file. It does not matter why you need to get an old version, but you need to know that you can keep an old version again.
 
@@ -128,7 +135,7 @@ Or get an old version and put it in another file "rules.txt.v2"
 
     svn cat --revision 2 rules.txt > rules.txt.v2
 
-# Commit an old revision to a new one
+## Commit an old revision to a new one
 
 Sometimes when you try to make a program or script, you go to the wrong way so that you need to go back in an old state.
 
@@ -140,13 +147,13 @@ To get more info of the files.
 
 <pre>[`svn --verbose list` ](file:///home/david/svnroot/reposite/somedir</code)`[file:///home/david/svnroot/reposite/>](file:///home/david/svnroot/reposite/</code)`</pre>
 
-# Exporting a project
+## Exporting a project
 
 Some time we need to export a project when we not want all these `.svn`directories with all that stuff in it. Like these `.svn` files can be are really big. You may discovered that these files are 10 times bigger than your whole project.
 
 <pre>[`svn export` ](file:///home/david/svnroot/reposite/</code)`[file:///home/david/test/svn_guicms/>](file:///home/david/test/svn_guicms/</code)`</pre>
 
-# Making a remote ssh connection to the svn repo
+## Making a remote ssh connection to the svn repo
 
 [See](file:///home/david/test/svn_guicms/</code) [](http://svnbook.red-bean.com/en/1.1/ch06.html)[http://svnbook.red-bean.com/en/1.1/ch06.html](http://svnbook.red-bean.com/en/1.1/ch06.html) For more informations for the setup of it. Basically there is nothings to setup to get a remove connection to a `svn` reposition. The previous link is useful for additional informations like access permissions and other ways to access the repos with ssh.
 
@@ -170,7 +177,7 @@ When you have done some changes locally and want to commit it:
 
 No need to add the whole path (svn commit svn+ssh://IP/home/david/test/svn_guicms). Anyway it will not work if you add the whole path. Like you have get a checkout, the `svn` system know where he need to send the data to.
 
-# To get more help of subversion
+## To get more help of subversion
 
 There are many methods to get help of `Subversion`. But not forget to read the manual of it. So you need to know where you're documentation of `Subversion` is installed. The manual have many useful informations.
 
@@ -183,7 +190,7 @@ You can also get informations from `Subversion`.
     svn help
     svn help <subcommand>
 
-# Some useful tools
+## Some useful tools
 
 *   `cvs2svn` Convert a cvs repository to a subversion repository Converts a CVS repository (including its branches and tags) to a Subversion repository. It is designed for one-time conversions, not for repeated synchronizations between CVS and Subversion.
 
@@ -195,7 +202,7 @@ You can also get informations from `Subversion`.
 
 *   `rapidsvn` A GUI client for subversion. An graphical client for the subversion revision control system (svn).
 
-# Other notes
+## Other notes
 
 See also svn propset to make use of these build in templating system i.e.:
 
@@ -226,7 +233,7 @@ To see the files that are ignored:
 
     svn status --no-ignore
 
-# Deployment with apache2
+## Deployment with apache2
 
 See [](http://svnbook.red-bean.com/nightly/en/svn.serverconfig.httpd.html)[http://svnbook.red-bean.com/nightly/en/svn.serverconfig.httpd.html](http://svnbook.red-bean.com/nightly/en/svn.serverconfig.httpd.html)
 
@@ -260,12 +267,12 @@ Note also that this file needs to be owned by the user who runs the server: chow
         Require valid-user
     </Location>
 
-# Resources
+## Resources
 
 *   The [svn book](http://svnbook.red-bean.com/)
 *   [](http://systhread.net/texts/200607subver.php)[http://systhread.net/texts/200607subver.php](http://systhread.net/texts/200607subver.php)
 
-# Tools
+## Tools
 
 *   mpy-svn-stats - Simple and easy to use svn statistics generator
 *   websvn - interface for subversion repositories written in PHP

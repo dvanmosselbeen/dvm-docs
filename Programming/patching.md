@@ -1,14 +1,19 @@
+-----
+title: Patching
+description: Modify some file and create a file containing only the difference.
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords: gnu, programming
+lang: be
+-----
+
 # Patching
 
-created: 2012-12-15 00:00:00
-
-Modify some file and create a file containing only the difference.
-
-# Introduction
+## Introduction
 
 Some time you want to modify a file and redistribute the modifications that you have applied. Without sending the complete modified file. You can make a patch of what you have modified and only send the differences of the original file, so that others can apply the same changes.
 
-# Let's play
+## Let's play
 
 Create a text file and add some fake data. Say, we go to call it `original.txt`and add the following to the file:
 
@@ -61,6 +66,6 @@ And that output:
 
 Good, were been done, you an now work on some stuff and distribute your patch file.
 
-# Additional tips
+## Additional tips
 
 In `vim`, you can set `:set patchmode=.orig`

@@ -1,18 +1,13 @@
-# Xampp
-
-
 -----
 title: Xampp
-
 description: A page dedicated to Xampp webserver for Windows.
-
-created: 30-04-2020
-
+created: 30-04-2020 00:00:00
+modified: 30-04-2020 00:00:00
 keywords: Drupal, CMS, Content Management System, Website, Internet, Web Server
-
 lang: en
-
 -----
+
+# Xampp
 
 ## Create a virtual host
 

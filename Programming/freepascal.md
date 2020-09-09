@@ -1,26 +1,31 @@
+-----
+title: FreePascal
+description: This article talk about freepascal.
+created: 15-12-2012 00:00:00
+modified: 15-12-2012 00:00:00
+keywords: programming, development, freepascal
+lang: be
+-----
+
 # Freepascal
 
-created: 2012-12-15 00:00:00
-
-This article talk about freepascal.
-
-# Introduction
+## Introduction
 
 This page talk about [Free pascal](http://www.freepascal.org/).
 
-# Resources
+## Resources
 
 *   [http://www.freepascal.org/](http://www.freepascal.org) 
 *   /usr/share/doc/fp-docs/fpctoc.html
 
 The `#freepascal` on the freenode's network.
 
-# Tools
+## Tools
 
 *   lazarus - Rapid Application Development (RAD) tool for Free Pascal
 *   gpc - The GNU Pascal compiler
 
-# Quick start
+## Quick start
 
 Read the docs provided with the free pascal compiler
 
