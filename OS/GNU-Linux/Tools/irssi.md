@@ -1,3 +1,12 @@
+-----
+title: irssi (The ultimate cli chat client)
+description: This article is dedicated to the irssi irc chat client.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: debian, gnu, linux, irssi, irc, internet
+lang: en
+-----
+
 # irssi (the ultimate cli chat client)
 
 This document is dedicated to the awesome console based IRC client `irssi`.

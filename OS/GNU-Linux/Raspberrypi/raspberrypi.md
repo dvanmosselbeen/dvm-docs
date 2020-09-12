@@ -1,3 +1,12 @@
+-----
+title: Raspberry PI Model 3 B
+description: This article is dedicated to the Raspberry PI Model 3 B.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: debian, gnu, linux, operating, system, admin, raspberry, pi
+lang: en
+-----
+
 # Raspberry PI Model 3 B
 
 This document is specific for the Raspberry PI Model 3 B or higher.
@@ -6,7 +15,7 @@ This document is specific for the Raspberry PI Model 3 B or higher.
 
 * [Introduction](#introduction)
 * [Things specific to Raspberry](#things-specific-to-raspberry)
-    *[Raspbian specific tools]()
+    * [Raspbian specific tools]()
     * [STOP killing that SD card](#stop-killing-that-sd-card-)
 * [Migrations Logs](#migrations-logs)
     * [Jessie to Buster migration](#jessie-to-buster-migration)

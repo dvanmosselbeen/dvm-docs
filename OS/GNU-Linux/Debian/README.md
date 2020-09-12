@@ -1,3 +1,12 @@
+-----
+title: Debian
+description: This article is dedicated to Debian GNU / Linux - The universal operating system.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: debian, gnu, linux, operating, system, admin
+lang: en
+-----
+
 This document will list a few notes about the Debian GNU/Linux operating system. It is mainly a draft document containing some notes or links to resources concerning Debian. This document won't detail everything as there are already a lot of documentation available online.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
