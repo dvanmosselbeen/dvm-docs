@@ -1,3 +1,12 @@
+-----
+title: PyCharm
+description: This article is dedicated to PyCharm.
+created: 00-00-2020 00:00:00
+modified: 00-00-2020 00:00:00
+keywords: python, pycharm, ide, programming, tools
+lang: en
+-----
+
 # Pycharm
 
 # Table of Contents

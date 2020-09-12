@@ -1,13 +1,61 @@
----
-description: In this article we talk about Javascript. It introduce some basic tricks about JavaScript.
-keywords: 
+-----
 title: Javascript
-created: 28-11-2007
-modified: 
----
+description: In this article we talk about Javascript. It introduce some basic tricks about JavaScript.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: javascript, programming, website, internet, web, client, server
+lang: en 
+-----
 
-Introduction
-============
+# Javascript
+
+## Table of Contents
+
+* [Introduction](#introduction)
+* [The traditional 'Hello, world!' program](#the-traditional-hello-world-program)
+* [Embed the javascript to your html code](#embed-the-javascript-to-your-html-code)
+* [Save code in an external file and import it](#save-code-in-an-external-file-and-import-it)
+* [Display a message if a client does not support javascript](#display-a-message-if-a-client-does-not-support-javascript)
+* [Document your code with comments](#document-your-code-with-comments)
+* [Reserved javascript keywords](#reserved-javascript-keywords)
+* [Constants and variable types](#constants-and-variable-types)
+* [Expressions](#expressions)
+* [Loops](#loops)
+  * [The for loop](#the-for-loop)
+  * [While loop](#while-loop)
+* [if elif else](#if-elif-else)
+* [Functions](#functions)
+* [Recursion](#recursion)
+* [Buid-in functions](#build-in-functions)
+  * [parseint()](#parseint)
+  * [eval()](#eval)
+* [Operators](#operators)
+  * [Assigning operator](#assigning-operator)
+  * [Logical operator](#logical-operator)
+  * [Calculation operator](#calculation-operator)
+  * [Bitwize operators](#bitwize-operators)
+  * [Special operators](#special-operators)
+* [typeof()](#typeof)
+* [Priority rules](#priority-rules)
+* [Strings](#strings)
+  * [Some methods and properties available on strings](#some-methods-and-properties-available-on-strings)
+  * [Slicing a chunk of a string](#slicing-a-chunk-of-a-string)
+  * [Searching in a string](#searching-in-a-string)
+* [Arrays](#arrays)
+  * [Methods on arrays](#methods-on-arrays)
+* [Objects](#objects)
+  * [Creating his own objects](#creating-his-own-objects)
+* [Storing scripts in external files](#storing-scripts-in-external-files)
+* [Forms](#forms)
+* [Events](#events)
+* [Frames and navigation](#frames-and-navigation)
+* [Cookies](#cookies)
+* [Other things](#other-things)
+  * [Viewing what object somethings has](#viewing-what-object-somethings-has)
+  * [Snippets of code](#snippets-of-code)
+  * [Some Resources](#some-resources)
+
+## Introduction
 
 JavaScript need to be embedded into HTML code. Like with pure HTML code,
 the pages you made will not be dynamic. With javascript you can make it
@@ -33,8 +81,7 @@ further we remove all the HTML code for some basic examples, to avoid
 that the examples will be are to long. But if we need to be are clear,
 we add the HTML tags too.
 
-The traditional \'Hello, world!\' program
-=========================================
+## The traditional 'Hello, world!' program
 
     <html>
     <head>
@@ -75,8 +122,7 @@ To avoid it, we should add the following:
 
 Like you see, there is a comment line that you probably recognize.
 
-Embed the JavaScript to your HTML code
-======================================
+## Embed the JavaScript to your HTML code
 
 Specifies JavaScript for Navigator 2.0.
 
@@ -86,8 +132,7 @@ Specifies JavaScript for Navigator 3.0
 
     <script language="JavaScript1.1" type="text/javascript">
 
-Save code in an external file and import it
--------------------------------------------
+## Save code in an external file and import it
 
     <head>
     <title>My Page</title>
@@ -98,8 +143,7 @@ Save code in an external file and import it
     <body>
     ...
 
-Display a message if a client does not support JavaScript
-=========================================================
+## Display a message if a client does not support JavaScript
 
     <noscript>
     <b>This page uses JavaScript, so you need to get Netscape Navigator 2.0
@@ -112,8 +156,7 @@ Display a message if a client does not support JavaScript
     the Options menu.
     </noscript>
 
-Document your code with comments
-================================
+## Document your code with comments
 
 You can add comments to your code to comment your code. It will be
 really useful to add the right comments on the right place. It will help
@@ -147,8 +190,7 @@ Another more useful example:
         document.write(myMsg)
     }
 
-Reserved JavaScript keywords
-============================
+## Reserved JavaScript keywords
 
 We you make some variables, these maybe not be are called like one of
 the reserved JavaScript keyword.
@@ -160,8 +202,7 @@ the reserved JavaScript keyword.
     function
     return
 
-Constants and variable types
-============================
+## Constants and variable types
 
 We not need to declare a variable before we assign somethings to it. But
 we can still declare the variables if we like it too:
@@ -188,8 +229,7 @@ The non recommended way:
 
 That make the code many lesser readable and should be avoided!
 
-Expressions
-===========
+## Expressions
 
 We can use constants and variables to make an expression.
 
@@ -223,7 +263,7 @@ That output:
 
     11
 
-But if it\'s really a integer as variable, we not get the trouble:
+But if it's really a integer as variable, we not get the trouble:
 
     <script>
     foo = 'Hello,'
@@ -259,11 +299,9 @@ btw we had been could write:
     document.write(foo, bar, baz)
     </script>
 
-Loops
-=====
+## Loops
 
-The for loop
-------------
+### The for loop
 
 The for loop have 3 important elements. We first initialize a variable
 that will be used for the counter. Then we have the condition in
@@ -347,8 +385,7 @@ In these previous for loop examples, we wish that we wanted to iterate
 an amount of times. If we not know how mush time we should need to
 iterate, you need then to make use of the while loop.
 
-while loop
-----------
+### while loop
 
 When we not know how many time we should need to iterate.
 
@@ -374,8 +411,7 @@ for loop have it included in his for parentheses.
 We can make use of the break in combination with a condition to break a
 loop.
 
-if, elif, else
-==============
+## if, elif, else
 
 In the previous examples we have see how it work with logical tests in
 the loop examples. There was each time a logical test; `<=`.
@@ -437,8 +473,7 @@ An if with an else example:
 In the previous example, only one block of code is executed, depending
 what the content of the variable age is; if it\'s lower as 12 or not.
 
-Functions
-=========
+## Functions
 
 It is common that some pieces of JavaScript code need to be are executed
 on different parts of your HTML page or on a different page. In this
@@ -568,8 +603,7 @@ And that output:
 
     24
 
-Recursion
-=========
+## Recursion
 
 A function can call another function, but it can also call itself.
 That\'s called recursion.
@@ -584,8 +618,7 @@ That\'s called recursion.
 
 Note, we make use of the previous created facult function.
 
-Build-in functions
-==================
+## Build-in functions
 
 JavaScript have some build-in functions that we can use. That avoid that
 we should need to create these on his own.
@@ -601,8 +634,7 @@ Here\'s a little list of some functions:
 -   history.back() - To go back, like the back button of the browser.
 -   chr.charCodeAt() - Show the ascii code of a character.
 
-parseInt()
-----------
+### parseInt()
 
 We give as argument somethings and get a number or \'NaN\' Not a Number.
 
@@ -611,8 +643,7 @@ We give as argument somethings and get a number or \'NaN\' Not a Number.
         parseInt("3Q"), 
         parseInt("4You"))
 
-eval()
-------
+### eval()
 
     <script>
     foo = 'Hello '
@@ -625,10 +656,9 @@ Output:
 
     Hello world!
 
-\...
+...
 
-Operators
-=========
+## Operators
 
 There are different operators, you have already make use of it several
 times before inconcisely if you have follow this manual.
@@ -637,10 +667,9 @@ times before inconcisely if you have follow this manual.
 -   Logical operator (logische operators) (\<, \<=, \>, \>=, ==)
 -   Calculation operator (berekeningsoperators) (+, -, /, ++, \...)
 -   Bitwize operator (bitsgewijze operators)
--   \...
+-   ...
 
-Assigning operator
-------------------
+### Assigning operator
 
 The `=` sign is the assigning operator.
 
@@ -651,8 +680,7 @@ The `=` sign is the assigning operator.
     x *= y     // is like  = x * 2
     ...
 
-Logical operator
-----------------
+### Logical operator
 
 Logical operator output true or false.
 
@@ -671,8 +699,7 @@ Logical operator output true or false.
     x == y ? 'EgUaL' : 'LiKe'
     ...
 
-Calculation operator
---------------------
+### Calculation operator
 
 `+`, `-`, `*`, `/` and `%`
 
@@ -682,19 +709,16 @@ Calculation operator
     5 % 2 // 1   # % is the modulo operator 
     y = 1 x = ++ y // 2 y = -- Y // x++
 
-Bitwize operators
------------------
+### Bitwize operators
 
 `<<`, `>>>`, `>>>`, `&` (AND), `^` (XOR) \...
 
-Special operators
------------------
+### Special operators
 
 delete - With the delete operator we can delete an element of an array
 or object.
 
-typeof()
---------
+## typeof()
 
 Useful if you want to know which type a variable of somethings is.
 
@@ -704,8 +728,7 @@ Output one of the follow type:
 
     'number', 'string', 'boolean', 'object', 'function', and 'undefined'
 
-Priority rules
---------------
+## Priority rules
 
     1. ++, --, - (make negative), ~, !, typeof, void, delete
     2. *, /, %
@@ -721,8 +744,7 @@ Priority rules
     13. ?:
     14. =, OP= (operator combined with `=`, example `+=`)
 
-Strings
-=======
+## Strings
 
 We can use single or double quotes to encapsulate a string.
 
@@ -740,8 +762,7 @@ A tab stop `\t`
 
 Double backslash to escape a `\`. Example `c:\\tmp\\`
 
-Some methods and properties available on strings
-------------------------------------------------
+### Some methods and properties available on strings
 
 See also `match`, `replace`, `split`, `test` and `exec`
 
@@ -793,8 +814,7 @@ Let\'s have an example:
     x.indexOf("foo",2)     // We can start to search from a position
     </script>
 
-Arrays
-======
+## Arrays
 
 We need to make a constructor.
 
@@ -825,8 +845,7 @@ array.
 We can assign an array into an array, so that we can make
 multidimensional array.
 
-Methods on arrays
------------------
+### Methods on arrays
 
 The `reverse` method, reverse the positions.
 
@@ -844,8 +863,7 @@ We join each element of the array to a string:
     document.write(xuu)
     </script>
 
-Objects
-=======
+## Objects
 
 This next piece of code not work like expected with Firefox?? It output
 `1178001555000` while it should be Fri May 1 00:00:00 UTC+0200 1998\"
@@ -864,8 +882,7 @@ Daylight Time) 1998\" (Netscape Communicator)
     document.write(birthday);
     </script>
 
-Creating his own objects
-------------------------
+### Creating his own objects
 
     <script>
     function auto(bd,tp, yr)
@@ -896,8 +913,7 @@ Another example may be:
     personObj.eyecolor="blue";
     document.write(personObj.firstname + " is " + personObj.age + " years old.");
 
-Storing scripts in external files
-=================================
+## Storing scripts in external files
 
 When writing JavaScript code, you will quick discover that it take much
 space. With this i mean that there may be many lines. So probably you
@@ -914,31 +930,25 @@ Or load it when the page load:
 
     <body onLoad="hiddenWikiInfo()">
 
-Forms
-=====
+## Forms
 
-\...
+...
 
-Events
-======
+## Events
 
-\...
+...
 
-Frames and navigation
-=====================
+## Frames and navigation
 
-\...
+...
 
-Cookies
-=======
+## Cookies
 
-\...
+...
 
-Other things
-============
+## Other things
 
-Viewing what object somethings has
-----------------------------------
+### Viewing what object somethings has
 
 When developing code, you want time by time check what object some
 object has:
@@ -949,15 +959,13 @@ object has:
     }
     </script>
 
-Snippets of code
-----------------
+### Snippets of code
 
     <body onLoad="alert('Welcome on my page!')">
     <body onUnload="alert('See you back soon!')">
     <a href="/virtual_hosts/joomla_dvanmosselbeen.be/quit.html" onClick="return confirm('Really quit?')">quit</a>
 
-Some resources
-==============
+## Some resources
 
 - <http://www.w3schools.com/js/> The tutorial to follow!
 - <http://diveintomark.org/archives/2003/05/05/why_we_wont_help_you>
