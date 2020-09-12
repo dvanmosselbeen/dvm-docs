@@ -1,17 +1,19 @@
----
-description: This article describe the installation of a Microsoft Exchange 2003 mail server.
-keywords: Microsoft Exchange 2003 mail server
+-----
 title: Installing a Microsoft Exchange 2003 mail server
-created: 18-04-2008
----
+description: This article describe the installation of a Microsoft Exchange 2003 mail server.
+created: 18-04-2008 00:00:00
+modified: 18-04-2008 00:00:00
+keywords: Microsoft, Windows, Exchange, 2003, mail, server
+lang: en
+-----
 
-Introduction
-============
+# Installing a Microsoft Exchange 2003 mail server
+
+## Introduction
 
 ...
 
-Before installing Microsoft Exchange 2003
-=========================================
+## Before installing Microsoft Exchange 2003
 
 We first need to install some Required Windows components:
 
@@ -35,14 +37,12 @@ the following:
 *Note that i left the default options that where automatically
 selected.*
 
-Installing Microsoft Exchange 2003
-==================================
+## Installing Microsoft Exchange 2003
 
 Once all Windows Components installed, we may start the Microsoft
 Exchange installation. Follow the few instructions on screen\...
 
-OWA - Outlook Web Access
-========================
+## OWA - Outlook Web Access
 
 If you have installed an IIS and an Exchange server, you can access your
 mailbox thought a web interface on <http://servername_or_ip/exchange/>.

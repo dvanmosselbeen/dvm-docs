@@ -1,16 +1,19 @@
----
+-----
+title: Microsoft Windows vs GNU/Linux
 description: This article point out the good and bad points of Microsoft Windows and GNU/Linux.
-keywords: microsoft windows vs gnu linux
-title: 'Microsoft Windows vs GNU/Linux'
-created: 13-04-2008
----
+created: 13-04-2008 00:00:00
+modified: 13-04-2008 00:00:00
+keywords: Microsoft, Windows, gnu, linux
+lang: en
+-----
+
+# Microsoft Windows vs GNU/Linux
 
 This article summarize the good and sad point of Microsoft Windows vs
 GNU/Linux. Things marked with a PLUS is meant to be good point. Things
 marked a with MINUS is sad point.
 
-Microsoft Windows
-=================
+## Microsoft Windows
 
 -   PLUS- Active Directory - The whole LDAP system with users and group
     system. The relation of the permissions with other programs/tools.
@@ -21,8 +24,7 @@ Microsoft Windows
 -   PLUS - Management Console - Easy to use and to customize a
     management console.
 
-GNU/Linux
-=========
+## GNU/Linux
 
 -   PLUS - Remote administration - It\'s easy to manage a system with
     ssh.

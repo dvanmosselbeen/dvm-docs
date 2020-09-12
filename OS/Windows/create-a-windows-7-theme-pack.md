@@ -1,9 +1,13 @@
----
-description: Create a custom Microsoft Windows 7 theme pack to share with other peoples.
-keywords: Microsft Windows 7 theme pack
+-----
 title: Create a Windows 7 theme pack
-created: 14-01-2012
----
+description: Create a custom Microsoft Windows 7 theme pack to share with other peoples.
+created: 14-01-2012 00:00:00
+modified: 14-01-2012 00:00:00
+keywords: Microsft, Windows, 7 ,theme pack
+lang: be 
+-----
+
+# Create a Windows 7 theme pack
 
 *In this article i will detail how one could easily create a Windows 7
 theme that can be shared and installed by other peoples. You don\'t need
@@ -33,8 +37,7 @@ share sound files, do the same as done for the imagery.
 Right click on you desktop and in the context menu select
 **Personalize**.
 
-![desktop context
-menu](imgs/desktop_context_menu.jpg){width="248"
+![desktop contextmenu](imgs/desktop_context_menu.jpg)
 height="332"}Desktop context menu
 
 In the new window that has poped up there you might
@@ -42,9 +45,7 @@ adjust the settings you want. Look at the bottom of the screen where you
 can click on a few items. Firstly start by clicking on **Desktop
 background**, a new window will pop up.
 
-![personalization
-window](imgs/personalization_window.jpg){width="914"
-height="600"}
+![personalization window](imgs/personalization_window.jpg)
 
 Browse to the location which hold your imagery you want
 to use as backgrounds (wallpapers). You will see a preview of all
@@ -52,27 +53,21 @@ wallpapers bellow. By default, all images in that directory will be
 included/activated in the theme pack. You can uncheck the undesired
 images if you want. See also the few options bellow in the screenshot.
 
-![desktop
-background](imgs/desktop_background.jpg){width="914"
-height="600"}
+![desktop background](imgs/desktop_background.jpg)
 
 After having pressed the Save changes buton, you will
 come back to the first screen of the personalisation window. You will
 now see that there\'s a new entry **Unsaved Theme**. But first, let\'s
 change a few more options\...
 
-![personalization
-window2](imgs/personalization_window2.jpg){width="914"
-height="534"}
+![personalization window2](imgs/personalization_window2.jpg)
 
 Let's now change the Window Color. Press the **Window
 Color** button as shown in the previous window. In the next screenshot
 we already adjusted the colors to our taste. Here i made the color kinda
 dark. Once your colors adjusted press the **Save changes** button.
 
-![change window
-color](imgs/change_window_color.jpg){width="914"
-height="534"}
+![change window color](imgs/change_window_color.jpg)
 
 We come again back to the main Personalisation window as
 show in point **5**. We could also adjust the sound settings but i

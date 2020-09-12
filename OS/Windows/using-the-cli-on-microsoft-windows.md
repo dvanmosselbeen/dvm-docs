@@ -1,9 +1,13 @@
----
-description: 
-keywords: microsoft windows cli command line
+-----
 title: Using the cli on Microsoft Windows
-created: 28-04-2009
----
+description: This article is dedicated on using the cli on Microsoft Windows. 
+created: 28-04-2009 00:00:00
+modified: 28-04-2009 00:00:00
+keywords: Microsoft, Windows, cli, command line
+lang: be
+-----
+
+# Using the cli on Microsoft Windows
 
 This article talk about command line interface tips and tricks on a Microsoft
 Windows operating system. Yah, the cli of Microsoft Windows isn\'t that
@@ -16,8 +20,8 @@ detail every aspect of the command line interface. Many cool command
 line tools needs to be installed separately. Like for example these
 tools Sysinternal offer.
 
-Getting started
-===============
+## Getting started
+
 
 To get started, you need to open that Command DOS interface. By going
 into the `Start menu > Execute`, or simply by pressing the
@@ -29,8 +33,7 @@ If you messed with your user setting, it could be that the cmd just
 launch in full screen mode. This can be useful on other operating
 system, but honesty, it isn\'t on a Microsoft Windows box.
 
-Some applications
-=================
+## Some applications
 
 There isn\'t that many of cool command line interface programs. Most of
 the administration needs to be done throught graphical user interface.
@@ -43,17 +46,14 @@ Netstat
 
     netstat –a -b
 
-See the members of a group
---------------------------
+## See the members of a group
 
     net group <some-group-name> /domain
 
-See user related info
----------------------
+## See user related info
 
     net user <username> /domain
 
-Force the group policy
-----------------------
+## Force the group policy
 
     gpupdate /force

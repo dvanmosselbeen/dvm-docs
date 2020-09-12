@@ -1,9 +1,13 @@
----
-description: This article explain how easy you can add a computer to a Microsoft domain.
-keywords: microsoft windows client join domain server
+-----
 title: Let a Microsoft client join a Microsoft domain
-created: 28-11-2007
----
+description: This article explain how easy you can add a computer to a Microsoft domain.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: Microsoft, Windows, client, domain, server
+lang: en
+-----
+
+# Let a Microsoft client join a Microsoft domain
 
 The advantage to join a computer to a Microsoft Windows domain are many.
 The most know is to benefit of the Active Directory.

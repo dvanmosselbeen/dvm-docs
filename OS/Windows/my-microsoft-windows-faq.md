@@ -1,27 +1,30 @@
----
-description: 
-keywords: Microsoft Windows faq frequently asked questions
+-----
 title: My Microsoft Windows FAQ
-created: 28-11-2007
----
+description: This is my Microsoft Windows FAQ 
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: Microsoft, Windows, faq, frequently asked questions
+lang: en
+-----
+
+# My Microsoft Windows FAQ
 
 This page is intended for an Frequently Asked Question about Microsoft
 Windows. Not specific to a version of Microsoft Windows. This page is
 especially intended to point to some other pages. See also the general
 MSWindows page.
 
-How do i add a new user?
-========================
+
+## How do i add a new user?
 
 See the general MSWindows page.
 
-How do i add a new printer?
-===========================
+## How do i add a new printer?
 
 See the general MSWindows page.
 
-Office documents are opening slowly
-===================================
+## Office documents are opening slowly
+
 
 Opening an Office document, Word, Excel, it take more as 30 seconds
 before this open. While opening Word and then opening the file within
@@ -36,8 +39,7 @@ double quotes.
 
 <http://forums.techarena.in/ms-office-support/908660.htm>
 
-Wrong keyboard layout at logon
-==============================
+## Wrong keyboard layout at logon
 
 If the keyboard layout is different on the logon screen of that once
 logged in, go to into the registry:
@@ -55,8 +57,7 @@ See <http://www.cryer.co.uk/brian/windows/trbl_nt_kbdlytlgn.htm>
 See <http://www.cryer.co.uk/brian/windows/info_windows_locale_table.htm>
 for the other codes.
 
-How to hidden installed applications or remove installed applications
-=====================================================================
+## How to hidden installed applications or remove installed applications
 
 Start regedit via the run menu:
 
@@ -67,13 +68,11 @@ Go to the follow location:
 There are sub folders, take a look at this. Before deleting a sub
 folder, create a backup of the register.
 
-Scan the protected system files and replaces incorrect versions with correct Microsoft versions
-===============================================================================================
+## Scan the protected system files and replaces incorrect versions with correct Microsoft versions
 
     sfc /scannow
 
-Process list
-============
+## Process list
 
 Get a list of running processes:
 

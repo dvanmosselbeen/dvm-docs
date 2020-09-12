@@ -1,12 +1,16 @@
----
-description: 
-keywords: free software microsoft windows
+-----
 title: Free software for Microsoft Windows
-created: 28-11-2007
----
+description: This article is dedicated to free software for Microsoft Windows
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: Microsoft, Windows, free, software
+lang: be
+-----
 
-Introduction
-============
+# Free software for Microsoft Windows
+
+## Introduction
+
 
 This page mostly talk and link to Open Source applications, freeware or
 any software that can be used without paying to use them. This page
@@ -30,8 +34,7 @@ names of all that cool stufff.
 
 Take also a look on http://osswin.sourceforge.net.
 
-Antivirus
-=========
+## Antivirus
 
 -   [AVG Free](http://free.grisoft.com/) - It's always been our
     philosophy at AVG that everyone has the right to basic computer
@@ -50,14 +53,12 @@ Antivirus
 
 -   [ClamWin](http://www.clamwin.com/) - A GPL anti virus system.
 
-Firewall
-========
+## Firewall
 
 -   [Comodo](http://www.personalfirewall.comodo.com/)
 -   [Jetico](http://www.jetico.com/)
 
-Office Tools
-============
+## Office Tools
 
 -   [Open Office](http://www.openoffice.org/) - An ideal Office suite.
     The alternative of \'Microsoft Office\'. Text processor, calc
@@ -72,8 +73,7 @@ Office Tools
     (Portable Document Format) files. The alternative for \'Adobe
     Acrobat Reader\'.
 
-Vizualisation Tools
-===================
+## Visualisation Tools
 
 -   [Gimp](http://www.gimp.org/) - GIMP is an acronym for GNU Image
     Manipulation Program. It is a freely distributed program for such
@@ -107,8 +107,7 @@ Vizualisation Tools
     small, compact and innovative FREEWARE (for non-commercial use)
     graphic viewer for Windows 9x/ME/NT/2000/XP/2003.
 
-Webbrowsers
-===========
+## Web browsers
 
 -   [Mozilla Firefox](http://www.mozilla.com/firefox/) - Everybody uses
     the Web differently, so why should your browser be exactly like the
@@ -120,8 +119,7 @@ Webbrowsers
 Source from the [Mozilla Firefox](http://www.mozilla.com/firefox/)
 website.
 
-Compression Tools
-=================
+## Compression Tools
 
 -   [7-zip](http://www.7-zip.org/) - A really good tool to compress and
     decrompress compressed files. This applications can use many
@@ -133,8 +131,7 @@ Compression Tools
     (LZH), LIB, RAR, RPM, SQX, TAR, TGZ, TBZ, TAZ, YZ1, ZOO en zelfs
     images zoals BIN, C2D, IMG, ISO and NRG (FREEWARE).
 
-Internet Tools
-==============
+## Internet Tools
 
 -   [Filezilla](http://filezilla.sourceforge.net/) - The free FTP
     solution. Both a client and a server are available. FileZilla is
@@ -165,8 +162,7 @@ Internet Tools
     the packaging of xchat, but if you compile it on your own, it\'s
     free.
 
-Audio Tools
-===========
+## Audio Tools
 
 -   [Audacity](http://audacity.sourceforge.net//) - Audacity is a free,
     easy-to-use audio editor and recorder for Windows, Mac OS X,
@@ -176,8 +172,7 @@ Audio Tools
     splice, and mix sounds together. \* Change the speed or pitch of a
     recording. And a bit more\...
 
-Database
-========
+## Database
 
 -   [Kexi](http://www.kexi-project.org/) - To create databases. The
     alternative of \'M\$ Access\'.
@@ -188,22 +183,19 @@ Database
 -   [MySQL](http://www.mysql.com/) - Yet another great database system!
     Really easy to use. This is a must have!
 
-News Readers
-============
+## News Readers
 
 -   [Thunderbird](http://www.mozilla.com/en-US/thunderbird/) - A very
     nice email and news client!
 -   Messnews - I not find back this link! Is the project dead?
 
-Text Editors
-============
+## Text Editors
 
 -   [Notepad plus ++](http://notepad-plus.sourceforge.net/) - A nice
     text editor, a must have on Microsoft Windows systems.
 -   [pspad](http://www.pspad.com/) - (FREEWARE)
 
-Other Tools
-===========
+## Other Tools
 
 -   [TightVNC](http://www.tightvnc.com/) - The tool to take remote
     control of computer.

@@ -1,20 +1,24 @@
----
-description: 
-keywords: register a dll ocx file registry
-title: Register a dll file
-created:
----
+-----
+title: Microsoft Windows 10
+description: This article is dedicated to Microsoft Windows 10
+created: 12-09-2020 16:59:00
+modified: 12-09-2020 16:59:00
+keywords: Microsoft, Windows, 10
+lang: en
+-----
 
 # Windows 10
 
 Just a bunch of notes i have specific to Microsoft Windows 10.
 
-# Table of Contents
+## Table of Contents
 
 * [Useful command line tools](#useful-command-line-tools)
+* [Activating the hibernate item in the shutdown options](#activating-the-hibernate-item-in-the-shutdown-options)
 * [Apps i like for Windows](#apps-i-like-for-windows)
+* [Games](#games)
 
-# Useful command line tools
+## Useful command line tools
 
 | Command | Description |
 |---|---|
@@ -48,17 +52,24 @@ Just a bunch of notes i have specific to Microsoft Windows 10.
 | `pkgmgr /iu:"TelnetClient"` | To install the `TelnetClient`. `pkgmgr` is deprecated on Windows 10, use `dism` instead.|
 | cipher | `cipher` is used to permanently delete files that where already deleted. So that they can't be recovered anymore with special recovery software. You should be aware that when you delete files, these files aren't deleted, but the reference is. The used space by the old files are then marked as being free space, and is then eventually allocated to future new data and thus the old data will then be eventually overwritten. As long as the system doesn't overwrite the old data, then the old data can be easily recovered. The `cipher` command wipes a directory by writing some random data to it, in the hope that the old data can't be recovered. It still can be recovered but way more harder and with another type of recovery tools. `cipher` doesn't delete files that "still exist" (which reference still exist in the FAT, File Allocation Table). For example, `cipher /w:c` will wipe free space on the `C:` drive, without deleting existing data.|
 
-# Activating the hibernate item in the shutdown options
+## Activating the hibernate item in the shutdown options
 
-By default, the hibernate feature is not activated on a Microsoft Windows Desktop computer. The hibernation feature was initially created for laptop computers to speed up in some way the startup and the shutdown process. At the same time it save the state of your current work space (profile / desktop). The hibernation feature is also way faster than a classic shutdown and start up. That's why the hibernation feature is also loved on desktop computers. 
+By default, the hibernate feature is not activated on a Microsoft Windows Desktop computer. The hibernation feature was 
+initially created for laptop computers to speed up in some way the startup and the shutdown process. At the same time 
+it save the state of your current work space (profile / desktop). The hibernation feature is also way faster than a 
+classic shutdown and start up. That's why the hibernation feature is also loved on desktop computers. 
 
-To activate the hibernation feature, the shortcut way is by going to  `Control Panel\Hardware and Sound\Power Options`. It's actually a path you can paste in the Windows File explore path bar (`ctrl+e` to start the file explorer).
+To activate the hibernation feature, the shortcut way is by going to  `Control Panel\Hardware and Sound\Power Options`. 
+It's actually a path you can paste in the Windows File explore path bar (`ctrl+e` to start the file explorer).
 
-The longer method is by clicking on the `Start Menu` > `Settings`. Then in that new window click on `Power & sleep`. Then on the right side, click on `Additional power settings`.
+The longer method is by clicking on the `Start Menu` > `Settings`. Then in that new window click on `Power & sleep`. 
+Then on the right side, click on `Additional power settings`.
 
-In the left side of the window, click on `Choose what the power button do`. You will see that there's a checkbox `Hibernate` which you can't activate you. First click on top of that window on `Change settings that are currently unavailable`. Now you will see that you can check the `Hibernate` option.
+In the left side of the window, click on `Choose what the power button do`. You will see that there's a checkbox 
+`Hibernate` which you can't activate you. First click on top of that window on 
+`Change settings that are currently unavailable`. Now you will see that you can check the `Hibernate` option.
 
-# Apps i like for Windows
+## Apps i like for Windows
 
 Here's a list of applications i like to use on a Microsoft Windows operating system.
 
@@ -95,7 +106,7 @@ Here's a list of applications i like to use on a Microsoft Windows operating sys
 | [Malwarebytes](https://malwarebytes.com) | Remove spyware. |
 | XAMPP | Webserver & database. |
 
-# Games
+## Games
 
 | Name | Description|
 |---|---|

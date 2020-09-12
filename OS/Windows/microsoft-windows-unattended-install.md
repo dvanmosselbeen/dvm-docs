@@ -1,9 +1,13 @@
----
-description: Automate (unattend) a Microsoft Windows installation.
-keywords: Microsoft Windows unattended automate installation
+-----
 title: Microsoft Windows unattended install
-created: 28-11-2007
----
+description: Automate (unattend) a Microsoft Windows installation.
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: Microsoft, Windows, unattended, automate, installation
+lang: en
+-----
+
+# Microsoft Windows unattended install
 
 If you want to automate a Microsoft Windows installation, you can make
 use of an unattended procedure. It take a bit work to get the job done.

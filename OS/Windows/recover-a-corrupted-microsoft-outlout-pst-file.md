@@ -1,12 +1,15 @@
----
-description: This article talk about how to recover a corrupted PST file.
-keywords: recover fix corrupt microsoft outlook pst file
+-----
 title: Recover a corrupted Microsoft Outlook pst file
-created: 09-09-2008
----
+description: This article talk about how to recover a corrupted PST file.
+created: 09-09-2008 00:00:00
+modified: 09-09-2008 00:00:00
+keywords: recover fix corrupt microsoft outlook pst file
+lang: be
+-----
 
-Introduction
-============
+# Recover a corrupted Microsoft Outlook pst file
+
+## Introduction
 
 Microsoft Outlook store his data in a pst file. If this pst file is
 bigger than 1 GB you have more chances that this file become corrupted.
@@ -14,8 +17,7 @@ Believe it or not, but a corrupted pst file happen much more than we
 think. And this only happen, when it shouldn\'t happen! The good news is
 that Microsoft provide a tool to fix this!
 
-Fix the pst file
-================
+## Fix the pst file
 
 To start the English scanpst click on `C:\Program Files\Common
 Files\System\MSMAPI\1033\SCANPST.EXE`.

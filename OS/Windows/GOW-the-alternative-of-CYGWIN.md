@@ -1,9 +1,13 @@
----
+-----
+title: GOW the alternative of CYGWIN
 description: This article talk abou GOW (GNU on Windows) the lightweight alternative to Cygwin.
 keywords: GOW gnu on microsoft windows
-title: GOW the alternative of CYGWIN
-created: 16-12-2012
----
+created: 16-12-2012 00:00:00
+modified: 16-12-2012 00:00:00
+lang: en
+-----
+
+# GOW the alternative of CYGWIN
 
 GOW (GNU On Windows) is a lightweight alternative to
 [Cygwin](http://www.cygwin.com). GOW make use of the NSIS Installer

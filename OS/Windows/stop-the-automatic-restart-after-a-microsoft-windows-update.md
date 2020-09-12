@@ -1,9 +1,13 @@
----
-description: This article explain how to stop the automatic restart after Microsoft Windows updates
-keywords: stop reboot restart microsoft windows client update
+-----
 title: Stop the automatic restart after a Microsoft Windows updates
-created: 02-03-2009
----
+description: This article explain how to stop the automatic restart after Microsoft Windows updates
+created: 02-03-2009 00:00:00
+modified: 02-03-2009 00:00:00
+keywords: Microsoft, Windows, client, update, restart
+lang: be
+-----
+
+# Stop the automatic restart after a Microsoft Windows updates
 
 Source come from:
 <http://www.overclock.net/faqs/103266-how-do-i-stop-automatic-restart.html>

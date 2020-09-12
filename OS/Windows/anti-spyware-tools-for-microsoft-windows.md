@@ -1,9 +1,13 @@
----
-description: This article talk about anti spyware tools for Microsoft Windows
-keywords: microsoft windows anti spyware virus tool
+-----
 title: Anti spyware tools for Microsoft Windows
-created: 28-04-2009
----
+description: This article talk about anti spyware tools for Microsoft Windows
+created: 28-04-2009 00:00:00
+modified: 28-04-2009 00:00:00
+keywords: Microsoft, Windows, anti spyware, virus, tools
+lang: en
+-----
+
+# Anti spyware tools for Microsoft Windows
 
 Sadly enough, Microsoft Windows just fails when it\'s about being secure
 on the Internet. I don\'t want to start any operating system war, as i
@@ -24,16 +28,14 @@ profile can infect your whole system in less than you could think of. By
 using your operating system the correct way, will avoid you already
 lot\'s of \"basic\" issues.
 
-Spybot search and destroy
-=========================
+## Spybot search and destroy
 
 Spybot Search and Destroy, also know as Spybot S&D, is for my part, the
 best tool there is on the market at the moment. Well, i didn\'t define,
 moment, because that moment take long time. Anyway, it does it job
 correctly and over all it\'s free to use! What can you expect more?
 
-malwarebytes
-============
+## malwarebytes
 
 If not better as spybot search and destroy, then it must get the second
 place. There\'s a freeware version aswell as a payware version. The
@@ -43,12 +45,10 @@ do the realtime protection anyway.
 
 Official website: <http://www.malwarebytes.org/>
 
-Ad-Aware
-========
+## Ad-Aware
 
 ...
 
-Resources
-=========
+## Resources
 
 ...

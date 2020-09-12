@@ -1,13 +1,15 @@
----
-description: This article is about resetting a Microsoft Windows user password of a
-system where you are unable to log in.
-generator: 'Joomla! - Open Source Content Management'
-keywords: ntpasswd chntpw Microsoft Windows 98 XP Vista 7 2008 password reset
-title: 'Password reset on Microsoft Windows 98, XP, Vista, 7, 2008'
-created: 30-12-2011
----
+-----
+title: Password reset on Microsoft Windows 98, XP, Vista, 7, 2008
+description: This article is about resetting a Microsoft Windows user password of a system where you are unable to log in.
+created: 30-12-2011 00:00:00
+modified: 30-12-2011 00:00:00
+keywords: Microsoft, Windows, 98, XP, Vista, 7, 2008, ntpasswd, chntpw, password, reset
+lang: be
+-----
 
-ntpasswd (chntpw) is a tool to reset your user password when your are
+# Password reset on Microsoft Windows 98, XP, Vista, 7, 2008
+
+[ntpasswd](http://pogostick.net/%7Epnh/ntpasswd/) (chntpw) is a tool to reset your user password when your are
     completely locked out of your Microsoft Windows 98 XP, Vista, 7.
 
 [ntpasswd](http://pogostick.net/%7Epnh/ntpasswd/) (chntpw) is an open

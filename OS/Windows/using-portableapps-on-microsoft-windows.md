@@ -1,27 +1,22 @@
----
-description: 'This article talk about Portableapps which are portable apps.'
-generator: 'Joomla! - Open Source Content Management'
-keywords: portableapps portable apps microsoft windows
-lang: 'en-gb'
-rights: Copyrights by David Van Mosselbeen
-robots: 'noindex, nofollow'
+-----
 title: Using Portableapps on Microsoft Windows
-created: 24-09-2008
----
+description: This article talk about Portableapps which are portable apps.
+created: 24-09-2008 00:00:00
+modified: 24-09-2008 00:00:00
+keywords: portableapps, portable, apps, Microsoft, Windows
+lang: be
+-----
 
-Introduction
-============
+# Using Portableapps on Microsoft Windows
 
-...
+## Introduction
 
-Installing portableapps
-=======================
+## Installing portableapps
 
 I downloaded `PortableApps.com_Suite_Setup_1.1.exe` and i selected as
 install dir `D:\papps`.
 
-Installing configuring xampp
-============================
+## Installing configuring xampp
 
 I downloaded `xampp-win32-1.6.7-installer.exe` and
 `XAMPP_Launcher_1.3.paf.exe`
@@ -37,8 +32,7 @@ to do:
 -   Setup the mysql root password
 -   Rename the file `htdocs/index.php` to `htdocs/index.php`
 
-Python on xampp
----------------
+### Python on xampp
 
 Download and install `mod_python-3.3.1.win32-py2.5-Apache2.2.exe`
 from<http://apache.belnet.be/httpd/modpython/win/3.3.1/>. Note that my
@@ -79,7 +73,6 @@ to<http://localhost/python/mptest.py>.
 
 Source from: <http://blog.chomperstomp.com/?p=150>
 
-xampp resources
----------------
+### xampp resources
 
 -   <http://sourceforge.net/projects/xamppaddon>

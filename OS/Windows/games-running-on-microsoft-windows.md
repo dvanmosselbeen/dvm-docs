@@ -1,9 +1,13 @@
----
-description: 'A list of games running on the Microsoft Windows operating system.'
-keywords: games microsoft windows
+-----
 title: Games running on Microsoft Windows
-created: 28-11-2007
----
+description: 'A list of games running on the Microsoft Windows operating system.'
+created: 28-11-2007 00:00:00
+modified: 28-11-2007 00:00:00
+keywords: Games, Microsoft, Windows
+lang: en
+-----
+
+# Games running on Microsoft Windows
 
 This article talk about some free game that are available for Microsoft
 Windows.
@@ -11,8 +15,7 @@ Windows.
 Look a bit if you find somethings nice on this website
 <http://osswin.sourceforge.net/games.html>.
 
-Adventure / Role Playing
-========================
+## Adventure / Role Playing
 
 -   [Adonthell](http://adonthell.linuxgames.com/)
 -   [Daimonin](http://www.daimonin.net/)
@@ -21,22 +24,19 @@ Adventure / Role Playing
 -   [FreeDroid](http://freedroid.sourceforge.net/)
 -   [NetHack](http://users.tkk.fi/%7Ejtpelto2/nethack.html)
 
-Arcade / Classics
-=================
+## Arcade / Classics
 
 -   [Armagetron Advanced](http://www.armagetronad.net/)
 -   [Chromium](http://www.reptilelabour.com/software/chromium/)
 -   [ClanBomber](http://clanbomber.sourceforge.net/)
 -   [Frozen Bubble](http://www.frozen-bubble.org/)
 
-Action
-======
+## Action
 
 -   [BZFlag](http://www.bzflag.org/)
 -   [NeverBall](http://icculus.org/neverball/)
 
-Board Games
-===========
+## Board Games
 
 -   [Choice](http://saftsack.fs.uni-bayreuth.de/%7Ecarador/choice/)
 -   [DJ-backgammon](http://sourceforge.net/projects/djbackgammon)
@@ -51,15 +51,13 @@ Board Games
 -   [Yahtzo!](http://yahtzo.sourceforge.net/)
 -   [Yahtzee](http://www.geocities.com/jandjprograms/yahtzee.html)
 
-Card Games
-==========
+## Card Games
 
 -   [JAVA Solitaire](http://javasol.sourceforge.net/)
 -   [Calculation](http://calculation.sourceforge.net/)
 -   [Whist Online](http://www.whist-online.be/)
 
-First Person Shooter
-====================
+## First Person Shooter
 
 -   [Cube](http://www.cubeengine.com/)
 -   [jDoom](http://www.doomsdayhq.com/)
@@ -68,8 +66,7 @@ First Person Shooter
 -   [Nexuiz](http://www.nexuiz.com/)
 -   [Urban terror](http://www.urbanterror.net/)
 
-Platform
-========
+## Platform
 
 -   [Jump \'n Bump](http://www.icculus.org/jumpnbump/)
 -   [Secret Mario Chronicles](http://smclone.sourceforge.net/)
@@ -79,8 +76,7 @@ Platform
 -   [xrick](http://www.bigorno.net/xrick/)
 -   [Zoid\'s Quest](http://zoids-quest.sourceforge.net/)
 
-Racing
-======
+## Racing
 
 -   [Critical Care](http://critical-care.sourceforge.net/)
 -   [Planet Penguin Racer](http://projects.planetpenguin.de/racer/)
@@ -88,15 +84,13 @@ Racing
 -   [Tux Racer](http://tuxracer.sourceforge.net/)
 -   [Trackmania](http://www.trackmania.com/)
 
-Puzzle
-======
+## Puzzle
 
 -   [Enigma](http://www.nongnu.org/enigma/)
 -   [Gem Drop X](http://www.newbreedsoftware.com/gemdropx/)
 -   [Krystal Drop](http://krystaldrop.sourceforge.net/)
 
-Shoot\'m Up
-===========
+## Shoot\'m Up
 
 -   [Critical Mass](http://criticalmass.sourceforge.net/)
 -   [Descent 2 (D2X)](http://icculus.org/d2x/)
@@ -104,8 +98,7 @@ Shoot\'m Up
 -   [Glaxium](http://xhosxe.free.fr/glaxium/)
 -   [Kobo Deluxe](http://olofson.net/kobodl/)
 
-Simulators
-==========
+## Simulators
 
 -   [Danger from the Deep](http://dangerdeep.sourceforge.net/)
 -   [Eclipse](http://www.drzizka.adslink.cz/Eclipse.html)
@@ -113,15 +106,13 @@ Simulators
 -   [Search and Rescue](http://wolfpack.twu.net/SearchAndRescue/)
 -   [Vega Strike](http://vegastrike.sourceforge.net/)
 
-Sport
-=====
+## Sport
 
 -   [FooBillard](http://foobillard.sunsite.dk/)
 -   [Hot Potato Online](http://www.hotpotatoonline.com/)
 -   [TuxPuck](http://home.no.net/munsuun/tuxpuck/)
 
-Strategy
-========
+## Strategy
 
 -   [Battle for Wesnoth](http://wesnoth.org/)
 -   [C-evo](http://c-evo.org/)
@@ -138,8 +129,7 @@ Strategy
 -   [Stratagus](http://stratagus.sourceforge.net/)
 -   [UFO: Alien Invasion](http://ufo.myexp.de/)
 
-Tetris Clones
-=============
+## Tetris Clones
 
 -   [Crack Attack](http://aluminumangel.org/attack/)
 -   [Falling Block Game](http://fbg.sourceforge.net/)
@@ -148,17 +138,14 @@ Tetris Clones
 -   [Snip](http://snip.sourceforge.net/)
 -   [Stacker Blocks 3D](http://stacker-blocks.sourceforge.net/)
 
-Quiz
-====
+## Quiz
 
 -   [jQuizShow](http://quizshow.sourceforge.net/)
 
-Word Games
-==========
+## Word Games
 
 -   [Anagramarama](http://www.coralquest.com/anagramarama/)
 
-Other
-=====
+## Other
 
--   [Americas Army - An crazy shoot game.](http://www.americasarmy.com/)
+-   [Americas Army](http://www.americasarmy.com/) - A crazy shoot game.
