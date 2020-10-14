@@ -1,3 +1,8 @@
-
 # My custom aliases
+
 alias ll="ls -lah"
+
+# Sys Admin related stuff
+alias sys_cleanup="sudo apt-get clean"
+alias sys_shutdown="sudo shutdown -h now"
+alias sys_reboot="sudo reboot"
