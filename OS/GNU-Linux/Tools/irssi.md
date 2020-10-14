@@ -19,7 +19,7 @@ This document is dedicated to the awesome console based IRC client `irssi`.
 * [Setting up a theme](#setting-up-a-theme)
 * [Script](#scripts)
     * [Spell check](#spell-check)
-* [Ressources](#resources)
+* [Resources](#resources)
 
 # Introduction
 
@@ -93,7 +93,7 @@ To change that variable, use:
 
 There's a lot of themes available for `irssi` and it's very easy to activate some theme. The hardest part of activating a theme is to choice the one you want to use. You have a complete list of themes on the website of irssi and that's also the location from where you should download them: https://irssi-import.github.io/themes/
 
-_Note that what you see there on the different screenshots isn't what you will actually get. You should take into consideration that most of these themes depend on other factors. Like the background color of your terminal, an eventually background image in the terminal. Futhermore, ._
+_Note that what you see there on the different screenshots isn't what you will actually get. You should take into consideration that most of these themes depend on other factors. Like the background color of your terminal, an eventually background image in the terminal. Furthermore, ._
 
 Now let's look what theme is currently set:
 
