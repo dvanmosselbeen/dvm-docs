@@ -23,7 +23,7 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 
 # Introduction
 
-The Debian GNU/Linux operating system claims to be the universal operating system. And that's in fact true. Debian runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the Raspberry Pi, the Sony Playstation (3) and so on.
+The Debian GNU/Linux operating system claims to be the universal operating system. And that's in fact true. Debian runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the Raspberry Pi, the Sony Playstation (3) and so on. I guess we could install Debian into our fridge, but people seems to lazy to do so.
 
 # General information
 
@@ -106,6 +106,8 @@ Just by running the command `aptitude`, you will start the UI interface.
 
 # Interesting packages
 
+A few very interesting package which should be almost installed on every system
+
 | Application | Description |
 |---|---|
 | aptitude | Package manager |
@@ -113,9 +115,41 @@ Just by running the command `aptitude`, you will start the UI interface.
 | apt-listbugs | ... |
 | screen | See the dedicated [screen page](../Tools/screen.md).|
 | htop | Process monitoring tool. |
+| mc | Midnight Commander - a powerful file manager |
 | tightvncserver | ... |
 | irssi | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
 | fail2ban | Some security tools that watch the (abusive) login attempts and take action. |
+| xclip | command line interface to X selections |
+| rsnapshot | local and remote filesystem snapshot utility |
+| uptimed | daemon to track uptimes, especially the high ones |
+| mutt | text-based mailreader supporting MIME, GPG, PGP and threading |
+
+# Server tools
+
+Here's a few tips for server tools.
+
+## Web Server & Database
+
+There are various different web servers.
+
+### Apache
+
+Apache is probably the most well know and used web server. It is very stable, very easy to use and to extend. There's
+also a lot of extra modules you can load to add some extra functionalities. In fact, if you need a good web server,
+then you are probably looking for this Apache web server.
+
+#### Installing Apache
+
+To install Apache:
+
+    aptitude install apache
+
+### Installing MySQL
+
+### PHPMyAdmin
+
+PHPMyAdmin is a web interface to manage the MySQL databases. It's very handy and a must have if you use MySQL.
+
 
 # Getting more help
 
@@ -129,3 +163,12 @@ Before adding a new user, look on how you should do:
 
     man adduser
 
+# Resources
+
+| Website | Description |
+|---|---|
+| www.debian.org | The official website of the Debian GNU/Linux operating system. |
+| https://debian-handbook.info | The famous handbook for Debian. |
+| www.debiantutorials.com | Website with tons of how to's. |
+| www.debiantalk.wordpress.com | Some blog with topics about Debian. |
+| https://debian.chezrami.net | Some French website with articles in french. |
