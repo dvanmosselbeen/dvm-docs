@@ -3,7 +3,7 @@ title: irssi (The ultimate cli chat client)
 description: This article is dedicated to the irssi irc chat client.
 created: 28-11-2007 00:00:00
 modified: 28-11-2007 00:00:00
-keywords: debian, gnu, linux, irssi, irc, internet
+keywords: debian, gnu, linux, irssi, irc, internet, chat, communication
 lang: en
 -----
 
@@ -27,7 +27,38 @@ This document is dedicated to the awesome console based IRC client `irssi`.
 
 # Set up and configuring irssi
 
+Installing irssi is a matter of running the following command:
+
+    sudo apt-get install irssi
+
 As first, follow the startup guide on https://irssi.org/documentation/startup/ This should help you to set your basic configuration and should set you up and running.
+
+## My setup
+
+For the FlightGear irc server=
+
+    /NETWORK ADD FlightGear
+    /SERVER ADD -auto -network FlightGear irc.flightgear.org
+    /CHANNEL ADD -auto #flightgear FlightGear
+    /CHANNEL ADD -auto #flightgear-nl FlightGear
+    /NETWORK ADD -autosendcmd "/^msg nickserv ident FooBar4321;wait 2000" FlightGear
+    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password FooBar4321 -sasl_mechanism PLAIN FlightGear
+    
+For all other:
+
+    /CHANNEL ADD -auto #irssi Freenode
+    /CHANNEL ADD -auto #debian Freenode
+    /CHANNEL ADD -auto #python Freenode
+    
+    /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" Freenode
+    
+Password:
+    
+    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password FooBar4321 -sasl_mechanism PLAIN Freenode
+
+
+    /HILIGHT nick
+/SET hilight_nick_matches_everywhere ON
 
 # Usage
 
