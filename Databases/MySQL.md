@@ -52,6 +52,14 @@ That identify you as root user and go in the `mysql` table.
 Not forget to replace the `new_password_we_want` password with one we
 want.
 
+## Create a new user with full access rights
+
+This is meant to be a user with same level of user rights as the root user.
+
+    CREATE USER 'dvanmosselbeen'@'localhost' IDENTIFIED BY PASSWORD 'my_secure_password';
+    grant all on * . * To 'dvanmosselbeen'@'localhost' with grant option;
+    flush privileges;
+
 ## Connecting to the MySQL server
 
 Now that you have an account on the `MySQL` server, it\'s a good thing
