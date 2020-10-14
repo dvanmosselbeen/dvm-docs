@@ -1,8 +1,8 @@
 -----
 title: Specialized security OS
 description: This article is dedicated to security Linux distributions.
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
+created: 14-10-2020 16:00:00
+modified: 14-10-2020 16:00:00
 keywords: debian, gnu, linux, security
 lang: en
 -----
