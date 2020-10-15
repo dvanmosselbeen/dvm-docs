@@ -25,3 +25,6 @@ See the official website of X-Plane: https://www.x-plane.com/
 
  * My self made Rans S-6S Coyote II - http://www.davidvanmosselbeen.be/pages/x-plane-rans-s-6s-coyote-ii/
  
+## Recommended Addons
+
+* Headshakes -  
