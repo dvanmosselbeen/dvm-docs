@@ -3,8 +3,7 @@
 This file provide some tools to manage the mardown documentation i wrote
 """
 
-myTextFile = """
------
+myTextFile = """-----
 title: MySQL Reference
 description: A little MySQL reference.
 created: 28-11-2007 00:00:00
@@ -19,6 +18,13 @@ This is just a bunch of personal notes i made for my specific needs. These are a
 shared as is as some files could have some private information. (Needs to be checked !)
 
 """
+
+# Convert the string to a list
+myTextFileList = []
+for i in myTextFile:
+    myTextFileList.append(i)
+
+print("myTextFileList is %s chars long !" % len(myTextFileList))
 
 def checkHeader(thatText):
     "Check if the header start with 5 dashes and contains all the attributes."
@@ -40,6 +46,8 @@ def checkHeader(thatText):
                             print ("Level 5")
     print("Totals DASHES: %s " % dashCount)
 
+
+print(type(myTextFile))
 
 # Start the thing
 checkHeader(myTextFile)
