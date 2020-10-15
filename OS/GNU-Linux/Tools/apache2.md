@@ -41,3 +41,11 @@ To:
 Restart the `apache2` server:    
     
     systemctl restart apache2
+
+# Tools
+
+| Application | Description |
+|---|---|
+| awffull | web server log analysis program |
+| awstats | powerful and featureful web server log analyzer |
+| webalizer | web server log analysis program |
