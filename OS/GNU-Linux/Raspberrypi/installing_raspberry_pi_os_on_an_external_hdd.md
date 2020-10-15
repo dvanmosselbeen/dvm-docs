@@ -9,6 +9,8 @@ lang: en
 
 Source from but adapted: https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/ to work with Raspberry Pi Model 4 with 4GB ram.
 
+Also interesting information: https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/
+
 # Introduction
 
 So far, i was been able to do this setup successful on a Raspberry Pi Model 4B with an external HDD with his own power supply.
@@ -225,4 +227,10 @@ Unmount everything and reboot
     sudo poweroff
 
 Now this working like expected and able to boot without a micro SD card. 
-Note that the screen resolution seems to be different. I have some big black borders now.
+Note that the screen resolution seems to be different since i'm booting from the external HDD. Previously it was in 4K resolution i think and now I have some big black borders on the edges. And looking too `Start Menu` > `Preferences` > `Screen Configurator` > `Screen Resolution`. And there in this new Windows, `Configure` > `Screen` > `Default` > `Resolution`.
+
+# Resources
+
+* https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/
+* https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/
+* https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/
