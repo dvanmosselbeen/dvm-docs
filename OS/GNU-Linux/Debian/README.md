@@ -123,6 +123,8 @@ A few very interesting package which should be almost installed on every system
 | rsnapshot | local and remote filesystem snapshot utility |
 | uptimed | daemon to track uptimes, especially the high ones |
 | mutt | text-based mailreader supporting MIME, GPG, PGP and threading |
+| mydumper | High-performance MySQL backup tool |
+| sqlitebrowser | GUI editor for SQLite databases |
 
 # Server tools
 
@@ -169,6 +171,8 @@ Before adding a new user, look on how you should do:
 |---|---|
 | www.debian.org | The official website of the Debian GNU/Linux operating system. |
 | https://debian-handbook.info | The famous handbook for Debian. |
+| http://www.debianhelp.co.uk/ |  |
 | www.debiantutorials.com | Website with tons of how to's. |
 | www.debiantalk.wordpress.com | Some blog with topics about Debian. |
 | https://debian.chezrami.net | Some French website with articles in french. |
+|http://www.debianadmin.com/||
