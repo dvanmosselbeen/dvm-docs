@@ -223,4 +223,5 @@ Show your ip and mac address on the console:
 # Resources
 
 * https://www.raspberrypi.org - The official website of the Raspberry PI project.
+* https://www.raspberrypi.org/forums/
 * https://raspberrytips.com - Tons of articles with tips and trips for raspberry pi.
