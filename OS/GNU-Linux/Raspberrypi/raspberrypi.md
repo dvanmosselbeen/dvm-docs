@@ -143,11 +143,16 @@ On a fresh install on a Model 4, i passed from `8.6G` to `6.7G`.
 
 # Recommended software and setup
 
-* `screen` - See the dedicated [screen page](../Tools/screen.md).
-* `irssi` - The famous command line irc chat client. See the dedicated [irssi page](../Tools/irssi.md).
-* `xchat` - IRC client for X similar to AmIRC
-* `mc` -
-* `xclip` - 
+As Raspberry PI OS is based on Debian, you will find all the classic programs. So you could also take a look to the
+dedicated [Debian](../Debian/README.md) page.
+
+| Application | Description |
+|---|---|
+| screen | See the dedicated [screen page](../Tools/screen.md). |
+| irssi | The famous command line irc chat client. See the dedicated [irssi page](../Tools/irssi.md). |
+| xchat | IRC client for X similar to AmIRC |
+| mc | Midnight Commander - a powerful file manager |
+| xclip | command line interface to X selections |
 
 # Recommended hardware for the Raspberry Pi
 

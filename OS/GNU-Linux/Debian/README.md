@@ -11,6 +11,8 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
+[Table-Of-Content]
+
 # Table Of contents
 
 1. [Introduction](#introduction)
@@ -19,7 +21,17 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 1. [The package manager](#the-package-manager)
     * [apt](#apt)
     * [aptitude](#aptitude)
+1. [Admin Commands](#admin-commands)
 1. [Interesting apps](#interesting-packages)
+1. [Server Tools](#server-tools)
+   * [Web Server & Database](#web-server--database)
+     * [Apache](#apache)
+       * [Installing Apache](#installing-apache)
+     * [MySQL](#mysql)
+        * [Installing MySQL](#installing-mysql)
+     * [PHPMyAdmin](#phpmyadmin)
+* [Getting more help](#getting-more-help)
+* [Resources](#resources)
 
 # Introduction
 
@@ -113,6 +125,7 @@ A few very interesting package which should be almost installed on every system
 | aptitude | Package manager |
 | apt-listchanges | List the changes... |
 | apt-listbugs | ... |
+| apt-reportbug | reports bugs in the Debian distribution |
 | screen | See the dedicated [screen page](../Tools/screen.md).|
 | htop | Process monitoring tool. |
 | mc | Midnight Commander - a powerful file manager |
@@ -125,6 +138,10 @@ A few very interesting package which should be almost installed on every system
 | mutt | text-based mailreader supporting MIME, GPG, PGP and threading |
 | mydumper | High-performance MySQL backup tool |
 | sqlitebrowser | GUI editor for SQLite databases |
+| vim | Vi IMproved - enhanced vi editor |
+| vim-gtk3 | Vi IMproved - enhanced vi editor - with GTK3 GUI |
+| vim-python-jedi | autocompletion tool for Python - VIM addon files |
+| unp | unpack (almost) everything with one command |
 
 # Server tools
 
@@ -146,7 +163,13 @@ To install Apache:
 
     aptitude install apache
 
-### Installing MySQL
+### MySQL
+
+...
+
+#### Installing MySQL
+
+...
 
 ### PHPMyAdmin
 
