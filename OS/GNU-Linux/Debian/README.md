@@ -124,12 +124,12 @@ A few very interesting package which should be almost installed on every system
 |---|---|
 | aptitude | Package manager |
 | apt-listchanges | List the changes... |
-| apt-listbugs | ... |
+| apt-listbugs | tool which lists critical bugs before each APT installation |
 | apt-reportbug | reports bugs in the Debian distribution |
 | screen | See the dedicated [screen page](../Tools/screen.md).|
-| htop | Process monitoring tool. |
+| htop | interactive processes viewer |
 | mc | Midnight Commander - a powerful file manager |
-| tightvncserver | ... |
+| tightvncserver | virtual network computing server software |
 | irssi | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
 | fail2ban | Some security tools that watch the (abusive) login attempts and take action. |
 | xclip | command line interface to X selections |
