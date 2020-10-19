@@ -128,6 +128,7 @@ A few very interesting package which should be almost installed on every system
 | apt-reportbug | reports bugs in the Debian distribution |
 | screen | See the dedicated [screen page](../Tools/screen.md).|
 | htop | interactive processes viewer |
+| iftop | Observe the flows on your network interfaces |
 | mc | Midnight Commander - a powerful file manager |
 | tightvncserver | virtual network computing server software |
 | irssi | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
@@ -193,8 +194,9 @@ Before adding a new user, look on how you should do:
 | Website | Description |
 |---|---|
 | www.debian.org | The official website of the Debian GNU/Linux operating system. |
+| https://wiki.debian.org | The official wiki of Debian. |
 | https://debian-handbook.info | The famous handbook for Debian. |
-| http://www.debianhelp.co.uk/ |  |
+| http://www.debianhelp.co.uk/ | Some website with a lot of tutorials. |
 | www.debiantutorials.com | Website with tons of how to's. |
 | www.debiantalk.wordpress.com | Some blog with topics about Debian. |
 | https://debian.chezrami.net | Some French website with articles in french. |
