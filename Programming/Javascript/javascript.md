@@ -299,8 +299,10 @@ question. And as least, the incrementer. And finally, in the block of
 code we have the action that should be are repeated. Let's have an
 example:
 
-    for (i = 1; i <= 10; i++)
-    document.write("<p>Get some looooping ...</p>")
+    for (i = 1; i <= 10; i++) 
+    {
+        document.write("<p>Get some looooping ...</p>")
+    }
 
 Let's say it with other words: We first assign the value 1 to the
 variable `i`, while the value of `i` is lesser as 10; we increment the
@@ -319,7 +321,9 @@ easy to make a mistake and make a loop that never will end. Look at the
 follow piece of code. This will crash your web browser! Try it out :-)
 
     for (i = 1; i >= 1; i++)
-    document.write("<p>Get some looooping ...</p>")
+    {
+        document.write("<p>Get some looooping ...</p>")
+    }
 
 With the Firefox web, if a script want to crash the browser, Firefox
 detect it and show a dialog that permit you to stop the script without
@@ -331,27 +335,25 @@ could use multiples action to execute in the for loop, but then we need
 to use the brackets `{ }` to delimit multiples line of code in the same
 block:
 
-    for (i = 1; i <= 10; i++)
-    {
-        document.write("<p>" + i + " - Get some looooping ...</p>")
-        document.write("<hr>")
+    for (i = 1; i <= 10; i++) {
+        document.write("<p>" + i + " - Get some looooping ...</p>");
+        document.write("<hr>");
     }
 
 It is not required to indent the code in the block. We had been could
 indent it with 4 spaces to make the stuff more readable. See the same
 example but indented with 4 spaces:
 
-    for (i = 1; i <= 10; i++)
-    {
-        document.write("<p>" + i + " - Get some looooping ...</p>")
-        document.write("<hr>")
+    for (i = 1; i <= 10; i++) {
+        document.write("<p>" + i + " - Get some looooping ...</p>");
+        document.write("<hr>");
     }
 
 We had also could write it on one line to make the code so weird as
 possible:
 
     for (i = 1; i <= 10; i++) {
-        document.write("<p>" + i + " - Get some looooping ...</p>"); document.write("<hr>")
+        document.write("<p>" + i + " - Get some looooping ...</p>"); document.write("<hr>");
     }
 
 **Pay attention to the line wrap!**
@@ -369,14 +371,13 @@ iterate, you need then to make use of the while loop.
 When we not know how many time we should need to iterate.
 
 Take for example that we have some application that get some input of
-the user, put the input result in the `nbr` variable. Look to this
-minimalistic piece of code (it\'s really not yet the ideal example):
+the user, put the input result in the `i` variable. Look to this
+minimalistic piece of code (it's really not yet the ideal example):
 
-    nbr = 1
-    while (nbr <= 10)
-    { 
-        document.write("nbr is still lower as 10! ")
-        nbr++
+    i = 1
+    while (i <= 10) { 
+        document.write("i is still lower as 10! ");
+        i++;
     }
 
 The while function only have only one element in his parentheses, while
@@ -395,32 +396,31 @@ the loop examples. There was each time a logical test; `<=`.
 
 We can also use logical test in some block code or where as needed.
 
-    nbr=1
-    if (nbr < 2)
-    document.write("Lower!")
+    i = 1;
+    if (i < 2) {
+        document.write("Lower!");
+    }
 
-Let\'s have an example with a combination of the while and the if and
+Let's have an example with a combination of the while and the if and
 break:
 
-    nbr = 1
-    while (nbr <= 100)
-    {
-        document.write(nbr, " Just some tests... ")
-        if (nbr == 50)
-        {
-            document.write("Because we spawn to many output, we stop! ")
-            break
+    i = 1
+    while (i <= 100) {
+        document.write(i, " Just some tests... ");
+        if (i == 50) {
+            document.write("Because we spawn to many output, we stop! ");
+            break;
         }
-    nbr++
+    i++;
     }
-    document.write("We are done with us test! ")
+    document.write("We are done with us test! ");
 
-While nrb is lower or egual to 100, run the chunk of code in while loop;
-Output the message nbr, \" Just some tests\... \" each time (the content
-of the variable nbr and the message). If nbr is egual to 50 (nbr == 50),
-we output the message \"Because we spawn to many output, we stop! \" and
+While `i` is lower or equal to 100, run the chunk of code in while loop;
+Output the message `i`, " Just some tests... " each time (the content
+of the variable `i` and the message). If `i` is equal to 50 (i == 50),
+we output the message "Because we spawn to many output, we stop! " and
 break the while loop. The next code following the while loop is
-executed; the message \"We are done with us test! \" is outputted.
+executed; the message "We are done with us test! " is outputted.
 
 The break will only break (stop) the execution of the block of code
 where the break statement is placed. Take for example the next piece of
@@ -432,25 +432,23 @@ code that will break the whole script!:
 
 An if with an else example:
 
-    if (age < 12)
-    {
+    if (age < 12) {
         entryPrize = 5
         needAdultPresent = true
     }
-    else
-    {
+    else {
         entryPrize = 10
         needAdultPresent = false
     }
 
 In the previous example, only one block of code is executed, depending
-what the content of the variable age is; if it\'s lower as 12 or not.
+what the content of the variable `age` is; if it's lower as 12 or not.
 
 ## Functions
 
 It is common that some pieces of JavaScript code need to be are executed
 on different parts of your HTML page or on a different page. In this
-case, it\'s best to split the code in functions so that you not need to
+case, it's best to split the code in functions so that you not need to
 write always the whole repeated chunk of code. You only refer to some
 function. That will help to get your code many more compacter. Also if
 you want to change a bit the code of the repeated chunk of code, you
