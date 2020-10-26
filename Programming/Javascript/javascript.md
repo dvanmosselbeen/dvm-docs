@@ -288,34 +288,37 @@ btw we had been could write:
 
 ## Loops
 
+There are 2 kinds of loops in JavaScript, the `for` and `while` loop. Each of these 2 have their own usage which you 
+will understand better once you start using them.
+
 ### The for loop
 
-The for loop have 3 important elements. We first initialize a variable
+The `for` loop have 3 important elements. We first initialize a variable
 that will be used for the counter. Then we have the condition in
 question. And as least, the incrementer. And finally, in the block of
-code we have the action that should be are repeated. Let\'s have an
+code we have the action that should be are repeated. Let's have an
 example:
 
-    for (nbr = 1; nbr <= 10; nbr++)
+    for (i = 1; i <= 10; i++)
     document.write("<p>Get some looooping ...</p>")
 
-Let\'s say it with other words: We first assign the value 1 to the
-variable nbr, while the value of nbr is lesser as 10; we increment the
-content of the variable nbr with one more value. (It\'s similar as
-`nbr = nbr + 1`). And then we execute the block of code that follow the
+Let's say it with other words: We first assign the value 1 to the
+variable `i`, while the value of `i` is lesser as 10; we increment the
+content of the variable `i` with one more value. (It's similar as
+`i = i + 1`). And then we execute the block of code that follow the
 for loop. We have done one iteration. nbr have now the value 2, so it
 still pass the condition and will be again incremented. The block of
-code is again executed. nbr have now value \... While the variable nbr
-is lesser (\<) or egual (=) to 10 (while the condition is true), the
+code is again executed. nbr have now value ... While the variable `i`
+is lesser (`<`) or equal (`=`) to 10 (while the condition is true), the
 block of code is executed. Once nbr have the value 11, the for loop is
 no more used and the script continue his job with following the next
 line of code below the for loop.
 
-You should also pay attention to not make an infinite loop. It\'s so
+You should also pay attention to not make an infinite loop. It's so
 easy to make a mistake and make a loop that never will end. Look at the
 follow piece of code. This will crash your web browser! Try it out :-)
 
-    for (nbr = 1; nbr >= 1; nbr++)
+    for (i = 1; i >= 1; i++)
     document.write("<p>Get some looooping ...</p>")
 
 With the Firefox web, if a script want to crash the browser, Firefox
@@ -328,9 +331,9 @@ could use multiples action to execute in the for loop, but then we need
 to use the brackets `{ }` to delimit multiples line of code in the same
 block:
 
-    for (nbr = 1; nbr <= 10; nbr++)
+    for (i = 1; i <= 10; i++)
     {
-        document.write("<p>" + nbr + " - Get some looooping ...</p>")
+        document.write("<p>" + i + " - Get some looooping ...</p>")
         document.write("<hr>")
     }
 
@@ -338,18 +341,17 @@ It is not required to indent the code in the block. We had been could
 indent it with 4 spaces to make the stuff more readable. See the same
 example but indented with 4 spaces:
 
-    for (nbr = 1; nbr <= 10; nbr++)
+    for (i = 1; i <= 10; i++)
     {
-        document.write("<p>" + nbr + " - Get some looooping ...</p>")
+        document.write("<p>" + i + " - Get some looooping ...</p>")
         document.write("<hr>")
     }
 
 We had also could write it on one line to make the code so weird as
 possible:
 
-    for (nbr = 1; nbr <= 10; nbr++){
-        document.write("<p>" + nbr + " - Get some looooping ...</p>");
-        document.write("<hr>")
+    for (i = 1; i <= 10; i++) {
+        document.write("<p>" + i + " - Get some looooping ...</p>"); document.write("<hr>")
     }
 
 **Pay attention to the line wrap!**
