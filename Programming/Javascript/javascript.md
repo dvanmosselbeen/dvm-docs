@@ -959,6 +959,23 @@ object has:
     }
     </script>
 
+### Make use of the console for debugging
+
+While creating Javascript code, you need to debug it while writing it and sometime you want to show some data so
+that you know what it hold.
+
+	var myArray = new Array(); //
+		
+	// Just add a bunch of data to the newly created array
+	myArray[0] = "Foo"; myArray[1] = "Bar"; myArray[2] = "Baz";
+		
+	// Display stuff to the console. 
+	// For this use Google Chrome, right click on the page and select Inspect, then click on the "console" tab.
+	console.log(myArray);
+	console.log("This is my stuff.");
+	console.log("5+3");
+	console.log(5+3);
+
 ### Snippets of code
 
     <body onLoad="alert('Welcome on my page!')">
