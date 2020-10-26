@@ -43,6 +43,9 @@ lang: en
   * [Searching in a string](#searching-in-a-string)
 * [Arrays](#arrays)
   * [Methods on arrays](#methods-on-arrays)
+     * [reverse()](#reverse)
+     * [sort()](#sort)
+     * [join()](#join)
 * [Objects](#objects)
   * [Creating his own objects](#creating-his-own-objects)
 * [Storing scripts in external files](#storing-scripts-in-external-files)
@@ -749,32 +752,39 @@ Let\'s have an example:
 We can do it with the methods `indexOf()` and `lastIndexOf()`.
 `lastIndexOf()` search from backwards occurrence.
 
-Let\'s have an example:
+Let's have an example:
 
-    x = "Hello foo and bar."
-    x.indexOf("foo")
-    x.indexOf("foo",2)     // We can start to search from a position
+    x = "Hello foo and bar.";
+    x.indexOf("foo");
+    x.indexOf("foo",2);     // We can start to search from a position
 
 ## Arrays
 
+You have different ways to initialise an array.
+
 We need to make a constructor.
 
-    foo = new Array()
-    foo[0] = "Bart"; foo[1] = "Lisa"; foo[2] = "Magie".
-    bar = new Array("Homer", "Marge")
-    baz = new Array("foo", 3.1415, true)
-    document.write(foo, bar, baz)
+    foo = new Array();
+    foo[0] = "Bart"; foo[1] = "Lisa"; foo[2] = "Magie";
+    
+    bar = new Array("Homer", "Marge");
+    baz = new Array("foo", 3.1415, true);
+    
+    var xuu = ["Me", "You"];
+    xuu.push("Both of us"); // Add up an item.
+    
+    document.write(foo, bar, baz, xuu);
 
 Printing element `1` (second element, we start to count from `0`)
 
-    document.write(foo[1])
+    document.write(foo[1]);
 
 The array type have also the property length, to get the length of the
 array.
 
     for (item = 0; item <= foo.length-1; item++)
     {
-        document.write(foo[item], ", ")
+        document.write(foo[item], ", ");
     }
 
 We can assign an array into an array, so that we can make
@@ -782,12 +792,18 @@ multidimensional array.
 
 ### Methods on arrays
 
+#### reverse()
+
 The `reverse` method, reverse the positions.
+
+#### sort()
 
 With `sort`, we can sort the array
 
     x = new Array("xuu", "buu", "bar");
     document.write(x.sort())
+
+#### join()
 
 We join each element of the array to a string:
 
