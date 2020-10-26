@@ -165,20 +165,16 @@ to give some comments to the person who read your code too.
 
 A single line comment is as following:
 
-    <script type="text/javascript">
     // Print heading
     document.write("<h1>This is a heading</h1>");
-    </script>
 
 A multi line comment is as following:
 
-    <script type="text/javascript">
     /* Print a heading and
     then print a paragraph
     */
     document.write("<h1>This is a heading</h1>");
     document.write("<p>This is a paragraph.</p>");
-    </script>
 
 Another more useful example:
 
@@ -236,28 +232,22 @@ We can use constants and variables to make an expression.
 If we use some string in a expression, the expression would be are of
 the type string.
 
-    <script>
     foo = 'Hello,'
     bar = ' world!'
     baz = foo + bar
     document.write(baz)
-    </script>
 
 Another example:
 
-    <script>
     foo = 'Hello,'
     bar = ' world!'
     document.write(foo + bar)
-    </script>
-
+    
 If we mix up string with integers, the result would be not like
 expected. In the next example we make a string containing 1:
 
-    <script>
     foo = '1'
     document.write(foo + 1)
-    </script>
 
 That output:
 
@@ -265,13 +255,11 @@ That output:
 
 But if it's really a integer as variable, we not get the trouble:
 
-    <script>
     foo = 'Hello,'
     bar = 2
     baz = ' you'
     buu = foo + bar + baz
     document.write(buu)
-    </script>
 
 That output:
 
@@ -279,12 +267,10 @@ That output:
 
 Another example:
 
-    <script>
     foo = 'Hello,'
     bar = 2
     baz = ' you'
     document.write(foo + bar + baz)
-    </script>
 
 Output:
 
@@ -292,12 +278,10 @@ Output:
 
 btw we had been could write:
 
-    <script>
     foo = 'Hello,'
     bar = 2
     baz = ' you'
     document.write(foo, bar, baz)
-    </script>
 
 ## Loops
 
@@ -309,10 +293,8 @@ question. And as least, the incrementer. And finally, in the block of
 code we have the action that should be are repeated. Let\'s have an
 example:
 
-    <script>
     for (nbr = 1; nbr <= 10; nbr++)
     document.write("<p>Get some looooping ...</p>")
-    </script>
 
 Let\'s say it with other words: We first assign the value 1 to the
 variable nbr, while the value of nbr is lesser as 10; we increment the
@@ -330,10 +312,8 @@ You should also pay attention to not make an infinite loop. It\'s so
 easy to make a mistake and make a loop that never will end. Look at the
 follow piece of code. This will crash your web browser! Try it out :-)
 
-    <script>
     for (nbr = 1; nbr >= 1; nbr++)
     document.write("<p>Get some looooping ...</p>")
-    </script>
 
 With the Firefox web, if a script want to crash the browser, Firefox
 detect it and show a dialog that permit you to stop the script without
@@ -345,35 +325,29 @@ could use multiples action to execute in the for loop, but then we need
 to use the brackets `{ }` to delimit multiples line of code in the same
 block:
 
-    <script>
     for (nbr = 1; nbr <= 10; nbr++)
     {
         document.write("<p>" + nbr + " - Get some looooping ...</p>")
         document.write("<hr>")
     }
-    </script>
 
 It is not required to indent the code in the block. We had been could
 indent it with 4 spaces to make the stuff more readable. See the same
 example but indented with 4 spaces:
 
-    <script>
     for (nbr = 1; nbr <= 10; nbr++)
     {
         document.write("<p>" + nbr + " - Get some looooping ...</p>")
         document.write("<hr>")
     }
-    </script>
 
 We had also could write it on one line to make the code so weird as
 possible:
 
-    <script>
     for (nbr = 1; nbr <= 10; nbr++){
         document.write("<p>" + nbr + " - Get some looooping ...</p>");
         document.write("<hr>")
     }
-    </script>
 
 **Pay attention to the line wrap!**
 
@@ -393,14 +367,12 @@ Take for example that we have some application that get some input of
 the user, put the input result in the `nbr` variable. Look to this
 minimalistic piece of code (it\'s really not yet the ideal example):
 
-    <script>
     nbr = 1
     while (nbr <= 10)
     { 
         document.write("nbr is still lower as 10! ")
         nbr++
     }
-    </script>
 
 The while function only have only one element in his parentheses, while
 the for loop, had 3 elements. Here we only have the condition in the
@@ -425,7 +397,6 @@ We can also use logical test in some block code or where as needed.
 Let\'s have an example with a combination of the while and the if and
 break:
 
-    <script>
     nbr = 1
     while (nbr <= 100)
     {
@@ -438,7 +409,6 @@ break:
     nbr++
     }
     document.write("We are done with us test! ")
-    </script>
 
 While nrb is lower or egual to 100, run the chunk of code in while loop;
 Output the message nbr, \" Just some tests\... \" each time (the content
@@ -451,11 +421,9 @@ The break will only break (stop) the execution of the block of code
 where the break statement is placed. Take for example the next piece of
 code that will break the whole script!:
 
-    <script>
     document.write("Is outputed on screen!")
     break
     document.write("Is never seen!")
-    </script>
 
 An if with an else example:
 
@@ -485,12 +453,10 @@ need to modify it on all the different places where you have write it
 down. With making use of functions, you modify your function content and
 it will reflect where needed.
 
-    <script>
     function hello_world()
     {
         document.write("Hello, world")
     }
-    </script>
 
 We used the reserved word function following a function name we have
 choice. When we create a self made function we need to make use of the
@@ -500,9 +466,7 @@ code in the function.
 We can now call us self made function where as we want in the same HTML
 page:
 
-    <script>
     hello_world()
-    </script>
 
 That just output \'Hello, world\'. It\'s just a minimalistic piece of
 code to make a function.
@@ -511,26 +475,20 @@ We can create a function that require an argument, so that there will be
 done somethings with the argument when we call the function with an
 argument:
 
-    <script>
     function hello_world(fname)
     {
         document.write("Hello, world and ", fname)
     }
-    </script>
 
 We now call us self made function with an argument
 hello\_world(\'foo\'):
 
-    <script>
     hello_world('foo')
-    </script>
 
 We now call us self made function with an argument
 hello\_world(\'bar\'):
 
-    <script>
     hello_world('bar')
-    </script>
 
 You can make so personalized messages too.
 
@@ -539,19 +497,15 @@ give a argument when we call the function.
 
 **NOTE: Then next example have an error in his syntax!**
 
-    <script>
     function hello_world(fname='baz')
     {
-        document.write("Hello, world and ", fname)
+        document.write("Hello, world and ", fname);
     }
-    </script>
 
 We now call us self made function without an argument hello\_world() a
 default value will be used:
 
-    <script>
     hello_world()
-    </script>
 
 The previous function examples we showed are really simply and not
 return some values. It print it out on screen. A such function in other
@@ -561,12 +515,10 @@ that you can assign it to another variable.
 So we need to rewrite the function so that he return some values, so
 that we could assign it to a variable:
 
-    <script>
     function hello_world(fname)
     {
         return "Hello, world and ", fname
     }
-    </script>
 
 A real function should be called as following:
 
@@ -582,7 +534,7 @@ stuff returned be a function:
 
     document.write(hello_world('xuu'))
     { var tmp = 1 for (i=1;i<=n;i++) tmp = tmp * i return tmp }
-    <script>
+
     function facult(n)
     {
         var tmp = 1
@@ -590,14 +542,11 @@ stuff returned be a function:
         tmp = tmp * i
         return tmp
     }
-    </script>
 
 We now call it:
 
-    <script>
     ff = facult(4)
     document.write(ff)
-    </script>
 
 And that output:
 
@@ -645,12 +594,10 @@ We give as argument somethings and get a number or \'NaN\' Not a Number.
 
 ### eval()
 
-    <script>
     foo = 'Hello '
     bar = 'world!'
     baz = eval("foo+bar")
     document.write(baz)
-    </script>
 
 Output:
 
@@ -754,9 +701,7 @@ Dave\'s computer\'.
 We make use of n to make a new line in a string. Useful for in alert
 messages. See for example with the follow code:
 
-    <script>
     alert('hello\n world')
-    </script>
 
 A tab stop `\t`
 
@@ -795,11 +740,9 @@ variable.
 
 Let\'s have an example:
 
-    <script>
     x = "Hello, world!"
     write.document(x.substring(7))
     write.document(x.substring(7, 10))
-    </script>
 
 ### Searching in a string
 
@@ -808,39 +751,31 @@ We can do it with the methods `indexOf()` and `lastIndexOf()`.
 
 Let\'s have an example:
 
-    <script>
     x = "Hello foo and bar."
     x.indexOf("foo")
     x.indexOf("foo",2)     // We can start to search from a position
-    </script>
 
 ## Arrays
 
 We need to make a constructor.
 
-    <script>
     foo = new Array()
     foo[0] = "Bart"; foo[1] = "Lisa"; foo[2] = "Magie".
     bar = new Array("Homer", "Marge")
     baz = new Array("foo", 3.1415, true)
     document.write(foo, bar, baz)
-    </script>
 
 Printing element `1` (second element, we start to count from `0`)
 
-    <script>
     document.write(foo[1])
-    </script>
 
 The array type have also the property length, to get the length of the
 array.
 
-    <script>
     for (item = 0; item <= foo.length-1; item++)
     {
         document.write(foo[item], ", ")
     }
-    </script>
 
 We can assign an array into an array, so that we can make
 multidimensional array.
@@ -851,17 +786,13 @@ The `reverse` method, reverse the positions.
 
 With `sort`, we can sort the array
 
-    <script>
     x = new Array("xuu", "buu", "bar");
     document.write(x.sort())
-    </script>
 
 We join each element of the array to a string:
 
-    <script>
     xuu = X.join(" ")  // we want to join it with a space between each item
     document.write(xuu)
-    </script>
 
 ## Objects
 
@@ -870,7 +801,6 @@ This next piece of code not work like expected with Firefox?? It output
 (MS Internet Explorer) or \"Fri May 01 00:00:00 GMT+0200 (Romance
 Daylight Time) 1998\" (Netscape Communicator)
 
-    <script>
     //birthday = new Date("May 1, 1900")
     // or
     // Stand for year, month, day
@@ -880,18 +810,15 @@ Daylight Time) 1998\" (Netscape Communicator)
     today = new Date();
     birthday = birthday.setYear(2007);
     document.write(birthday);
-    </script>
 
 ### Creating his own objects
 
-    <script>
     function auto(bd,tp, yr)
     {
         this.brand = bd;
         this.type = tp;
         this.year = yr;
     } 
-    </script>
 
 The word `this` in the `object`, mean that it is related to this object.
 This is comparable to `self` used in the Python programming language.
@@ -899,10 +826,8 @@ This is comparable to `self` used in the Python programming language.
 If we want to make use of the custom object, we need to make an new
 instance of the object. We create an instance with the `new`:
 
-    <script>
     littlecar = new auto("Fiat", "Panda", 1996)
     write.document(littlecar)
-    <script>
 
 Another example may be:
 
@@ -953,11 +878,9 @@ Or load it when the page load:
 When developing code, you want time by time check what object some
 object has:
 
-    <script type="text/javascript">
     for(var prop in document){
         document.write(prop + "<br>");
     }
-    </script>
 
 ### Make use of the console for debugging
 
