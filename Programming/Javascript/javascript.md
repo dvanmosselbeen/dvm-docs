@@ -446,11 +446,11 @@ what the content of the variable `age` is; if it's lower as 12 or not.
 
 ## Functions
 
-It is common that some pieces of JavaScript code need to be are executed
+It is common that some pieces of JavaScript code need to be executed
 on different parts of your HTML page or on a different page. In this
-case, it's best to split the code in functions so that you not need to
+case, it's best to split the code in functions so that you do not need to
 write always the whole repeated chunk of code. You only refer to some
-function. That will help to get your code many more compacter. Also if
+function. That will help to get your code more compacter. Also if
 you want to change a bit the code of the repeated chunk of code, you
 need to modify it on all the different places where you have write it
 down. With making use of functions, you modify your function content and
@@ -463,7 +463,7 @@ it will reflect where needed.
 
 We used the reserved word function following a function name we have
 choice. When we create a self made function we need to make use of the
-{} brackets, also if there is only one statement line in the block of
+`{}` brackets, also if there is only one statement line in the block of
 code in the function.
 
 We can now call us self made function where as we want in the same HTML
@@ -471,7 +471,7 @@ page:
 
     hello_world()
 
-That just output \'Hello, world\'. It\'s just a minimalistic piece of
+That just output `Hello, world`. It's just a minimalistic piece of
 code to make a function.
 
 We can create a function that require an argument, so that there will be
@@ -483,13 +483,11 @@ argument:
         document.write("Hello, world and ", fname)
     }
 
-We now call us self made function with an argument
-hello\_world(\'foo\'):
+We now call us self made function with an argument `hello_world('foo')`:
 
     hello_world('foo')
 
-We now call us self made function with an argument
-hello\_world(\'bar\'):
+We now call us self made function with an argument `hello_world('bar')`:
 
     hello_world('bar')
 
@@ -505,7 +503,7 @@ give a argument when we call the function.
         document.write("Hello, world and ", fname);
     }
 
-We now call us self made function without an argument hello\_world() a
+We now call us self made function without an argument `hello_world()` a
 default value will be used:
 
     hello_world()
@@ -558,7 +556,7 @@ And that output:
 ## Recursion
 
 A function can call another function, but it can also call itself.
-That\'s called recursion.
+That's called recursion.
 
     function facult(n)
     {
@@ -575,7 +573,7 @@ Note, we make use of the previous created facult function.
 JavaScript have some build-in functions that we can use. That avoid that
 we should need to create these on his own.
 
-Here\'s a little list of some functions:
+Here's a little list of some functions:
 
 -   parseInt()
 -   parseFloat()
@@ -588,7 +586,7 @@ Here\'s a little list of some functions:
 
 ### parseInt()
 
-We give as argument somethings and get a number or \'NaN\' Not a Number.
+We give as argument somethings and get a number or `NaN` Not a Number.
 
     document.write(parseInt(3), 
         parseInt("3"), 
@@ -611,7 +609,7 @@ Output:
 ## Operators
 
 There are different operators, you have already make use of it several
-times before inconcisely if you have follow this manual.
+times before unconscious if you have follow this manual.
 
 -   Assigning operator (Toekenningsoperators) (=)
 -   Logical operator (logische operators) (\<, \<=, \>, \>=, ==)
@@ -661,7 +659,7 @@ Logical operator output true or false.
 
 ### Bitwize operators
 
-`<<`, `>>>`, `>>>`, `&` (AND), `^` (XOR) \...
+`<<`, `>>>`, `>>>`, `&` (AND), `^` (XOR) ...
 
 ### Special operators
 
@@ -741,7 +739,7 @@ heeft gezet, krijgen we een `B` te zien en dus niet de `e` van Test!
 We can use the substring() method on strings to slice the content of the
 variable.
 
-Let\'s have an example:
+Let's have an example:
 
     x = "Hello, world!"
     write.document(x.substring(7))
@@ -813,9 +811,9 @@ We join each element of the array to a string:
 ## Objects
 
 This next piece of code not work like expected with Firefox?? It output
-`1178001555000` while it should be Fri May 1 00:00:00 UTC+0200 1998\"
-(MS Internet Explorer) or \"Fri May 01 00:00:00 GMT+0200 (Romance
-Daylight Time) 1998\" (Netscape Communicator)
+`1178001555000` while it should be `Fri May 1 00:00:00 UTC+0200 1998`
+(MS Internet Explorer) or `Fri May 01 00:00:00 GMT+0200 (Romance
+Daylight Time) 1998` (Netscape Communicator)
 
     //birthday = new Date("May 1, 1900")
     // or
