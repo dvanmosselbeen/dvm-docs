@@ -217,7 +217,7 @@ Show your ip and mac address on the console:
 * Secure Raspberry PI OS default setup - https://raspberrytips.com/security-tips-raspberry-pi/
 * Check for backup system. See: https://raspberrytips.com/backup-raspberry-pi/
 * Install heat sink - https://raspberrytips.com/install-heat-sinks-raspberry-pi/
-* Try camera stuff - https://raspberrytips.com/install-camera-raspberry-pi/ and https://raspberrytips.com/raspberry-pi-camera-projects-ideas/
+* Try camera stuff - https://projects.raspberrypi.org/en/projects/getting-started-with-picamera and https://raspberrytips.com/install-camera-raspberry-pi/ and https://raspberrytips.com/raspberry-pi-camera-projects-ideas/
 * Check to install a VPN server - https://raspberrytips.com/install-openvpn-raspberry-pi/
 * Samba file server - 
 * Hacking wifi - https://raspberrytips.com/hacking-wifi-raspberry-pi/
