@@ -72,7 +72,20 @@ There are different methods:
 
 It is very common on a GNU/Linux system or in programming language the need to reformat a paragraph to some width.
 
+# Addons
+
+| Name | Description |
+|---|---|
+| vim-python-jedi | Autocompletion plugin for python|
+
+# Vim python tricks
+
+| Command | Description |
+|---|---|
+| ctrl+n | Autocompletion. Show matching result in a context menu. |
+
 # Resources
 
 * https://opensource.com/article/19/3/getting-started-vim
 * https://www.howtoforge.com/vim-basics
+* https://realpython.com/vim-and-python-a-match-made-in-heaven/
