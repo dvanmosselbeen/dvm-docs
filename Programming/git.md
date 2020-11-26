@@ -68,7 +68,17 @@ Pus the local data to the GIT hoster:
 
     git push -u origin master
 
+## Additional tips
+
+| Command | Description |
+|---|---|
+| git rev-list --count <branch-name> | Show the number of commits of a branch. Usually the command will be `git rev-list --count master`. |
+
 ## Github
 
 Github (https://github.com/) is a web service, which allow you to store your git repository on the internet. Thanks to 
 this service you can also share your work in such way that other can collaborate on your project.
+
+# Resources
+
+* https://opensource.com/article/20/10/advanced-git-tips
