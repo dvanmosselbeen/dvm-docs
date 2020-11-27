@@ -89,3 +89,4 @@ It is very common on a GNU/Linux system or in programming language the need to r
 * https://opensource.com/article/19/3/getting-started-vim
 * https://www.howtoforge.com/vim-basics
 * https://realpython.com/vim-and-python-a-match-made-in-heaven/
+* https://danielmiessler.com/study/vim/ - Probably the best vim tutorial.

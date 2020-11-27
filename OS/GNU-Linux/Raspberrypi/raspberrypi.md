@@ -73,7 +73,7 @@ There is also: https://www.balena.io/etcher/
 
 # Differences between Raspberry pi models
 
-* The case is not compatible with version 3.
+* The cases of the raspberry pi 3 is not compatible with version 4.
 
 # Things specific to Raspberry
 
@@ -177,7 +177,7 @@ See the dedicated [LAMP server with Raspberry PI OS](lamp-server-with-raspberry-
 
 As of writing this, august 2019, `Debian version 10` with the code name `Buster` is the current stable release.
 
-When i acquired the Raspberrypi with a kit, i got a `Noobs` SD card of 16 GB and installed `Raspbian`. At that time it was `Debian version 8` with code name `Jessie`. It isn't that wise to migrate a system by jumping over a release but it is doable.
+When i acquired the Raspberrypi Model 3B with a kit, i got a `Noobs` SD card of 16 GB and installed `Raspbian`. At that time it was `Debian version 8` with code name `Jessie`. It isn't that wise to migrate a system by jumping over a release but it is doable.
 
 There's not much to tell about this migration. Except that `apt-get` failed at some dependencies issues with `udev` and `systemd` (iirc). I had got a message on the end of the failing log that i should run `apt-get -f install`, which i did and didn't got any issues later on. Or at least, didn't discovered anything wrong. Both `udev` and `systemd` packages are still installed, so all seems fine to me.
 
@@ -217,16 +217,23 @@ Show your ip and mac address on the console:
 * Secure Raspberry PI OS default setup - https://raspberrytips.com/security-tips-raspberry-pi/
 * Check for backup system. See: https://raspberrytips.com/backup-raspberry-pi/
 * Install heat sink - https://raspberrytips.com/install-heat-sinks-raspberry-pi/
-* Try camera stuff - https://projects.raspberrypi.org/en/projects/getting-started-with-picamera and https://raspberrytips.com/install-camera-raspberry-pi/ and https://raspberrytips.com/raspberry-pi-camera-projects-ideas/, https://www.raspberrypi.org/documentation/hardware/camera/README.md, https://www.raspberrypi.org/documentation/raspbian/applications/camera.md
+* Try camera stuff - https://projects.raspberrypi.org/en/projects/getting-started-with-picamera and https://raspberrytips.com/install-camera-raspberry-pi/ and https://raspberrytips.com/raspberry-pi-camera-projects-ideas/, https://www.raspberrypi.org/documentation/hardware/camera/README.md, https://www.raspberrypi.org/documentation/raspbian/applications/camera.md https://github.com/ethanjli/picamera-mqtt
 * Check to install a VPN server - https://raspberrytips.com/install-openvpn-raspberry-pi/
 * Samba file server - 
 * Hacking wifi - https://raspberrytips.com/hacking-wifi-raspberry-pi/
 * Fail2ban - https://raspberrytips.com/install-fail2ban-raspberry-pi/
 * Use Kali on the Pi - https://raspberrytips.com/use-kali-linux-raspberry-pi/
 * Crypto mine - https://raspberrytips.com/mine-monero-raspberry-pi/
+* Facial recognition - https://www.tomshardware.com/how-to/raspberry-pi-facial-recognition
+* Overclock - Check in `/boot/config.txt` and adjust to `over_voltage=2`, `arm_freq=1750`. Only to be done if it's cooled.
+* Check about Kubernetes - https://opensource.com/article/20/8/kubernetes-raspberry-pi
+* https://raspberrytips.com/raspberry-pi-projects-for-home/
 
 # Resources
 
-* https://www.raspberrypi.org - The official website of the Raspberry PI project.
-* https://www.raspberrypi.org/forums/
-* https://raspberrytips.com - Tons of articles with tips and trips for raspberry pi.
+| Link | Description |
+|---|---|
+| https://www.raspberrypi.org | The official website of the Raspberry PI project. |
+| https://www.raspberrypi.org/forums/ | The official forum. |
+| https://raspberrytips.com | Tons of articles with tips and trips for raspberry pi. |
+| https://projects.raspberrypi.org | Various projects with their description and detailed instructions. |

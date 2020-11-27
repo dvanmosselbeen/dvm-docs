@@ -27,7 +27,7 @@ lang: en
 
 A `VPN`, more specifically, a `Virtual Private Network` is a direct connection to another network. Simple like this is. By default there's nothing secure on this, but you make use of some `secure` methods to encrypt all data transfer in that private connection to that other network.
 
-**_But what is this usefull for?_**
+**_But what is this useful for?_**
 
 This allow to access a remote network. As well as for enterprises as for home use. 
 

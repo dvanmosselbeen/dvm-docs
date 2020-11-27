@@ -255,8 +255,19 @@ Update about screen resolution & `/dev/net/tun` issue. After some time (30/10/20
     ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such device (errno=19)
     Exiting due to fatal error
 
+# Adjust the swap size
+
+It is very important to adjust the swap size as the default size of 100MB can give a lot of issues when doing resource intensive tasks. A to small size cal
+
+    nano /etc/dphys-swapfile
+
+And change the value of `CONF_SWAPSIZE` to 2GB for example:
+
+    CONF_SWAPSIZE=2048
+
 # Resources
 
 * https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/
 * https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/
 * https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/
+* https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb
