@@ -11,9 +11,9 @@ lang: en
 
 ## Introduction
 
-If we don\'t need a sophisticated client/server database system, no
-multiple clients access, `sqlite` is the thing. It\'s easy to use, easy
-to setup (zero configuration), it\'s not too sophisticated to use.
+If we don't need a sophisticated client/server database system, no
+multiple clients access, `sqlite` is the thing. It's easy to use, easy
+to setup (zero configuration), it's not too sophisticated to use.
 
 Ideal if you want to integrate a database system in your own
 application. There are several programming language that have some
@@ -26,7 +26,7 @@ we use capital for the commands.
 
 SQLite is available for different platforms. There is sqlite and
 sqlite3. Databases created with the later one will be not compatible
-with the oldersqlite version.
+with the older sqlite version.
 
 ## Installing SQLite on Debian GNU/Linux (and others)
 
@@ -58,22 +58,33 @@ source. Most likely like:
     # As root user
     make install
 
-## Installing SQLite on Microsoft Windows {#windows}
+## Installing SQLite on Microsoft Windows
+
+There are 2 different bundles, for X86 or 64 bit. Here we use the X86 as the download bundles provide one package with extra tools.
 
 Download the binary file and place it somewhere. Most likely in the
-**C:\\Program Files\\SQLite3\\** and add that path to the path variable.
+`C:\Program Files (x86)\sqlite3\` and add that path to the path variable.
 
+To be useful, it's recommended to add this path to the system PATH variable, so that you can access SQLite from anywhere.
 
-## Read the documentation {#checking-the-docs}
+For this, right click on `This Computer`, select properties and then `Advanced system settings`, then click on `Environment Variables...`.
+
+Then in the upper (only for the current user), or the lower part (System variables, for all users), select `Path` and then click edit. Then press `New` and fill in the path (`C:\Program Files (x86)\sqlite3\`). 
+
+*It's maybe more practical to use the all user system as described above.* 
+
+You should maybe restart the system so that the PATH variable is read again, or just reopen all the concerned apps (Windows explorer, shell etc).
+
+## Read the documentation
 
 Like we have installed the `sqlite3-doc` packages on my debian box.
-It\'s best that we first read the doc. The docs are located
+It's best that we first read the doc. The docs are located
 in`/usr/share/doc/sqlite3-doc/index.html`. You can find this out with
 `dpkg -L sqlite3-doc`.
 
-It\'s also good to look on the website of `sqlite`. Probably you get
+It's also good to look on the website of `sqlite`. Probably you get
 there up to date news about the product. Also are there are bit more
-informations than provided in the additional `sqlite3-doc` package.
+information than provided in the additional `sqlite3-doc` package.
 
 Get help:
 
