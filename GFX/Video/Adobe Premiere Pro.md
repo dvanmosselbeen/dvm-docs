@@ -3,7 +3,7 @@ title: Adobe Premiere Pro
 description: This article is dedicated to the Adobe Premiere Pro, a video editing program.
 created: 12-11-2020 13:00:00
 modified: 12-11-2020 13:00:00
-keywords: video, adobe, premiere pro
+keywords: video, videography, adobe, premiere pro
 lang: en
 -----
 
@@ -29,7 +29,7 @@ Adobe Premiere Pro is a video editing tool. It allows you to combine, edit video
 
 It's wise to create a folder structure to put in your different kind of files. In Adobe terminology, a folder is called a `bin`. It's also wise to add a number to the bin as this will help us to sort on number names instead of by the alphabet and mix up everything.
 
-* **01_Sequences** - To keep the most recent sequence.
+* **01_SEQUENCES** - To keep the most recent sequence.
   * **ARCHIVE** - The old, unused or previous sequences we don't use. Just to keep older stuff for in case of if we need to roll back.
 * **02_VIDEO** - For the video files. It's wise to create sub folder in this when using multiple camera files. But also to designate smartphone videos, b-roll, screencast. A & B cam are used with multiples cameras (with sounds) are used to record to same video/audio at the same time but from another view. For example a camera (A CAM) in front and B CAM the screencast. 
   * **A CAM** - 
