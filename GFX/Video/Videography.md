@@ -27,6 +27,7 @@ lang: en
 
 * Do not upload 60fps on YouTube, it's probably way overkill, takes twice as much as data for no reason. But shooting in higher fps and exporting it as 24/25/30 is benefical. Have room for slowering down parts.
 * 80% speed of 30fps is 24fps.
+* Clapboard - Used to make a sound peak, help to syncronise if multiples cameras record at the same time. But also for correct exposure and white balance. Plus other info like scene name, shot number etc.
 
 # Resources
 
