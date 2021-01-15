@@ -53,6 +53,18 @@ You can sync the audio by doing the magics of Adobe Premiere Pro. For this, sele
 
 For this, make sure that the audio of the different clips are synced. Then select the concerned video clips and right click and select Nest. Give a name to this, for example `Multicam`. Then right click on it and `Multi-Camera` > `Enable`. Now in the Monitor window, select that tool icon and there select `Multi-Camera`.
 
+# Interesting default Preset video transitions
+
+    Dissolve > Cross Dissolve
+    Dissolve > Dip to Black
+    Dissolve > Dip to White
+    Dissolve > Film Dissolve
+    Immensive Video > VR Mobius Zoom
+    Slide > Push
+    Slide > Slide
+    Slide > Whip
+    Wipe > Wipe
+
 # Keyboard shortcuts
 
 | Keyboard key | Description |
