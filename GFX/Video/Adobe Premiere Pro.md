@@ -71,7 +71,12 @@ For this, make sure that the audio of the different clips are synced. Then selec
 |---|---|
 | i | Mark the in key |
 | o | Mark the out key |
-| SHIFT + C | In the timeline, to gut all tracks, instead of only the active track. |
+| SHIFT + C | In the timeline, to cut all tracks, instead of only the active track. |
+| CTRL + D | Apply default transition on selected clips. Or by being in between 2 clips. |
+| q | In the timeline: Ripple delete what's before the Playhead (blue bar) of the selected clip. |
+| w | In the timeline: Ripple delete what's after the Playhead (blue bar) of the selected clip. |
+|SHIFT + Scroll Wheel | In Timeline, scroll horizontally instead of the default vertically. |
+| ALT + Scroll Wheel | In Timeline, zoom in where the Playhead is|
 
 | Combo | Description |
 |---|---|
