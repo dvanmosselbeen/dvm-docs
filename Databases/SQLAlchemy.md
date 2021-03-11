@@ -35,7 +35,7 @@ Example:
     class Wiki(DeclarativeBase):
         __tablename__ = 'wikis'
         id = Column(Integer, primary_key=True)
-        pagename=Columnt(Text, unique=True)
+        pagename=Column(Text, unique=True)
         data = Column(Text)
         def __init(self, pagename, data):
             self.pagename = pagename
