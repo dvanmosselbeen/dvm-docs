@@ -17,6 +17,7 @@ lang: en
     * [The Python env (virtual environment)](#the-python-env-virtual-environment)
     * [Installing additional modules](#installing-additional-python-modules)
     * [Interesting Python modules](#interesting-python-modules)
+* [The Zen of Python](#the-zen-of-python)
 * [Tools](#tools)
     * [IDE's](#ides)
         * [PyCharm](#pycharm)
@@ -24,6 +25,7 @@ lang: en
         * [Vim](#vim)
     * [Python tools](#python-tools)
         * [ipython](#ipython)
+* [Resources](#resources)
 
 # Introduction
 
@@ -120,6 +122,16 @@ There are different methods to install aditional modules. One of these methods i
 * Django - Web framework
 * ...
 
+# The Zen of Python
+
+Python has some particular philosophy. Try this in `ipython`:
+
+```
+import this
+```
+
+See the PEP20 for more information: https://www.python.org/dev/peps/pep-0020/
+
 # Tools
 
 There's tons of tools available for Python.
@@ -150,3 +162,7 @@ Vim has some plugins to help when witting Python code
 ### ipython
 
 ipython is an enhanced shell for Python which has autocomplete features.
+
+# Resources
+
+* https://www.askpython.com/
