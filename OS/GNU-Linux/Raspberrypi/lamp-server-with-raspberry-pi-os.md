@@ -54,6 +54,18 @@ PhpMyAdmin is a web interface to manage the mysql database. This is a must have 
 
 You should now be able to use the phpmyadmin web interface and log in with you new user: http://192.168.0.20/phpmyadmin/
 
+I have had some isssues with PHPMyAdmin, facing an annoying bug which gave me some errors on the PHPMyAdmin web interface:
+
+    Warning in ./libraries/sql.lib.php#613 count(): Parameter must be an array or an object that implements Countable
+
+Found some information and some fixe to it. See: https://stackoverflow.com/questions/48001569/phpmyadmin-count-parameter-must-be-an-array-or-an-object-that-implements-co
+
+So, to fix this issue partially:
+
+    sudo sed -i "s/|\s*\((count(\$analyzed_sql_results\['select_expr'\]\)/| (\1)/g" /usr/share/phpmyadmin/libraries/sql.lib.php
+
+There are still some errors here and there on the PHPMyAdmin webinterface. If i understood it correctly, it's an know bug. Could be fixed by manually upgrade PHPMyAdmin or downgrade the PHP version.
+
 ## Extra tools
 
     awffull - web server log analysis program

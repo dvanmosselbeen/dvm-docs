@@ -46,6 +46,7 @@ Restart the `apache2` server:
 
 | Application | Description |
 |---|---|
+| apachetop | Realtime Apache monitoring tool |
 | awffull | web server log analysis program |
 | awstats | powerful and featureful web server log analyzer |
 | webalizer | web server log analysis program |

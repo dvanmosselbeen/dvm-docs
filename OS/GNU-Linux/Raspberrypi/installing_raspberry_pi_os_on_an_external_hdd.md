@@ -21,14 +21,18 @@ See that you have a fresh and full installation of the Raspberry Pi. Not a Noobs
 Start with:
 
     sudo apt-get update
+    sudo apt-get upgrade   # very important as older version fail !
 
 Then:
 
+    sudo rpi-update
+    
+On my first Raspberry Pi 4 i had to use the next branch like the following command. However, as of today 06/11/2020 it feels if i use the next branch.
+    
     sudo BRANCH=next rpi-update
     
 This will show:
 
-    pi@raspberrypim4:~ $ sudo BRANCH=next rpi-update
      *** Raspberry Pi firmware updater by Hexxeh, enhanced by AndrewS and Dom
      *** Performing self-update
      *** Relaunching after update
@@ -81,7 +85,7 @@ Finally, reboot now:
 
     sudo reboot
     
-Once rebooted (the following command does not give me the expected results on Model 4B):
+Once rebooted (the following command does not give me the expected results on Model 4B as i get `17:000008b0`):
 
     vcgencmd otp_dump | grep 17:
 
@@ -103,7 +107,7 @@ Which result in:
     ├─mmcblk0p1 179:1    0  256M  0 part /boot
     └─mmcblk0p2 179:2    0 28.7G  0 part /
 
-We see that sda1 and sda2 is mounted: so we unmount it.
+We see that `sda1` and `sda2` is mounted, so we need to unmount it.
 
     sudo umount /dev/sda1
     sudo umount /dev/sda2
@@ -134,16 +138,31 @@ Create the different partitions. Note that we don't use the full HDD capacity. T
 
     mkpart primary fat32 0% 100M
     mkpart primary ext4 100M 100G
+
+Then show the information of our changes:  
+    
     print
 
-Use `CTRL+C` to exit this.
+Which result in:
+
+    Model: TOSHIBA External USB 3.0 (scsi)
+    Disk /dev/sda: 2000GB
+    Sector size (logical/physical): 512B/512B
+    Partition Table: msdos
+    Disk Flags:
+    
+    Number  Start   End     Size    Type     File system  Flags
+     1      1049kB  99.6MB  98.6MB  primary  fat32        lba
+     2      99.6MB  100GB   99.9GB  primary  ext4         lba
+
+Use `CTRL+C` to exit this or type in `quit`.
 
 Create the Filesystems:
 
     sudo mkfs.vfat -n BOOT -F 32 /dev/sda1
     sudo mkfs.ext4 /dev/sda2
 
-Now mount the new partitions and copy files:
+Now mount the new partitions and copy files of the micro SD card to the external HDD:
 
     sudo mkdir /mnt/target
     sudo mount /dev/sda2 /mnt/target/
@@ -151,6 +170,8 @@ Now mount the new partitions and copy files:
     sudo mount /dev/sda1 /mnt/target/boot/
     sudo apt-get update; sudo apt-get install rsync
     sudo rsync -ax --progress / /boot /mnt/target
+
+Copying the files will take a few minutes. Not so long actually.
 
 Then:
 
@@ -229,8 +250,24 @@ Unmount everything and reboot
 Now this working like expected and able to boot without a micro SD card. 
 Note that the screen resolution seems to be different since i'm booting from the external HDD. Previously it was in 4K resolution i think and now I have some big black borders on the edges. And looking too `Start Menu` > `Preferences` > `Screen Configurator` > `Screen Resolution`. And there in this new Windows, `Configure` > `Screen` > `Default` > `Resolution`.
 
+Update about screen resolution & `/dev/net/tun` issue. After some time (30/10/2020), i got some kernel and firmware related updates (`sudo apt-get update; sudo apt-get upgrade`) which fixed the screen resolution and the issue i had to run openvpn (system did not wanted to create `/dev/net/tun`). 
+
+    ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such device (errno=19)
+    Exiting due to fatal error
+
+# Adjust the swap size
+
+It is very important to adjust the swap size as the default size of 100MB can give a lot of issues when doing resource intensive tasks. A to small size cal
+
+    nano /etc/dphys-swapfile
+
+And change the value of `CONF_SWAPSIZE` to 2GB for example:
+
+    CONF_SWAPSIZE=2048
+
 # Resources
 
 * https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/
 * https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/
 * https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/
+* https://www.tomshardware.com/how-to/boot-raspberry-pi-4-usb

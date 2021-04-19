@@ -41,7 +41,8 @@ For the FlightGear irc server=
     /SERVER ADD -auto -network FlightGear irc.flightgear.org
     /CHANNEL ADD -auto #flightgear FlightGear
     /CHANNEL ADD -auto #flightgear-nl FlightGear
-    /NETWORK ADD -autosendcmd "/^msg nickserv ident FooBar4321;wait 2000" FlightGear
+    /CHANNEL ADD -auto #fg_cantene FlightGear
+    /NETWORK ADD -autosendcmd "/^msg nickserv identify FooBar4321;wait 2000" FlightGear
     /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password FooBar4321 -sasl_mechanism PLAIN FlightGear
     
 For all other:
@@ -50,7 +51,7 @@ For all other:
     /CHANNEL ADD -auto #debian Freenode
     /CHANNEL ADD -auto #python Freenode
     
-    /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" Freenode
+    /NETWORK ADD -autosendcmd "/^msg nickserv identify FooBar4321;wait 2000" Freenode
     
 Password:
     
@@ -58,7 +59,7 @@ Password:
 
 
     /HILIGHT nick
-/SET hilight_nick_matches_everywhere ON
+    /SET hilight_nick_matches_everywhere ON
 
 # Usage
 

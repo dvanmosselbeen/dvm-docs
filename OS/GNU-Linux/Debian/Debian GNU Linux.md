@@ -11,6 +11,8 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
+[Table-Of-Content]
+
 # Table Of contents
 
 1. [Introduction](#introduction)
@@ -19,7 +21,17 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 1. [The package manager](#the-package-manager)
     * [apt](#apt)
     * [aptitude](#aptitude)
+1. [Admin Commands](#admin-commands)
 1. [Interesting apps](#interesting-packages)
+1. [Server Tools](#server-tools)
+   * [Web Server & Database](#web-server--database)
+     * [Apache](#apache)
+       * [Installing Apache](#installing-apache)
+     * [MySQL](#mysql)
+        * [Installing MySQL](#installing-mysql)
+     * [PHPMyAdmin](#phpmyadmin)
+* [Getting more help](#getting-more-help)
+* [Resources](#resources)
 
 # Introduction
 
@@ -112,11 +124,13 @@ A few very interesting package which should be almost installed on every system
 |---|---|
 | aptitude | Package manager |
 | apt-listchanges | List the changes... |
-| apt-listbugs | ... |
+| apt-listbugs | tool which lists critical bugs before each APT installation |
+| apt-reportbug | reports bugs in the Debian distribution |
 | screen | See the dedicated [screen page](../Tools/screen.md).|
-| htop | Process monitoring tool. |
+| htop | interactive processes viewer |
+| iftop | Observe the flows on your network interfaces |
 | mc | Midnight Commander - a powerful file manager |
-| tightvncserver | ... |
+| tightvncserver | virtual network computing server software |
 | irssi | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
 | fail2ban | Some security tools that watch the (abusive) login attempts and take action. |
 | xclip | command line interface to X selections |
@@ -125,6 +139,10 @@ A few very interesting package which should be almost installed on every system
 | mutt | text-based mailreader supporting MIME, GPG, PGP and threading |
 | mydumper | High-performance MySQL backup tool |
 | sqlitebrowser | GUI editor for SQLite databases |
+| vim | Vi IMproved - enhanced vi editor |
+| vim-gtk3 | Vi IMproved - enhanced vi editor - with GTK3 GUI |
+| vim-python-jedi | autocompletion tool for Python - VIM addon files |
+| unp | unpack (almost) everything with one command |
 
 # Server tools
 
@@ -146,7 +164,13 @@ To install Apache:
 
     aptitude install apache
 
-### Installing MySQL
+### MySQL
+
+...
+
+#### Installing MySQL
+
+...
 
 ### PHPMyAdmin
 
@@ -170,8 +194,9 @@ Before adding a new user, look on how you should do:
 | Website | Description |
 |---|---|
 | www.debian.org | The official website of the Debian GNU/Linux operating system. |
+| https://wiki.debian.org | The official wiki of Debian. |
 | https://debian-handbook.info | The famous handbook for Debian. |
-| http://www.debianhelp.co.uk/ |  |
+| http://www.debianhelp.co.uk/ | Some website with a lot of tutorials. |
 | www.debiantutorials.com | Website with tons of how to's. |
 | www.debiantalk.wordpress.com | Some blog with topics about Debian. |
 | https://debian.chezrami.net | Some French website with articles in french. |
