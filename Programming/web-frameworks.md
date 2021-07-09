@@ -48,8 +48,9 @@ See also [http://wiki.python.org/moin/WebFrameworks](http://wiki.python.org/moin
 
 * CakePHP
 * CodeIgniter
-* Drupal
+* Drupal (See my dedicated page [drupal](drupal.md))
 * Joomla
+* Wordpress (See my dedicated page [wordpress](wordpress.md))
 
 ## Other
 

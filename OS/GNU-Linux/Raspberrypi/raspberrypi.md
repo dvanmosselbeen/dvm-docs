@@ -45,7 +45,7 @@ Raspberry isn't for the average user at all. With this i mean the average Micros
 
 That said, if you are new to GNU/Linux, Welcome ! But i really don't think that Raspberry is the ideal step to take if you want to learn GNU/Linux. My personal opinion would say you to install Virtual Box and play with virtual machines instead. You should realise that a Raspberry is really tin in all aspects. So, to avoid that you blame that GU/Linux is slow, it's better that you move on to somethings more serious before digging into complex stuff. However, if you are patient, realist and have a fever to learn, go go go !!!
 
-As Debian is installed (on that micro SD card), using Raspberry is like using Debian. So in this document we will avoid to give general Debian information, rather point out that there's a [dedicated Debian documentation page](../Debian/README.md) for that. Here we will point out the things specific to the Raspberry "computer".
+As Debian is installed (on that micro SD card), using Raspberry is like using Debian. So in this document we will avoid to give general Debian information, rather point out that there's a [dedicated Debian documentation page](../Debian/Debian%20GNU%20Linux.md) for that. Here we will point out the things specific to the Raspberry "computer".
 
 # Installing an operating system on Raspberry pi
 
@@ -144,7 +144,7 @@ On a fresh install on a Model 4, i passed from `8.6G` to `6.7G`.
 # Recommended software and setup
 
 As Raspberry PI OS is based on Debian, you will find all the classic programs. So you could also take a look to the
-dedicated [Debian](../Debian/README.md) page.
+dedicated [Debian](../Debian/Debian%20GNU%20Linux.md) page.
 
 | Application | Description |
 |---|---|
