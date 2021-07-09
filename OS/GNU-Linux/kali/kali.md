@@ -36,5 +36,11 @@ To disable it again
 
 ACTUALLY it's this one:
 
+As when i followed the procedure indicated here: https://kali.training/topic/configuring-services/ got the error:
+
+    rescue-ssh.target is a disabled or a static unit, not starting it.
+
+Actually it should be enabled this way:
+
     systemctl enable ssh.socket
     systemctl start ssh.socket
