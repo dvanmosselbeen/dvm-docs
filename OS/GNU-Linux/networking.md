@@ -1,4 +1,5 @@
 -----
+
 title: Networking
 description: This article is dedicated to computer networks.
 created: 28-11-2007 00:00:00
@@ -6,6 +7,7 @@ modified: 28-11-2007 00:00:00
 keywords: debian, gnu, linux, operating, system, admin, network, wifi, lan, 
 security, hacking, wireless
 lang: en
+
 -----
 
 # Table of Contents
