@@ -11,8 +11,7 @@
 
 # Table of Contents
 
- * [Commands](#commands)
-   * [Change the mac address of a network device](#change-the-mac-address-of-a-network-device)
+* [Change the mac address of a network device](#change-the-mac-address-of-a-network-device)
  * [Wi-Fi Monitor mode requirements](#wi-fi-monitor-mode-requirements)
    * [Know working chipsets with Kali](#know-working-chipsets-with-kali)
  * [Wi-Fi Hacking](#wi-fi-hacking)
