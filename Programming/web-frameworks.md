@@ -1,10 +1,12 @@
 -----
-title: Web Frameworks
-description: This page list references to different web frameworks.
-created: 26-11-2010 00:00:00
-modified: 26-11-2010 00:00:00
-keywords: web, framework, python, php, templates, webdev, development, programming, website, webserver
-lang: en
+
+* title: Web Frameworks
+* description: This page list references to different web frameworks.
+* created: 26-11-2010 00:00:00
+* modified: 26-11-2010 00:00:00
+* keywords: web, framework, python, php, templates, webdev, development, programming, website, webserver
+* lang: en
+
 -----
 
 # Web frameworks
