@@ -8,6 +8,26 @@ security, hacking, wireless
 lang: en
 -----
 
+# Table of Contents
+
+ * [Commands](#commands)
+   * [Change the mac address of a network device](#change-the-mac-address-of-a-network-device)
+ * [Wi-Fi Monitor mode requirements](#wi-fi-monitor-mode-requirements)
+   * [Know working chipsets with Kali](#know-working-chipsets-with-kali)
+ * [Wi-Fi Hacking](#wi-fi-hacking)
+   * [Change the Wi-Fi mode from managed to monitor](#change-the-wi-fi-mode-from-managed-to-monitor)
+   * [Sniffing Wi-Fi packets](#sniffing-wi-fi-packets)
+   * [Write data to a file](#write-data-to-a-file)
+   * [Targeted Packet Sniffing](#targeted-packet-sniffing)
+   * [Deauthentication Attack](#deauthentication-attack)
+ * [WEP Cracking](#wep-cracking)   
+   * [Arp attack](#arp-attack) 
+ * [WPA and WPA2 Cracking](#wpa--wpa2-attack)
+   * [WPS attack](#wps-attack)
+   * [Creating a wordlist](#creating-a-wordlist)
+   * [WPA & WPA2 attack](#wpa--wpa2-attack)
+   * [Crack the WPA password based on the wordlist](#crack-the-wpa-password-based-on-the-wordlist)
+ * [Discover the network devices](#discover-the-network-devices)
 
 # Commands
 
@@ -53,7 +73,11 @@ See also:
     from Kali 2007.1 and the chipset is less reliable. So sometimes it 
     disconnects or attacks fails, and you need to restart your attack.
 
-# Wifi
+See also:
+
+ * https://kennyvn.com/best-wireless-adapters-kali-linux/
+
+# Wi-Fi Hacking
 
 ## Change the Wi-Fi mode from managed to monitor
 
@@ -76,7 +100,7 @@ Change the mode:
 
 The wireless interface will be called `mon0` or something similar.
 
-# Sniffing Wi-Fi packets
+## Sniffing Wi-Fi packets
 
 By sniffing I mean copying all Wi-Fi packages that are in range.
 
@@ -126,7 +150,7 @@ for example:
 
     airodump-ng --bssid F8:23:B2:B9:50:A8 --channel 2 --write my_captured_data mon0
 
-# De Authentication Attack
+## Deauthentication Attack
 
 To disconnect any client from any network.
 
@@ -340,4 +364,13 @@ There are also methods to speed up the cracking process:
    `aircrack-ng` so that you don't need to create a huge word list file and 
    storage on your computer.
  * You can also use methods so that you can pause the process.
+
+# Discover the network devices
+
+To discover all devices connected to a network, we can make use of the  
+`netdiscover` utility. Once run, let it run so it will continue to catch and 
+discover interesting hosts that join the netwrok.
+
+    netdiscover -r 192.168.0.1/24
+
 
