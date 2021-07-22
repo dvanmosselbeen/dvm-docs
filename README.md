@@ -29,8 +29,8 @@ should contain the following:
 
     -----
 
-    title: <The title of the file>
-    description: <A description of the file>
+    * title: <The title of the file>
+    * description: <A description of the file>
     * created: <Day-Month-Year HH:MM:SS> (ex: 28-11-2007 13:36:29)
     * modified: <Day-Month-Year HH:MM:SS> (ex: 28-11-2007 13:36:29)
     * keywords: <Foo>, <Bar>, <Baz>
