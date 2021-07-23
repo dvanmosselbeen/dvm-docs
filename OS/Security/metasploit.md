@@ -38,6 +38,17 @@ network, you can do an `Intense scan` on the IP of that `Metasploitable`
 virtual machine. In my case, that `0Metasploitable 2.0` virtual machine has the 
 ip address `10.0.2.6`.
 
+We will for example see that vsftpd 2.3.4 is installed on the target machine:
+
+    21/tcp   open  ftp         vsftpd 2.3.4
+
+From this point, we should search on Google for each application, and it's 
+version number to find out if there are known vulnerabilities.
+
+So doing a little Google search about `vsftpd 2.3.4 vulnerabilities` will 
+give us for example this website: https://www.rapid7.com/db/modules/exploit/unix/ftp/vsftpd_234_backdoor/ which give metasploit 
+instructions to gain access to this computer.
+
 So to start with, run Metasploit with as `root` user:
 
     msfconsole
