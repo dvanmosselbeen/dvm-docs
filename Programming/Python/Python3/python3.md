@@ -115,6 +115,7 @@ There are different methods to install aditional modules. One of these methods i
 
     pip install ipython
 
+
 ## Interesting Python modules
 
 * SQLAlchemy - SQL database
@@ -131,6 +132,24 @@ import this
 ```
 
 See the PEP20 for more information: https://www.python.org/dev/peps/pep-0020/
+
+# Python sample code
+
+## Variables
+
+```python
+myInteger = 36
+myString = "Foo"
+myFloat = 1.2
+```
+
+## Functions
+
+```python
+def myFunction()
+    """My function description"""
+    print("This is the output of my function")
+```
 
 # Tools
 
@@ -154,8 +173,7 @@ Eclipse is a general purpose IDE writen in Java. Pydev is some extra Python addo
 
 ### Vim
 
-Vim has some plugins to help when witting Python code
-...
+Vim has some plugins to help when witting Python code...
 
 ## Python tools
 
