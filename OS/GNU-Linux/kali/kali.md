@@ -11,6 +11,10 @@
 
 # Introduction
 
+Kali is a distribution made for penetration and security testing.
+
+See also all the documentation related to Debian GNU/Linux as Kali is based  on this distribution.
+
 ## Services
 
 ### SSH server
@@ -19,8 +23,7 @@ Eventually reconfigure the server
 
     dpkg-reconfirgure openssh-server
 
-By default, the openssh-server is installed but is not launched 
-automatically at boot time.
+By default, the openssh-server is installed but is not launched  automatically at boot time.
 
     # Start the server
     systemctl start ssh.service
@@ -38,7 +41,7 @@ To disable it again
 
 ACTUALLY it's this one:
 
-As when i followed the procedure indicated here: https://kali.training/topic/configuring-services/ got the error:
+As when i followed the procedure indicated here: https://kali training/topic/configuring-services/ got the error:
 
     rescue-ssh.target is a disabled or a static unit, not starting it.
 
