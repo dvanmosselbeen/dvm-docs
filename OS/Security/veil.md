@@ -46,6 +46,10 @@ Select the desired payload:
 
     use 15
 
+Show the options we should set:
+
+    show options
+
 Set the desired options:
 
     set LHOST 10.0.2.4

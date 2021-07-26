@@ -28,6 +28,10 @@
 * `bettercaps` - Like `arpspoof` but then more advanced. A framework with 
   more options.
 
+# Non classified
+
+    rout -n
+
 # Discover the network devices
 
 To discover all devices connected to a network, we can make use of the  
