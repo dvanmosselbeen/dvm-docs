@@ -1,10 +1,12 @@
 -----
-title: Python 3
-description: This article is dedicated to Python 3.
-created: 00-00-2020 00:00:00
-modified: 00-00-2020 00:00:00
-keywords: python, programming, tools
-lang: en
+
+* title: Python 3
+* description: This article is dedicated to Python 3.
+* created: 00-00-2020 00:00:00
+* modified: 00-00-2020 00:00:00
+* keywords: python, programming, tools
+* lang: en
+
 -----
 
 # Table Of Contents
