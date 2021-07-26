@@ -1,29 +1,30 @@
 -----
-title: Debian
-description: This article is dedicated to Debian GNU / Linux - The universal operating system.
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: debian, gnu, linux, operating, system, admin
-lang: en
+
+* title: Debian
+* description: This article is dedicated to Debian GNU / Linux - The universal operating system.
+* created: 28-11-2007 00:00:00
+* modified: 28-11-2007 00:00:00
+* keywords: debian, gnu, linux, operating, system, admin
+* lang: en
+
 -----
 
 This document will list a few notes about the Debian GNU/Linux operating system. It is mainly a draft document containing some notes or links to resources concerning Debian. This document won't detail everything as there are already a lot of documentation available online.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
-[Table-Of-Content]
-
 # Table Of contents
 
-1. [Introduction](#introduction)
-1. [General information](#general-information)
+* [Introduction](#introduction)
+* [General information](#general-information)
     * [Releases (Versions)](#releases-versions)
-1. [The package manager](#the-package-manager)
+* [The package manager](#the-package-manager)
     * [apt](#apt)
     * [aptitude](#aptitude)
-1. [Admin Commands](#admin-commands)
-1. [Interesting apps](#interesting-packages)
-1. [Server Tools](#server-tools)
+* [User Management](./user_management.md)
+* [Admin Commands](#admin-commands)
+* [Interesting apps](#interesting-packages)
+* [Server Tools](#server-tools)
    * [Web Server & Database](#web-server--database)
      * [Apache](#apache)
        * [Installing Apache](#installing-apache)
