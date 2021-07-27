@@ -47,7 +47,7 @@ On Debian, by default members of the group sudo are granted with sudo access.
 
 If you want the newly created user to have administrative rights, add the user to the sudo group :
 
-    usermod -aG sudo <USERNAME>
+    usermod -aG <GROYPNAME> <USERNAME>
 
 # Resources
 

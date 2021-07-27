@@ -57,3 +57,8 @@ Netstat
 ## Force the group policy
 
     gpupdate /force
+
+# Ohter
+
+* `net` - primarily used to manage network resources
+
