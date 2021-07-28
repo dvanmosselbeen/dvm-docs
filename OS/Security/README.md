@@ -3,10 +3,13 @@ Microsoft Windows as well as for GNU/Linux.
 
 # Pages
 
+* [website_pentesting/README](./website_pentesting/README.md)
+* [metasploit](./metasploit.md)
 * [networking](./networking.md)
-* [metasploit](./metasploit.md)  
-* [Wi-Fi Cracking](./Wi-Fi%20Hacking.md)
+* [nmap](./nmap.md)
+* [TryHackMe_Path](./TryHackMe_Path.md)
 * [veil](./veil.md) 
+* [Wi-Fi Cracking](./Wi-Fi%20Hacking.md)
 * [wireshark](./wireshark.md)
 
 # Tools and their usage
