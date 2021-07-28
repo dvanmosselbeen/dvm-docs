@@ -1,8 +1,23 @@
+-----
+
+* title: TryHackMe Path
+* description: This article is dedicated to TryHackMe Path.
+* created: 27-07-2021 19:55:00
+* modified: 27-07-2021 19:55:00
+* keywords: kali, gnu, linux, operating, system, admin, network, lan, security, hacking, TryHackMe
+* lang: en
+
+-----
+
+# Introduction
+
+This TryHackMe Path is a Free path that you can try out on TryHackMe.com However, i recommend you to take a subscription to this awesome website if you're interested into these topics. These free `rooms` should give you an idea if Hacking is something for your
+
 # Level 1 - Intro
-- [ ] OpenVPN https://tryhackme.com/room/openvpn
+- [X] OpenVPN https://tryhackme.com/room/openvpn
 - [X] Welcome https://tryhackme.com/jr/welcome
-- [ ] Intro to Researching https://tryhackme.com/room/introtoresearch
-- [ ] The Hacker Methodology https://tryhackme.com/room/hackermethodology
+- [X] Intro to Researching https://tryhackme.com/room/introtoresearch
+- [X] The Hacker Methodology https://tryhackme.com/room/hackermethodology
 - [X] Learn Linux https://tryhackme.com/module/linux-fundamentals
 - [ ] Crash Course Pentesting https://tryhackme.com/room/ccpentesting
 

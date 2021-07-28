@@ -1,19 +1,16 @@
------
 
- * title: Kali
- * description: This is dedicated to Kali.
- * created: 09-07-2021 00:00:00
- * modified: 09-07-2021 00:00:00
- * keywords: kali, security, network, linux
- * lang: en
-
------
 
 # Introduction
 
 Kali is a distribution made for penetration and security testing.
 
 See also all the documentation related to Debian GNU/Linux as Kali is based  on this distribution.
+
+# Interesting tools
+
+Some are installed by default, other not, here is just a list of nice and interesting tools. Making an already installed and another not installed will be painful to maintain in the long run. So here's a mix up.
+
+* `steghide` - steganography hiding tool
 
 ## Services
 
