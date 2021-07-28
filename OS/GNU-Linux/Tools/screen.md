@@ -59,6 +59,13 @@ id. For example i got this result with `screen -list`:
 
 Then you can re attach to this session with the command `screen -r 3412`.
 
+# Putty and Screen
+
+When using `screen` in `putty`, you probably want to adjust or append the following to `~/.screenrc` if you want to be able to scroll back correctly. Without this adjustment, it's just a real pain to scroll back with `shift+PGUP (PGDW)`. You should also look to the setting of `putty` in `Window` and adjust the `Lines of scrollback` from 200 too 2000. 
+
+    termcapinfo xterm* ti@:te@
+    TERM=xterm-256color
+
 # Resources
 
 * https://linuxize.com/post/how-to-use-linux-screen/
