@@ -18,15 +18,20 @@ Some are installed by default, other not, here is just a list of nice and intere
 
 Eventually reconfigure the server
 
-    dpkg-reconfirgure openssh-server
+```commandline
+dpkg-reconfirgure openssh-server
+```    
+
 
 By default, the openssh-server is installed but is not launched  automatically at boot time.
 
-    # Start the server
-    systemctl start ssh.service
+```commandline
+# Start the server
+systemctl start ssh.service
     
-    # Stop the server
-    systemctl stop ssh.service
+# Stop the server
+systemctl stop ssh.service
+```
 
 To instead permanently enable the SSH service to start whenever the system is booted use:
 
