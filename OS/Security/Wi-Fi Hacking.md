@@ -27,6 +27,26 @@
    * [WPA & WPA2 attack](#wpa--wpa2-attack)
    * [Crack the WPA password based on the wordlist](#crack-the-wpa-password-based-on-the-wordlist)
 
+# aircrack-ng suite
+
+The aircrack-ng suite consists of:
+
+* aircrack-ng
+* airdecap-ng
+* airmon-ng
+* aireplay-ng
+* airodump-ng
+* airtun-ng
+* packetforge-ng
+* airbase-ng
+* airdecloak-ng
+* airolib-ng
+* airserv-ng
+* buddy-ng
+* ivstools
+* easside-ng
+* tkiptun-ng
+* wesside-ng
 
 # Change the mac address of a network device
 

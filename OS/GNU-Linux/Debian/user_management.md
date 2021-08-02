@@ -26,11 +26,11 @@ As root user:
     passwd: password updated successfully
     Changing the user information for itchy
     Enter the new value, or press ENTER for the default
-            Full Name []: Itchy
+            Full Name []: Itchy From Scratchy
             Room Number []: 36
             Work Phone []: 
             Home Phone []: 
-            Other []: I'm the mouse
+            Other []: I'm The Mouse
     Is the information correct? [Y/n] y
 
 # Deleting a user
@@ -47,7 +47,9 @@ On Debian, by default members of the group sudo are granted with sudo access.
 
 If you want the newly created user to have administrative rights, add the user to the sudo group :
 
-    usermod -aG <GROYPNAME> <USERNAME>
+    # Syntax is as following
+    usermod -aG <GROUPNAME> <USERNAME>
+    usermod -aG sudo <USERNAME>
 
 # Resources
 

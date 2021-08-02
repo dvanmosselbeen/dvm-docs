@@ -22,7 +22,9 @@
 
 # Quick cheat sheet
 
-Essentially borowed from the zenmap graphical user interface.
+Essentially borrowed from the zenmap graphical user interface.
+
+*NOTE that you get more information if running this with root priviledges.*
 
 * `nmap -T4 -A -v` - Intense Scan
 * `nmap -sS -sU -T4 -A -v` - Intense Scan plus UDP
@@ -34,6 +36,16 @@ Essentially borowed from the zenmap graphical user interface.
 * `nmap -sn --traceroute` - Quick traceroute
 * `nmap` - Regular scan
 * `nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)"` - Slow Comprehensive scan
+* `nmap -p- -A` - Scan ALL ports (above 1024 too) and get OS info
+
+You can also store scan results into a file, which is cool:
+
+````commandline
+mkdir ~/nmap
+nmap -sC -sV -oN nmap/initial 10.10.10.10
+````
+
+
 
 # Extra Tools
 

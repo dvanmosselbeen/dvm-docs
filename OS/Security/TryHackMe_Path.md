@@ -19,7 +19,7 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [X] Intro to Researching https://tryhackme.com/room/introtoresearch
 - [X] The Hacker Methodology https://tryhackme.com/room/hackermethodology
 - [X] Learn Linux https://tryhackme.com/module/linux-fundamentals
-- [ ] Crash Course Pentesting https://tryhackme.com/room/ccpentesting
+- [X] Crash Course Pentesting https://tryhackme.com/room/ccpentesting
 
 **Introductory CTFs to get your feet wet**
 
@@ -83,7 +83,7 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Overpass 2 https://tryhackme.com/room/overpass2hacked
 
 # Level 7 - PrivEsc
-- [ ] Sudo Security Bypass https://tryhackme.com/room/sudovulnsbypass
+- [X] Sudo Security Bypass https://tryhackme.com/room/sudovulnsbypass
 - [ ] Sudo Buffer Overflow https://tryhackme.com/room/sudovulnsbof
 - [ ] Windows Privesc Arena https://tryhackme.com/room/windowsprivescarena
 - [ ] Linux Privesc Arena https://tryhackme.com/room/linuxprivescarena

@@ -35,14 +35,39 @@ system, but honesty, it isn\'t on a Microsoft Windows box.
 
 ## Some applications
 
-There isn\'t that many of cool command line interface programs. Most of
+There isn't that many of cool command line interface programs. Most of
 the administration needs to be done throught graphical user interface.
 Which is ok to do for a basic user. But sometimes you just want to get a
 shell with all it\'s power. This for several reasons such as remote
 administration but especially for scripting purpose.
 
-Netstat
--------
+## icacls
+
+Tool to check files or folder permissions.
+
+![alt text](imgs/icacls_01.png "icacls Screenshot")
+
+Let's explain what those letters in parentheses mean as right now you might be confused.
+
+* `I` - permission inherited from the parent container
+* `F` - full access (full control)
+* `M` - Modify right/access 
+* `OI` - object inherit 
+* `IO` - inherit only 
+* `CI` - container inherit 
+* `RX` - read and execute 
+* `AD` - append data (add subdirectories)
+* WD - write data and add files
+
+You can use icacls to check permissions, set ownership of the folder, set, remove or deny permissions. An example would be setting the ownership of the folder to Users.
+
+![alt text](imgs/icacls_02.png "icacls Screenshot")
+
+To check if that applied you can right-click on the folder and select "Properties", go to the "Security" tab, and click on "Advanced". There you should be able to see that the owner is "Users".
+
+![alt text](imgs/icacls_03.png "icacls Screenshot")
+
+## Netstat
 
     netstat –a -b
 
@@ -58,7 +83,7 @@ Netstat
 
     gpupdate /force
 
-# Ohter
+## Ohter
 
 * `net` - primarily used to manage network resources
 
