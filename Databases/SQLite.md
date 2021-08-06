@@ -126,17 +126,21 @@ id          forname     name
 
 Create a file `query.sql` and put the following:
 
-    SELECT * FROM test;
+```sql
+SELECT * FROM test;
+```
 
 We now us 'external' query:
 
-    sqlite3 -init query.sql test.db .exit
-    Loading resources from query.sql
-    1|foo
-    2|bar
-    3|baz
-    4|xuu
-    5|buu
+```sql
+sqlite3 -init query.sql test.db .exit
+Loading resources from query.sql
+1|foo
+2|bar
+3|baz
+4|xuu
+5|buu
+```
 
 Fetch a particular row:
 
@@ -166,13 +170,13 @@ With integer primary key, we make an auto increment way. Useful so that we later
 
 Here's an example:
 
-```commandline
+```sql
 sqlite> INSERT INTO contacts VALUES (NULL, 'foo', 12);
 ```
 
 We now use another style:
 
-```commandline
+```sql
 sqlite> INSERT INTO contacts VALUES (
     NULL, 
     'bar', 
@@ -370,8 +374,8 @@ view        schema      schema      0      CREATE VIEW schema AS SELECT \
 To see the index:
 
 ```sql
-    sqlite> .indice contacts
-    test_idx
+sqlite> .indice contacts
+test_idx
 ```
 
 Term The SQL definition or data definition language (DDL) for a table or view can be obtained using `.shema [table name]`. If no table name is provided, the SQL definition of all database objects (tables,indexes,views and indexes) are returned
@@ -453,21 +457,21 @@ When developing a database layout, it will be good to create a file that contain
 Create some file `contacts_tables.sql` and add the following:
 
 ```sql
-    CREATE TABLE contacts (
-        id integer primary key,
-        name text,
-        age integer
-    );
+CREATE TABLE contacts (
+    id integer primary key,
+    name text,
+    age integer
+);
 ```
 
 Create another file called `contacts_data.sql` and add the following:
 
 ```sql
-    INSERT INTO contacts VALUES (NULL, 'foo', 12);
-    INSERT INTO contacts VALUES (NULL, 'bar', 13);
-    INSERT INTO contacts VALUES (NULL, 'baz', 14);
-    INSERT INTO contacts VALUES (NULL, 'xuu', 15);
-    INSERT INTO contacts VALUES (NULL, 'buu', 16);
+INSERT INTO contacts VALUES (NULL, 'foo', 12);
+INSERT INTO contacts VALUES (NULL, 'bar', 13);
+INSERT INTO contacts VALUES (NULL, 'baz', 14);
+INSERT INTO contacts VALUES (NULL, 'xuu', 15);
+INSERT INTO contacts VALUES (NULL, 'buu', 16);
 ```
 
 Then import it like note in the `importing` chapter.
@@ -487,28 +491,28 @@ sqlite> select * from contacts where value like '%oo%';
 ## Date and time commands
 
 ```sql
-    sqlite> select datetime('now','localtime','+1.5 hours','-10 minutes');
-    2008-01-23 02:36:58
+sqlite> select datetime('now','localtime','+1.5 hours','-10 minutes');
+2008-01-23 02:36:58
 
 where 0 = Sunday, 1 = Monday, 2 = Tuesday \... 6 = Saturday
 
-    sqlite> select datetime('now','localtime','+3.5 seconds','weekday 1');
-    2008-01-28 01:17:45
+sqlite> select datetime('now','localtime','+3.5 seconds','weekday 1');
+2008-01-28 01:17:45
 
-    NNN days
-    NNN hours
-    NNN minutes
-    NNN.NNNN seconds
-    NNN months
-    NNN years
-    start of month
-    start of year
-    start of week
-    start of day
-    weekday N
-    unixepoch
-    localtime
-    utc
+NNN days
+NNN hours
+NNN minutes
+NNN.NNNN seconds
+NNN months
+NNN years
+start of month
+start of year
+start of week
+start of day
+weekday N
+unixepoch
+localtime
+utc
 ```
 
 There is also the `strftime` function:
@@ -533,8 +537,8 @@ There is also the `strftime` function:
 Here's an example:
 
 ```sql
-    sqlite> select strftime("%d/%m/%Y %H:%M:%S %s %w %W",'now','localtime');
-    23/01/2008 01:22:30 1201051351 3 03
+sqlite> select strftime("%d/%m/%Y %H:%M:%S %s %w %W",'now','localtime');
+23/01/2008 01:22:30 1201051351 3 03
 ```
 
 ## SQLite and Python
