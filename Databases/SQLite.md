@@ -111,7 +111,7 @@ OPTIONS include:
 
 Some examples:
 
-```commandline
+```sql
 $ sqlite3 test.db ".tables"
 contacts  schema    test      test2
 
@@ -242,13 +242,13 @@ SELECT first_name AS fname FROM contacts;
 ### Relations
 
 ```sql
-sqlite3 contacts.sqlite3 "SELECT * FROM contacts JOIN contact_address WHERE \
-    contacts.id == contact_address.contact_id"
+SELECT * FROM contacts JOIN contact_address WHERE \
+    contacts.id == contact_address.contact_id
 
-sqlite3 contacts.sqlite3 "SELECT contacts.first_name, contact_address.contact_id, \
+SELECT contacts.first_name, contact_address.contact_id, \
 address.street from contacts contacts, contact_address, address WHERE \
 contacts.id==contact_address.contact_id AND \
-contact_address.contact_id=contact_address.address_id;"
+contact_address.contact_id=contact_address.address_id;
 ```
 
 Get all the different addresses of a contact:
