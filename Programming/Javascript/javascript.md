@@ -1,12 +1,3 @@
------
-title: Javascript
-description: In this article we talk about Javascript. It introduce some basic tricks about JavaScript.
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: javascript, programming, website, internet, web, client, server
-lang: en 
------
-
 # Javascript
 
 ## Table of Contents
@@ -54,74 +45,70 @@ lang: en
 * [Frames and navigation](#frames-and-navigation)
 * [Cookies](#cookies)
 * [Other things](#other-things)
-  * [Viewing what object somethings has](#viewing-what-object-somethings-has)
+  * [Viewing what object something has](#viewing-what-object-something-has)
   * [Snippets of code](#snippets-of-code)
   * [Some Resources](#some-resources)
 
 ## Introduction
 
-JavaScript need to be embedded into HTML code. Like with pure HTML code,
-the pages you made will not be dynamic. With javascript you can make it
-dynamic.
+JavaScript needs to be embedded into HTML code. Like with pure HTML code, the pages you made will not be dynamic. With javascript you can make it dynamic.
 
-JavaScript is made by Netscape and was called LiveScript at that time.
-Near 1995 Sun (the authors of Java) adopted it as open standard for the
-Internet and have call it JavaScript. Since Sun has adopted JavaScript,
-many other companies adopted JavaScript like for example America Online,
-Apple, Borland and Oracle \...
+JavaScript is made by Netscape and was called LiveScript at that time. Near 1995 Sun (the authors of Java) adopted it as open standard for the Internet and have call it JavaScript. Since Sun has adopted JavaScript, many other companies adopted JavaScript like for example America Online, Apple, Borland and Oracle ...
 
 Microsoft made also his own implementation and called it JScript.
 
-The JavaScript was made to be run client side. There is also a
-JavaScript implementation for server side.
+The JavaScript was made to be run client side. There is also a JavaScript implementation for server side.
 
-When you write some JavaScript code, always test it with different
-browsers!
+When you write some JavaScript code, always test it with different browsers!
 
-You should need to embed JavaScript code in HTML documents. In the first
-examples, we show some complete code examples with HTML code. But
-further we remove all the HTML code for some basic examples, to avoid
-that the examples will be are to long. But if we need to be are clear,
-we add the HTML tags too.
+You should need to embed JavaScript code in HTML documents. In the first examples, we show some complete code examples with HTML code. But further we remove all the HTML code for some basic examples, to avoid that the examples will be are to long. But if we need to be are clear, we add the HTML tags too.
 
 ## The traditional 'Hello, world!' program
 
-    <html>
-    <head>
-        <title>Some test with JavaScript</title>
-    </head>
-    <body>
-    <h1>'Hello, world!' Test:</h1>
-    <p>This is the traditional 'Hello, world!' script.</p>
-    <script>
-    document.write("Hello, world!")
-    </script>
-    </body>
-    </html>
+```html
+<html>
+<head>
+  <title>Some test with JavaScript</title>
+</head>
+<body>
+<h1>'Hello, world!' Test:</h1>
+<p>This is the traditional 'Hello, world!' script.</p>
+
+<script>
+document.write("Hello, world!")
+</script>
+
+</body>
+</html>
+```
 
 Little example to print the content of a variable:
 
-    <script>
-    msg = "Hello, world!"
-    document.write(msg)
-    </script>
+```javascript
+<script>
+msg = "Hello, world!"
+document.write(msg)
+</script>
+```
 
 **Note: In the second example, we don\'t make use of quote in the write
 function. Like it is not a string constant but a reference to a
 variable.**
 
-These 2 littles examples will work very well with decent browsers. But a
+These 2 little examples will work very well with decent browsers. But a
 problem will raise if we use an older browsers. Like every browser that
 does not understand a tag, will ignore it. That means that the tag
 `<script>` and `</script>` will be are removed and only the text line
 `document.write(msg)` will be showed. That\'s probably not what we want.
 To avoid it, we should add the following:
 
-    <script>
-    <!-- This next one will be hidden for not compatible browsers
-    document.write("Hello, world!<br>")
-    // End hidden for non-compatible browsers -->
-    </script>
+```javascript
+<script>
+<!-- This next one will be hidden for not compatible browsers
+document.write("Hello, world!<br>")
+// End hidden for non-compatible browsers -->
+</script>
+```
 
 Like you see, there is a comment line that you probably recognize.
 
@@ -161,10 +148,7 @@ Specifies JavaScript for Navigator 3.0
 
 ## Document your code with comments
 
-You can add comments to your code to comment your code. It will be
-really useful to add the right comments on the right place. It will help
-you when you come back to your piece of code some time later. But also
-to give some comments to the person who read your code too.
+You can add comments to your code to comment your code. It will be really useful to add the right comments on the right place. It will help you when you come back to your piece of code some time later. But also to give some comments to the person who read your code too.
 
 A single line comment is as following:
 
@@ -173,11 +157,13 @@ A single line comment is as following:
 
 A multi line comment is as following:
 
+```javascript
     /* Print a heading and
     then print a paragraph
     */
     document.write("<h1>This is a heading</h1>");
     document.write("<p>This is a paragraph.</p>");
+```
 
 Another more useful example:
 
@@ -887,7 +873,7 @@ Or load it when the page load:
 
 ## Other things
 
-### Viewing what object somethings has
+### Viewing what object something has
 
 When developing code, you want time by time check what object some
 object has:
@@ -898,26 +884,29 @@ object has:
 
 ### Make use of the console for debugging
 
-While creating Javascript code, you need to debug it while writing it and sometime you want to show some data so
-that you know what it hold.
+While creating Javascript code, you need to debug it while writing it, and sometimes you want to show some data so that you know what it holds.
 
-	var myArray = new Array(); //
-		
-	// Just add a bunch of data to the newly created array
-	myArray[0] = "Foo"; myArray[1] = "Bar"; myArray[2] = "Baz";
-		
-	// Display stuff to the console. 
-	// For this use Google Chrome, right click on the page and select Inspect, then click on the "console" tab.
-	console.log(myArray);
-	console.log("This is my stuff.");
-	console.log("5+3");
-	console.log(5+3);
+```javascript
+var myArray = new Array(); //
+    
+// Just add a bunch of data to the newly created array
+myArray[0] = "Foo"; myArray[1] = "Bar"; myArray[2] = "Baz";
+    
+// Display stuff to the console. 
+// For this use Google Chrome, right click on the page and select Inspect, then click on the "console" tab.
+console.log(myArray);
+console.log("This is my stuff.");
+console.log("5+3");
+console.log(5+3);
+```
 
 ### Snippets of code
 
-    <body onLoad="alert('Welcome on my page!')">
-    <body onUnload="alert('See you back soon!')">
-    <a href="/virtual_hosts/joomla_dvanmosselbeen.be/quit.html" onClick="return confirm('Really quit?')">quit</a>
+```html
+<body onLoad="alert('Welcome on my page!')">
+<body onUnload="alert('See you back soon!')">
+<a href="/virtual_hosts/joomla_dvanmosselbeen.be/quit.html" onClick="return confirm('Really quit?')">quit</a>
+```
 
 ## Some resources
 
