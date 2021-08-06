@@ -1,64 +1,42 @@
------
-title: SQLite
-description: This article is about SQLite
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: database, website, internet, orm
-lang: en
------
-
 # SQLite
 
 ## Introduction
 
-If we don't need a sophisticated client/server database system, no
-multiple clients access, `sqlite` is the thing. It's easy to use, easy
-to setup (zero configuration), it's not too sophisticated to use.
+If we don't need a sophisticated client/server database system, no multiple clients access, `sqlite` is the thing. It's easy to use, easy to setup (zero configuration), it's not too complicated to use.
 
-Ideal if you want to integrate a database system in your own
-application. There are several programming language that have some
-libraries to make use of sqlite.
+Ideal if you want to integrate a database system in your own application. There are some programming language that have some libraries to make use of sqlite.
 
-We can use lower or capital letters. To make the stuff more clear here,
-we use capital for the commands.
+SQLite is case-insensitive. We can use lower or capital letters. To make it more clear here, we use capitals for the commands.
 
 ## Installing SQLite
 
-SQLite is available for different platforms. There is sqlite and
-sqlite3. Databases created with the later one will be not compatible
-with the older sqlite version.
+`SQLite` is available for different platforms. There is `sqlite` and `sqlite3`. Databases created with the later one will be not backwards compatible with the older `sqlite` version.
 
-## Installing SQLite on Debian GNU/Linux (and others)
+### Installing SQLite on Debian GNU/Linux (and others)
 
-We first always update the list of packages and then upgrade all the
-packages before installing new software. We also install the additional
-documentation that are available. Maybe, once you have read the
-documentation and no more need it. You can easy remove the sqlite3-doc
-package.
+We first always update the list of packages and then upgrade all the packages before installing new software. We also install the additional documentation that are available.
 
-    # Update the package list
-    aptitude update
+```commandline
+apt-get update
+apt-get install sqlite3 sqlite3-doc
+```
 
-    # Upgrade the installed packages
-    aptitude upgrade
+*For other distributions, refer to your package manager. Take maybe first a look to the packages related to sqlite.*
 
-    # Install the stuff
-    aptitude install sqlite3 sqlite3-doc
+### Installing SQLite from source
 
-*For other distributions, refer to your package manager. Take maybe
-first a look to the packages related to sqlite.*
+If `SQLite` is not available as a package, you may always compile it from source. Most likely like:
 
-If SQLite is not available as a package, you may always compile it from
-source. Most likely like:
+```commandline
+# As normal user
+./configure --prefix=/usr/local/
+make
 
-    # As normal user
-    ./configure --prefix=/usr/local/
-    make
+# As root user
+make install
+```
 
-    # As root user
-    make install
-
-## Installing SQLite on Microsoft Windows
+### Installing SQLite on Microsoft Windows
 
 There are 2 different bundles, for X86 or 64 bit. Here we use the X86 as the download bundles provide one package with extra tools.
 
@@ -77,23 +55,20 @@ You should maybe restart the system so that the PATH variable is read again, or 
 
 ## Read the documentation
 
-Like we have installed the `sqlite3-doc` packages on my debian box.
-It's best that we first read the doc. The docs are located
-in`/usr/share/doc/sqlite3-doc/index.html`. You can find this out with
-`dpkg -L sqlite3-doc`.
+Like we have installed the `sqlite3-doc` packages on my debian box. It's best that we first read the doc. The docs are located in`/usr/share/doc/sqlite3-doc/index.html`. You can find this out with `dpkg -L sqlite3-doc`.
 
-It's also good to look on the website of `sqlite`. Probably you get
-there up to date news about the product. Also are there are bit more
-information than provided in the additional `sqlite3-doc` package.
+It's also good to look on the website of `sqlite`. Probably you get there up to date news about the product. Also are there are bit more information than provided in the additional `sqlite3-doc` package.
 
 Get help:
 
-    sqlite> .help
+```sql
+sqlite> .help
 
-    sqlite> .explain
-    sqlite> EXPLAIN INSERT INTO contacts VALUES('Hello, World!',99);
+sqlite> .explain
+sqlite> EXPLAIN INSERT INTO contacts VALUES('Hello, World!',99);
 
-    sqlite> EXPLAIN SELECT * FROM contacts;
+sqlite> EXPLAIN SELECT * FROM contacts;
+```
 
 ## Datatypes
 
@@ -107,41 +82,45 @@ Get help:
 
 ## SQLite in the cli
 
-You can use `sqlite` in your shell or maybe want you access it in an
-simple shell script. Also useful to export or import some data in the
-command line interface.
+You can use `sqlite` in your shell or maybe want you access it in an simple shell script. Also useful to export or import some data in the command line interface.
 
 As first, see how we can get info in the cli:
 
-    $ sqlite3 --help
+```commandline
+$ sqlite3 --help
+```
 
 That output:
 
-    Usage: sqlite3 [OPTIONS] FILENAME [SQL]
-    FILENAME is the name of an SQLite database. A new database is created
-    if the file does not previously exist.
-    OPTIONS include:
-       -init filename       read/process named file
-       -echo                print commands before execution
-       -[no]header          turn headers on or off
-       -column              set output mode to 'column'
-       -html                set output mode to HTML
-       -line                set output mode to 'line'
-       -list                set output mode to 'list'
-       -separator 'x'       set output field separator (|)
-       -nullvalue 'text'    set text string for NULL values
-       -version             show SQLite version
+```
+Usage: sqlite3 [OPTIONS] FILENAME [SQL]
+FILENAME is the name of an SQLite database. A new database is created
+if the file does not previously exist.
+OPTIONS include:
+   -init filename       read/process named file
+   -echo                print commands before execution
+   -[no]header          turn headers on or off
+   -column              set output mode to 'column'
+   -html                set output mode to HTML
+   -line                set output mode to 'line'
+   -list                set output mode to 'list'
+   -separator 'x'       set output field separator (|)
+   -nullvalue 'text'    set text string for NULL values
+   -version             show SQLite version
+```
 
 Some examples:
 
-    $ sqlite3 test.db ".tables"
-    contacts  schema    test      test2
+```commandline
+$ sqlite3 test.db ".tables"
+contacts  schema    test      test2
 
-    $ sqlite3 -header -column test.db "SELECT * from test2"
-    id          forname     name          
-    ----------  ----------  --------------
-    1           foo         bar
-    2           baz         buu
+$ sqlite3 -header -column test.db "SELECT * from test2"
+id          forname     name          
+----------  ----------  --------------
+1           foo         bar
+2           baz         buu
+```
 
 ## Create and execute a query file
 
@@ -165,11 +144,7 @@ Fetch a particular row:
 
 ## Creating a database
 
-If we not specify a database name, the database will be are made
-in-memory, some time it is useful for test routines. But keep in mind
-that the data will be loost once you have quit `sqlite`. If you specify
-a database name, and the file not yet exist, these will be made when you
-create the first table in the database.
+If we not specify a database name, the database will be made in-memory, some time it is useful for test routines. But keep in mind that the data will be lost once you have quit `sqlite`. If you specify a database name, and the file not yet exist, these will be made when you create the first table in the database.
 
     $ sqlite3 test.db
 
@@ -177,287 +152,341 @@ create the first table in the database.
 
 ## Creating a table
 
-    sqlite> CREATE TABLE contacts (
-        id integer primary key,
-        name text,
-        age integer
-        );
+```sql
+sqlite> CREATE TABLE contacts (
+    id integer primary key,
+    name text,
+    age integer
+    );
+```
 
-With integer primary key, we make an auto increment way. Useful so that
-we later not specify an id, it automatically set a number higher as the
-highest id.
+With integer primary key, we make an auto increment way. Useful so that we later not specify an id, it automatically set a number higher as the highest id.
 
 ## Insert data in the table
 
-Here\'s an example:
+Here's an example:
 
-    sqlite> INSERT INTO contacts VALUES (NULL, 'foo', 12);
+```commandline
+sqlite> INSERT INTO contacts VALUES (NULL, 'foo', 12);
+```
 
 We now use another style:
 
-    sqlite> INSERT INTO contacts VALUES (
-        NULL, 
-        'bar', 
-        13
-        );
+```commandline
+sqlite> INSERT INTO contacts VALUES (
+    NULL, 
+    'bar', 
+    13
+    );
 
-    sqlite> INSERT INTO contacts VALUES (
-        NULL, 
-        'baz', 
-        20);
+sqlite> INSERT INTO contacts VALUES (
+    NULL, 
+    'baz', 
+    20);
+```
 
 When inserting, we can also define the order of the data we add:
 
-    sqlite> INSERT INTO contacts (age,id,name) VALUES (14, NULL, 'foo';
-
+```sql
+sqlite> INSERT INTO contacts (age,id,name) VALUES (14, NULL, 'foo';
+```
 
 ## Select data from a table
 
 We get all the columns:
 
-    sqlite> SELECT * FROM contacts;
+```sql
+sqlite> SELECT * FROM contacts;
+```
 
-If you not need all the columns, it is always better (faster) to only
-fetch what you need to fetch.
+If you not need all the columns, it is always better (faster) to only fetch what you need to fetch.
 
 But we can also take the fields we want:
 
-    sqlite> SELECT first_name FROM contacts;
+```sql
+sqlite> SELECT first_name FROM contacts;
 
-    SELECT last_name FROM contacts WHERE first_name=="David";
+SELECT last_name FROM contacts WHERE first_name=="David";
+```
 
 ### Order the result
 
-    SELECT last_name from contacts ORDER BY last_name;
+```sql
+SELECT last_name from contacts ORDER BY last_name;
+```
 
 ### Group by
 
-    SELECT last_name from contacts GROUP BY last_name;
+```sql
+SELECT last_name from contacts GROUP BY last_name;
+```
 
 ### Select distinct
 
-Don\'t fetch duplicated records.
+Don't fetch duplicated records.
 
+```sql
 SELECT DISTINCT last\_name from contacts;
+```
 
 ### Rename temporally a field
 
-    SELECT first_name AS fname FROM contacts;
+```sql
+SELECT first_name AS fname FROM contacts;
+```
 
 ### Relations
 
-    sqlite3 contacts.sqlite3 "SELECT * FROM contacts JOIN contact_address WHERE \
-        contacts.id == contact_address.contact_id"
+```sql
+sqlite3 contacts.sqlite3 "SELECT * FROM contacts JOIN contact_address WHERE \
+    contacts.id == contact_address.contact_id"
 
-    sqlite3 contacts.sqlite3 "SELECT contacts.first_name, contact_address.contact_id, \
-    address.street from contacts contacts, contact_address, address WHERE \
-    contacts.id==contact_address.contact_id AND \
-    contact_address.contact_id=contact_address.address_id;"
+sqlite3 contacts.sqlite3 "SELECT contacts.first_name, contact_address.contact_id, \
+address.street from contacts contacts, contact_address, address WHERE \
+contacts.id==contact_address.contact_id AND \
+contact_address.contact_id=contact_address.address_id;"
+```
 
 Get all the different addresses of a contact:
 
-    SELECT address.street from contacts contacts, contact_address, address WHERE 
-    contacts.first_name=="David" AND contact_address.contact_id=contact_address.address_id;
+```sql
+SELECT address.street from contacts contacts, contact_address, address WHERE 
+contacts.first_name=="David" AND contact_address.contact_id=contact_address.address_id;
+```
 
 ## Delete data from a table
 
-    sqlite> DELETE FROM contacts WHERE age>15;
+```sql
+sqlite> DELETE FROM contacts WHERE age>15;
+```
 
-another exemple:
+Another exemple:
 
-    sqlite> DELETE FROM contacts WHERE name="bar";
+```sql
+sqlite> DELETE FROM contacts WHERE name="bar";
+```
 
 Delete all records of a table:
 
-    sqlite> DELETE FROM contacts;
+```sql
+sqlite> DELETE FROM contacts;
+```
 
 ## Update data from a table
 
-    sqlite> UPDATE contacts SET age = '14' WHERE name == 'foo';
+```sql
+sqlite> UPDATE contacts SET age = '14' WHERE name == 'foo';
+```
 
 ## Add a new column to an existing table
 
 Say you have a table with as sql and want to add a nem column:
 
-    CREATE TABLE actors (
-        id INTEGER PRIMARY KEY,
-        name VARCHAR (50) NOT NULL UNIQUE
-    );
+```sql
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR (50) NOT NULL UNIQUE
+);
+```
 
-As first create a manual backup of the database file, as this is a
-simple file, copy this somewhere on a secure location, go into the
-sqlite interpreter:
+As first create a manual backup of the database file, as this is a simple file, copy this somewhere on a secure location, go into the sqlite interpreter:
 
+```commandline
     sqlite3 mydatabase.db
+```
 
 Begin:
 
-    BEGIN TRANSACTION;
-    CREATE TEMPORARY TABLE actors_backup(
-            id INTEGER PRIMARY KEY,
-            name VARCHAR (50) NOT NULL UNIQUE
-            );
+```sql
+BEGIN TRANSACTION;
+CREATE TEMPORARY TABLE actors_backup(
+        id INTEGER PRIMARY KEY,
+        name VARCHAR (50) NOT NULL UNIQUE
+        );
 
-    INSERT INTO actors_backup SELECT id, name FROM actors;
-    DROP TABLE actors;
-    CREATE TABLE actors(
-            id INTEGER PRIMARY KEY,
-            name VARCHAR (50) NOT NULL UNIQUE,
-            role VARCHAR (50)
-            );
+INSERT INTO actors_backup SELECT id, name FROM actors;
+DROP TABLE actors;
+CREATE TABLE actors(
+        id INTEGER PRIMARY KEY,
+        name VARCHAR (50) NOT NULL UNIQUE,
+        role VARCHAR (50)
+        );
 
-    INSERT INTO actors (id, name) SELECT id, name FROM actors_backup;
-    DROP TABLE actors_backup;
-    COMMIT;
+INSERT INTO actors (id, name) SELECT id, name FROM actors_backup;
+DROP TABLE actors_backup;
+COMMIT;
+```
 
 ## Let's get a better output
 
 The data will be split into columns.
 
-    sqlite> .mode col
-    sqlite> SELECT * FROM contacts;
+```sql
+sqlite> .mode col
+sqlite> SELECT * FROM contacts;
+```
 
 Show the header (columns names):
 
-    sqlite> .header on
-    sqlite> SELECT * FROM contacts;
+```sql
+sqlite> .header on
+sqlite> SELECT * FROM contacts;
+```
 
-NOTE: `.mode col` and `.header on` are to improve the visibility. Once
-it\'s activated, it still leave so long you not exit `sqlite`.
+NOTE: `.mode col` and `.header on` are to improve the visibility. Once it's activated, it still leaves so long you not exit `sqlite`.
 
 ## Create an index and a view
 
-    sqlite> CREATE INDEX contacts_idx ON test (value);
-    sqlite> CREATE VIEW schema AS SELECT * FROM sqlite_master;
+```sql
+sqlite> CREATE INDEX contacts_idx ON test (value);
+sqlite> CREATE VIEW schema AS SELECT * FROM sqlite_master;
+```
 
 ## See the new table that are created
 
-
-    sqlite> .tables
-    sqlite> schema  contacts
+```sql
+sqlite> .tables
+sqlite> schema  contacts
+```
 
 ## See the content of the schema table
 
-    sqlite> select * from schema;
+```sql
+sqlite> select * from schema;
+```
 
 This will output some interesting stuff:
 
-    type       name       tbl_name   rootpage   sql
-    ---------  ---------  ---------  --------- --------------------------------------
-    table       test        test        2      CREATE TABLE test (id integer primary \
-                                                       key, value text)
-    index       test_idx    test        3      CREATE INDEX test_idx ON test (value)
-    view        schema      schema      0      CREATE VIEW schema AS SELECT \
-                                                       * from sqlite_master
+```
+type       name       tbl_name   rootpage   sql
+---------  ---------  ---------  --------- --------------------------------------
+table       test        test        2      CREATE TABLE test (id integer primary \
+                                                   key, value text)
+index       test_idx    test        3      CREATE INDEX test_idx ON test (value)
+view        schema      schema      0      CREATE VIEW schema AS SELECT \
+                                                   * from sqlite_master
+```
 
 To see the index:
 
+```sql
     sqlite> .indice contacts
     test_idx
+```
 
-Term The SQL definition or data definition language (DDL) for a table or
-view can be obtained using .shema \[table name\]. If no table name is
-provided, the SQL definition of all database objects
-(tables,indexes,views and indexes) are returned
+Term The SQL definition or data definition language (DDL) for a table or view can be obtained using `.shema [table name]`. If no table name is provided, the SQL definition of all database objects (tables,indexes,views and indexes) are returned
 
-To get thet DDL (Data Definition Language) use the .schema, if no table
-are specified all the tables are showed:
+To get the DDL (Data Definition Language) use the `.schema`, if no table are specified all the tables are showed:
 
-    sqlite> .schema contacts
-    sqlite> CREATE TABLE contacts (id integer primary key, value text);
-    sqlite> CREATE INDEX contacts_idx ON test (value);
+```sql
+sqlite> .schema contacts
+sqlite> CREATE TABLE contacts (id integer primary key, value text);
+sqlite> CREATE INDEX contacts_idx ON test (value);
 
-    sqlite> .schema
-    sqlite> CREATE TABLE test (id integer primary key, value text);
-    sqlite> CREATE VIEW schema AS SELECT * from sqlite_master;
-    sqlite> CREATE INDEX test_idx ON test (value);
+sqlite> .schema
+sqlite> CREATE TABLE test (id integer primary key, value text);
+sqlite> CREATE VIEW schema AS SELECT * from sqlite_master;
+sqlite> CREATE INDEX test_idx ON test (value);
 
-    sqlite> select * from sqlite_master;
+sqlite> select * from sqlite_master;
 
-    explain select * from test;
-    addr        opcode      p1          p2          p3        
-    ----------  ----------  ----------  ----------  ----------
-    0           Goto        0           11                    
-    1           Integer     0           0                     
-    2           OpenRead    0           2                     
-    3           SetNumColu  0           2                     
-    4           Rewind      0           9                     
-    5           Rowid       0           0                     
-    6           Column      0           1                     
-    7           Callback    2           0                     
-    8           Next        0           5                     
-    9           Close       0           0                     
-    10          Halt        0           0                     
-    11          Transactio  0           0                     
-    12          VerifyCook  0           3                     
-    13          Goto        0           1                     
-    14          Noop        0           0
+explain select * from test;
+addr        opcode      p1          p2          p3        
+----------  ----------  ----------  ----------  ----------
+0           Goto        0           11                    
+1           Integer     0           0                     
+2           OpenRead    0           2                     
+3           SetNumColu  0           2                     
+4           Rewind      0           9                     
+5           Rowid       0           0                     
+6           Column      0           1                     
+7           Callback    2           0                     
+8           Next        0           5                     
+9           Close       0           0                     
+10          Halt        0           0                     
+11          Transactio  0           0                     
+12          VerifyCook  0           3                     
+13          Goto        0           1                     
+14          Noop        0           0
+```
 
 ## Exporting (backup) data of a database
 
-To export stuff, we use the `.dump`, default the output is displayed on
-screen, so we need to define to export to an file. The `.dumpt` is the
-most portable way to export data. So usually we do:
+To export stuff, we use the `.dump`, default the output is displayed on screen, so we need to define to export to an file. The `.dumpt` is the most portable way to export data. So usually we do:
 
-    sqlite> .output exported_data.sql
-    sqlite> .dump
-    sqlite> .output stout
+```sql
+sqlite> .output exported_data.sql
+sqlite> .dump
+sqlite> .output stout
+```
 
-On the last line we have change the ouput to stout, so that it again
-look like the default option.
+On the last line we have change the ouput to stout, so that it again look like the default option.
 
 We can also do it in the cli way:
 
-    $ sqlite3 contacts.db .dump > contacts.sql
+```commandline
+$ sqlite3 contacts.db .dump > contacts.sql
+```
 
 You can easy export a `sqlite` database to `sqlite3`:
 
-    $ sqlite contacts.sqlite ".dump" | sqlite3 contacts.sqlite3
+```commandline
+$ sqlite contacts.sqlite ".dump" | sqlite3 contacts.sqlite3
+```
 
 ## Importing data into a database
 
+```sql
     sqlite> .read exported_data.sql
+```
 
-Or in the cli. But we assume the that the are no data in the `test3.db`,
-otherwise us get some errors if some data we want to import already
-exist:
+Or in the cli. But we assume the that the is no data in the `test3.db`,  otherwise us get some errors if some data we want to import already exist:
 
-    $ sqlite3 contacts2.db < contacts.sql
+```commandline
+$ sqlite3 contacts2.db < contacts.sql
+```
 
-When developing a database layout, it will be good to create a file that
-contains all the tables and eventually another file that contains some
-default data.
+When developing a database layout, it will be good to create a file that contains all the tables and eventually another file that contains some default data.
 
 ## Creating SQL files
 
 Create some file `contacts_tables.sql` and add the following:
 
+```sql
     CREATE TABLE contacts (
         id integer primary key,
         name text,
         age integer
     );
+```
 
 Create another file called `contacts_data.sql` and add the following:
 
+```sql
     INSERT INTO contacts VALUES (NULL, 'foo', 12);
     INSERT INTO contacts VALUES (NULL, 'bar', 13);
     INSERT INTO contacts VALUES (NULL, 'baz', 14);
     INSERT INTO contacts VALUES (NULL, 'xuu', 15);
     INSERT INTO contacts VALUES (NULL, 'buu', 16);
+```
 
 Then import it like note in the `importing` chapter.
 
 ## Drop
 
-    sqlite> drop table contacts;
+```sql
+sqlite> drop table contacts;
+```
 
 ## Like
 
-    sqlite> select * from contacts where value like '%oo%';
+```sql
+sqlite> select * from contacts where value like '%oo%';
+```
 
 ## Date and time commands
 
+```sql
     sqlite> select datetime('now','localtime','+1.5 hours','-10 minutes');
     2008-01-23 02:36:58
 
@@ -480,6 +509,7 @@ where 0 = Sunday, 1 = Monday, 2 = Tuesday \... 6 = Saturday
     unixepoch
     localtime
     utc
+```
 
 There is also the `strftime` function:
 
@@ -500,16 +530,16 @@ There is also the `strftime` function:
      **   %W  week of year 00-53
      **   %Y  year 0000-9999
 
-Here\'s an example:
+Here's an example:
 
+```sql
     sqlite> select strftime("%d/%m/%Y %H:%M:%S %s %w %W",'now','localtime');
     23/01/2008 01:22:30 1201051351 3 03
+```
 
 ## SQLite and Python
 
-There are some `Python` modules to access the content of a `sqlite`
-database. So that you easy can program an application that do some
-things with the`sqlite` database. Take a look on this website http://www.devshed.com/c/a/Python/Using-SQLite-in-Python/2/.
+There are some `Python` modules to access the content of a `sqlite` database. So that you easily can program an application that do some  things with the`sqlite` database. Take a look on this website http://www.devshed.com/c/a/Python/Using-SQLite-in-Python/2/.
 
 ## Other commands to see for
 
@@ -520,7 +550,9 @@ things with the`sqlite` database. Take a look on this website http://www.devshed
 
 The following will be interesting to run some saved queries:
 
-    sqlite> .read some.sql
+```sql
+sqlite> .read some.sql
+```
 
 ## Other useful commands
 
@@ -528,22 +560,17 @@ Download `sqlite_analyzer` from `sqlite` website.
 
 Extract the stuff:
 
-Put it in your `/usr/local/bin` dir and
-`chmod a+x sqlite3_analyzer-3.3.8.bin`it so that everyone can execute
-it.
+Put it in your `/usr/local/bin` dir and `chmod a+x sqlite3_analyzer-3.3.8.bin`it so that everyone can execute it.
 
-\*I have rename sqlite3\_analyzer-3.3.8.bin to sqlite3\_analyzer.\`
+*I have renamed `sqlite3\_analyzer-3.3.8.bin` to `sqlite3\_analyzer`.*
 
-The usage is really easy and this tool is really interesting too. I not
-understand that it is not yet packaged for `Debian`. Maybe is there
-another tool for `sqlite`, but i dunno. Maybe could it be useful to
-package this tool for `Debian`.
+The usage is really easy and this tool is really interesting too. I not understand that it is not yet packaged for `Debian`. Maybe is there another tool for `sqlite`, but i dunno. Maybe could it be useful to package this tool for `Debian`.
 
+```commandline
     $ sqlite3_analyzer test.db
+```
 
-I not past the output like it\'s really big. But try it on the test
-database us have made. Also read the latest part of the report, it give
-you the `SQL`syntax to produce the same stats.
+I not past the output like it's really big. But try it on the test database us have made. Also read the latest part of the report, it give you the `SQL`syntax to produce the same stats.
 
 ## Detect the SQLite version of a database
 
