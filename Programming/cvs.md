@@ -1,12 +1,3 @@
------
-title: CVS
-description: This article talk about CVS.
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords: programming, development
-lang: be
------
-
 # CVS 
 
 ## Introduction

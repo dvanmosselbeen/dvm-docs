@@ -1,12 +1,3 @@
------
-title: X-Plane 11
-description: A page dedicated to X-Plane 11 Flight simulator.
-created: 07-04-2020 10:29:00
-modified: 07-04-2020 10:29:00
-keywords: X-Plane, xplane, 11, simulator, simulation, flight
-lang: en
------
-
 # X-Plane 11
 
 X-Plane is some advanced flight simulator. This is some payware flight simulator. However, you can download a demo to try it out. For not even $59.99 you can have a full copy for personal use.
@@ -28,3 +19,7 @@ See the official website of X-Plane: https://www.x-plane.com/
 ## Recommended Addons
 
 * Headshakes -  
+
+## Resources
+
+* ...

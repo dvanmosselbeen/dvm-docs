@@ -1,37 +1,28 @@
------
+# John The Ripper
 
-* title: John The Ripper
-* description: This article is dedicated to John The Ripper.
-* created: 30-07-2021 14:04:00
-* modified: 30-07-2021 14:04:00
-* keywords: kali, gnu, linux, operating, system, admin, network, lan, security, hacking, TryHackMe
-* lang: en
-
------
-
-# Introduction
+## Introduction
 
 John The Ripper, john for the friends, is a password cracker tool that make use of a wordlist.
 
 This document is based on following the THM room: https://tryhackme.com/room/johntheripper0
 
-# Installation 
+## Installation 
 
-## Linux
+### Linux
 
 Probably the GNU/Linux distribution has packaged this for your.
 
-## Windows
+### Windows
 
 For Windows, you can download John The Ripper here: https://www.openwall.com/john/k/john-1.9.0-jumbo-1-win64.zip
 
-## Word lists
+### Word lists
 
 There are different wordlist out there, the most popular one is the `rockyou.txt` file which is available trough the package `wordlists`. See in `/usr/share/wordlists`.
 
 But take also a look to the SecLists, https://github.com/danielmiessler/SecLists - apt-get install seclist Which contains various wordlists. Very interesting to see is that there's a dedicated sub-folder (on github) called passwords/Leaked-Databases where different kind of passwords lists are stored.
 
-# Basic usage
+## Basic usage
 
 John has a build in hash identifier, but isn't great at this job. So you can try this one:
 
@@ -39,7 +30,7 @@ John has a build in hash identifier, but isn't great at this job. So you can try
 john --wordlist=/usr/share/wordlists/rockyou.txt somehash.txt
 ```
 
-# Identifying the type of hash
+## Identifying the type of hash
 
 Like said, john has a build in hash identifier, but isn't great at this and other apps are performing way more better than that.
 
@@ -58,21 +49,17 @@ But you can also use the `-j` flag on hashid which even more speed up the proces
 
     hashid -j first_task_hashes/hash1.txt
 
-## hashid
+### hashid
 
 From /usr/bin/hashid
 
     hashid -j first_task_hashes/hash1.txt
 
-# Using john 
+## Using john 
 
     john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash1.txt
 
-# Resources
-
-* https://www.openwall.com/john/doc/EXAMPLES.shtml
-
-# Cracking basic hashes
+## Cracking basic hashes
 
 ```commandline
 hashid -j hashfile.txt
@@ -132,13 +119,11 @@ We're then able to feed the output from unshadow, in our example use case called
 echo > etchashes.txt
 john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt etchashes.txt
 
-# Single Crack Mode
-
 ## Single Crack Mode
 
 So far we've been using John's wordlist mode to deal with brute forcing simple., and not so simple hashes. But John also has another mode, called Single Crack mode. In this mode, John uses only the information provided in the username, to try and work out possible passwords heuristically, by slightly changing the letters and numbers contained within the username.
 
-## Word Mangling
+### Word Mangling
 
 The best way to show what Single Crack mode is,  and what word mangling is, is to actually go through an example:
 
@@ -152,11 +137,11 @@ Some possible passwords could be:
 
 This technique is called word mangling. John is building it's own dictionary based on the information that it has been fed and uses a set of rules called "mangling rules" which define how it can mutate the word it started with to generate a wordlist based off of relevant factors for the target you're trying to crack. This is exploiting how poor passwords can be based off of information about the username, or the service they're logging into.
 
-## GECOS
+### GECOS
 
 John's implementation of word mangling also features compatibility with the Gecos fields of the UNIX operating system, and other UNIX-like operating systems such as Linux. So what are Gecos? Remember in the last task where we were looking at the entries of both /etc/shadow and /etc/passwd? Well if you look closely You can see that each field is seperated by a colon ":". Each one of the fields that these records are split into are called Gecos fields. John can take information stored in those records, such as full name and home directory name to add in to the wordlist it generates when cracking /etc/shadow hashes with single crack mode.
 
-## Using Single Crack Mode
+### Using Single Crack Mode
 
 To use single crack mode, we use roughly the same syntax that we've used to so far, for example if we wanted to crack the password of the user named "Mike", using single mode, we'd use:
 
@@ -190,13 +175,13 @@ john --single --format=raw-md5 joker_pass.txt
 
 passwd: Jok3r
 
-# Custom Rules
+## Custom Rules
 
-## What are Custom Rules?
+### What are Custom Rules?
 
 As we journeyed through our exploration of what John can do in Single Crack Mode- you may have some ideas about what some good mangling patterns would be, or what patterns your passwords often use- that could be replicated with a certain mangling pattern. The good news is you can define your own sets of rules, which John will use to dynamically create passwords. This is especially useful when you know more information about the password structure of whatever your target is.
 
-## Common Custom Rules
+### Common Custom Rules
 
 Many organisations will require a certain level of password complexity to try and combat dictionary attacks, meaning that if you create an account somewhere, go to create a password and enter:
 
@@ -216,7 +201,7 @@ A password with the capital letter first, and a number followed by a symbol at t
 
 Now this does meet the password complexity requirements, however as an attacker we can exploit the fact we know the likely position of these added elements to create dynamic passwords from our wordlists.
 
-## How to create Custom Rules
+### How to create Custom Rules
 
 Custom rules are defined in the `john.conf file`, usually located in `/etc/john/john`.conf if you have installed John using a package manager or built from source with `make` and in `/opt/john/john.conf` on the TryHackMe Attackbox.
 
@@ -233,8 +218,6 @@ We then use a regex style pattern match to define where in the word will be modi
 `A0 `- Takes the word and prepends it with the characters you define
 
 `c` - Capitalises the character positionally
-
-
 
 These can be used in combination to define where and what in the word you want to modify.
 
@@ -270,7 +253,7 @@ A number in the range 0-9 - `[0-9]`
 
 Followed by a symbol that is one of `[!£$%@]`
 
-## Using Custom Rules
+### Using Custom Rules
 
 We could then call this custom rule as a John argument using the  --rule=PoloPassword flag.
 
@@ -282,11 +265,11 @@ Jumbo John already comes with a large list of custom rules, which contain modifi
 
 Now, time for you to have a go!
 
-# Cracking a Password Protected Zip File
+## Cracking a Password Protected Zip File
 
 Yes! You read that right. We can use John to crack the password on password protected Zip files. Again, we're going to be using a separate part of the john suite of tools to convert the zip file into a format that John will understand, but for all intents and purposes, we're going to be using the syntax that you're already pretty familiar with by now.
 
-## Zip2John
+### Zip2John
 
 Similarly to the unshadow tool that we used previously, we're going to be using the `zip2john` tool to convert the zip file into a hash format that John is able to understand, and hopefully crack. The basic usage is like this:
 
@@ -316,11 +299,11 @@ We're then able to take the file we output from zip2john in our example use case
 john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt
 ```
 
-# Cracking Password Protected RAR Archives
+## Cracking Password Protected RAR Archives
 
 We can use a similar process to the one we used in the last task to obtain the password for rar archives. If you aren't familiar, rar archives are compressed files created by the Winrar archive manager. Just like zip files they compress a wide variety of folders and files.
 
-## Rar2John
+### Rar2John
 
 Almost identical to the `zip2john` tool that we just used, we're going to use the `rar2john` tool to convert the rar file into a hash format that John is able to understand. The basic syntax is as follows:
 
@@ -342,7 +325,7 @@ Example Usage
 rar2john rarfile.rar > rar_hash.txt
 ```
 
-## Cracking
+### Cracking
 
 Once again, we're then able to take the file we output from rar2john in our example use case called "rar_hash.txt" and, as we did with zip2john we can feed it directly into John..
 
@@ -350,11 +333,11 @@ Once again, we're then able to take the file we output from rar2john in our exam
 john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
 ```
 
-# Cracking SSH Keys with John
+## Cracking SSH Keys with John
 
 Okay, okay I hear you, no more file archives! Fine! Let's explore one more use of John that comes up semi-frequently in CTF challenges. Using John to crack the SSH private key password of `id_rsa` files. Unless configured otherwise, you authenticate your SSH login using a password. However, you can configure key-based authentication, which lets you use your private key, id_rsa, as an authentication key to login to a remote machine over SSH. However, doing so will often require a password- here we will be using John to crack this password to allow authentication over SSH using the key.
 
-## SSH2John
+### SSH2John
 
 Who could have guessed it, another conversion tool? Well, that's what working with John is all about. As the name suggests `ssh2john` converts the `id_rsa` private key that you use to login to the SSH session into hash format that `john` can work with. Jokes aside, it's another beautiful example of John's versatility. The syntax is about what you'd expect. Note that if you don't have `ssh2john` installed, you can use `ssh2john.py`, which is located in the `/opt/john/ssh2john.py`. If you're doing this, replace the ssh2john command with `python3 /opt/ssh2john.py` or on Kali, `python /usr/share/john/ssh2john.py`.
 
@@ -383,7 +366,7 @@ Example Usage on Kali
 python /usr/share/john/ssh2john.py id_rsa > id_rsa_hash.txt
 ```
 
-## Cracking
+### Cracking
 
 For the final time, we're feeding the file we output from ssh2john, which in our example use case is called "id_rsa_hash.txt" and, as we did with rar2john we can use this seamlessly with John:
 
@@ -391,6 +374,11 @@ For the final time, we're feeding the file we output from ssh2john, which in our
 john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa_hash.txt
 ```
 
-# Further Reading
+## Further Reading
 
 Thank you for completing this room on John the Ripper! I hope you've learnt a lot along the way. I'm sure by now you understand the basic principles and the pattern that there is to using John with even the most obscure supported hashes. I'd recommend checking out the [Openwall Wiki here](https://www.openwall.com/john/) for more information about using John, and advice, updates or news about the tool.
+
+
+## Resources
+
+* https://www.openwall.com/john/doc/EXAMPLES.shtml

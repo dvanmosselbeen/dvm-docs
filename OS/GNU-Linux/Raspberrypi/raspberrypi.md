@@ -1,37 +1,10 @@
------
-title: Raspberry PI
-description: This article is dedicated to the Raspberry PI.
-created: 14-10-2020 00:00:00
-modified: 14-10-2020 00:00:00
-keywords: debian, gnu, linux, operating, system, admin, raspberry, pi
-lang: en
------
+# Raspberry PI
 
-# Raspberry PI Model 3 B
+## Raspberry PI Model 3 B
 
 This document is specific for the Raspberry PI Model 3 B or higher. I own both Model 3B and Model 4. Later on maybe there will be some more notes about some other versions of Raspberry Pi.
 
-# Table of Contents
-
-* [Introduction](#introduction)
-* [Installing an operating system on the raspberry pi](#installing-an-operating-system-on-raspberry-pi)
-* [Backing up the micro sd card](#backing-up-the-micro-sd-card)
-* [Differences between Raspberry PI models](#differences-between-raspberry-pi-models)
-* [Things specific to Raspberry](#things-specific-to-raspberry)
-    * [Raspbian specific tools]()
-    * [STOP killing that SD card](#stop-killing-that-sd-card-)
-* [Using the Raspberry Pï model 3 or 4 for the first time](#using-the-raspberry-model-3-or-4-for-the-first-time)
-* [Cleaning up stuff](#cleaning-up-stuff)
-* [Recommended software and setup](#recommended-software-and-setup)
-* [Recommended hardware for the Raspberry Pi](#recommended-hardware-for-the-raspberry-pi)
-* [Tools to take remote control](#tools-to-take-remote-control)
-* [Webserver and Database](#webserver-and-database)
-* [Migrations Logs](#migrations-logs)
-    * [Jessie to Buster migration](#jessie-to-buster-migration)
-* [Other notes not categorised](#other-notes-not-categorised)
-* [Resources](#resources)
-
-# Introduction
+## Introduction
 
 The Raspberry is some minimalistic computer, the size of a bank card. Well, at least that's what they are saying about Raspberry and which isn't 100% a lie. Because the Raspberry is effectively that small. But then we are talking about the motherboard only. Once you put some protective case around it, that raspberry pi won't fit in your pocket so easily anymore. Beside that, Raspberry still is that small and awesome.
 
@@ -47,7 +20,7 @@ That said, if you are new to GNU/Linux, Welcome ! But i really don't think that 
 
 As Debian is installed (on that micro SD card), using Raspberry is like using Debian. So in this document we will avoid to give general Debian information, rather point out that there's a [dedicated Debian documentation page](../Debian/Debian%20GNU%20Linux.md) for that. Here we will point out the things specific to the Raspberry "computer".
 
-# Installing an operating system on Raspberry pi
+## Installing an operating system on Raspberry pi
 
 There are different variants of GNU Linux operating systems you can install. For example Ubuntu.
 
@@ -55,7 +28,7 @@ There's some dedicated tool called `Raspberry Pi Imager` to use to download and 
 
 Once this tool installed, it allow with a GUI interface to select the desired operating system and to write it to the SD card.
 
-# Backing up the micro SD card
+## Backing up the micro SD card
 
 Once you have installed and configured a bar Raspberry Pi, it's strongly recommended to make a backup of it. This well speed up the process during a restore. As you should not forget, SD cards die fast.
 
@@ -71,17 +44,17 @@ Note, depending of the speed of the micro SD card, as well as the card reader, i
 
 There is also: https://www.balena.io/etcher/
 
-# Differences between Raspberry pi models
+## Differences between Raspberry pi models
 
 * The cases of the raspberry pi 3 is not compatible with version 4.
 
-# Things specific to Raspberry
+## Things specific to Raspberry
 
 The default username for the `pi` user account is `raspberry`. There's no password set for the `root` user and to get root access you should use the `sudo` command. Thus to pass to a `root shell`, from the `pi` user account you should type this: `sudo su`. You will switch to the root user without being asked for the root password, because there's none. From there, you can define a password if desired with the `passwd` command, which i strongly recommend.
 
 The Raspberry i have bought came with a micro SD card with Raspberry (Debian) pre installed. If you know about the Debian operating system, or any other GNU/Linux distribution based on Debian, then you will find your way.
 
-## Raspbian specific tools
+### Raspbian specific tools
 
 | Command | Description |
 |---|---|
@@ -92,7 +65,7 @@ The Raspberry i have bought came with a micro SD card with Raspberry (Debian) pr
 | raspividyuv | |
 | raspiyuv | |
 
-## STOP killing that SD card !
+### STOP killing that SD card !
 
 Yes! Stop with that! Please!
 
@@ -119,7 +92,7 @@ But don't worry to much, there are solutions like mentioned above ! So, stop usi
 
 As alternative, you can look to install `Noobs` (read, raspbian) to an external hard disk drive. Yes, you read it good, install it to another "hard disk" than your SD card. With one stone, you will hit 2 targets. Using raspberry with an external (powered over USB, instead of a wall plug), you will avoid to kill your SD card within a few months. But the most "visible" improvement would be visible when seeing that the boot up & co is much faster on an external drive that the SD card.
 
-# Using the raspberry Model 3 or 4 for the first time
+## Using the raspberry Model 3 or 4 for the first time
 
 The first time you want to use the Raspberry Pi, you probably need to plug in all cables so that you could configure it. Plug in all cables: hdmi, keyboard, mouse, power cable. The Raspberry Pi will automatically boot once you plugged in the power cable. There's no On or Off button. So the power cable is always the cable you want to plug at last.
 
@@ -133,7 +106,7 @@ Once this done, i recommend to do a few more things:
 
 Once these settings adjusted, you need to reboot the system. After this, i suggest to start to make use of the remote tools like ssh or RealVNC to connect to your Raspberry Pi.
 
-# Cleaning up stuff
+## Cleaning up stuff
 
 Once rebooted, lets start to clean up stuff that has been downloaded by the updates. Note that you should run the following command once in a while if you fetch a lot of updates and install new software.
 
@@ -141,7 +114,7 @@ Once rebooted, lets start to clean up stuff that has been downloaded by the upda
 
 On a fresh install on a Model 4, i passed from `8.6G` to `6.7G`.
 
-# Recommended software and setup
+## Recommended software and setup
 
 As Raspberry PI OS is based on Debian, you will find all the classic programs. So you could also take a look to the
 dedicated [Debian](../Debian/Debian%20GNU%20Linux.md) page.
@@ -154,7 +127,7 @@ dedicated [Debian](../Debian/Debian%20GNU%20Linux.md) page.
 | mc | Midnight Commander - a powerful file manager |
 | xclip | command line interface to X selections |
 
-# Recommended hardware for the Raspberry Pi
+## Recommended hardware for the Raspberry Pi
 
 I strongly recommend a easy to use keyboard and mouse.
 
@@ -162,18 +135,18 @@ It could be you bought a kit which include some micro keyboard with an integrate
 
 I really recommend to buy the `Logitech K400`. This keyboard is small, but still the size of a real computer keyboard and has an integrated track pad.
 
-# Tools to take remote control 
+## Tools to take remote control 
 
 * realvnc-vnc-server
 * ssh server
 
-# Webserver and database
+## Webserver and database
 
 See the dedicated [LAMP server with Raspberry PI OS](lamp-server-with-raspberry-pi-os.md) file.
 
-# Migrations logs
+## Migrations logs
 
-## Jessie to Buster migration
+### Jessie to Buster migration
 
 As of writing this, august 2019, `Debian version 10` with the code name `Buster` is the current stable release.
 
@@ -206,13 +179,13 @@ I also got another failing issue and the error told to run `apt --fix-broken ins
 
 Once the upgrade done, restart to raspberry, to be sure everything is ok.
 
-# Other notes not categorised
+## Other notes not categorised
 
 Show your ip and mac address on the console:
 
     ip addr show wlan0 | grep inet | awk '{print $2}' | cut -d/ -f1
 
-# TODO
+## TODO
 
 * Secure Raspberry PI OS default setup - https://raspberrytips.com/security-tips-raspberry-pi/
 * Check for backup system. See: https://raspberrytips.com/backup-raspberry-pi/
@@ -229,7 +202,7 @@ Show your ip and mac address on the console:
 * Check about Kubernetes - https://opensource.com/article/20/8/kubernetes-raspberry-pi
 * https://raspberrytips.com/raspberry-pi-projects-for-home/
 
-# Resources
+## Resources
 
 | Link | Description |
 |---|---|

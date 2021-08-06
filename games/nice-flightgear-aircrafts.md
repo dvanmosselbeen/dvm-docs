@@ -1,30 +1,19 @@
------
-title: Nice FlightGear aircrafts
-description: A list of interesting and nice aircrafts for FlightGear Flight Simulator.
-keywords: ict computer pc support 3D modelling photography open source graphics
-created: 12-08-2011 00:00:00
-modified: 12-08-2011 00:00:00
-keywords aircraft, simulator, aviation, scenerie, flightgear 
-lang: en
------
+# Nice Flight Gear Aircraft
 
-# Introduction 
+## Introduction 
 
-This is my own list of prefered aircrafts that are available in the
-FlightGear Flight Simulators. Just my little list of favorite aircrafts
-or some details i like about some specific aircraft. My list is split by
-aircraft type, which you can checkout on the table of content.
+This is my own list of preferred aircraft that are available in the FlightGear Flight Simulators. Just my little list of favorite aircraft or some details I like about some specific aircraft. My list is split by aircraft type, which you can check out on the table of content.
+
+**Note: this is very outdated because it's very old notes. Furthermore, new development has probably been done by now.**
 
 ## General Aviation
 
--   A6M2-jsbsim - See the aircraft specific CTRM+SHIFT+M for the
-    monitoring tool.
+-   A6M2-jsbsim - See the aircraft specific CTRM+SHIFT+M for the monitoring tool.
 -   aerostar700 - Cool model and seems to be complete.
 -   alphajet - Nice model, fly a bit weird at low speed.
 -   b1900d
 -   bluebird - Some advanced UFO.
--   c172r - Flies kinda well, but require some modern upgrade 2D
-    instruments vs 3D
+-   c172r - Flies kinda well, but require some modern upgrade 2D instruments vs 3D
 -   C684 - Has cool default failure= if to much throttle..
 -   carreidas - Has interesting modern instruments.
 -   caravanW & caravanA
@@ -36,17 +25,11 @@ aircraft type, which you can checkout on the table of content.
 -   dhc2w & dhc2F - Just excellent aircraft! Also do towing.
 -   dhc3f & dhc3w & dhc3s & dhc3a - Nice aircraft!
 -   dhc6 & dhc6f & dhc6s - Just excellent aircraft!
--   da42 - Have the cool G1000 (zkr1000) but probably a local version of
-    it. Need to see if it can be updated and how that moving map works.
+-   da42 - Have the cool G1000 (zkr1000) but probably a local version of it. Need to see if it can be updated and how that moving map works.
 -   dr400-120 & dr400-180 - Excellent aircraft!
 -   dromader - Cool aircraft, however with some display issues.
--   g-164a - Nice looking aircraft, almost same type of dromader without
-    display issues. However, much less complete cockpit.e-2c - Has
-    lot\'s of exterior details, miss the cockpit instruments. Also use
-    some custom greay splashscreen background to check.
--   g115 - Very complete aircraft. And has interesting instruments (like
-    that zkr500?? need to check - some little basic round with in square
-    interface; gps)
+-   g-164a - Nice looking aircraft, almost same type of dromader without display issues. However, much less complete cockpit.e-2c - Has lot's of exterior details, miss the cockpit instruments. Also use some custom greay splashscreen background to check.
+-   g115 - Very complete aircraft. And has interesting instruments (like that zkr500?? need to check - some little basic round with in square interface; gps)
 -   lionceau - Odems as the g115 - check that cool gps feature
 -   hondajet - Interesting about it is the zkr1000 (aka g1000)
 -   k5y1 - Hard to fly but cool aircraft.
@@ -68,31 +51,21 @@ aircraft type, which you can checkout on the table of content.
 ## Airliners
 
 -   ATR-72-500
--   CRJ - There are diff models, the 700 seems to be very nice (see
-    forum post for latest version).
+-   CRJ - There are diff models, the 700 seems to be very nice (see forum post for latest version).
 -   777-200ER (Which seems to have nice tutorials)
--   787 - Very nice (grey scale) looking cockpit, cockpit not finished
-    however. Use the generic autopilot system. And no tutorials for it
-    :/
+-   787 - Very nice (grey scale) looking cockpit, cockpit not finished however. Use the generic autopilot system. And no tutorials for it :/
 -   747-400
 -   Lockheed1049h - Very complete and beautiful cockpit. No tutorials
     and no autostartup.
--   767-300 - Have no cockpit, but has tons of liveries. And a few nice
-    options to show up truck stairs, fuel tankers etc.
--   636 (737-600) - Nice looking cockpit view. Cockpit seems to be more
-    or less complete.
--   CRJ700 (see also the CRJ700 & CRJ1000) - Very nice looking aircraft
-    with a complete and nice looking cockpit. Also have a custom
-    autopilot interface. Have tutorials (some tutorials seems to be only
-    available in some version (ER & LR).
+-   767-300 - Have no cockpit, but has tons of liveries. And a few nice options to show up truck stairs, fuel tankers etc.
+-   636 (737-600) - Nice looking cockpit view. Cockpit seems to be more or less complete.
+-   CRJ700 (see also the CRJ700 & CRJ1000) - Very nice looking aircraft with a complete and nice looking cockpit. Also have a custom autopilot interface. Have tutorials (some tutorials seems to be only available in some version (ER & LR).
 -   A380 ?? and that A320 ?? family
 
 ## Helicopters
 
 -   aircrane -
--   alouette2-easy, alouette2F-easy - There\'s also a alouette2 and
-    alouette2F but seems to be much more acurate, even if i find these
-    last two unflyable.
+-   alouette2-easy, alouette2F-easy - There\'s also a alouette2 and alouette2F but seems to be much more acurate, even if i find these last two unflyable.
 -   Alouette-III - Kinda hard to fly but must by doable.
 -   as332 - Hard to fly but maybe doable after some learn curve.
 -   bo105
@@ -111,9 +84,7 @@ aircraft type, which you can checkout on the table of content.
 -   typhoon-2
 -   f-14b - Must be the top fighter in fgfs.
 -   f16
--   f4u - With a maybe to overrealistic fdm. Need to investigate if
-    it\'s usable after a long flytime. Has also a propstrike failure,
-    when to much throttle for long time.
+-   f4u - With a maybe to over realistic fdm. Need to investigate if it's usable after a long flytime. Has also a propstrike failure, when to much throttle for long time.
 -   harrier
 -   hurricaneIIb
 -   IAR80 - Probably the most advanced in high-tech aircraft
@@ -121,8 +92,7 @@ aircraft type, which you can checkout on the table of content.
 -   lightning
 -   sea-vixen
 -   spitfire - See all the diff models of it.
--   p47d-30 - Nice plane, tailwheel and make it hard to take off
-    straith, but model and the basic interior is nice.
+-   p47d-30 - Nice plane, tail wheel and make it hard to take off straight, but model and the basic interior is nice.
 -   P-51D (JSBSIM) - Very nice aircraft. Hard to land with it (see
     sudden stall).
 
@@ -136,7 +106,6 @@ aircraft type, which you can checkout on the table of content.
 
 ## Cars and other
 
--   jeep - Interesting one, could be an example to create some airports
-    verhicule
+-   jeep - Interesting one, could be an example to create some airports verhicule
 -   gpa
 -   deuche

@@ -1,15 +1,4 @@
------
-
-* title: Metasploit
-* description: This article is dedicated to Metasploit framework.
-* created: 23-07-2021 16:14:00
-* modified: 23-07-2021 16:14:00
-* keywords: gnu, linux, admin, network, security, hacking
-* lang: en
-
------
-
-# Introduction
+# Metasploit
 
 This part is based on info from TryHackMe: https://tryhackme.com/room/rpmetasploit
 

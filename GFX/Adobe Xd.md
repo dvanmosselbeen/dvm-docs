@@ -1,17 +1,10 @@
------
-title: Adobe Xd
-description: My Adobe Xd notes 
-created: 09-05-2021 11:58:00
-modified: 09-05-2021 11:58:00
-keywords: html, website, web, dev
-lang: en 
------
+# Adobe Xd
 
-# Introduction
+## Introduction
 
 Adobe Xd is to create UI/UX design.
 
-# Terminology
+## Terminology
 
 | name | description |
 |---|---|
@@ -21,7 +14,7 @@ Adobe Xd is to create UI/UX design.
 | components | Previously called symbols.|
 | repeat grid ||
 
-# Keyboard Shortcuts
+## Keyboard Shortcuts
 
 | Shortcut | Description |
 |---|---|
@@ -38,7 +31,7 @@ Adobe Xd is to create UI/UX design.
 |`ctrl` + `2`| Zoom to 200%|
 |`ctrl` + `3`||
 
-# Interesting plugins
+## Interesting plugins
 
 * Anima
 * Stock Image
@@ -54,6 +47,6 @@ To Be checked for:
 * UserTesting
 * Userlytics
 
-# Resources
+## Resources
 
 * https://www.adobe.com/be_en/creativecloud/ui-ux.html

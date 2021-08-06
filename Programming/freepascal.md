@@ -1,12 +1,3 @@
------
-title: FreePascal
-description: This article talk about freepascal.
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords: programming, development, freepascal
-lang: be
------
-
 # Freepascal
 
 ## Introduction

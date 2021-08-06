@@ -1,30 +1,21 @@
------
-title: HTML
-description: HTML reference 
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: html, website
-lang: en 
------
+# HTML
+
+## Introduction
 
 Create static web pages with the Hypertext Markup Language.
 
-# Introduction
-
-To note.
-
-# The document type (doctype)
+## The document type (doctype)
 
 You need to define a doctype.
 
-## HTML 4.01 Transitional {#html-401-transitional}
+### HTML 4.01 Transitional {#html-401-transitional}
 
 ```
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 ```
 
-## XHTML
+### XHTML
 
 ```
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -32,7 +23,7 @@ You need to define a doctype.
 ```
 
 
-# Meta tags
+## Meta tags
 
 `meta` tags define some properties of a page:
 
@@ -44,6 +35,6 @@ You need to define a doctype.
 * The first defint the content type `text/html` and the charset `iso-8859-1`
 * The last define the author of the page
 
-# Resources
+## Resources
 
 * See the website of w3c

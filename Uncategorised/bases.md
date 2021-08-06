@@ -1,18 +1,8 @@
----
-title: Bases
-description: Page dedicated to the math bases
-created: 22-10-2011 00:00:00
-modified: 22-10-2011 00:00:00
-keywords: math
-lang: en
----
-
 # Math Bases
 
 *This is a little reminder note about the different bases.*
 
-Note that `**` means exponent. This is used in this file for easy usage
-in python.
+Note that `**` means exponent. This is used in this file for easy usage in python.
 
 ## Decimal numbers
 

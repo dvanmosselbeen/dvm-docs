@@ -1,24 +1,15 @@
------
-title: Piano stuff
-description: A little file containing various notes related to piano.
-created: 07-06-2012 21:19:53
-modified: 07-06-2012 21:19:53
-keywords: piano, music
-lang: en
------
-
 # Piano stuff
 
 ## Learn music
 
 Search for "cours de solfege" on google.
 
-http://tutofm.e-monsite.com/pages/theorie-musicale/les-cours-en-pdf.html
-http://arpeggione.wifeo.com/theorie-musicale.php
-http://alban.lepsy.free.fr/composer/solfege.pdf
-http://www.nicedays.net/solfege/
-http://fr.wikipedia.org/wiki/Solf%C3%A8ge
-http://www.theoriedelamusique.com/pageprincipale.html
+* http://tutofm.e-monsite.com/pages/theorie-musicale/les-cours-en-pdf.html
+* http://arpeggione.wifeo.com/theorie-musicale.php
+* http://alban.lepsy.free.fr/composer/solfege.pdf
+* http://www.nicedays.net/solfege/
+* http://fr.wikipedia.org/wiki/Solf%C3%A8ge
+* http://www.theoriedelamusique.com/pageprincipale.html
 
 ## Youtube piano music
 

@@ -1,12 +1,3 @@
------
-title: Microsoft Windows 10
-description: This article is dedicated to Microsoft Windows 10
-created: 12-09-2020 16:59:00
-modified: 12-09-2020 16:59:00
-keywords: Microsoft, Windows, 10
-lang: en
------
-
 # Windows 10
 
 Just a bunch of notes i have specific to Microsoft Windows 10.
@@ -54,20 +45,13 @@ Just a bunch of notes i have specific to Microsoft Windows 10.
 
 ## Activating the hibernate item in the shutdown options
 
-By default, the hibernate feature is not activated on a Microsoft Windows Desktop computer. The hibernation feature was 
-initially created for laptop computers to speed up in some way the startup and the shutdown process. At the same time 
-it save the state of your current work space (profile / desktop). The hibernation feature is also way faster than a 
-classic shutdown and start up. That's why the hibernation feature is also loved on desktop computers. 
+By default, the hibernate feature is not activated on a Microsoft Windows Desktop computer. The hibernation feature was initially created for laptop computers to speed up in some way the startup and the shutdown process. At the same time it save the state of your current work space (profile / desktop). The hibernation feature is also way faster than a classic shutdown and start up. That's why the hibernation feature is also loved on desktop computers. 
 
-To activate the hibernation feature, the shortcut way is by going to  `Control Panel\Hardware and Sound\Power Options`. 
-It's actually a path you can paste in the Windows File explore path bar (`ctrl+e` to start the file explorer).
+To activate the hibernation feature, the shortcut way is by going to  `Control Panel\Hardware and Sound\Power Options`. It's actually a path you can paste in the Windows File explore path bar (`ctrl+e` to start the file explorer).
 
-The longer method is by clicking on the `Start Menu` > `Settings`. Then in that new window click on `Power & sleep`. 
-Then on the right side, click on `Additional power settings`.
+The longer method is by clicking on the `Start Menu` > `Settings`. Then in that new window click on `Power & sleep`. Then on the right side, click on `Additional power settings`.
 
-In the left side of the window, click on `Choose what the power button do`. You will see that there's a checkbox 
-`Hibernate` which you can't activate you. First click on top of that window on 
-`Change settings that are currently unavailable`. Now you will see that you can check the `Hibernate` option.
+In the left side of the window, click on `Choose what the power button do`. You will see that there's a checkbox `Hibernate` which you can't activate you. First click on top of that window on `Change settings that are currently unavailable`. Now you will see that you can check the `Hibernate` option.
 
 ## Apps i like for Windows
 
@@ -105,12 +89,3 @@ Here's a list of applications i like to use on a Microsoft Windows operating sys
 | [Spybot Search & Destroy](https://www.safer-networking.org/download/) | Tool to scan the computer for malicious stuff.|
 | [Malwarebytes](https://malwarebytes.com) | Remove spyware. |
 | XAMPP | Webserver & database. |
-
-## Games
-
-| Name | Description|
-|---|---|
-| FlightGear | Open source Flight Simulator. |
-| X-Plane | Pay Flight Simulator. ||
-| ROR | Body & physics based simulator game. Essentially trucks, cars ... |
- 

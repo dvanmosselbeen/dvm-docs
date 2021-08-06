@@ -1,21 +1,10 @@
------
-title: GIT Quick Reference
-description: Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. 
-created: 2020-04-07 10:22:00
-modified: 2020-04-07 10:22:00
-keywords: git, programming, source, code
-lang: en
------
+# GIT
 
-# GIT Quick Reference
-
-GIT is a serious tool for developers who want to keep track of their source code changes. With this i will make it 
-clear from the start that this tool is essentially very useful for non-binary data.
+GIT is a serious tool for developers who want to keep track of their source code changes. With this i will make it clear from the start that this tool is essentially very useful for non-binary data.
 
 ## GIT quick reference
 
-There are different tools available to work with GIT. There is a command line interface tool (Git Bash) and GUI 
-tools. He we describe the CLI tools
+There are different tools available to work with GIT. There is a command line interface tool (Git Bash) and GUI tools. He we describe the CLI tools
 
 ### General GIT references
 
@@ -45,8 +34,7 @@ Fetch the latest data:
 
 ### Create a new repository and push it to the git hoster
 
-First of all, we need to create a repository on the github web interface. On that interface once the repository 
-created, it will give you information on how to push the data to the web hoster. Which resume like the following: 
+First of all, we need to create a repository on the github web interface. On that interface once the repository created, it will give you information on how to push the data to the web hoster. Which resume like the following: 
 
 Initialise a directory to be used as a git repository:
 
@@ -76,8 +64,7 @@ Pus the local data to the GIT hoster:
 
 ## Github
 
-Github (https://github.com/) is a web service, which allow you to store your git repository on the internet. Thanks to 
-this service you can also share your work in such way that other can collaborate on your project.
+Github (https://github.com/) is a web service, which allow you to store your git repository on the internet. Thanks to this service you can also share your work in such way that other can collaborate on your project.
 
 # Resources
 

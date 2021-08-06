@@ -1,7 +1,11 @@
+# Security Section
+
 A dedicated folder with various information related to security for 
 Microsoft Windows as well as for GNU/Linux.
 
-# Pages
+## Pages
+
+**This Table Of Content/Pages is outdated**
 
 * [website_pentesting/README](./website_pentesting/README.md)
 * [metasploit](./metasploit.md)
@@ -12,7 +16,7 @@ Microsoft Windows as well as for GNU/Linux.
 * [Wi-Fi Cracking](./Wi-Fi%20Hacking.md)
 * [wireshark](./wireshark-101.md)
 
-# Tools and their usage
+## Tools and their usage
 
 * `netdiscover` - Discover the devices on your network.
 * `nmap` - Discover the devices on your network and get more information 
@@ -32,13 +36,12 @@ Microsoft Windows as well as for GNU/Linux.
 * `smbclient` - command-line SMB/CIFS clients for Unix
 * `hydra` - very fast network logon cracker - This is to do online password guessing/cracking.
 * `LinPEAS` - Linux Privilege Escalation Awesome Script (Not in Kali (yet). See github: https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
-* `Nessus vulnerability scanner` - Is exactly what you think is its! A vulnerability scanner! It uses techniques similar to Nmap to find and report vulnerabilities, which are then, presented in a nice GUI for us to look at. Nessus is different from other scanners as it doesn't make assumptions when scanning, like assuming the web application is running on port 80 for instance.  Nessus offers a free and paid service, in which some features are left out from the free to make you more inclined to buy the paid service. Their pricing is similar to Burp Suite, so unless you got some spare change, we will be just be using their free version.
+* `Nessus vulnerability scanner` - Is exactly what you think is its! A vulnerability scanner! It uses techniques similar to Nmap to find and report vulnerabilities, which are then, presented in a nice GUI for us to look at. Nessus is different from other scanners as it doesn't make assumptions when scanning, like assuming the web application is running on port 80 for instance.  Nessus offers a free and paid service, in which some features are left out from the free to make you more inclined to buy the paid service. Their pricing is similar to Burp Suite, so unless you got some spare change, we will be just be using their free version. NOTE: **REQUIRES 9GB OF DISKSPACE**
 
-## Wifi Cracking
+## Wi-Fi Cracking
 
 * crack-ng - See [Wi-Fi Cracking](./Wi-Fi%20Hacking.md)
 
 ## Backdoor creation
 
 * [veil](./veil.md)
-

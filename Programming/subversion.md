@@ -1,13 +1,4 @@
------
-title: Subversion
-description: Subversion Reference
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords:
-lang: en
------
-
-# Subversion Reference
+# Subversion
 
 This is a quick reference for Subversion users. I consider this more as a short tutorial to subversion.
 

@@ -1,13 +1,4 @@
------
-title: Perl Reference
-description: This article talk about Perl programming.
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords: perl, programming
-lang: en
------
-
-# Perl Reference
+# Perl
 
 ## Playing with Perl in the interpreter
 
@@ -17,25 +8,30 @@ Type whatever you want and then `ctrl+d` to execute the statements.
 
 ## Let's Play with the interpreter
 
-    $myVar = 'Hello world\n';
-    print $myVar;
-    $myVar = "Hello world\n";
-    print $myVar;
+```perl
+$myVar = 'Hello world\n';
+print $myVar;
+$myVar = "Hello world\n";
+print $myVar;
+```
 
 That output:
 
-    Hello world\nHello world
+    Hello world
+    Hello world
 
-Some aritmetric stuff:
+Some arithmetic stuff:
 
-    $a = 7;
-    $b = 3;
-    print $a + $b . "\n";
-    print $a - $b . "\n";
-    print $a * $b . "\n";
-    print $a / $b . "\n";
-    print $a ** $b . "\n";
-    print $a % $b . "\n";
+```perl
+$a = 7;
+$b = 3;
+print $a + $b . "\n";
+print $a - $b . "\n";
+print $a * $b . "\n";
+print $a / $b . "\n";
+print $a ** $b . "\n";
+print $a % $b . "\n";
+```
 
 That output:
 
@@ -52,8 +48,10 @@ A Perl script is the same code you have enter in the interpreter. Because of the
 
 The classic Hello world program:
 
-    #!/usr/bin/perl
-    print "Hello, World!\n";
+```perl
+#!/usr/bin/perl
+print "Hello, World!\n";
+```
 
 The first line is the shebang. The path of the `perl` interpreter on the `unix`like like box. You can know where your `perl` interpreter is located with the command 'whereis perl'.
 
@@ -65,44 +63,55 @@ Then you can execute the script without specifying the program. Like we can exec
 
 ## If
 
-    $a = 7;
-    $b = 3;
-    if ($a > $b) {
-        print "$a is greater than b\n";
-    }
+```perl
+$a = 7;
+$b = 3;
+if ($a > $b) {
+    print "$a is greater than b\n";
+}
+```
 
 That output:
 
     7 is greater than 3
-    $a = 7;
-    $b = 3;
-    if ($b > $a) {
-        print "$b is greater than $a\n";
-    } else {
-        print "$b is not more than $a\n";
-    }
+
+```perl
+$a = 7;
+$b = 3;
+if ($b > $a) {
+    print "$b is greater than $a\n";
+} else {
+    print "$b is not more than $a\n";
+}
+```
 
 Output :
 
     3 is not more than 7
-    $a = 7;
-    $b = 3;
-    unless ($b > $a) {
-        print "$b is not more than $a\n";
-    }
-    $a = 7;
-    $b = 3;
-    unless ($a > $b) {
-        print "$a is not more than $b\n";
-    } else {
-        print "$a is more than $b\n";
-    }
+
+```perl
+$a = 7;
+$b = 3;
+unless ($b > $a) {
+    print "$b is not more than $a\n";
+}
+$a = 7;
+$b = 3;
+unless ($a > $b) {
+    print "$a is not more than $b\n";
+} else {
+    print "$a is more than $b\n";
+}
+```
 
 Output:
 
     7 is more than 3
-    print "$a is greater than $b\n" if ($a > $b)";
-    print "$b is not more thatn $a\n" unless ($b > $a);
+
+```perl
+print "$a is greater than $b\n" if ($a > $b)";
+print "$b is not more thatn $a\n" unless ($b > $a);
+```
 
 output:
 
@@ -111,21 +120,26 @@ output:
 
 ## Arrays
 
-    @array = (1, 2, 3, 4, 5);
-    foreach $number (@array) {
-        print "$number\n";
-    }
+```perl
+@array = (1, 2, 3, 4, 5);
+foreach $number (@array) {
+    print "$number\n";
+}
+```
 
 Making an array with a little range trick:
 
-    @array = (1 .. 5);
-    foreach $number (@array) {
-        print "$number\n";
-    }
-    @array = (1 .. 5, 7 .. 10 );
-    foreach $number (@array) {
-        print "$number\n";
-    }
+```perl
+@array = (1 .. 5);
+foreach $number (@array) {
+    print "$number\n";
+}
+
+@array = (1 .. 5, 7 .. 10 );
+foreach $number (@array) {
+    print "$number\n";
+}
+```
 
 That output:
 
@@ -137,13 +151,14 @@ That output:
     7
     8
     9
+    10
 
-10
-
-    foreach $number (1 .. 5) {
-        next if ($number == 3);
-        print "$number\n";
-    }
+```perl
+foreach $number (1 .. 5) {
+    next if ($number == 3);
+    print "$number\n";
+}
+```
 
 That output:
 
@@ -151,10 +166,13 @@ That output:
     2
     4
     5
-    foreach $number (1 .. 10 ) {
-        last if ($number == 7);
-        print "$number\n";
-    }
+
+```perl
+foreach $number (1 .. 10 ) {
+    last if ($number == 7);
+    print "$number\n";
+}
+```
 
 That output:
 
@@ -167,4 +185,4 @@ That output:
 
 ## Resources
 
-*   Nice Perl movie introductions: [http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries](http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries)
+* Nice Perl movie introductions: [http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries](http://showmedo.com/videos/series?name=perlDevijverPerlIntroSeries)

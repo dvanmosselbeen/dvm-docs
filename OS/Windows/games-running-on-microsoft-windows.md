@@ -1,19 +1,8 @@
------
-title: Games running on Microsoft Windows
-description: 'A list of games running on the Microsoft Windows operating system.'
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: Games, Microsoft, Windows
-lang: en
------
-
 # Games running on Microsoft Windows
 
-This article talk about some free game that are available for Microsoft
-Windows.
+This document talk about some free game that are available for Microsoft Windows.
 
-Look a bit if you find somethings nice on this website
-<http://osswin.sourceforge.net/games.html>.
+Look a bit if you find somethings nice on this website: https://bartvandewoestyne.github.io/osswin/
 
 ## Adventure / Role Playing
 

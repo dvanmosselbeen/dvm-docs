@@ -1,31 +1,23 @@
------
-title: Photography
-description: This page is dedicated to photography
-created: 07-02-2012 00:00:00
-modified: 07-02-2012 00:00:00
-keywords: photography
-lang: en
------
 
 # Photography
 
-This article regroup some information concerning photography. This page can be split up into different articles (mind a photography category).
+This document list some information concerning photography. This page can be split up into different articles (mind a photography category).
 
 ## Resources
 
-### Wetten en rechten
+### Laws and Rights (Belgian)
 
 [http://www.privacycommission.be/nl/faq-themas/recht-op-afbeelding](http://www.privacycommission.be/nl/faq-themas/recht-op-afbeelding)
 
 ### Tools
 
-[http://www.tineye.com/](http://www.tineye.com/) - Reverse image search (To search where you image has been used. Google can do the same btw)
+[http://www.tineye.com/](http://www.tineye.com/) - Reverse image search (To search where you image has been used. Google can do the same btw)
 
 ### Specific information
 
 * [Sunny 16 rule](http://en.wikipedia.org/wiki/Sunny_16_rule)
 * [Freedom Of Panorama](http://en.wikipedia.org/wiki/Freedom_of_panorama)
-* [National Geographic: The Last Roll of Kodachrome](http://www.youtube.com/watch?v=DUL6MBVKVLI) - On Youtubeb how to get rich by felix dennis screw it let's do it by richard branson
+* [National Geographic: The Last Roll of Kodachrome](http://www.youtube.com/watch?v=DUL6MBVKVLI) - On Youtube how to get rich by felix dennis screw it let's do it by richard branson
 * [http://en.wikipedia.org/wiki/List_of_photographers](http://en.wikipedia.org/wiki/List_of_photographers)
 
 ### General websites
@@ -34,7 +26,7 @@ This article regroup some information concerning photography. This page can be s
 * [www.picturecorrect.com](http://www.picturecorrect.com) - General tips and trics.
 * [www.pix-populi.fr](http://www.pix-populi.fr) - French website with some tips and trics
 * [http://oneslidephotography.com/search/d51000-lenses/](http://oneslidephotography.com/search/d51000-lenses/)
-* [www.belgiumdigital.com](http://www.belgiumdigital.com) - 
+* [www.belgiumdigital.com](http://www.belgiumdigital.com) - 
 * [100 Strangers project](http://www.100strangers.com) - Create a portrait of a stranger and tell the story.
 * [www.otof.nl](http://www.otof.nl/) - Dutch website dedicated to photography.
 * [www.myshuttercount.com](http://www.myshuttercount.com) - A website that can tell you the shutter count of the pic you upload!
@@ -43,11 +35,11 @@ This article regroup some information concerning photography. This page can be s
 * [MegaPixel forum](http://megapixel.gkarnet.org)
 * [Nikon Creative Lighting System](http://www.nikoncls.com)
 * http://dslrphoto.com
-* [www.imaging-resource.com/PRODS/D5100/D5100FLASH.HTM](http://www.imaging-resource.com/PRODS/D5100/D5100FLASH.HTM) - Flash (and other) information of the Nikon D5100
-* [http://strobist.blogspot.be/](http://strobist.blogspot.be/) - The strobist starting place!
+* [www.imaging-resource.com/PRODS/D5100/D5100FLASH.HTM](http://www.imaging-resource.com/PRODS/D5100/D5100FLASH.HTM) - Flash (and other) information of the Nikon D5100
+* [http://strobist.blogspot.be/](http://strobist.blogspot.be/) - The strobist starting place!
 * http://attrape-pixel.com
-* [www.reddit.com/r/photocritique](http://www.reddit.com/r/photocritique) - A site to post your photographs and get some feedback.
-* [www.exposureguide.com/exposure.htm](http://www.exposureguide.com/exposure.htm) - Information about exposure.
+* [www.reddit.com/r/photocritique](http://www.reddit.com/r/photocritique) - A site to post your photographs and get some feedback.
+* [www.exposureguide.com/exposure.htm](http://www.exposureguide.com/exposure.htm) - Information about exposure.
 * [www.diyphotography.net](http://www.diyphotography.net/) - Do It Yourself photography.
 * [http://www.virusphoto.com/](http://www.virusphoto.com/)
 
@@ -58,11 +50,11 @@ This article regroup some information concerning photography. This page can be s
 ### Photographers and models lookup sites
 
 * [www.monbookphoto.com](http://www.monbookphoto.com) <a>- Databank for models aswell as photographers.</a>
-* [www.photo-models-belgium.be](http://www.photo-models-belgium.be) - Webiste where you can subscribe as model or photographer and do some session at some studio.
+* [www.photo-models-belgium.be](http://www.photo-models-belgium.be) - Webiste where you can subscribe as model or photographer and do some session at some studio.
 * www.photoviews.net
 * [Getty Image Wanted](https://twitter.com/gettyimageswant) - Look to what Getty Image is looking for photographs.
 *  http://modellennet.be
-* [http://fotoshoots.be/](http://fotoshoots.be/) -
+* [http://fotoshoots.be/](http://fotoshoots.be/) -
 
 ### Stock photography - Website or companies selling images
 
@@ -71,10 +63,10 @@ This article regroup some information concerning photography. This page can be s
 * [http://www.dreamstime.com](http://www.dreamstime.com/)
 * [http://fotolia.com](http://fotolia.com)
 * http://123rf.com
-* [http://www.bigstockphoto.com](http://www.bigstockphoto.com) - Very inefficient submission process but they accept almost everything.
-* [http://www.canstockphoto.com/](http://www.canstockphoto.com/) - Fast submission process, the most efficient of all!
-* [http://www.pond5.com](http://www.pond5.com) - Also do audio stock! They also include your meta data which is rare (but good!)
-* [http://www.istockphoto.com](http://www.istockphoto.com) - Probably the most picky, but they pay alright. Probably only reserved for the best photographers!
+* [http://www.bigstockphoto.com](http://www.bigstockphoto.com) - Very inefficient submission process but they accept almost everything.
+* [http://www.canstockphoto.com/](http://www.canstockphoto.com/) - Fast submission process, the most efficient of all!
+* [http://www.pond5.com](http://www.pond5.com) - Also do audio stock! They also include your meta data which is rare (but good!)
+* [http://www.istockphoto.com](http://www.istockphoto.com) - Probably the most picky, but they pay alright. Probably only reserved for the best photographers!
 
 ### (Video) tutorials
 
@@ -84,15 +76,15 @@ This article regroup some information concerning photography. This page can be s
 * [DigitalRev](http://www.youtube.com/user/DigitalRevCom?feature=watch) -
 * [Depth of field (with light)](http://www.youtube.com/watch?v=qPcdWxhLwoA&feature=related) - Some nice tricks with depth of field with light tutorial
 * [Lighting Basics: How to Shoot Professional-Looking Portraits](http://www.youtube.com/watch?v=y_Occ8W-zIE&feature=player_embedded) - Some great tutorial (1 hour and 39 minutes long!). See also all other videos they made!
-* [Controlling the Light: Beginners Guide to Off-Camera Lighting and Control](http://www.youtube.com/watch?v=b5v7ejTAIlA) - A 1 hour 50 minutes long video!
-* [Introduction to Studio Lighting](http://www.youtube.com/watch?v=-ibFanS5GC4&feature=relmfu) - A 2 hours long video!
+* [Controlling the Light: Beginners Guide to Off-Camera Lighting and Control](http://www.youtube.com/watch?v=b5v7ejTAIlA) - A 1 hour 50 minutes long video!
+* [Introduction to Studio Lighting](http://www.youtube.com/watch?v=-ibFanS5GC4&feature=relmfu) - A 2 hours long video!
 * [The basic headshot](http://www.youtube.com/watch?v=MIMCFVlbEz8&feature=relmfu) - A 2 hours and 4 minutes long video!
 * [An introduction to HDR photography](http://www.youtube.com/watch?v=v3CPavb2NWs&feature=related) - A 1 hour 33 minutes long video!
 * [Off camera flash](http://www.youtube.com/watch?v=HCDtcVFjJG4&feature=watch-vrec) - A 1 hour 57 minutes long video!
 * [Studio Lightings Essentials](http://www.youtube.com/watch?v=B-9I6d0Yavk&feature=player_embedded) - A 1 hour and 20 minutes long video!
 * [Better Photographic Composition - Beyond the Rule of Thirds](http://www.youtube.com/watch?v=OtcD84l9eUw) - A 2 hours a 3 minutes long video!
 * [Being Creative and getting the shot](http://www.youtube.com/watch?v=J2YFm4UkD5I&feature=watch-vrec) - A 1 hour and 33 minutes long video!
-* [2D Composition Rules](http://www.johnharveyphoto.com/LearnComposition/) - Some very good information. See also the other sections like flowers, peoples, water etc photography.
+* [2D Composition Rules](http://www.johnharveyphoto.com/LearnComposition/) - Some very good information. See also the other sections like flowers, peoples, water etc photography.
 * [How to photograph models](http://www.youtube.com/watch?v=J6bXdOBIDzM&feature=related) - Give tips on general shooting + quick info on lightmeter and the greycard. It also give a good tip about the spot metering.
 * [lynda.com](http://www.youtube.com/user/lyndapodcast/videos?view=0) - Tons of short youtube photography (and others) tutorials.
 * [How to make infinity white background](http://www.youtube.com/watch?v=D_iLW0RbbUY&feature=related) (in a garage box)(youtube)
@@ -105,8 +97,8 @@ This article regroup some information concerning photography. This page can be s
 * [JUNO-Photography](http://www.facebook.com/pages/JUNO-fotografie-Halle/237086812979748) - A photographer at Halle
 * [SL-Photography](http://www.facebook.com/creatitivityisanart) - A photographer at Halle
 * [Erwin Alsteen](http://www.erwinalsteens.be) - A photographer at Halle
-* [www.speakingthroughsilence.com](http://www.speakingthroughsilence.com) - A photographer at Halle
-* [www.altergrafix.be](http://www.altergrafix.be) - Photographer at Halle (Buizingen)
+* [www.speakingthroughsilence.com](http://www.speakingthroughsilence.com) - A photographer at Halle
+* [www.altergrafix.be](http://www.altergrafix.be) - Photographer at Halle (Buizingen)
 * [http://www.facebook.com/Peerstudio](http://www.facebook.com/Peerstudio) - A photographer at "Dworp" (close to Halle)
 * [Studio Pieters](http://www.studiopieters.be) - A photographer at "Dworp" (close to Halle)
 * [Moments 4 ever](http://www.dav-fotografie.be) - A photographer at Halle
@@ -132,12 +124,12 @@ This article regroup some information concerning photography. This page can be s
 * http://www.dehobbyfotograaf.be
 * [Ooievaarsboom](http://www.ooievaarsboom.be) - (2) Photophers specialiced in pregnancy and baby photography. See here the [facebook page](https://www.facebook.com/pages/Ooievaarsboom/324292571239).
 * [http://art-numeric.com](http://art-numeric.com/) -
-* [http://www.shootpeople.be](http://www.shootpeople.be) -
-* [http://pbase.com/bechhols](http://pbase.com/bechhols) - Old Belgian photographer who also let or do it's retouch on his photographs which result in amazing photographs.
+* [http://www.shootpeople.be](http://www.shootpeople.be) -
+* [http://pbase.com/bechhols](http://pbase.com/bechhols) - Old Belgian photographer who also let or do it's retouch on his photographs which result in amazing photographs.
 * [Jan Janssens](http://janjanssensfotografie.be) - Belgian photographer (price list available)
 * [Fotografie eye-c](http://www.fotografie-eye-c.be/) - A Belgian photographer located at Brugge who does non-comercial (Free, TFCD) shoots.
-* kevin vandenberghe - Photographer located at Waregem - [http://www.vinn.be](http://www.vinn.be/) - [](http://vandenberghekevin.be/)[http://vandenberghekevin.be](http://vandenberghekevin.be)
-* [http://headshot.be/](http://headshot.be/) - A photographer specialized into event photography
+* kevin vandenberghe - Photographer located at Waregem - [http://www.vinn.be](http://www.vinn.be/) - [](http://vandenberghekevin.be/)[http://vandenberghekevin.be](http://vandenberghekevin.be)
+* [http://headshot.be/](http://headshot.be/) - A photographer specialized into event photography
 
 ### Awesome photographers
 
@@ -151,19 +143,19 @@ This article regroup some information concerning photography. This page can be s
 * [Chriss Collacott](http://avision.ca/galleries-of-panoramics-bc-vancouver-canada-by-chris-collacott.html)
 * [Quentin Arnaud](http://www.behance.net/quearn)
 * [Glyn Dewis](http://glyndewis.com/) - A photographer and retoucher. See his [facebook page](https://www.facebook.com/glyndewisphotography), [youtube channel](http://www.youtube.com/user/GlynDewis/),
-* [Peter Hurley](http://peterhurley.com) - See his awesome [The basic headshot](http://www.youtube.com/watch?v=MIMCFVlbEz8&feature=relmfu) video tutorial. Peter ask 1100$ for his Actor's headshots sessions.
+* [Peter Hurley](http://peterhurley.com) - See his awesome [The basic headshot](http://www.youtube.com/watch?v=MIMCFVlbEz8&feature=relmfu) video tutorial. Peter ask 1100$ for his Actor's headshots sessions.
 * [Joel Grimes](http://joelgrimes.com) - Who do mainly composite HDR portraits. See for example [this presentation video](http://www.youtube.com/watch?v=1c0_pLKtG5Y&NR=1&feature=endscreen).
 * [Tim Tadder](http://www.timtadder.com) - Who does styled HDR photography as well as playing with light, does some concepts etc. Very inspiring photographer!
 * [Phil Steele](http://steelevisions.com) - Who also do some [photography trainings](http://www.steeletraining.com).
-* [](http://www.facebook.com/PhilippeBrismezPhotographie)<a>http://www.facebook.com/PhilippeBrismezPhotographie</a>
-* [](http://www.facebook.com/RyanBrenizerPhotography/photos_stream)<a>http://www.facebook.com/RyanBrenizerPhotography/photos_stream</a>
-* [](http://www.ryanbrenizer.com/)<a>http://www.ryanbrenizer.com/</a>
+* http://www.facebook.com/PhilippeBrismezPhotographie
+* http://www.facebook.com/RyanBrenizerPhotography/photos_stream
+* http://www.ryanbrenizer.com
 * www.zingaro-photography.com
 * [Jill Greenberg](http://www.jillgreenberg.com)
 * [Morinico](http://www.morinico.com) - Have some nice (post processing) photographic style.
-* [](http://www.moriahicephotography.com)<a>www.moriahicephotography.com</a>
-* [](http://www.courtneychenphotography.com/)<a>www.courtneychenphotography.com/</a>
-* [](http://www.oscarplazadiez.com/)<a>http://www.oscarplazadiez.com/</a>
+* http://www.moriahicephotography.com
+* http://www.courtneychenphotography.com
+* http://www.oscarplazadiez.com/
 * [www.luckypicturesphotography.com](http://www.luckypicturesphotography.com) - Who does awesome baby photos (Style of Anne Geddes)
 * [http://www.2myworld.com/](http://www.2myworld.com/)
 
@@ -188,10 +180,10 @@ This article regroup some information concerning photography. This page can be s
 * http://www.diorama.be
 * [http://ishphoto.com](http://ishphoto.com) - See price in the Wedding / Portrait section.
 * [Danyste Fotografie](http://www.danyste.com) - A photographer here at Lembeek.
-* [www.tlmphotography.be](http://www.tlmphotography.be) - [www.photo-de-mariage.be](http://www.photo-de-mariage.be) - [www.photo-de-grossesse.be](http://www.photo-de-grossesse.be) - A Belgian photographer located in Brabant Wallon.
-* [http://lauravink.werkaandemuur.nl/index/131/nl/Laura-Vink/id/9](http://lauravink.werkaandemuur.nl/index/131/nl/Laura-Vink/id/9) - Photographer who sell posters and "kaders".
+* [www.tlmphotography.be](http://www.tlmphotography.be) - [www.photo-de-mariage.be](http://www.photo-de-mariage.be) - [www.photo-de-grossesse.be](http://www.photo-de-grossesse.be) - A Belgian photographer located in Brabant Wallon.
+* [http://lauravink.werkaandemuur.nl/index/131/nl/Laura-Vink/id/9](http://lauravink.werkaandemuur.nl/index/131/nl/Laura-Vink/id/9) - Photographer who sell posters and "kaders".
 * http://le-photograph.photosit.es/pricing/current
-* [www.jasmine-star.com](http://www.jasmine-star.com) - Her price start from $7500 (see collections link)
+* [www.jasmine-star.com](http://www.jasmine-star.com) - Her price start from $7500 (see collections link)
 
 ### Inspiration sources
 
@@ -208,25 +200,25 @@ This article regroup some information concerning photography. This page can be s
 
 ### (E)Books
 
-* [www.otof.nl/ebooks-over-fotografie/#.UHQ8iFH38uA](http://www.otof.nl/ebooks-over-fotografie/#.UHQ8iFH38uA) - List with free and payware ebooks.
+* [www.otof.nl/ebooks-over-fotografie/#.UHQ8iFH38uA](http://www.otof.nl/ebooks-over-fotografie/#.UHQ8iFH38uA) - List with free and payware ebooks.
 
 ### Shops
 
 * www.beslist.be/products/r/nikon+d5100+prijs/
 * [www.teurlings.selexionclix.be](http://www.teurlings.selexionclix.be/) - Shop at (GB of) Halle
-* [www.bhphotovideo.com](http://www.bhphotovideo.com) -
-* [http://dx.com](http://dx.com) -
+* [www.bhphotovideo.com](http://www.bhphotovideo.com)
+* [http://dx.com](http://dx.com)
 * [www.digicamshop.be](http://www.digicamshop.be) - Seems to be a very cheap (the cheapes) shop.
-* [www.photogalerie.com](http://www.photogalerie.com) - There's 3 shops of them in Belgium.
+* [www.photogalerie.com](http://www.photogalerie.com) - There's 3 shops of them in Belgium.
 * www.kamera-express.be
 * [www.photobooks.be](http://fr.photobook.be) - Print shop who print calendars, books posers etc.
-* [www.auxprixbas.fr/loisirs/photographie/](http://www.auxprixbas.fr/loisirs/photographie/) -
+* [www.auxprixbas.fr/loisirs/photographie/](http://www.auxprixbas.fr/loisirs/photographie/) -
 * http://www.bonjourfoto.nl
 * [http://www.fotokonijnenberg.be](http://www.fotokonijnenberg.be)
 
 ### Photo/book printer shops
 
-* [www.monalbumphoto.be](http://www.monalbumphoto.be) - Print shop who print calendars, books posers etc.
+* [www.monalbumphoto.be](http://www.monalbumphoto.be) - Print shop who print calendars, books posers etc.
 * http://foto.delhaize.be/
 
 ### Rental
@@ -243,41 +235,18 @@ This article regroup some information concerning photography. This page can be s
 
 * http://imgur.com
 * http://www.flickr.com
-* [http://flickeflu.com/photos/dvanmosselbeen](http://flickeflu.com/photos/dvanmosselbeen) - Other interface for flickr (but still use flickr)
+* [http://flickeflu.com/photos/dvanmosselbeen](http://flickeflu.com/photos/dvanmosselbeen) - Other interface for flickr (but still use flickr)
 * [http://imageshack.us](http://imageshack.us/)
 
 ### Share files
 
-[https://soshareit.com](https://soshareit.com) -  Share as many large photos, videos, audio files, or any other file types as you want, for free. Up to a terabyte
+[https://soshareit.com](https://soshareit.com) - Share as many large photos, videos, audio files, or any other file types as you want, for free. Up to a terabyte
 
-[https://www.wetransfer.com](https://www.wetransfer.com) - Share up to 2 GB for 15 days.
+[https://www.wetransfer.com](https://www.wetransfer.com) - Share up to 2 GB for 15 days.
 
 ## Other notes
 
-01:50:25 < i4dnf> itchi - just get a 55-200, it should e enough  
-01:51:03 < i4dnf> 18-200 is prone to distortion and chromatic aberration  
-01:51:04 < itchi> Well, still expensive :P  
-01:51:59 < i4dnf> check Tamron and other compatibles ;)  
-01:54:32 < i4dnf> itchi - a 55-200 from nikon is just short of 150Euro here
-
-The key to make a good photograph: light, location, model, photographer are the 4 key elements to get your moment into a picture.
-
 [http://www.dofmaster.com/dofjs.html](http://www.dofmaster.com/dofjs.html) - a Depth of Field calculator.
-
-## My Equipment
-
-* **Nikon D5100** -
-* [Nikon D800](http://www.digicamshop.be/product/152696/category-193019-nikon-d800/nikon-d800-body.html) - Bought the D800 with the Nikon AF-S 24-70mm f/2.8 ED in a kit for €3768.
-* [Nikon AF-S 24-70mm f/2.8G ED](http://www.digicamshop.be/product/59360/category-193019-nikon-d800/nikon-af-s-24-70mm-f-2-8g-ed.html) -
-* **Nikkor Lens AF-S DX Zoom-Nikkor 18-55mm f/3.5-5.6G EDII** - Kitlens bought with the D5100 body. Filter size: 52mm, (without) hood: HB45, (without) Case: CL-0815
-* **Nikkor Lens AF-S DX VR Zoom-Nikkor 55-200mm f/4-5.6G IF-ED** - 329€ (at MediaMarkt while it's 189€ worth on digicamshop.be). Filter size: 52mm, (supplied) hood: HB-37, (without) Case: CL-0918
-* [Nikon AF-S 35mm f/1.8G DX](http://www.digicamshop.be/product/65915/category-188329-top-10-voor-nikon/nikon-af-s-35mm-f-1-8g-dx.html) - 179€ - Is a DX, lens will crop on a full frame camera[.](http://www.digicamshop.be/product/65915/category-188329-top-10-voor-nikon/nikon-af-s-35mm-f-1-8g-dx.html)
-* [Nikon SB-700 Speedlight (i-TTL)](http://www.digicamshop.be/product/111718/category-203858-nikon/nikon-sb-700-speedlight-flitser.html) - 259€
-* [Tamron 28-75mm f/2.8 XR Di LD IF](http://www.digicamshop.be/product/82994/category-188332-keuzehulp-lenzen-voor-nikon-spiegelreflexcameras/tamron-28-75mm-f-2-8-xr-di-ld-if-nikon-built-in-af.html) - 399€ - See also the [Tamron 28-75mm flickr group](http://www.flickr.com/groups/tamron2875mm/pool/with/8212314778/#photo_8212314778).
-* [Remote controller ML-L 3](http://www.digicamshop.be/product/25054/177635/1862/category-181294-nikon-d5100/nikon-ml-l-3-remote-nikon-slr.html) - 36,95€
-* [Reflector kit](http://www.digicamshop.be/product/208910/category-202830-200-500-w/falcon-eyes-reflectiescherm-5-in-1-crk-32-slg.html) - 34,85€
-* [Lowepro Pro Runner 300 AW](http://www.digicamshop.be/product/97879/category-70083-cameratassen/lowepro-pro-runner-300-aw.html) - Yasmina a acheter ca chez [Teurlings](http://teurlings.selexionclix.be) 150€ - Dispo a 89,95€ chez digicamshop.be
-* [Billingham 445 Khaki/Tan](http://www.digicamshop.be/product/139688/billingham-445-khaki-tan.html) - Cost about €350
 
 ## Interesting Equipment
 

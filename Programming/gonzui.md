@@ -1,25 +1,16 @@
------
-title: Gonzui
-description: This article talk about how i have setup gonzui and how i use it on a Debian box. 
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords: programming, tool, development
-lang: be
------
-
 # Gonzui
 
-# Introduction
+## Introduction
 
 `gonzui` is useful for programmers. With a web browser you can easy see the source code of your projects, get some documentation of functions, classes or parts of codes. And also see where these functions are used. You can also do a search. It's also and a nice toy to show your code to people, each line have an anchor, so you can give any URL link that point to each line of code.
 
 You can easy import an `apt` source of a package or `cvs` or `svn`(`subversion`) reposition. `gonzui` is an ideal tool if you want to learn the code of someone or for big projects.
 
-# Setup
+## Setup
 
 I have made a custom setup, like i not want to run the stuff as root user and that the stuff are located in the `/var/...`. So i have a bit modified the default config file and i have place the stuff in my home directory. My goal is to create a user account only for that task and let `gozui` running as that user account. With some `cron` job.
 
-## Config
+### Config
 
 We first need to copy the config example to his own home directory.
 
@@ -58,7 +49,7 @@ I have change the paths in the `~/.gonzuirc`, like i want to run it with an user
       :verbose                  => false,
     }
 
-## Creating the needed directories and files
+### Creating the needed directories and files
 
 We now need to create some directories and some files. Like i move the stuff to my home directory:
 
@@ -70,7 +61,7 @@ We now need to create some directories and some files. Like i move the stuff to 
     touch ~/.gonzui/log/gonzui/access.log
     mkdir -p ~/.gonzui/usr/share/gonzui/catalog
 
-# Import stuff to the database
+## Import stuff to the database
 
 We now need to import some stuff we want. Usually we import the different directories that contains the different files of the project. Maybe some time we only want to import some specific files.
 
@@ -89,18 +80,20 @@ Importing from a svn repo:
 
 While experimenting with 'gonzui', you probably want to import some stuff then remove it again, playing a bit with the new toy. Let's write a little script to import the diferent paths/files. Take for example: We fill a file that contain all the directories or files we want to import. Let's make a little script that will automate the import procedure:
 
-    #!/usr/bin/env python
-    # name: gonzui_mass_importer.py
-    import os
-    # File containing the differents paths/files we want to import
-    importFile = '/home/david/to_import_gonzui'
-    for line in open(importFile):
-        if (line.find(' ') >= 1):
-            # We have find a argument
-            os.popen(u'gonzui-import %s %s' % (line.split()[0],line.split()[1]))
-        else:
-            # We have not detect an argument
-            os.popen('gonzui-import %s' % (line))
+```python
+#!/usr/bin/env python
+# name: gonzui_mass_importer.py
+import os
+# File containing the differents paths/files we want to import
+importFile = '/home/david/to_import_gonzui'
+for line in open(importFile):
+    if (line.find(' ') >= 1):
+        # We have find a argument
+        os.popen(u'gonzui-import %s %s' % (line.split()[0],line.split()[1]))
+    else:
+        # We have not detect an argument
+        os.popen('gonzui-import %s' % (line))
+```
 
 Maybe put this script in your ~/bin to have it included in your path directory. So that you can execute this script from anywhere on your computer with your user. I have place this script in my '~/bin' and have call it gonzui_mass_importer. Without the '.py' extension.
 
@@ -132,7 +125,7 @@ Most time, when i want to import some stuff to gonzui. I add it in the to_import
 
 We can at any moment re run us self made script, after we have added a new import path. The stuff that are already imported will be skipped. So the next time you run us script, it will go many faster as the first time we have run it.
 
-# Updating the info
+## Updating the info
 
 If we modify some stuff in the source code, we need to update the gonzui database with 'gonzui-update'. Each time we the source code is modified, and want to see the changes in gonzui, we need to update the database. Maybe is it interesting to make a cron job to automate the task.
 
@@ -141,7 +134,7 @@ If we modify some stuff in the source code, we need to update the gonzui databas
 
 Note: It's just if we add some more source to the stuff.
 
-# Starting the server
+## Starting the server
 
 Once everything is configured and some stuff is been imported, we can start the server. Not that it was needed to import some stuff before starting the server.
 
@@ -151,7 +144,7 @@ You can still import some stuff, update your source code, update the database wh
     http://venus:46984/
     2007-01-10T21:15:32 server started [23790]
 
-# Remove some stuff
+## Remove some stuff
 
 If we want to remove some project:
 
@@ -159,6 +152,6 @@ If we want to remove some project:
 
 We not need to execute `gonzui-update` after remove some stuff. It's directly take in consideration.
 
-# Additional notes
+## Additional notes
 
 If we have some weird characters in us path, `gonzui` will crash. Better to avoid weird characters. If you look to your path and see a `?` character in it. Modify the directory of the file!

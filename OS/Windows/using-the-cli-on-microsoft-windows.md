@@ -1,12 +1,3 @@
------
-title: Using the cli on Microsoft Windows
-description: This article is dedicated on using the cli on Microsoft Windows. 
-created: 28-04-2009 00:00:00
-modified: 28-04-2009 00:00:00
-keywords: Microsoft, Windows, cli, command line
-lang: be
------
-
 # Using the cli on Microsoft Windows
 
 This article talk about command line interface tips and tricks on a Microsoft
@@ -87,3 +78,7 @@ To check if that applied you can right-click on the folder and select "Propertie
 
 * `net` - primarily used to manage network resources
 
+## See also
+
+* The my note file [Miscrosoft Windows 10](microsoft-windows-10.md) which contains lot's of commandline tools and information. Both files should be merged at some point.
+* 

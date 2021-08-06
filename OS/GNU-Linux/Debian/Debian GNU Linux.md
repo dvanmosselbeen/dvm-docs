@@ -1,46 +1,16 @@
------
-
-* title: Debian
-* description: This article is dedicated to Debian GNU / Linux - The universal operating system.
-* created: 28-11-2007 00:00:00
-* modified: 28-11-2007 00:00:00
-* keywords: debian, gnu, linux, operating, system, admin
-* lang: en
-
------
+# Debian GNU / Linux
 
 This document will list a few notes about the Debian GNU/Linux operating system. It is mainly a draft document containing some notes or links to resources concerning Debian. This document won't detail everything as there are already a lot of documentation available online.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
-# Table Of contents
-
-* [Introduction](#introduction)
-* [General information](#general-information)
-    * [Releases (Versions)](#releases-versions)
-* [The package manager](#the-package-manager)
-    * [apt](#apt)
-    * [aptitude](#aptitude)
-* [User Management](./user_management.md)
-* [Admin Commands](#admin-commands)
-* [Interesting apps](#interesting-packages)
-* [Server Tools](#server-tools)
-   * [Web Server & Database](#web-server--database)
-     * [Apache](#apache)
-       * [Installing Apache](#installing-apache)
-     * [MySQL](#mysql)
-        * [Installing MySQL](#installing-mysql)
-     * [PHPMyAdmin](#phpmyadmin)
-* [Getting more help](#getting-more-help)
-* [Resources](#resources)
-
-# Introduction
+## Introduction
 
 The Debian GNU/Linux operating system claims to be the universal operating system. And that's in fact true. Debian runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the Raspberry Pi, the Sony Playstation (3) and so on. I guess we could install Debian into our fridge, but people seems to lazy to do so.
 
-# General information
+## General information
 
-## Releases (versions)
+### Releases (versions)
 
 Debian is been know to be a very stable operating system. Debian is available in 3 different releases. A stable version, a testing version, and a unstable version (called sid).
 
@@ -48,13 +18,13 @@ The stable version, like the name say it, is very stable, however, the packages 
 
 The testing version, like the name say it, is a testing version.
 
-# Installing Debian
+## Installing Debian
 
 You can install Debian on different ways. Starting from a CD, DVD, iso image, usb key, with PXE boots and so on.
 
 These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little iso image. That iso image you can burn to a CD and from there boot up your computer. The particularity of the netinst method is that the iso image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
 
-## Migrating from stable to testing release
+### Migrating from stable to testing release
 
     cp /etc/apt/sources.list /etc/apt/sources.list_BACKUP
     
@@ -65,13 +35,13 @@ These days, with a big internet line, it's common to use the `netinst` method. W
     apt-get update
     apt-get dist-upgrade
 
-# The package manager
+## The package manager
 
 You can easily manage your package with the `apt` tools, which is a collection of tools including `apt-get`, `apt-cache` etc.
 
 There's also `aptitude` which i strongly recommend but is not so user friendly at all. If you don't want to bother, `apt` is just fine and you don' need `aptitude`. Beside apt and aptitude, theirs a un numerous number of other applications, command line or with a graphical interface.
 
-## apt
+### apt
 
 `apt-get` is the default package manager on Debian. There are other package managers available such as `aptitude` etc but in this section we will try to show you how much `apt` rules!
 
@@ -95,13 +65,13 @@ Installing applications
     # Clear the cache (Clears the downloaded deb files).
     apt-get clean
 
-## aptitude
+### aptitude
 
 Aptitude can be used in 2 different ways. Both ways are to do on the command line but one method has no UI and the other has one.
 
 Just by running the command `aptitude`, you will start the UI interface.
 
-# Admin commands
+## Admin commands
 
 | Command | Description |
 |---|---|
@@ -117,7 +87,7 @@ Just by running the command `aptitude`, you will start the UI interface.
 | `service fail2ban status` | To check if fail2ban service is been running. |
 | dmesg | Shows some logs on the console.|
 
-# Interesting packages
+## Interesting packages
 
 A few very interesting package which should be almost installed on every system
 
@@ -145,40 +115,40 @@ A few very interesting package which should be almost installed on every system
 | vim-python-jedi | autocompletion tool for Python - VIM addon files |
 | unp | unpack (almost) everything with one command |
 
-# Server tools
+## Server tools
 
 Here's a few tips for server tools.
 
-## Web Server & Database
+### Web Server & Database
 
 There are various different web servers.
 
-### Apache
+#### Apache
 
 Apache is probably the most well know and used web server. It is very stable, very easy to use and to extend. There's
 also a lot of extra modules you can load to add some extra functionalities. In fact, if you need a good web server,
 then you are probably looking for this Apache web server.
 
-#### Installing Apache
+##### Installing Apache
 
 To install Apache:
 
     aptitude install apache
 
-### MySQL
+#### MySQL
 
 ...
 
-#### Installing MySQL
+##### Installing MySQL
 
 ...
 
-### PHPMyAdmin
+#### PHPMyAdmin
 
 PHPMyAdmin is a web interface to manage the MySQL databases. It's very handy and a must have if you use MySQL.
 
 
-# Getting more help
+## Getting more help
 
 The trick on a GNU/Linux system is to find your way on how you should find information.
 
@@ -190,7 +160,7 @@ Before adding a new user, look on how you should do:
 
     man adduser
 
-# Resources
+## Resources
 
 | Website | Description |
 |---|---|

@@ -1,17 +1,8 @@
------
-title: Apache 2
-description: This article is dedicated to the apache 2 web server.
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: debian, gnu, linux, web, server, website, admin
-lang: en
------
-
 # Apache2
 
 Apache is probably the most used web server. It's rock solid, well documented and has a great user base and support. 
 
-# Installing Apache2
+## Installing Apache2
 
 Installing `apache2`:
 
@@ -42,7 +33,7 @@ Restart the `apache2` server:
     
     systemctl restart apache2
 
-# Tools
+## Tools
 
 | Application | Description |
 |---|---|

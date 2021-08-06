@@ -1,11 +1,4 @@
------
-title: LAMP server with Raspberry PI OS
-description: This article is dedicated to the Raspberry PI LAMP server setup.
-created: 14-10-2020 00:00:00
-modified: 14-10-2020 00:00:00
-keywords: debian, gnu, linux, operating, system, admin, raspberry, pi, linux, apache, apache2, mysql, mariadb,
-lang: en
------
+# LAMP server with Raspberry PI OS
 
 In this document, i describe how to install and configure a LAMP server on a Raspberry Pi Model 4. This should work with other models too.
 

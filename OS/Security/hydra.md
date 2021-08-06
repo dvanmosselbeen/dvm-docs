@@ -1,13 +1,4 @@
------
-
-* title: hydra
-* description: This article is dedicated to Hydra. An tool for online password cracking.
-* created: 30-07-2021 14:04:00
-* modified: 30-07-2021 14:04:00
-* keywords: kali, gnu, linux, operating, system, admin, network, lan, security, hacking, TryHackMe
-* lang: en
-
------
+# Hydra
 
 ## Introduction
 

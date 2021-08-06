@@ -1,20 +1,6 @@
------
-title: Belgian music
-description: A list of Belgian music.
-created: 28-11-2011 00:00:00
-modified: 28-11-2011 00:00:00
-keywords: belgium, belgian, music
-lang: en
------
-
 # Belgian Music
 
-A list of Belgian music, groups, bands and whatever that
-maybe related to pure music made in Belgium or by Belgians*
-
-You will find here an alphabetical list on your right side. Click on an
-item to jump right to it. Or click the All pages button to get the full
-list.
+A list of Belgian music, groups, bands and whatever that maybe related to pure music made in Belgium or by Belgians*
 
 ## F
 

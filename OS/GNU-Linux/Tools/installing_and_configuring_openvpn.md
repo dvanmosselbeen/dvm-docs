@@ -1,29 +1,6 @@
------
-title: Installing and configuring openvpn
-description: This article is dedicated to the openvpn
-created: 14-10-2020 17:39:00
-modified: 14-10-2020 17:39:00
-keywords: debian, gnu, linux, microsoft, windows, operating, system, admin, raspberry, pi, vpn, openvpn, client, server, security, nat, networking
-lang: en
------
+# Installing and configuring openvpn
 
-# Table of Contents
-
-* [Introduction](#introduction)
-* [Server Setup](#server-setup)
-  * [Server Installation](#server-installation)
-  * [Server Configuration](#server-configuration)
-  * [Client configuration files](#client-configuration-files)
-  * [Port forwarding on your internet router](#port-forwarding-on-your-internet-router)
-  * [Server NAT](#server-nat)
-* [Client Setup](#client-setup)
-  * [Windows 10 Clients](#windows-10-clients)
-    * [Windows 10 Client Installation](#windows-10-client-installation)
-    * [Windows 10 Client Configuration](#windows-10-client-configuration)
-  * [Android Clients](#android-clients)
-* [Resources](#resources)
-
-# Introduction
+## Introduction
 
 A `VPN`, more specifically, a `Virtual Private Network` is a direct connection to another network. Simple like this is. By default there's nothing secure on this, but you make use of some `secure` methods to encrypt all data transfer in that private connection to that other network.
 
@@ -31,7 +8,7 @@ A `VPN`, more specifically, a `Virtual Private Network` is a direct connection t
 
 This allow to access a remote network. As well as for enterprises as for home use. 
 
-# Requirements
+## Requirements
 
 * A Linux computer
 * A client (could be a Microsoft Windows 10 laptop)
@@ -40,17 +17,17 @@ The server will be a Raspberry PI OS (Debian based).
 
 The client will be a Windows 10 laptop connected throught wifi network. However, for the tests to work, i shared my internet throught mobile data. 
 
-# Server Setup
+## Server Setup
 
 As server we will use a Raspberry Pi model 4 and it's default OS. The raspberry pi is connected to the onboard ethernet port. The wifi is not used.
 
-## Server Installation
+### Server Installation
 
 Installing the required software is a matter of running the following command:
 
     sudo apt-get install openvpn
 
-## Server Configuration
+### Server Configuration
 
 Switch to root user as we have a lot of commands to do:
 
@@ -68,15 +45,15 @@ We need to adjust a few things up to our needs in `/etc/openvpn/server.conf`.
 
 See my sample [/etc/openvpn/server.conf](files/openvpn__etc_openvpn_server.conf) file.
 
-## Client configuration files
+### Client configuration files
 
 We need to prepare the client configuration file. But we also need to provide a few file to the client so that he is able to connect.
 
 To easy things up, we could use a little trick to group together the required files and create an compressed archive file. So that we only have to provide 1 file to the client, which needs to be unpacked on the host side. 
 
-## Generating the keys
+### Generating the keys
 
-### Keys for the server
+#### Keys for the server
 
     cp -r /usr/share/easy-rsa/ /etc/openvpn
 
@@ -145,7 +122,7 @@ We can now check the log file to see if there's any errors:
 
     nano /var/log/openvpn/openvpn.log
 
-### Keys for the clients
+#### Keys for the clients
 
 In this example, we only generate one client, these keys and config files can be shared to multiples clients and they can connect all together, at least with this server configuration we have. This is more easier to manage than generating keys for each client (user or device). It is possible to make in sort that it is not possible to connect with the same key at the same time.   
 
@@ -160,7 +137,7 @@ Copy an example file which we will need to fine tune:
 
 See my client.ovpn file.
 
-### Create an unified configuration file
+#### Create an unified configuration file
 
 Up to now we have one `client.ovpn` file which contains the configuration of the vpn connection. But we have also some certification and key files. So we end up having 5 files to provide to the each client. But there's a nice trick to merge them somehow together in the `ovpn` configuration file so that we only need to provide 1 file to each client. This is very convenient especially for on smartphones and tables where handling files is not so convenient.
 
@@ -191,7 +168,7 @@ Now from a console:
     cat /etc/openvpn/easy-rsa/pki/private/client1.key >> /etc/openvpn/easy-rsa/keys/client_unified.ovpn
     echo '</key>' >> /etc/openvpn/easy-rsa/keys/client_unified.ovpn
 
-##  Allow IP Forwarding
+###  Allow IP Forwarding
 
 We need to enable to allow IP forwarding as this isn't enabled by default.
 This is required as the "server" (our Raspberry Pi) will be the router between the VPN clients and the local network.
@@ -212,13 +189,13 @@ Save and exit (CTRL+O, CTRL+X)
 
 Your Raspberry Pi can now act as a router
 
-## Port forwarding on your internet router
+### Port forwarding on your internet router
 
 This is very specific to your internet router. It's probably a wifi router you received with your Internet Service Provider. 
 
 For the moment i have one of Proximus and it's very straightforward to setup port forwarding. In a web browser i had to fill in the ip address of my wifi router, there in the interface i had to define to forward the port 1194 to an internal ip adress of the computer where the openvpn server is installed on.
 
-## Server NAT
+### Server NAT
 
 We need to enable NAT. This need to be done at firewall side, for this we will use iptables.
 
@@ -275,19 +252,19 @@ Which returns
     # Completed on Fri Oct 30 14:12:50 2020
 
 
-# Client Setup
+## Client Setup
 
 The openvpn client can work on different kind of operating systems.
 
-## Windows 10 Clients
+### Windows 10 Clients
 
 For this we need a Microsoft Windows 10 operating system. 
 
-### Windows 10 Client Installation 
+#### Windows 10 Client Installation 
 
 Download the installer from https://openvpn.net/ and execute it. 
 
-### Windows 10 Client Configuration
+#### Windows 10 Client Configuration
 
 Depening if you unified the ovpn file with the crt and key files. But the client need to get the configuration files of the server. Not all files are some needs to be keept secret on the server side.
 
@@ -300,16 +277,16 @@ The client needs to have a few files all placed in a temp .
     
 In the interface of the openvpn client, you need to import the `client1.ovpn` file. If everything went fine, then there's nothing else to do at all to get the vpn connection working. There's no need to specify the crt or key files if they are at the same location as the ovpn file. With the unified ovpn file there's even less worries.
 
-## Android Clients
+### Android Clients
 
 We will install the client for Android on a Samsung Galaxy S8+.
 
-# Things left to do or improve
+## Things left to do or improve
 
 * Generate and make use of a ta.crt file to improve security.
 * For security reasons, we could create certificatin and key file for each device that will use the vpn.
 
-# Resources
+## Resources
 
 * https://openvpn.net
 * https://raspberrytips.com/install-openvpn-raspberry-pi/

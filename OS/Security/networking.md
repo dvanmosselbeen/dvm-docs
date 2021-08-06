@@ -1,27 +1,6 @@
------
+# Networking
 
-* title: Networking
-* description: This article is dedicated to computer networks.
-* created: 28-11-2007 00:00:00
-* modified: 28-11-2007 00:00:00
-* keywords: debian, gnu, linux, operating, system, admin, network, wifi, lan, security, hacking, wireless
-* lang: en
-
------
-
-# Table of Contents
-
-* [Tools](#tools)
-* [Non classified](#non-classified)
-* [The 3 different private networks](#the-3-different-private-networks)
-* [OSI Model](#osi-model)  
-* [Discover the network devices](#discover-the-network-devices)
-* [Arp spoofing](#arp-spoofing)
-   * [arpspoof](#arpspoof)
-   * [bettercap](#bettercap)
-      * [Web gui of bettercap](#web-gui-of-bettercap)
-
-# Tools
+## Tools
 
 * `netdiscover` - Discover the devices on your network.
 * `nmap` - Discover the devices on your network and get more information 
@@ -35,17 +14,17 @@
 * `whois` - Domain name lookup
 * `dig` - 
 
-# Non classified
+## Non classified
 
     rout -n
 
-# The 3 different private networks
+## The 3 different private networks
 
 * `Class A:` 10.0. 0.0 to 10.255. 255.255.
 * `Class B:` 172.16. 0.0 to 172.31. 255.255.
 * `Class C:` 192.168. 0.0 to 192.168. 255.255.
 
-# LAN Topologies
+## LAN Topologies
 
 LAN stands for Local Area Network.
 
@@ -53,7 +32,7 @@ LAN stands for Local Area Network.
 * Bus Topology
 * Ring Topology
 
-# ARP Protocol
+## ARP Protocol
 
 Recalling from our previous tasks that devices can have two identifiers: A MAC address and an IP address, the ARP protocol or Address Resolution Protocol for short, is the technology that is responsible for allowing devices to identify themselves on a network.
 
@@ -72,7 +51,7 @@ In order to map these two identifiers together (IP address and MAC address), the
 
 When an ARP request is sent, a message is broadcasted to every other device found on a network by the device, asking whether or not the device's MAC address matches the requested IP address. If the device does have the requested IP address, an ARP reply is returned to the initial device to acknowledge this. The initial device will now remember this and store it within its cache (an ARP entry). 
 
-# OSI Model
+## OSI Model
 
 The OSI model (or Open Systems Interconnection Model) is an absolute fundamental model used in networking.  This critical model provides a framework dictating how all networked devices will send, receive and interpret data.
 
@@ -90,13 +69,13 @@ At every individual layer that data travels through, specific processes take pla
 * Layer 2 - Data Link 
 * Layer 1 - Physical
 
-## Layer 7 - Application
+### Layer 7 - Application
 
 The application layer of the OSI model is the layer that you will be most familiar with. This familiarity is because the application layer is the layer in which protocols and rules are in place to determine how the user should interact with data sent or received.
 
 Everyday applications such as email clients, browsers, or file server browsing software such as FileZilla provide a friendly, Graphical User Interface (GUI) for users to interact with data sent or received. Other protocols include DNS (Domain Name System), which is how website addresses are translated into IP addresses.
 
-## Layer 6 - Presentation
+### Layer 6 - Presentation
 
 Layer 6 of the OSI model is the layer in which standardisation starts to take place. Because software developers can develop any software such as an email client differently, the data still needs to be handled in the same way — no matter how the software works.
 
@@ -104,7 +83,7 @@ This layer acts as a translator for data to and from the application layer (laye
 
 Security features such as data encryption (like HTTPS when visiting a secure site) occur at this layer.
 
-## Layer 5 - Session
+### Layer 5 - Session
 
 Once data has been correctly translated or formatted from the presentation layer (layer 6), the session layer (layer 5) will begin to create a connection to the other computer that the data is destined for. When a connection is established, a session is created. Whilst this connection is active, so is the session.
 
@@ -112,14 +91,14 @@ The session layer (layer 5) synchronises the two computers to ensure that they a
 
 What is worthy of noting is that sessions are unique - meaning that data cannot travel over different sessions, but in fact, only across each session instead.
 
-## Layer 4 - Transport
+### Layer 4 - Transport
 
 Layer 4 of the OSI model plays a vital part in transmitting data across a network and can be a little bit difficult to grasp. When data is sent between devices, it follows one of two different protocols that are decided based upon several factors:
 
 * TCP - Tranmission Control Protocol
 * UDP - User Datagram Protocol
 
-# Layer 3 - Network
+### Layer 3 - Network
 
 The third layer of the OSI model (network layer) is where the magic of routing & re-assembly of data takes place (from these small chunks to the larger chunk). Firstly, routing simply determines the most optimal path in which these chunks of data should be sent.
 
@@ -130,7 +109,7 @@ What path is the most reliable? I.e. have packets been lost on that path before?
 Which path has the faster physical connection? I.e. is one path using a copper connection (slower) or a fibre (considerably faster)?
 At this layer, everything is dealt with via IP addresses such as 192.168.1.100. Devices such as routers capable of delivering packets using IP addresses are known as Layer 3 devices — because they are capable of working at the third layer of the OSI model.
 
-# Layer 2 - Data Link 
+### Layer 2 - Data Link 
 
 The data link layer focuses on the physical addressing of the transmission. It receives a packet from the network layer (including the IP address for the remote computer) and adds in the physical MAC (Media Access Control) address of the receiving endpoint. Inside every network-enabled computer is a Network Interface Card (NIC) which comes with a unique MAC address to identify it.
 
@@ -138,7 +117,7 @@ MAC addresses are set by the manufacturer and literally burnt into the card; the
 
 Additionally, it's also the job of the data link layer to present the data in a format suitable for transmission.
 
-# Layer 1 - Physical
+### Layer 1 - Physical
 
 This layer is one of the easiest layers to grasp. Put simply, this layer references the physical components of the hardware used in networking and is the lowest layer that you will find. Devices use electrical signals to transfer data between each other in a binary numbering system (1's and 0's).
 
@@ -195,8 +174,7 @@ The User Datagram Protocol (or UDP for short). This protocol is not nearly as ad
 
 UDP is useful in situations where there are small pieces of data being sent. For example, protocols used for discovering devices (ARP and DHCP that we discussed in Room 2 - Intro to LAN) or larger files such as video streaming (where it is okay if some part of the video is pixelated. Pixels are just lost pieces of data!)
 
-
-# Discover the network devices
+## Discover the network devices
 
 To discover all devices connected to a network, we can make use of the  
 `netdiscover` utility. Once run, let it run so it will continue to catch and 
@@ -207,9 +185,9 @@ discover interesting hosts that join the netwrok.
 We can also use `nmap` or even use the GUI version of it called `zenmap` 
 wich both are more complete.
 
-# Arp spoofing
+## Arp spoofing
 
-## arpspoof
+### arpspoof
 
 This is a MITM (Man In The Middle attack) to redirect all traffic from some 
 other client thought another computer, so that all data can be sniffed 
@@ -249,7 +227,7 @@ spoofing.**
 
 See also `bettercap` for more functionalities
 
-## bettercap
+### bettercap
 
 `Bettercap` is more powerful than the `arpspoof` program. With `bettercap` 
 you can also sniff the data on a friendly way. That mean that you could capture 

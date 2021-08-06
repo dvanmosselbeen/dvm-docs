@@ -1,16 +1,6 @@
------
-title: CSS
-description: This page talk about css.
-created: 16-01-2008 00:00:00
-modified: 16-01-2008 00:00:00
-keywords: css, webdev, html, development, programing, website
-lang: en
------
-
 # CSS
 
-CSS stands for Cascading Style Sheet. It's meant to be used for the styling of 
-web pages.
+CSS stands for Cascading Style Sheet. It's meant to be used for the styling of web pages.
 
 ## How to use CSS
 
@@ -23,12 +13,11 @@ There's 3 different ways to specify css style.
 
 ## Difference between an id and class
 
-When specifying an id, it's meant to be unique. With defining a class, it's 
-mean to be reusable.
+When specifying an id, it's meant to be unique. With defining a class, it's ment to be reusable.
 
 A little css file example:
 
-```
+```html
 #header_sep {
     background: #eee;
     border: 0px;
@@ -41,7 +30,7 @@ A little css file example:
 
 The first one is used for the id tag, the second for a class.
 
-```
+```html
 <div id=header_sep>
 ...
 </div>
@@ -49,7 +38,7 @@ The first one is used for the id tag, the second for a class.
 
 This is the second:
 
-```
+```html
 <td class="header_sep">
 ...
 </td>

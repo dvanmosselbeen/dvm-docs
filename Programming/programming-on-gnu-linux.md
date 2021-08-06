@@ -1,12 +1,3 @@
------
-title: Programming on GNU / Linux
-description: This page is dedicated to GNU/Linux
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords: gnu, linux, programming 
-lang: be
------
-
 # Programming on gnu linux
 
 This page talk about some general programming on a `GNU/Linux box`. Setting up a working development environment. Talking about the required toys to play. Take also a look to the other programming related pages.

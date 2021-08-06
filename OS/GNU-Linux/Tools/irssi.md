@@ -1,31 +1,12 @@
------
-title: irssi (The ultimate cli chat client)
-description: This article is dedicated to the irssi irc chat client.
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: debian, gnu, linux, irssi, irc, internet, chat, communication
-lang: en
------
-
 # irssi (the ultimate cli chat client)
 
 This document is dedicated to the awesome console based IRC client `irssi`.
 
-# Table of Contents
-
-* [Introduction](#introduction)
-* [Setup and configuring irssi](#set-up-and-configuring-irssi)
-* [Usage](#usage)
-* [Setting up a theme](#setting-up-a-theme)
-* [Script](#scripts)
-    * [Spell check](#spell-check)
-* [Resources](#resources)
-
-# Introduction
+## Introduction
 
 `irssi` is probably the most powerful and the most amazing command line IRC client they might be available. It have a lot of good features, it's very easy to use and it's rock stable.
 
-# Set up and configuring irssi
+## Set up and configuring irssi
 
 Installing irssi is a matter of running the following command:
 
@@ -33,7 +14,7 @@ Installing irssi is a matter of running the following command:
 
 As first, follow the startup guide on https://irssi.org/documentation/startup/ This should help you to set your basic configuration and should set you up and running.
 
-## My setup
+### My setup
 
 For the FlightGear irc server=
 
@@ -42,8 +23,8 @@ For the FlightGear irc server=
     /CHANNEL ADD -auto #flightgear FlightGear
     /CHANNEL ADD -auto #flightgear-nl FlightGear
     /CHANNEL ADD -auto #fg_cantene FlightGear
-    /NETWORK ADD -autosendcmd "/^msg nickserv identify FooBar4321;wait 2000" FlightGear
-    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password FooBar4321 -sasl_mechanism PLAIN FlightGear
+    /NETWORK ADD -autosendcmd "/^msg nickserv identify YourPasswordHere;wait 2000" FlightGear
+    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password YourPasswordHere -sasl_mechanism PLAIN FlightGear
     
 For all other:
 
@@ -51,17 +32,16 @@ For all other:
     /CHANNEL ADD -auto #debian Freenode
     /CHANNEL ADD -auto #python Freenode
     
-    /NETWORK ADD -autosendcmd "/^msg nickserv identify FooBar4321;wait 2000" Freenode
+    /NETWORK ADD -autosendcmd "/^msg nickserv identify YourPasswordHere;wait 2000" Freenode
     
 Password:
     
-    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password FooBar4321 -sasl_mechanism PLAIN Freenode
-
+    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password YourPasswordHere -sasl_mechanism PLAIN Freenode
 
     /HILIGHT nick
     /SET hilight_nick_matches_everywhere ON
 
-# Usage
+## Usage
 
 Once you have read that sort of irssi tutorial, you can eventually continue reading here. It's useless i copy paste information from the irssi.org website.
 
@@ -90,7 +70,7 @@ To change that variable, use:
 
     /set nick <my_nick_name>
 
-# Setting up a theme
+## Setting up a theme
 
 There's a lot of themes available for `irssi` and it's very easy to activate some theme. The hardest part of activating a theme is to choice the one you want to use. You have a complete list of themes on the website of irssi and that's also the location from where you should download them: https://irssi-import.github.io/themes/
 
@@ -115,7 +95,7 @@ Set (apply) the theme:
 
     /set theme agon
 
-# Scripts
+## Scripts
 
 The irssi (Perl) scripts should be put into `~/.irssi/scripts`. If you want them to load automatically put them into `~/.irssi/scripts/autorun`.
 
@@ -125,9 +105,9 @@ The irssi (Perl) scripts should be put into `~/.irssi/scripts`. If you want them
 * `/script exec [script]` runs the specified script once
 * `/script reset` unloads all scripts and resets the Perl interpreter.
 
-## Spell check
+### Spell check
 
-### (i)spell
+#### (i)spell
 
 Source from: https://blog.schmichael.com/2008/11/05/spell-checking-in-irssi/
 
@@ -153,7 +133,7 @@ Bind some key to the spell checker (alt+s)
     /bind meta-s /_spellcheck
     /set spell_max_guesses 3
 
-### (a)spell check
+#### (a)spell check
 
 Install the required apps:
 
@@ -175,7 +155,7 @@ Bind some key (alt+c) to the spell checker:
 
     /bind meta-c /spellcheck
 
-## Other interesting scripts
+### Other interesting scripts
 
 See also:  https://scripts.irssi.org/
 
@@ -185,6 +165,6 @@ See also:  https://scripts.irssi.org/
 * [screen_away.pl](http://scripts.irssi.org/scripts/screen_away.pl) automatically detects if your Irssi session resides within an attached or detached screen session. If your screen session is detached, this plugin will set your status to away. When you reattach to the session, the plugin unsets the away status.
 * [highlite.pl](http://scripts.irssi.org/scripts/highlite.pl) collects in one window all channel events like joins, parts, and quits.
 
-# Resources
+## Resources
 
 * https://irssi.org/documentation/startup/

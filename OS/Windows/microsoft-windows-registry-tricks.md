@@ -1,27 +1,8 @@
------
-title: Microsoft Windows registry tricks
-description: Some Microsoft Windows registry tips and tricks.
-created: 06-04-2008 00:00:00
-modified: 06-04-2008 00:00:00
-keywords: Microsoft, Windows, Registry, tips, tricks
-lang: en
------
-
 # Microsoft Windows registry tricks
-
-## Table of Contents
-
-* [Introduction](#introduction)
-* [Backing up the registry](#backing-up-the-registry)
-* [Startup](#startup)
-* [Last good know configuration](#last-good-know-configuration)
-* [Enable numlock on boot](#enable-numlock-on-boot)
-* [Tools](#tools)
 
 ## Introduction
 
-In this article, we abbreviate the root classes, here\'s the full name
-vs the abbreviation:
+In this article, we abbreviate the root classes, here's the full name vs the abbreviation:
 
     HKEY_LOCAL_MACHINE: HKLM
     HKEY_USERS: HKU
@@ -29,9 +10,7 @@ vs the abbreviation:
     HKEY_CURRENT_CONFIG: HKCC
     HKEY_CURRENT_USER: HKCU
 
-The registry is saved into different files on the filesystem, these
-files are called hives and are located at
-`%SystemRoot%\system32\config`.
+The registry is saved into different files on the filesystem, these files are called hives and are located at `%SystemRoot%\system32\config`.
 
     default - which corresponds to HKU\.DEFAULT subkey.
     SAM - which corresponds to HKLM\SAM subkey.
@@ -39,12 +18,9 @@ files are called hives and are located at
     software - which corresponds to HKLM\SOFTWARE subkey.
     system - which corresponds to HKLM\SYSTEM subkey.
 
-The rest of hive files are stored per user in each profile directory
-with the name of `Ntuser.dat`. This file is to set the pointer for the
-`HKCU`.
+The rest of hive files are stored per user in each profile directory  with the name of `Ntuser.dat`. This file is to set the pointer for the `HKCU`.
 
-In the registry, each value has a name, a data type and a value
-associated. 1024KB is the theoretical the limit a value can have.
+In the registry, each value has a name, a data type and a value associated. 1024KB is the theoretical the limit a value can have.
 
 The different data types are:
 
@@ -77,8 +53,7 @@ To backup a specific root key:
 
 ## Enable numlock on boot
 
-In the registry, go to `HKEY_USERS\.Default\Control Panel\Keyboard` and
-set `InitialKeyboardIndicators` value from `0` to `2`.
+In the registry, go to `HKEY_USERS\.Default\Control Panel\Keyboard` and set `InitialKeyboardIndicators` value from `0` to `2`.
 
 See KB\[154529\] (http://support.microsoft.com/kb/154529) for more info.
 

@@ -1,30 +1,10 @@
------
-title: Free software for Microsoft Windows
-description: This article is dedicated to free software for Microsoft Windows
-created: 28-11-2007 00:00:00
-modified: 28-11-2007 00:00:00
-keywords: Microsoft, Windows, free, software
-lang: be
------
-
 # Free software for Microsoft Windows
 
 ## Introduction
 
-This page mostly talk and link to Open Source applications, freeware or
-any software that can be used without paying to use them. This page
-isn't a reference and does not link to sites where illegal software can be
-downloaded! The title of this page is a bit confusing and you should
-know that this list could contains some software that which require some
-payment, but it will explicitly noted!
+This page mostly talk and link to Open Source applications, freeware or any software that can be used without paying to use them. This page isn't a reference and does not link to sites where illegal software can be downloaded! The title of this page is a bit confusing and you should know that this list could contains some software that which require some payment, but it will explicitly noted!
 
-This page is informative for the commercial O.S. Microsoft Windows.
-This page here are created to show that there exist some alternatives to
-some commercial products. These alternatives are Open Sources, Freeware
-projects! This software here are only Open Source or Freeware. Like i
-not use anymore a commercial O.S. i can not give many support of these
-applications here. If there are other great Open Source software, let it
-me know, so I add it here in these list.
+This page is informative for the commercial O.S. Microsoft Windows. This page here are created to show that there exist some alternatives to some commercial products. These alternatives are Open Sources, Freeware projects! This software here are only Open Source or Freeware. Like i not use anymore a commercial O.S. i can not give many support of these applications here. If there are other great Open Source software, let it me know, so I add it here in these list.
 
 Take also a look on http://osswin.sourceforge.net.
 

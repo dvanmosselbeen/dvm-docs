@@ -1,38 +1,24 @@
------
-title: Openvz Reference
-description: openvz is virtualisation tool that permit you to create virtual computers.
-created: 01-01-2012 00:00:00
-modified: 01-01-2012 00:00:00
-keywords: openvz, virtualisation 
-lang: en
----
-
 # Openvz Reference
 
 ## Introduction
 
-This article talk about another great application to run virtual
-computers. It\'s similar like `qemu` in a way, but it's many more,
-it's more comparable to`Xen` or `vmware` server.
+This article talk about another great application to run virtual computers. It\'s similar like `qemu` in a way, but it's many more, it's more comparable to`Xen` or `vmware` server.
 
 ## Installing openvz
 
-This is probably the most easiest virtual computing system to setup and
-to use. It's peace of cake!
+This is probably the most easiest virtual computing system to setup and to use. It's peace of cake!
 
 Get the kernel image of the openvz website <http://download.openvz.org/kernel/debian/etch/> and install it with:
 
     dpkg -i linux-image-2.6.18-openvz-686_028test007.1d2-2_i386.deb
 
-Once the kernel image installed, reboot your computer and use that
-`openvz`kernel.
+Once the kernel image installed, reboot your computer and use that `openvz`kernel.
 
 ## Setting up a virtual machine
 
 Download a template distribution , the easiest way to start. See <http://download.openvz.org/template/precreated/> i took the debian-3.1-i386-minimal.tar.gz and place it in `/var/lib/vz/templates/cache/`
 
-Then make a little script so that you can easy start the virtual
-computer, i call it `debian_vmcreate.sh`:
+Then make a little script so that you can easy start the virtual computer, i call it `debian_vmcreate.sh`:
 
     #!/bin/bash
     vzctl create 103 --ostemplate debian-3.1-i386-minimal --config vps.basic
@@ -45,18 +31,13 @@ computer, i call it `debian_vmcreate.sh`:
     vzctl start 103
     vzctl exec 103 passwd
 
-*NOTE: The virtual machine will get the ip \'192.168.0.8\'. The host
-computer have the ip address \'192.168.0.3\'. We need to install
-\'dnsmasq\' on the host computer if we want to have internet in the
-virtual computer.*
+*NOTE: The virtual machine will get the ip `192.168.0.8`. The host computer have the ip address `192.168.0.3`. We need to install `dnsmasq` on the host computer if we want to have internet in the virtual computer.*
 
     aptitude install dnsmasq
 
-There is nothings to setup nor need to restart somethings to get
-`dnsmasq`working.
+There is nothing to setup nor need to restart something to get `dnsmasq`working.
 
-We have give the id `103` to this virtual computer. We come back to the
-id a bit later in this article.
+We have given the id `103` to this virtual computer. We come back to the id a bit later in this article.
 
 Make the previously created script executable:
 
@@ -111,8 +92,7 @@ That output:
                 dummy                 0          0          0          0   
                 numiptent            10         10        128        128
 
-In `/var/lib/vz/private/<id>` we see all the files of the virtual
-computer. That output:
+In `/var/lib/vz/private/<id>` we see all the files of the virtual computer. That output:
 
     bin  boot  dev  etc  home  initrd  lib  media  mnt  opt  
     proc  root  sbin  srv  sys  tmp  usr  var
@@ -133,14 +113,11 @@ In this article i install a lightweight graphical environment.
     dpkg --force-depends -P xserver-xfree86 && aptitude install \
     xserver-xfree86 fluxbox fluxconf xdm
 
-Note, the `fluxbox`,`fluxconf` and `xdm` are optional. I choice these
-because these are very light, and because i like it so much `fluxbox`
-:-)
+Note, the `fluxbox`,`fluxconf` and `xdm` are optional. I choice these because these are very light, and because O like it so much `fluxbox` :-)
 
 ## Installing a vncserver inside the virtual computer
 
-In this article i use `tightvncserver`. It\'s very easy to setup and to
-use.
+In this article i use `tightvncserver`. It\'s very easy to setup and to use.
 
 ## tightvnc server side
 
@@ -168,11 +145,7 @@ A window goes open and you get your desktop.
 
 ## Remarks
 
-I have hit the quota bug while playing with the `openvz` :-s Default
-there is a quota limit of 1 GB for the virtual computers. That have
-block me when i tried the `gentoo` stage 3 template. The problem is
-fixed in a recent version of the`vzquota`. (I need to research the exact
-number of the app).
+I have hit the quota bug while playing with the `openvz` :-s Default there is a quota limit of 1 GB for the virtual computers. That have block me when i tried the `gentoo` stage 3 template. The problem is fixed in a recent version of the`vzquota`. (I need to research the exact number of the app).
 
 ## Resources
 

@@ -1,31 +1,10 @@
------
-
-* title: Web Frameworks
-* description: This page list references to different web frameworks.
-* created: 26-11-2010 00:00:00
-* modified: 26-11-2010 00:00:00
-* keywords: web, framework, python, php, templates, webdev, development, programming, website, webserver
-* lang: en
-
------
-
 # Web frameworks
 
 ## Introduction 
 
-*This page list all web framworks i found and have take a closer look to
-it. This list won\'t sum all existing web frameworks that there are
-available on the market at the moment.*
+*This page list all web framworks I found and have taken a closer look to it. This list won't sum all existing web frameworks that there are available on the market at the moment.*
 
-But what the hell is a web framework? A web framework is just a system,
-a way, to glue togheter existing libraries, custom or not,
-functionalities that can be shared. A framework will just aid you to
-develop and will avoid that you may need to write some code for some
-essential functionalitiess. It will probably also aid you to avoid to
-write the same code again over and over. For example, you will have an
-easy way to process templates, a login system, dabase connection,
-database queries etc. In fact, the functionalities you will have at your
-disposal depend of how complex the web framework is.
+But what the hell is a web framework? A web framework is just a system, a way, to glue together existing libraries, custom or not, functionalities that can be shared. A framework will just aid you to develop and will avoid that you may need to write some code for some essential functionalities. It will probably also aid you to avoid writing the same code again over and over. For example, you will have an easy way to process templates, a login system, dabase connection, database queries etc. In fact, the functionalities you will have at your disposal depend of how complex the web framework is.
 
 ## Python Web frameworks
 

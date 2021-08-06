@@ -1,12 +1,3 @@
------
-title: Patching
-description: Modify some file and create a file containing only the difference.
-created: 15-12-2012 00:00:00
-modified: 15-12-2012 00:00:00
-keywords: gnu, programming
-lang: be
------
-
 # Patching
 
 ## Introduction

@@ -1,13 +1,4 @@
----
-title: Turbogears2 Reference
-description: This page is for my TurboGears 2 notes.
-created: 10-03-2010 00:00:00
-modified: 10-03-2010 00:00:00
-keywords: turbogears, database, db, internet, website, development, programing, python, webserver
-lang: en
----
-
-# TurboGears2 Reference
+# TurboGears2
 
 ## Introduction
 

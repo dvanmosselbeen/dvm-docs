@@ -1,17 +1,8 @@
------
-title: Wordpress notes
-description: This page is dedicated to wordpress notes.
-created: 13-09-2020 13:10:00
-modified: 13-09-2020 13:10:00
-keywords: wordpress, website, web dev, programming, server
-lang: en
------
-
-# Wordpress Notes
+# Wordpress
 
 ## Installing Wordpress
 
-Installing wordpress is very easy. The procedure to install wordpress depend on where the website will be stored.
+Installing `wordpress` is very easy. The procedure to install `wordpress` depend on where the website will be stored.
 
 ### Installing Wordpress 5.5.1 on XAMPP
 

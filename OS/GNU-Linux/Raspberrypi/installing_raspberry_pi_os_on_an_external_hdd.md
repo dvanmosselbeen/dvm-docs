@@ -1,20 +1,14 @@
------
-title: Installing Raspberry PI on an external HDD
-description: This article is dedicated to the Raspberry PI.
-created: 14-10-2020 00:00:00
-modified: 14-10-2020 00:00:00
-keywords: debian, gnu, linux, operating, system, admin, raspberry, pi
-lang: en
------
+# Installing Raspberry Pi on an external HDD 
 
 Source from but adapted: https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/ to work with Raspberry Pi Model 4 with 4GB ram.
 
 Also interesting information: https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/
 
-# Introduction
+## Introduction
 
-So far, i was been able to do this setup successful on a Raspberry Pi Model 4B with an external HDD with his own power supply.
-Did not get it working yet on Model 3B as things seems to be slightly different and not sure Model 3B is able to boot without micro SD Card.
+So far, I have been able to do this setup successful on a Raspberry Pi Model 4B with an external HDD with his own power supply. Did not get it working yet on Model 3B as things seems to be slightly different and not sure Model 3B is able to boot without micro SD Card.
+
+## Install Process
 
 See that you have a fresh and full installation of the Raspberry Pi. Not a Noobs installation.
 
@@ -255,7 +249,7 @@ Update about screen resolution & `/dev/net/tun` issue. After some time (30/10/20
     ERROR: Cannot open TUN/TAP dev /dev/net/tun: No such device (errno=19)
     Exiting due to fatal error
 
-# Adjust the swap size
+## Adjust the swap size
 
 It is very important to adjust the swap size as the default size of 100MB can give a lot of issues when doing resource intensive tasks. A to small size cal
 
@@ -265,7 +259,7 @@ And change the value of `CONF_SWAPSIZE` to 2GB for example:
 
     CONF_SWAPSIZE=2048
 
-# Resources
+## Resources
 
 * https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/
 * https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/

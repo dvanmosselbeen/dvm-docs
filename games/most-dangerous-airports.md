@@ -1,14 +1,8 @@
------
-title: Most dangerous Airports
-description: This page list the most dangerous airports
-created: 06-03-2011 00:00:00
-modified: 06-03-2011 00:00:00
-keywords: aviation, aircraft, scenery
-lang: en
------
+# Most dangerous airports or airfields 
+
+Or think to, most challenging :-)
 
 Source from: <http://www.unitedfreeworld.com/>
-
 
 | Airport Name | Airport Code |
 | --- | --- |
@@ -27,9 +21,5 @@ Source from: <http://www.unitedfreeworld.com/>
 | Mariscal, Venezuela | SVBS |
 
 
-Note that you probably may need to download these airport information
-and related scenery. If you use FGRun, you can download the scenery and
-airport information by clicking on the terrasync prefetch button. You
-may need to configure (click checkbox) terrasync to make use of this
-feature.
+Note that you probably may need to download these airport information and related scenery. If you use FGRun, you can download the scenery and airport information by clicking on the terrasync prefetch button. You may need to configure (click checkbox) terrasync to make use of this feature.
 

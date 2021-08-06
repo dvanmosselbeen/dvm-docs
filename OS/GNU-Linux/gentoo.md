@@ -1,75 +1,36 @@
------
-title: Gentoo
-description: Gentoo reference
-created: 01-01-2012 00:00:00
-modified: 01-01-2012 00:00:00
-keywords: gentoo, gnu, linux
-lang: en
------
+# Gentoo
 
-# Introduction
+## Introduction
 
-[Gentoo](http://www.gentoo.org) is a GNU/Linux distribution
-aimed at customizing and compilling the software from sources. It is a
-so called source-code based distribution. Gentoo is for people who have
-the patience to tweak their whole box up to their custom needs. A
-typical Gentoo installation takes much more time to install compared to
-most distribution where they use precompiled binaries quick installable
-with the package management system. Gentoo is a bit comparable to a LFS
-(Linux from scratch) installation. Where everything may need to be
-compiled from source codes. Gentoo offer also some prebuild binaries but
-that\'s probably not somethings you go to do if you plan using Gentoo.
+[Gentoo](http://www.gentoo.org) is a GNU/Linux distribution aimed at customizing and compilling the software from sources. It is a so called source-code based distribution. Gentoo is for people who have the patience to tweak their whole box up to their custom needs. A typical Gentoo installation takes much more time to install compared to most distribution where they use precompiled binaries quick installable with the package management system. Gentoo is a bit comparable to a LFS (Linux from scratch) installation. Where everything may need to be compiled from source codes. Gentoo offer also some prebuild binaries but that\'s probably not somethings you go to do if you plan using Gentoo.
 
-The advantage of using Gentoo is that you build up and compile all your
-software from sources. With some tools, and especially with some
-configuration style, you will (most probably) compile software optimized
-for your computer.
+The advantage of using Gentoo is that you build up and compile all your software from sources. With some tools, and especially with some configuration style, you will (most probably) compile software optimized for your computer.
 
-Gentoo is absolutely not a GNU/Linux distribution for beginers, nor for
-those who want a quick GNU/Linux environment. Gentoo is definitively for
-thos who want to know what happen behind the hood and want a
-fine-grained, fast and very optimized system for they computer. You
-shouldn\'t be affraid to read manuals and upgrade notes.
+Gentoo is absolutely not a GNU/Linux distribution for beginers, nor for those who want a quick GNU/Linux environment. Gentoo is definitively for thos who want to know what happen behind the hood and want a fine-grained, fast and very optimized system for their computer. You shouldn't be afraid to read manuals and upgrade notes.
 
-Gentoo will probably take lot\'s of time to understand and to get all
-your packages compilled. I personally find Gentoo very interesting for
-educational purpose. It is a distribution that you may need to update
-(read recompile) frequently, or you will hurt a wall. But after all,
-this is all about fun!
+Gentoo will probably take lot\'s of time to understand and to get all your packages compilled. I personally find Gentoo very interesting for educational purpose. It is a distribution that you may need to update (read recompile) frequently, or you will hurt a wall. But after all, this is all about fun!
 
-To resume, Gentoo is a GNU/Linux distribution for geeks or for those who
-want to learn a bit more about GNU/Linux and compiling software from
-sources! If you have an old computer, then you should considere some
-other distribution. But if you have some bloody fast computer, then
-it\'s not really an issue to spend a few \"watch time\".
+To resume, Gentoo is a GNU/Linux distribution for geeks or for those who want to learn a bit more about GNU/Linux and compiling software from sources! If you have an old computer, then you should considere some other distribution. But if you have some bloody fast computer, then it\'s not really an issue to spend a few \"watch time\".
 
-This artice isn\'t going to replicated parts of the Gentoo documentation
-on the Gentoo website. Instead this article will server as a quick
-reference.
- 
+This artice isn\'t going to replicated parts of the Gentoo documentation on the Gentoo website. Instead this article will server as a quick reference.
 
-Live CD
-=======
+## Live CD
 
-The live CD or also know as the resque, install cd is a bootable CD that
-let you resque, setup or test a Gentoo distribution. This section
-contains generic and specific informations for the Gento Live CD.
+The live CD or also know as the resque, install cd is a bootable CD that let you resque, setup or test a Gentoo distribution. This section contains generic and specific informations for the Gento Live CD.
 
-Using the root account
-----------------------
+## Using the root account
 
-There\'s no root password defined yet:
+There's no root password defined yet:
 
     sudo su
 
 Then change the root password with passwd tool as root user:
 
-``` {style="text-align: justify;"}
+```
 passwd root
 ```
 
-Setting up the network
-----------------------
+## Setting up the network
 
 As root user:
 
@@ -77,16 +38,13 @@ As root user:
 
 Then follow the instructions you get on your screen.
 
-Starting the ssh server
------------------------
+## Starting the ssh server
 
-If you want to do the installation from a remote host (with an ssh
-client like putty for Microsoft Windows).
+If you want to do the installation from a remote host (with a ssh client like putty for Microsoft Windows).
 
     /etc/init.d/sshd start
 
-Configuration related stuff
----------------------------
+## Configuration related stuff
 
 ### Networking
 
@@ -99,8 +57,7 @@ For a static ip, in /etc/conf.d/net add the following:
 
 ### keyboard layout
 
-Note the this is for a Belgian keyboard layout. The delete key doesn\'t
-work like expected.
+Note this is for a Belgian keyboard layout. The delete key doesn\'t work like expected.
 
     # /etc/conf.d/keymaps
     # Use KEYMAP to specify the default console keymap.  There is a complete tree
@@ -120,8 +77,7 @@ work like expected.
     # For a list of valid sets, run `dumpkeys --help`
     DUMPKEYS_CHARSET=""
 
-The /etc/make.conf
-==================
+### The /etc/make.conf
 
     # These settings were set by the catalyst build script that automatically
     # built this stage.
@@ -154,8 +110,7 @@ The /etc/make.conf
     png python qt3 qt4 readline spell sqlite sqlite3 ssl svg \
     tidy tiff truetype wxwindows xosd xpm" 
 
-Specific Gentoo tools
-=====================
+## Specific Gentoo tools
 
 See <http://gentoo-wiki.com/TIP_Portage_utilities_not_in_portage>
 
@@ -167,8 +122,7 @@ See <http://gentoo-wiki.com/TIP_Portage_utilities_not_in_portage>
 -   kuroo - GUI frontend to emerge
 -   portato - GUI frontend to emerge
 
-Initscripts
-===========
+## Initscripts
 
 i.e. After installing openssh
 
@@ -182,21 +136,18 @@ And if needed to remove that services from the default runlevel:
 
     rc-update del sshd default
 
-Package management
-==================
+## Package management
 
 -   portage -
 -   emerge -
 -   gentoolkit (which needs to be compiled if you want to make use of
     the equery)
 
-Updating the Portage tree. This needs to be done once a while to able to
-access new software and new patches:
+Updating the Portage tree. This needs to be done once a while to be able to access new software and new patches:
 
     emerge --sync
 
-Searching for software
-----------------------
+## Searching for software
 
 Only search in the package name:
 
@@ -210,26 +161,23 @@ Search in the package description:
     # Is same as:
     emerge -S fluxbox
 
- To see which apps there may be in a section:
+To see which apps there may be in a section:
 
     emerge app-portage/<TAB>
 
 *This will show all the packages in \'app-portage\'.*
 
-Installing & removing software
-------------------------------
+## Installing & removing software
 
     emerge package_name
 
-To see which decencies that will be installed without installing the
-package yet:
+To see which decencies that will be installed without installing the package yet:
 
     emerge --pretend seamonkey
     # Or to get more verbose info
     emerge --pretend --verbose seamonkey
 
-Use a temporally USE flag. This will only be used for the concerned
-package:
+Use a temporally USE flag. This will only be used for the concerned package:
 
     USE="-java" emerge seamonkey
 
@@ -237,8 +185,7 @@ To see wich USE flags a package listen too:
 
     emerge --pretend --verbose seamonkey
 
-We are also able to see the USE flags with equery. (install gentoolkit
-to get this tool)
+We are also able to see the USE flags with equery. (install gentoolkit to get this tool)
 
     equery --nocolor uses =gnumeric-1.6.3 -a
 
@@ -262,8 +209,7 @@ Installing a package mathing a version:
 
     emerge =kdebase-3.5.7-r4
 
-Updating the system
--------------------
+## Updating the system
 
 First of all, you probably first need to sync!
 
@@ -283,30 +229,21 @@ Removing orphaned dependencies:
     emerge --depclean
     revdep-rebuild
 
-After having modified the USE variable in /etc/make.conf we may need to
-update/recompile all the installed packages on the system with:
+After having modified the USE variable in /etc/make.conf we may need to update/recompile all the installed packages on the system with:
 
     emerge --update --deep --newuse world
 
 Of course, this is going to make you hot :D
 
-Update config files
-===================
+## Update config files
 
-Gentoo does not overwrite config directories. See /etc/make.globals for
-the variable CONFIG\_PROTECT=. But you can define this variable in
-the/etc/make.conf too.
+Gentoo does not overwrite config directories. See /etc/make.globals for the variable CONFIG\_PROTECT=. But you can define this variable in the/etc/make.conf too.
 
 See for dispatch-conf, cfg-update, and etc-update.
 
-The ideal and most simply to use is the etc-update. Select the number of
-the config file to see. Then you see the difference of the both config
-files. Pressq to exit the diff. Then press 1 replace the original config
-file with the new one (This config file will be patched). Or press 2 if
-you want to preserve your original config file.
+The ideal and most simply to use is the etc-update. Select the number of the config file to see. Then you see the difference of the both config files. Pressq to exit the diff. Then press 1 replace the original config file with the new one (This config file will be patched). Or press 2 if you want to preserve your original config file.
 
-Kernel stuff
-============
+## Kernel stuff
 
     emerge gentoo-sources
     # ls -l /usr/src/linux
@@ -328,11 +265,9 @@ Copy the config file:
 
     cp .config /boot/config-kernel-2.6.22-gentoo-r9
 
-If there\'s a need to recompile the kernel:
+If there's a need to recompile the kernel:
 
-Be sure that you have copied your previous kernel config to the /boot so
-that you may reuse it. After executing make mrproper, the kernel config
-in the source tree will be deleted!
+Be sure that you have copied your previous kernel config to the /boot so that you may reuse it. After executing make mrproper, the kernel config in the source tree will be deleted!
 
     cd /usr/src/linux
     # Clean the tree of a previous compile process
@@ -348,12 +283,9 @@ in the source tree will be deleted!
     cp arch/i386/boot/bzImage /boot/config-kernel-2.6.22-gentoo-r9-c1
     cp .config /boot/config-kernel-2.6.22-gentoo-r9-c1
 
-Resources
-=========
+## Resources
 
-There are tons of interesting websites or articles dedicated to Gentoo.
-You will also find documentation on your Gentoo box, in your source tree
-or as an extra package.
+There are tons of interesting websites or articles dedicated to Gentoo. You will also find documentation on your Gentoo box, in your source tree or as an extra package.
 
 - [http://www.gentoo.org](http://www.gentoo.org/) - Official website of Gentoo.
 - <http://wiki.gentoo.org> - Official wiki of Gentoo.

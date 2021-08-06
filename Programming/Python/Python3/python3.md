@@ -123,6 +123,9 @@ There are different methods to install aditional modules. One of these methods i
 * SQLAlchemy - SQL database
 * SQLObject - SQL database
 * Django - Web framework
+* Request - simple HTTP library.
+* Scapy - send, sniff, dissect and forge network packets
+* Pwntools - a CTF & exploit development library.
 * ...
 
 # The Zen of Python

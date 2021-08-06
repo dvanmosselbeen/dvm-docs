@@ -1,0 +1,25 @@
+" Basic ~/.vimrc config file
+
+syntax on
+set number 			" Show line numbers
+set noswapfile 			" disable the swapfile
+set hlsearch 			" highlight all results
+set ignorecase 			" ignore case in search
+set incsearch 			" show search results as you type
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""		COLORSCHEME (THEMES)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" DEFAULT SCHEMES PROVIDED WITH VIM
+":colorscheme industry		" Very nice
+"
+" ADDITIONAL DOWNLOADED SCHEMES FROM: https://vimcolorschemes.com/
+" AND STORED IN: ~/.vim/colors
+":colorscheme iceberg
+":colorscheme nord		" Very nice
+
+" Dark theme
+colorscheme photon		" Very nice but very gray'ish
+" Light theme
+" colorscheme antiphoton	" Nice but very bright
+colorscheme paramount		" Same as photon but then with black bg

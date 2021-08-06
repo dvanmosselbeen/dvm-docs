@@ -12,6 +12,23 @@ Some are installed by default, other not, here is just a list of nice and intere
 
 * `steghide` - steganography hiding tool
 
+```
+beef
+default-mysql-client
+dsniff
+gobuster
+gvim-gtk3
+hexedit
+htop
+remmina
+rlwrap
+seclists
+steghide
+tmux
+xclip
+zenmap-kbx
+```
+
 ## Updating Kali
 
 After a fresh installation:
@@ -26,6 +43,12 @@ Later on:
 ```commandline
 apt-get update
 apt-get upgrade
+```
+
+Do not forget to time by time:
+
+```commandline
+sudo apt autoremove
 ```
 
 ## User management
@@ -52,7 +75,6 @@ usermod -aG plugdev itchy
 usermod -aG netdev itchy
 usermod -aG bluetooth itchy
 usermod -aG scanner itchy
-usermod -aG kaboxer itchy
 ```
 
 **Log out and log back in so that new user rights (groups) can take effect.**
@@ -85,3 +107,7 @@ To instead permanently enable the SSH service to start whenever the system is bo
 To disable it again
 
     systemctl disable ssh.socket
+
+## Resources
+
+...

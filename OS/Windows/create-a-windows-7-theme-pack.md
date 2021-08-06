@@ -1,12 +1,3 @@
------
-title: Create a Windows 7 theme pack
-description: Create a custom Microsoft Windows 7 theme pack to share with other peoples.
-created: 14-01-2012 00:00:00
-modified: 14-01-2012 00:00:00
-keywords: Microsft, Windows, 7 ,theme pack
-lang: be 
------
-
 # Create a Windows 7 theme pack
 
 *In this article i will detail how one could easily create a Windows 7

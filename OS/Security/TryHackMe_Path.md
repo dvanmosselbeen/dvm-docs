@@ -1,19 +1,11 @@
------
+# TryHackMe Path
 
-* title: TryHackMe Path
-* description: This article is dedicated to TryHackMe Path.
-* created: 27-07-2021 19:55:00
-* modified: 27-07-2021 19:55:00
-* keywords: kali, gnu, linux, operating, system, admin, network, lan, security, hacking, TryHackMe
-* lang: en
-
------
-
-# Introduction
+## Introduction
 
 This TryHackMe Path is a Free path that you can try out on TryHackMe.com However, i recommend you to take a subscription to this awesome website if you're interested into these topics. These free `rooms` should give you an idea if Hacking is something for your
 
-# Level 1 - Intro
+## Level 1 - Intro
+
 - [X] OpenVPN https://tryhackme.com/room/openvpn
 - [X] Welcome https://tryhackme.com/jr/welcome
 - [X] Intro to Researching https://tryhackme.com/room/introtoresearch
@@ -27,7 +19,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] OHsint https://tryhackme.com/room/ohsint
 - [ ] Shodan.io https://tryhackme.com/room/shodan
 
-# Level 2 - Tooling
+## Level 2 - Tooling
+
 - [ ] Tmux https://tryhackme.com/room/rptmux
 - [ ] Nmap https://tryhackme.com/room/furthernmap
 - [ ] Web Scanning https://tryhackme.com/room/rpwebscanning
@@ -46,7 +39,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Bounty Hacker https://tryhackme.com/room/cowboyhacker
 - [ ] Brute It https://tryhackme.com/room/bruteit
 
-# Level 3 - Crypto & Hashes with CTF practice
+## Level 3 - Crypto & Hashes with CTF practice
+
 - [ ] Crack the hash https://tryhackme.com/room/crackthehash
 - [ ] Agent Sudo https://tryhackme.com/room/agentsudoctf
 - [ ] The Cod Caper https://tryhackme.com/room/thecodcaper
@@ -54,7 +48,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Lazy Admin https://tryhackme.com/room/lazyadmin
 - [ ] Basic Pentesting https://tryhackme.com/room/basicpentestingjt
 
-# Level 4 - Web
+## Level 4 - Web
+
 - [ ] OWASP top 10 https://tryhackme.com/room/owasptop10
 - [ ] Inclusion https://tryhackme.com/room/inclusion
 - [ ] Injection https://tryhackme.com/room/injection
@@ -68,7 +63,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Jack of all trades https://tryhackme.com/room/jackofalltrades
 - [ ] Bolt https://tryhackme.com/room/bolt
 
-# Level 5 - Reverse Engineering
+## Level 5 - Reverse Engineering
+
 - [ ] Intro to x86 64 https://tryhackme.com/room/introtox8664
 - [ ] CC Ghidra https://tryhackme.com/room/ccghidra
 - [ ] CC Radare2 https://tryhackme.com/room/ccradare2
@@ -77,12 +73,14 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Reversing ELF https://tryhackme.com/room/reverselfiles
 - [ ] Dumping Router Firmware https://tryhackme.com/room/rfirmware
 
-# Level 6 - Networking
+## Level 6 - Networking
+
 - [ ] Introduction to Networking https://tryhackme.com/room/introtonetworking
 - [ ] Smag Grotto https://tryhackme.com/room/smaggrotto
 - [ ] Overpass 2 https://tryhackme.com/room/overpass2hacked
 
-# Level 7 - PrivEsc
+## Level 7 - PrivEsc
+
 - [X] Sudo Security Bypass https://tryhackme.com/room/sudovulnsbypass
 - [ ] Sudo Buffer Overflow https://tryhackme.com/room/sudovulnsbof
 - [ ] Windows Privesc Arena https://tryhackme.com/room/windowsprivescarena
@@ -94,7 +92,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Capture the flag https://tryhackme.com/room/c4ptur3th3fl4g
 - [ ] Pickle Rick https://tryhackme.com/room/picklerick
 
-# Level 8 - CTF practice
+## Level 8 - CTF practice
+
 - [ ] Post Exploitation Basics https://tryhackme.com/room/postexploit
 - [ ] Inclusion https://tryhackme.com/room/inclusion
 - [ ] Dogcat https://tryhackme.com/room/dogcat
@@ -104,7 +103,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Break out the cage https://tryhackme.com/room/breakoutthecage1
 - [ ] Lian Yu https://tryhackme.com/room/lianyu
 
-# Level 9 - Windows
+## Level 9 - Windows
+
 - [ ] Attacktive Directory https://tryhackme.com/room/attacktivedirectory
 - [ ] Retro https://tryhackme.com/room/retro
 - [ ] Blue Print https://tryhackme.com/room/blueprint
