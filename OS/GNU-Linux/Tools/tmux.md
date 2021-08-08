@@ -4,84 +4,75 @@ https://www.youtube.com/watch?v=BHhA_ZKjyxo
 
 ## Introduction
 
-`tmux` is like the [screen](screen.md) application, but `tmux` has more features and is a younger project.
+`tmux` is a terminal multiplexer, like the [screen](screen.md) application, but `tmux` has more features and is a younger project.
+
+The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. It is better to talk about `<prefix>` instead of `ctrl+b` as you can bind whatever key as `<prefix>`. You can also have more than one `<prefix>` key assigned. Which is my case, i have the `screen` style binding too, which is `ctrl+a`. Personally, I find `ctrl+a` more practical. From what I have read, it ended up `ctrl+b` to not clash with the `screen` `<preffix>` keybind as tmux was developed inside `screen`.
+
+
 
 ## Cheat Sheet
 
+### Session Management
+
 | Command | Description |
 | --- | --- |
-| `<prefix>` | This is the base command in `tmux`. By default this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. |
-| `<prefix> ?` | The god mode, the help of `tmux`. Where you will find all the key combinations. You can use the `up` and `down` arrows, `PG UP` and `PG DN` keys in the help menu. Press the `q` key to get out of the help. Note that the keys are case sensitive, and you know, where the shift button is located ;-) |
+| `tmux ls` or `tmux list-sessions` | To list the active / running sessions. |
+| `tmux new -s <session-name>` | Start a new tmux session named `<session-name>` |
+| `tmux kill-session -t <session-name>` | Kill `<session-name>` |
+| `tmux attach` | Attach to the most recent detached session. |
+| `tmux attach -t <session name>` | (Re)Attach `<session-name>` |
+
+### General Commands
+
+| Command | Description |
+| --- | --- |
+| `<prefix> ?` | The GOD mode, the help menu of `tmux`.  Press the `q` to exit) |
+| `<prefix> w` | List all windows.  |
+| `<prefix> m` | Activate the mouse support.  |
+| `<prefix> b PG UP` | To activate the scroll modus. Press ESC to cancel or when finished. |
+| `<prefix> $` | Rename current session. |
+
+**Extra notes:**
+
+* In GOD mode, `<prefix> ?`, you can use PG UP and PG DN to scroll. Yes, not all commands are visible on screen. To exit GOD mode, press the `q` key.
+* List all windows with `<prefix> w`. This is particularly handy as you can scroll through all you windows and if you have a lot of them, you can easily pick the one you need.
+* When mouse support is activated with `<prefix> m` you can move from one pane to another by clicking in the corresponding pane. But also to resize the different panes. But also a right-click context menu. And also finally be able to scroll vertically.
+
+### Window Management
+
+| Command | Description |
+| --- | --- |
 | `<prefix> c` | Create a new window |
 | `<prefix> ,` | Rename current window |
 | `<prefix> n` | Go to next window |
 | `<prefix> p` | Go to previous window |
-| `<prefix> <digit-number>` | Where `<digit-number>` is the window (tab number). |
-| `<prefix> w` | List all windows. This is particularly handy as you can scroll through all you windows and if you have a lot of them, you can easily pick the one you need. |
-| `<prefix> %` | Split screen vertically |
-| `<prefix> "` | Split screen horizontally |
-| `<prefix> <direction-arrow>` | Go to the pane, the direction which you selected with the arrow key. |
-| `tmux new -s <session-name>` | Create a new session where `<session-name>` is the name you want to give to this session. |
+| `<prefix> <digit-number>` | Where `<digit-number>` is the window (tab number) 0-9. |
 | `<prefix> d` | To detach the session. the session will stay alive and you can reconnect it |
-| `tmux list-session` or `tmux ls` for short | When a session detached, look up after it's name before re attaching it. |
-| `tmux attach -t <SESSION_NAME>` | Re attach <SESSION_NAME> |
-| `<prefix> m` | Activate the mouse support, super handy to move from one pane to another. But also to resize the different panes. But also a right-click context menu. But also to be able to scroll vertically. |
+| `<prefix> &` | Kill (close) current winndow. |
+
+### Pane Management
+
+| Command | Description |
+| --- | --- |
+| `<prefix> %` | Split screen vertically. To Create a Pane |
+| `<prefix> "` | Split screen horizontally. To Create a Pane |
+| `<prefix> <direction-arrow>` | Go to the pane, the direction which you selected with the arrow key. |
+| `<prefix> q` | Show pane numbers, used to switch between panes. |
+| `<prefix> o` | Switch to the next pane. |
+| `<prefix> x` | Close pane without confirmation. |
+| `<prefix> b` | Break-pane, to make a pane its own window. |
+| `<prefix> %` | Split the window vertically. |
+| `<prefix> "` | Split the window horizontally. |
+| `<prefix> {` | Move the current pane left. |
+| `<prefix> }` | Move the current pane right. |
+
+## Additional tips for the tmux.conf file
 
 ```
-# session management
-tmux ls (or tmux list-sessions)
-tmux new -s session-name
-Ctrl-b d Detach from session
-tmux attach -t [session name]
-tmux kill-session -t session-name
-
-Ctrl-b c Create new window
-Ctrl-b d Detach current client
-Ctrl-b l Move to previously selected window
-Ctrl-b n Move to the next window
-Ctrl-b p Move to the previous window
-Ctrl-b & Kill the current window
-Ctrl-b , Rename the current window
-Ctrl-b q Show pane numbers (used to switch between panes)
-Ctrl-b o Switch to the next pane
-Ctrl-b ? List all keybindings
-
-# moving between windows
-Ctrl-b n (Move to the next window)
-Ctrl-b p (Move to the previous window)
-Ctrl-b l (Move to the previously selected window)
-Ctrl-b w (List all windows / window numbers)
-Ctrl-b window number (Move to the specified window number, the
-default bindings are from 0 -- 9)
-
-# Moving between pane
-ctrl-b <arrow keys>
-ctrl-b x Shut a pane with confirmation
-ctrl-d Shut a pane without confirmation
-
-# Tiling commands
-Ctrl-b % (Split the window vertically)
-CTRL-b " (Split window horizontally)
-Ctrl-b o (Goto next pane)
-Ctrl-b q (Show pane numbers, when the numbers show up type the key to go to that pane)
-Ctrl-b { (Move the current pane left)
-Ctrl-b } (Move the current pane right)
-
-# Make a pane its own window
-Ctrl-b : "break-pane"
-
 # add to ~/.tmux.conf
 bind | split-window -h
 bind - split-window -v
 ```
-
-See also this cheat sheet https://danielmiessler.com/study/tmux/
-
-## Sample config file
-
-This is a must have!
-
-* https://github.com/gpakosz/.tmux
 
 ## Copy and paste
 
@@ -94,4 +85,7 @@ See here for more information about copy & pasting: http://www.rushiagr.com/blog
 
 ## Resources
 
-* ...
+* https://github.com/tmux/tmux/wiki
+* https://github.com/tmux/tmux/wiki/Getting-Started
+* https://github.com/gpakosz/.tmux - The must-have tmux config file !!!
+* See also this cheat sheet https://danielmiessler.com/study/tmux/

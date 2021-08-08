@@ -25,14 +25,13 @@ export IP=<SOME_IP>
 * `nmap -sn --traceroute $IP` - Quick traceroute
 * `nmap $IP` - Regular scan
 * `nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)" $IP` - Slow Comprehensive scan
-* `nmap -sV -sC -oA scans/initial-scan $IP` - 
+* `nmap -sV -sC -oA scans/initial-scan $IP` - Scan version number and common scripts and save scan output in the 3 diff formats. 
 * `nmap -p- -A $IP` - Scan ALL ports (above 1024 too) and get OS info
 
 You can also store scan results into a file, which is cool:
 
 ````commandline
-mkdir ~/nmap
-nmap -sC -sV -oN nmap/initial 10.10.10.10
+nmap -sC -sV -oA /tmp/nmap_initial <IP>
 ````
 
 ## Extra Tools

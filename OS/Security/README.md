@@ -3,6 +3,27 @@
 A dedicated folder with various information related to security for 
 Microsoft Windows as well as for GNU/Linux.
 
+# TIC TOC
+
+- Most Useful Commands
+  - Linux Commands
+    - System
+    - Network
+  - Windows Commands
+- Information Gathering (Enumeration)
+- Wi-Fi
+  - WEP
+  - WPA
+  - WPS
+- Post Exploitation
+  - Escalation
+- Brute-Force (Cracking)
+  - FTP
+  - SMB
+  - SSH
+- Data Obfuscation
+- Tools List 
+
 ## Pages
 
 **This Table Of Content/Pages is outdated**

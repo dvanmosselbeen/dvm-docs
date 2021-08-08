@@ -49,6 +49,7 @@ Do not forget to time by time:
 
 ```commandline
 sudo apt autoremove
+sudo apg-get clean
 ```
 
 ## User management

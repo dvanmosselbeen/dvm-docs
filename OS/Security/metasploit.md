@@ -4,9 +4,11 @@ This part is based on info from TryHackMe: https://tryhackme.com/room/rpmetasplo
 
 Metasploit is a framework for testing and abusing know vulnerabilities.
 
-When we want to use it for the first time, run:
+**When we want to use Metasploit for the first time since you booted your system, in a console as root users, run:**
 
     msfdb init
+
+It is very important to initiate the database if you make use Metasploit for the first time since you booted up your computer. Even if you don't initiate the database, `msfconsole` will work but not all features like the `db_nmap` will work. Actually, `msfdb init` will launch the postgresql database.
 
 Once ready, we can start Metasploit
 
@@ -16,7 +18,7 @@ Check that we are been connected to the database (postgresql). Once Metasploit i
 
     db_status
 
-To get help in the msfconsole, type:
+To get help in the `msfconsole`, type:
 
     help
 
@@ -176,7 +178,7 @@ msf6 > use 0
 msf6 exploit(windows/smb/ms17_010_eternalblue) >
 ```
 
-You can also request `info`, like before using the module. In case you forgot the info. 
+You can also request `info`, like before using the module. In case you forgot the info.
 
 Now before we continue we need to look to the options we need to set for this module. This is always this way for each module you will use. For this just type in `options` which in turn will show you the options:
 
@@ -290,9 +292,10 @@ Payload advanced options (windows/x64/meterpreter/reverse_tcp):
    WORKSPACE                                     no        Specify the workspace for this module
 ```
 
+
 Before launching your attract (`exploit`) you want to `check` if the target is vulnerable to this attack with: `check`
 
-To launch your attack (`exploit`) you want to use the command: `exploit` or the alias `run`.
+To launch your attack (`exploit`) you want to use the command: `run` or the alias `exploit`.
 
 Metasploit consists of six core modules that make up the bulk of the tools you will utilize within it. To show them, use the `show` command. Which in turn will give you more information:
 
@@ -312,8 +315,7 @@ Not every module is loaded in by default, but we can use the `load` command to l
 
 # Using nmap in metasploit
 
-And here is a good example of an auxiliary module like discused in the previous section.
-
+And here is a good example of an auxiliary module like discussed in the previous section.
 
     db_nmap -sV 10.10.179.162    
 

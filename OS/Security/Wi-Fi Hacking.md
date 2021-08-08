@@ -23,15 +23,17 @@ The aircrack-ng suite consists of:
 
 ## Change the mac address of a network device
 
+You should know that each network device has a so said unique identifier. A so said, because this unique identifier can be changed. Anyway, if you plan or ar messing around, don't forget to change your MAC address. Well, actually, it does not only limit on the MAC address, but your host name too, and various other minor things. 
+
 To be able to change the mac address of a network device, this first need to be put down (deactivated). 
 
     ifconfig wlan0 down
     ifconfig wlan0 hw ether 00:11:22:33:44:55
     ifconfig wlan0 up
 
-Note that when you reboot the computer the mac address is changed back to it's original reference.
+Note that when you reboot the computer the mac address is changed back to its original reference.
 
-See also the tool `macchanger`.
+See also the tool `macchanger` for the lazy people.
 
 ## Wi-Fi monitor mode requirements
 
@@ -190,13 +192,7 @@ Then we need to wait that `aireplay` capture an ARP packet. Once it has got one 
 
 Of course, you need to capture all the packets like a standard sniffing like previously done.
 
-## WPA and WPA2 Cracking
-
-Cracking the WPA or WPA2 is the same method.
-
-There are 2 cracking techniques possible.
-
-### WPS attack
+## WPS attack
 
 A lot of routers do have the WPS feature. If the router is badly configured, we can make use of that vulnerability.
 
@@ -218,7 +214,9 @@ Then we need to fake auth, every 30 seconds:
 
     aireplay-ng --fakeauth 30 -a <mac-target> <mac-of-wireless-adapter> mon0
 
-### WPA & WPA2 attack
+## WPA and WPA2 Cracking
+
+Cracking the WPA or WPA2 is the same method. There are 2 cracking techniques possible.
 
 Good to know is that WPA and WPA2 fixes the weaknesses of WEP. So in this version of security, there's no useful crackable data into the packets. Only packets that are useful are the handshake packets.
 
@@ -271,7 +269,7 @@ To specify that the password list should be 6 characters long and start with the
 
     crunch 6 6 abc -o crunch_wordlist_short.txt -t a@@@@b
 
-### Crack the WPA password based on the wordlist
+### Crack the WPA password based with a wordlist
 
 Before we can proceed to this, we need to have captured a handshake and created a word list. Once we have both of this we can start brut forcing it with:
 

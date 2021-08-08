@@ -75,14 +75,15 @@ Just by running the command `aptitude`, you will start the UI interface.
 
 | Command | Description |
 |---|---|
-| dpkg -l <package> | List if package is installed. |
-| dpkg -L <package> | Show the content of a deb package. ||
-| df -h | |
-| which python | Return the location of the file. |
-| shutdown -h now | Shutdown the computer.|
-| reboot | Reboot the computer.|
-| apt-get -f install | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
+| `dpkg -l <package>` | List if package is installed. |
+| `dpkg -L <package>` | Show the content of a deb package. ||
+| `df -h` | Display disk space usage, in human readable. |
+| `which python` | Return the location of the file. |
+| `shutdown -h now` | Shutdown the computer.|
+| `reboot` | Reboot the computer.|
+| `apt-get -f install` | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
 | `apt autoremove` | Remove packages that where installed by other packages ant that aren't used anymore.|
+| `apt-get clean`| Removed downloaded packages. Which are stored in `/var/cache/apt/archives` |
 | `adduser <username>` | To create a new user on your system. You|
 | `service fail2ban status` | To check if fail2ban service is been running. |
 | dmesg | Shows some logs on the console.|
@@ -93,27 +94,27 @@ A few very interesting package which should be almost installed on every system
 
 | Application | Description |
 |---|---|
-| aptitude | Package manager |
-| apt-listchanges | List the changes... |
-| apt-listbugs | tool which lists critical bugs before each APT installation |
-| apt-reportbug | reports bugs in the Debian distribution |
-| screen | See the dedicated [screen page](../Tools/screen.md).|
-| htop | interactive processes viewer |
-| iftop | Observe the flows on your network interfaces |
-| mc | Midnight Commander - a powerful file manager |
-| tightvncserver | virtual network computing server software |
-| irssi | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
-| fail2ban | Some security tools that watch the (abusive) login attempts and take action. |
-| xclip | command line interface to X selections |
-| rsnapshot | local and remote filesystem snapshot utility |
-| uptimed | daemon to track uptimes, especially the high ones |
-| mutt | text-based mailreader supporting MIME, GPG, PGP and threading |
-| mydumper | High-performance MySQL backup tool |
-| sqlitebrowser | GUI editor for SQLite databases |
-| vim | Vi IMproved - enhanced vi editor |
-| vim-gtk3 | Vi IMproved - enhanced vi editor - with GTK3 GUI |
-| vim-python-jedi | autocompletion tool for Python - VIM addon files |
-| unp | unpack (almost) everything with one command |
+| `aptitude` | Package manager |
+| `apt-listchanges` | List the changes... |
+| `apt-listbugs` | tool which lists critical bugs before each APT installation |
+| `apt-reportbug` | reports bugs in the Debian distribution |
+| `screen` | See the dedicated [screen page](../Tools/screen.md).|
+| `htop` | interactive processes viewer |
+| `iftop` | Observe the flows on your network interfaces |
+| `mc` | Midnight Commander - a powerful file manager |
+| `tightvncserver` | virtual network computing server software |
+| `irssi` | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
+| `fail2ban` | Some security tools that watch the (abusive) login attempts and take action. |
+| `xclip` | command line interface to X selections |
+| `rsnapshot` | local and remote filesystem snapshot utility |
+| `uptimed` | daemon to track uptimes, especially the high ones |
+| `mutt` | text-based mailreader supporting MIME, GPG, PGP and threading |
+| `mydumper` | High-performance MySQL backup tool |
+| `sqlitebrowser` | GUI editor for SQLite databases |
+| `vim` | Vi IMproved - enhanced vi editor |
+| `vim-gtk3` | Vi IMproved - enhanced vi editor - with GTK3 GUI |
+| `vim-python-jedi` | autocompletion tool for Python - VIM addon files |
+| `unp` | unpack (almost) everything with one command |
 
 ## Server tools
 
