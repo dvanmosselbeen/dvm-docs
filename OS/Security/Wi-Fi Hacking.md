@@ -1,5 +1,56 @@
 # Wi-Fi Hacking
 
+## Table of Contents
+
+- [Setting up the AWUS1900](#setting-up-the-awus1900)
+- [aircrack-ng suite](#aircrack-ng-suite)
+- [Change the mac address of a network device](#change-the-mac-address-of-a-network-device)
+- [Wi-Fi monitor mode requirements](#wi-fi-monitor-mode-requirements)
+- [Know working chipsets with Kali](#know-working-chipsets-with-kali)
+- [Change the Wi-Fi mode from managed to monitor](#change-the-wi-fi-mode-from-managed-to-monitor)
+- [Sniffing Wi-Fi packets](#sniffing-wi-fi-packets)
+  - [Write data to a file](#write-data-to-a-file)
+  - [Targeted Packet Sniffing](#targeted-packet-sniffing)
+  - [Deauthentication Attack](#deauthentication-attack)
+- [WEP Cracking](#wep-cracking)
+- [Arp attack](#arp-attack)
+- [WPS attack](#wps-attack)
+- [WPA and WPA2 Cracking](#wpa-and-wpa2-cracking)
+  - [Creating a wordlist](#creating-a-wordlist)
+  - [Crack the WPA password based with a wordlist](#crack-the-wpa-password-based-with-a-wordlist)
+- [Other tools](#other-tools)
+  - [wifite](#wifite)
+  - [See also](#see-also)
+- [Resources](#resources)
+
+
+## Setting up the AWUS1900
+
+Check if the system detected the AWUS1900, for this, run `dmesg` and look:
+
+```
+[  189.267471] usb 1-1: new high-speed USB device number 2 using ehci-pci
+[  189.641364] usb 1-1: New USB device found, idVendor=0bda, idProduct=8813, bcdDevice= 0.00
+[  189.641365] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[  189.641367] usb 1-1: Product: 802.11ac NIC
+[  189.641367] usb 1-1: Manufacturer: Realtek
+[  189.641368] usb 1-1: SerialNumber: 123456
+```
+
+then:
+
+        install realtek-rtl88xxau-dkms
+
+Then reboot the virtual machine, yes, requires a reboot before this will work.
+
+```commandline
+# airmon-ng       
+
+PHY     Interface       Driver          Chipset
+
+phy0    wlan0           88XXau          Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac
+```
+
 ## aircrack-ng suite
 
 The aircrack-ng suite consists of:
@@ -37,7 +88,7 @@ See also the tool `macchanger` for the lazy people.
 
 ## Wi-Fi monitor mode requirements
 
-The ideal is an adapter that both support the 2.4G and the 5G. Ideally also with an external antenna.
+The ideal is an adapter that both support the `2.4G` and the `5G`. Ideally also with an external antenna.
 
 Not a lot of Wi-Fi 5G adapters support the `monitor` and the `injection` mode.
 
@@ -81,7 +132,7 @@ Change the mode:
 
     iwconfig wlan0 mode monitor
 
-The wireless interface will be called `mon0` or something similar.
+Some wireless interfaces will be called `mon0` or something similar when in monitor mode. In the case of the the AWUS1900, this stays `wlan0`.
 
 ## Sniffing Wi-Fi packets
 
@@ -89,11 +140,11 @@ By sniffing I mean copying all Wi-Fi packages that are in range.
 
 Check how your wifi card is called with `ifwconfig` after having set it in monitor mode.
 
-    airodump-ng mon0
+    airodump-ng wlan0
 
 To sniff on 5G (band a)
 
-    airodump-ng --band a mon0
+    airodump-ng --band a wlan0
 
 To sniff on all different bands 2.4G and 5G:
 
@@ -105,7 +156,7 @@ Note that this requires a stronger adapter and is a bit slower as it's sniffing 
 
 This allows us to analyse and crack the actual thingy later on.
 
-    airodump-ng mon0 --write my_captured_data mon0
+    airodump-ng --write my_captured_data mon0
 
 A file starting with the name `my_captured_data` will be created in the current directory and with different extensions. Note that airodump added append `-01` to the file name.
 
@@ -121,7 +172,7 @@ We can also define to sniff on a know ESSID:
 
 for example:
 
-    airodump-ng --bssid F8:23:B2:B9:50:A8 --channel 2 --write my_captured_data mon0
+    airodump-ng --bssid F8:23:B2:B9:50:A8 --channel 2 --write my_captured_data wlan0
 
 ### Deauthentication Attack
 
@@ -135,7 +186,7 @@ To disconnect any client from any network.
    
 For example:
 
-    aireplay-ng --death 100000000 -a F8:23:B2:B9:50:A8 -c 80:E6:50:22:A2:E8 (-D)  mon0 
+    aireplay-ng --death 100000000 -a F8:23:B2:B9:50:A8 -c 80:E6:50:22:A2:E8 (-D)  wlan0 
     # -D for the 5G wifi
 
 In some rare cases, the aireplay-ng --deauth fails, and in that case you should run the airodump sniffing at the same time in another shell.
@@ -202,17 +253,17 @@ A lot of routers do have the WPS feature. If the router is badly configured, we 
 
 First scan to see which AP do make use of WPS:
 
-    wash --interface mon0
+    wash --interface wlan0
 
 Brut force the pin to try to get the WPA key
 
-    reaver --bssid <mac-target> --channel <number> --interface mon0 -vvv --no-associate
+    reaver --bssid <mac-target> --channel <number> --interface wlan0 -vvv --no-associate
 
 *Some newer `reaver` version has some bug and fails, so it could be we need to download and use an older version of `reaver`*
 
 Then we need to fake auth, every 30 seconds:
 
-    aireplay-ng --fakeauth 30 -a <mac-target> <mac-of-wireless-adapter> mon0
+    aireplay-ng --fakeauth 30 -a <mac-target> <mac-of-wireless-adapter> wlan0
 
 ## WPA and WPA2 Cracking
 
@@ -228,7 +279,7 @@ From there on, we need to guess (brut force) the data with a wordlist. We can do
 
 Now we need to wait that a client connect, because it's only during connection time that handshare are send. But like before with the WEP attack we can force the deauthentication process, in order words, force that handshakes are send.
 
-    aireplay-ng -deauth 4 -a <mac-target> -c <mac-of-wireless-adapter> mon0
+    aireplay-ng -deauth 4 -a <mac-target> -c <mac-of-wireless-adapter> wlan0
 
 We need to keep an eye on the airodump-ng output, and when it has the WPA handshake, we can stop aerodump-ng.
 
@@ -284,12 +335,33 @@ Like for example:
  * https://gpuhash.me/
  * https://www.onlinehashcrack.com/how-to-crack-WPA-WPA2-networks.php
 
-See also this nice thing `wifite` which is available on Kali: https://github.com/derv82/wifite2
 
 There are also methods to speed up the cracking process:
 
  * Use GPU instead of CPU
  * Rainbow tables
- * You can pïpe the wordlist as it's create its passwords from `crunc` to `aircrack-ng` so that you don't need to create a huge word list file and storage on your computer.
+ * You can pïpe the wordlist as it's create its passwords from `crunch` to `aircrack-ng` so that you don't need to create a huge word list file and storage on your computer.
  * You can also use methods so that you can pause the process.
  
+
+ ## Other tools
+
+### wifite
+
+See also this nice thing `wifite` which is available on Kali: https://github.com/kimocoder/wifite2 Note that the wifite packages has been forket multiples times. So check out which one is the most up to date and which is still developped.
+
+Note also that on github it's called wifite2, even if in kali, and in it's package information it's called wifite. Actually, the github link i got from the package in Kali.
+
+This python script, according to it's documentation on github, require additional and optional tools
+
+tshark reaver bully cowpatty ath_masker modwifi pyrit
+
+    wifite -e Proximus-Home-46A8
+
+### See also
+
+* wifi-honey - Wi-Fi honeypot
+
+## Resources
+
+- ...

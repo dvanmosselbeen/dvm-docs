@@ -4,9 +4,25 @@ This part is based on info from TryHackMe: https://tryhackme.com/room/rpmetasplo
 
 Metasploit is a framework for testing and abusing know vulnerabilities.
 
+## Table of Contents
+
+- [Basics](#basics)
+- [Using nmap in Metasploit](#using-nmap-in-metasploit)
+- [Background Information](#background-information)
+- [Simple Example](#simple-example)
+- [Another Example](#another-example)
+- [Searching outside metasploit with searchsploit](#searching-outside-metasploit-with-searchsploit)
+- [Interesting modules and other things](#interesting-modules-and-other-things)
+- [Interesting Documentation](#interesting-documentation)
+  - [On TryHackMe](#on-tryhackme)
+
+## Basics
+
 **When we want to use Metasploit for the first time since you booted your system, in a console as root users, run:**
 
     msfdb init
+
+**See `msfdb --help` for more information**
 
 It is very important to initiate the database if you make use Metasploit for the first time since you booted up your computer. Even if you don't initiate the database, `msfconsole` will work but not all features like the `db_nmap` will work. Actually, `msfdb init` will launch the postgresql database.
 
@@ -434,3 +450,24 @@ Finally, launch the exploit:
 
     exploit
 
+
+## Searching outside metasploit with searchsploit
+
+    searchsploit proftpd 1.3.5
+
+## Interesting modules and other things
+
+Search for possible exploits after post exploitation. See the [Ice room on TryHackMe](https://tryhackme.com/room/ice):
+
+    run post/multi/recon/local_exploit_suggester
+
+Now that we've made our way to full administrator permissions we'll set our sights on looting. Mimikatz is a rather infamous password dumping tool that is incredibly useful. Load it now using the command `load kiwi` (Kiwi is the updated version of Mimikatz). Loading kiwi into our meterpreter session will expand our help menu, take a look at the newly added section of the help menu now via the command `help`. 
+
+    load kiwi
+
+## Interesting documentation
+
+### On TryHackMe
+
+- https://tryhackme.com/room/rpmetasploit
+- https://tryhackme.com/room/ice

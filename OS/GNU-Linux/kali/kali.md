@@ -1,5 +1,15 @@
 # Kali
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Interesting tools](#interesting-tools)
+- [Updating Kali](#updating-kali)
+- [User management](#user-management)
+- [Services](#services)
+  - [SSH server](#ssh-server)
+- [Resources](#resources)
+
 ## Introduction
 
 Kali is a distribution made for penetration and security testing.
@@ -111,4 +121,12 @@ To disable it again
 
 ## Resources
 
-...
+- https://www.kali.org
+- https://tools.kali.org
+- https://forums.kali.org
+- https://www.kali.org/docs/
+- https://www.kali.org/get-kali/#kali-mobile
+- https://www.offensive-security.com
+- https://www.offensive-security.com/metasploit-unleashed/
+- https://www.exploit-db.com
+- https://www.exploit-db.com/google-hacking-database

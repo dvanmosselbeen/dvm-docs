@@ -1,5 +1,30 @@
 # Python 3
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Setting up Python](#setting-up-python)
+  - [Installing Python](#installing-python)
+  - [Installing Python on Windows](#installing-python-on-windows)
+  - [Installing Python on Debian](#installing-python-on-debian)
+  - [The Python env (virtual environment)](#the-python-env-virtual-environment)
+  - [With virtualenv](#with-virtualenv)
+  - [Installing additional python modules](#installing-additional-python-modules)
+  - [Interesting Python modules](#interesting-python-modules)
+- [The Zen of Python](#the-zen-of-python)
+- [Python sample code](#python-sample-code)
+  - [Variables](#variables)
+  - [Functions](#functions)
+  - [SimpleHTTPServer](#simplehttpserver)
+- [Tools](#tools)
+- [IDE's](#ides)
+  - [Pycharm](#pycharm)
+  - [Eclipse with PyDev](#eclipse-with-pydev)
+  - [Vim](#vim)
+- [Python tools](#python-tools)
+  - [ipython](#ipython)
+- [Resources](#resources)
+
 ## Introduction
 
 Python is a programming language that is very well know. Python is used by well know and big enterprises. For example, Google, Nasa make extensively use of Python.
@@ -30,7 +55,7 @@ I have always been a great fan of aptitude to install my packages. To install Py
 
     aptitude install python3
 
-## The Python env (virtual environment)
+### The Python env (virtual environment)
 
 The goal of a Python virtual environment is to avoid infesting your main installation with extra modules, with different modules versions or with specific configuration files. Thanks to a Python environment you can isolate some sort of Python modules versions. This is very handy if you are a developer and are working on some Python code. By working with a virtual environment, you ensure to have full control of your extra installed modules as well as their versions.
 
@@ -280,7 +305,7 @@ Using pip we can also install requirement files that may be supplied when workin
 * Pwntools - a CTF & exploit development library.
 * ...
 
-# The Zen of Python
+## The Zen of Python
 
 Python has some particular philosophy. Try this in `ipython`:
 
@@ -307,6 +332,24 @@ def myFunction()
     """My function description"""
     print("This is the output of my function")
 ```
+
+## SimpleHTTPServer
+
+A simple HTTP server which will start for localhost:
+
+    python3 -m http.server
+
+You can bind it to another ip and port if needed:    
+
+    python -m http.server 8000 --bind 127.0.0.1
+
+See here the python documentation:
+
+https://docs.python.org/3/library/http.server.htmlhttps://docs.python.org/3/library/http.server.html
+
+For python 2.x this was:
+
+    python -m SimpleHTTPServer
 
 ## Tools
 

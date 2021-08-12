@@ -2,13 +2,23 @@
 
 https://www.youtube.com/watch?v=BHhA_ZKjyxo
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Cheat Sheet](#cheat-sheet)
+  - [Session Management](#session-management)
+  - [General Commands](#general-commands)
+  - [Window Management](#window-management)
+  - [Pane Management](#pane-management)
+- [Additional tips for the tmux.conf file](#additional-tips-for-the-tmuxconf-file)
+- [Copy and paste](#copy-and-paste)
+- [Resources](#resources)
+
 ## Introduction
 
 `tmux` is a terminal multiplexer, like the [screen](screen.md) application, but `tmux` has more features and is a younger project.
 
 The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. It is better to talk about `<prefix>` instead of `ctrl+b` as you can bind whatever key as `<prefix>`. You can also have more than one `<prefix>` key assigned. Which is my case, i have the `screen` style binding too, which is `ctrl+a`. Personally, I find `ctrl+a` more practical. From what I have read, it ended up `ctrl+b` to not clash with the `screen` `<preffix>` keybind as tmux was developed inside `screen`.
-
-
 
 ## Cheat Sheet
 
@@ -82,10 +92,10 @@ If you make use of the config file of: https://github.com/gpakosz/.tmux the `~/.
 
 See here for more information about copy & pasting: http://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
 
-
 ## Resources
 
 * https://github.com/tmux/tmux/wiki
 * https://github.com/tmux/tmux/wiki/Getting-Started
 * https://github.com/gpakosz/.tmux - The must-have tmux config file !!!
 * See also this cheat sheet https://danielmiessler.com/study/tmux/
+* A dedicated room on TryHackMe - https://tryhackme.com/room/rptmux

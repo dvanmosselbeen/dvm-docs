@@ -4,6 +4,28 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [General information](#general-information)
+  - [Releases (versions)](#releases-versions)
+- [Installing Debian](#installing-debian)
+  - [Migrating from stable to testing release](#migrating-from-stable-to-testing-release)
+- [The package manager](#the-package-manager)
+  - [apt](#apt)
+  - [aptitude](#aptitude)
+- [Admin commands](#admin-commands)
+- [Interesting packages](#interesting-packages)
+- [Server tools](#server-tools)
+  - [Web Server & Database](#web-server--database)
+    - [Apache](#apache)
+      - [Installing Apache](#installing-apache)
+    - [MySQL](#mysql)
+      - [Installing MySQL](#installing-mysql)
+    - [PHPMyAdmin](#phpmyadmin)
+- [Getting more help](#getting-more-help)
+- [Resources](#resources)
+
 ## Introduction
 
 The Debian GNU/Linux operating system claims to be the universal operating system. And that's in fact true. Debian runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the Raspberry Pi, the Sony Playstation (3) and so on. I guess we could install Debian into our fridge, but people seems to lazy to do so.

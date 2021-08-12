@@ -1,5 +1,12 @@
 # nmap
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Quick cheat sheet](#quick-cheat-sheet)
+- [Extra Tools](#extra-tools)
+- [Resources](#resources)
+
 ## Introduction
 
 `nmap` (or it's GUI alternative, `zenmap`) is the ultimate tool for network discovery.
@@ -30,9 +37,15 @@ export IP=<SOME_IP>
 
 You can also store scan results into a file, which is cool:
 
-````commandline
+```commandline
 nmap -sC -sV -oA /tmp/nmap_initial <IP>
-````
+```
+
+Scan for vulnerabilites:
+
+```commandline
+nmap -sV -vv --script vuln $IP
+```
 
 ## Extra Tools
 
@@ -40,4 +53,4 @@ nmap -sC -sV -oA /tmp/nmap_initial <IP>
 
 ## Resources
 
-* [zenmap on Tryhackme](https://tryhackme.com/room/furthernmap) - A dedicated room about zenmap.
+* [nmap on Tryhackme](https://tryhackme.com/room/furthernmap) - A dedicated room about zenmap.
