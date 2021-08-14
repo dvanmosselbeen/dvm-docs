@@ -1,5 +1,12 @@
 # Users Management
 
+## Table of Contents
+
+- [Creating a new user](#creating-a-new-user)
+- [Deleting a user](#deleting-a-user)
+- [Grant user sudo rights](#grant-user-sudo-rights)
+- [Resources](#resources)
+
 ## Creating a new user
 
 You can make use of the low level app `useradd`, however, `adduser` is more user friendly.

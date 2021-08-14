@@ -1,5 +1,25 @@
 # Raspberry PI
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installing an operating system on Raspberry pi](#installing-an-operating-system-on-raspberry-pi)
+- [Backing up the micro SD card](#backing-up-the-micro-sd-card)
+- [Differences between Raspberry pi models](#differences-between-raspberry-pi-models)
+- [Things specific to Raspberry](#things-specific-to-raspberry)
+  - [Raspbian specific tools](#raspbian-specific-tools)
+  - [STOP killing that SD card !](#stop-killing-that-sd-card-)
+- [Using the raspberry Model 3 or 4 for the first time](#using-the-raspberry-model-3-or-4-for-the-first-time)
+- [Cleaning up stuff](#cleaning-up-stuff)
+- [Recommended software and setup](#recommended-software-and-setup)
+- [Recommended hardware for the Raspberry Pi](#recommended-hardware-for-the-raspberry-pi)
+- [Tools to take remote control](#tools-to-take-remote-control)
+- [Migrations logs](#migrations-logs)
+  - [Jessie to Buster migration](#jessie-to-buster-migration)
+- [Other notes not categorised](#other-notes-not-categorised)
+- [TODO](#todo)
+- [Resources](#resources)
+
 ## Raspberry PI Model 3 B
 
 This document is specific for the Raspberry PI Model 3 B or higher. I own both Model 3B and Model 4. Later on maybe there will be some more notes about some other versions of Raspberry Pi.

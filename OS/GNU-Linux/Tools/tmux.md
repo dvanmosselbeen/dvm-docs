@@ -1,19 +1,5 @@
 # tmux
 
-https://www.youtube.com/watch?v=BHhA_ZKjyxo
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Cheat Sheet](#cheat-sheet)
-  - [Session Management](#session-management)
-  - [General Commands](#general-commands)
-  - [Window Management](#window-management)
-  - [Pane Management](#pane-management)
-- [Additional tips for the tmux.conf file](#additional-tips-for-the-tmuxconf-file)
-- [Copy and paste](#copy-and-paste)
-- [Resources](#resources)
-
 ## Introduction
 
 `tmux` is a terminal multiplexer, like the [screen](screen.md) application, but `tmux` has more features and is a younger project.
@@ -67,12 +53,13 @@ The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. 
 | `<prefix> %` | Split screen vertically. To Create a Pane |
 | `<prefix> "` | Split screen horizontally. To Create a Pane |
 | `<prefix> <direction-arrow>` | Go to the pane, the direction which you selected with the arrow key. |
+| `<prefix> <direction-arrow> (and keep ctrl pressed`) | To resize the pane, to the direction which you selected with the arrow key. |
+| `<prefix> z` | Zoom + maximalise a pane. Super super handy!!! `<prefix> z` back to un zoom like it was. |
 | `<prefix> q` | Show pane numbers, used to switch between panes. |
 | `<prefix> o` | Switch to the next pane. |
 | `<prefix> x` | Close pane without confirmation. |
 | `<prefix> b` | Break-pane, to make a pane its own window. |
 | `<prefix> %` | Split the window vertically. |
-| `<prefix> "` | Split the window horizontally. |
 | `<prefix> {` | Move the current pane left. |
 | `<prefix> }` | Move the current pane right. |
 
@@ -86,16 +73,23 @@ bind - split-window -v
 
 ## Copy and paste
 
-If you make use of the config file of: https://github.com/gpakosz/.tmux the `~/.tmux.conf` has already been set up and you only need to install xclip:
+If you make use of the config file of: https://github.com/gpakosz/.tmux the `~/.tmux.conf` has already been set up and you only need to install `xclip` and also `powerline` to make use of the fancy font graphics:
 
-    sudo apt-get install xclip
+    sudo apt-get install xclip powerline
 
 See here for more information about copy & pasting: http://www.rushiagr.com/blog/2016/06/16/everything-you-need-to-know-about-tmux-copy-pasting-ubuntu/
 
+## Tools
+
+- `python3-tmuxp` - tmux session manager (Python 3)
+- `tmuxp` - tmux session manager
+
 ## Resources
 
-* https://github.com/tmux/tmux/wiki
-* https://github.com/tmux/tmux/wiki/Getting-Started
-* https://github.com/gpakosz/.tmux - The must-have tmux config file !!!
-* See also this cheat sheet https://danielmiessler.com/study/tmux/
-* A dedicated room on TryHackMe - https://tryhackme.com/room/rptmux
+- https://www.youtube.com/watch?v=BHhA_ZKjyxo
+- https://www.youtube.com/watch?v=Lqehvpe_djshttps://www.youtube.com/watch?v=Lqehvpe_djs
+- https://github.com/tmux/tmux/wiki
+- https://github.com/tmux/tmux/wiki/Getting-Started
+- https://github.com/gpakosz/.tmux - The must-have tmux config file !!!
+- See also this cheat sheet https://danielmiessler.com/study/tmux/
+- A dedicated room on TryHackMe - https://tryhackme.com/room/rptmux

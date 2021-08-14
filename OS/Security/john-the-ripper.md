@@ -1,16 +1,59 @@
 # John The Ripper
 
+`John The Ripper`, `John` for the friends.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installationa)
+  - [Linux](#linux)
+  - [Windows](#windows)
+  - [Word lists](#word-lists)
+- [Basic usage](#basic-usage)
+- [Identifying the type of hash](#identifying-the-type-of-hash)
+- [Cracking Passwords](#cracking-passwors)
+  - [Cracking basic hashes](#cracking-basic-hashes)
+  - [Cracking Windows Authentication Hashes](#cracking-windows-authentication-hashes)
+  - [Cracking /etc/shadow Hashes](#cracking-etcshadow-hashes)
+  - [Single Crack Mode](#single-crack-mode)
+  - [Custom Rules](#custom-rules)
+    - [Common Custom Rules](#common-custom-rules)
+    - [How to create Custom Rules](#how-to-create-custom-rules)
+    - [Using Custom Rules](#using-custom-rules)
+  - [Cracking a Password Protected Zip File](#cracking-a-password-protected-zip-file)
+  - [Cracking Password Protected RAR Archives](#cracking-password-protected-rar-archives)
+  - [Cracking SSH Keys](#cracking-ssh-keys)
+    - [SSH2john](#ssh2john)
+    - [Cracking id_rsa](#cracking-id_rsa)
+  - Cracking GPG
+- [Further Reading](#further-reading)
+- [Resources](#resources)
+
 ## Introduction
 
-John The Ripper, john for the friends, is a password cracker tool that make use of a wordlist.
+`john` is a password cracker tool that make use of a wordlist or ...
 
 This document is based on following the THM room: https://tryhackme.com/room/johntheripper0
 
 ## Installation 
 
+The installation of this software is pretty easy.
+
 ### Linux
 
-Probably the GNU/Linux distribution has packaged this for your.
+Probably your `GNU/Linux` distribution has packaged this for you. Search for `john` and install the required package. For example:
+
+```commandline
+    # Only search for packages starting with the name of john
+    apt-cache search ^john
+
+    # install the package
+    sudo apt-get install john
+```
+
+#### Johnny
+
+The graphical interface for john. See the johnny packages for this. Personally, I don't like the interface so much and prefer the command line version. The GUI confuse me a lot.
 
 ### Windows
 
@@ -18,9 +61,9 @@ For Windows, you can download John The Ripper here: https://www.openwall.com/joh
 
 ### Word lists
 
-There are different wordlist out there, the most popular one is the `rockyou.txt` file which is available trough the package `wordlists`. See in `/usr/share/wordlists`.
+John can make use of wordlist to make a dictionary attack.
 
-But take also a look to the SecLists, https://github.com/danielmiessler/SecLists - apt-get install seclist Which contains various wordlists. Very interesting to see is that there's a dedicated sub-folder (on github) called passwords/Leaked-Databases where different kind of passwords lists are stored.
+Wordlists, like the name say it, is a list of words. Could be names, passwords, filenames and whatever. This goes beyond the scope of this documents and a dedicated documents has been made for this. See the dedicated document: [wordlists](wordlist.md)
 
 ## Basic usage
 
@@ -32,30 +75,11 @@ john --wordlist=/usr/share/wordlists/rockyou.txt somehash.txt
 
 ## Identifying the type of hash
 
-Like said, john has a build in hash identifier, but isn't great at this and other apps are performing way more better than that.
+Before you can start cracking, you need to know what you want to crack. You need to get to know what kind of "protection" is used.
 
-You have different options:
+See the dedicated document on how to [identify the type of hash](hash_types.md).
 
-* `/usr/bin/hashid`
-* The deprecated package `hash-identifier` which contains the file `/usr/share/hash-identifier/hash-id.py` (deprecated according to https://psypanda.github.io/hashID/)
-* Getting the last version from `wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py`
-* Online - https://hashes.com/en/tools/hash_identifier - And this one give you also the hash result (password).
-
-Once you know the format of the hash, you can use this trick to quickly find the name
-
-    john --list=formats | grep -iF "md5"
-
-But you can also use the `-j` flag on hashid which even more speed up the process as it will tell you which john format it is:
-
-    hashid -j first_task_hashes/hash1.txt
-
-### hashid
-
-From /usr/bin/hashid
-
-    hashid -j first_task_hashes/hash1.txt
-
-## Using john 
+## Cracking Passwors 
 
     john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash1.txt
 
@@ -342,7 +366,7 @@ Once again, we're then able to take the file we output from rar2john in our exam
 john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
 ```
 
-## Cracking SSH Keys with John
+## Cracking SSH Keys
 
 Okay, okay I hear you, no more file archives! Fine! Let's explore one more use of John that comes up semi-frequently in CTF challenges. Using John to crack the SSH private key password of `id_rsa` files. Unless configured otherwise, you authenticate your SSH login using a password. However, you can configure key-based authentication, which lets you use your private key, id_rsa, as an authentication key to login to a remote machine over SSH. However, doing so will often require a password- here we will be using John to crack this password to allow authentication over SSH using the key.
 
@@ -362,6 +386,7 @@ ssh2john [id_rsa private key file] > [output file]
 
 `[output file]` - This is the file that will store the output from
 
+### Cracking id_rsa
 
 Example Usage
 
@@ -382,6 +407,11 @@ For the final time, we're feeding the file we output from ssh2john, which in our
 ```commandline
 john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa_hash.txt
 ```
+
+## Cracking GPG
+
+gpg2john
+...
 
 ## Further Reading
 

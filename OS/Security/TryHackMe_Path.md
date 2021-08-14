@@ -17,13 +17,13 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 
 **Introductory CTFs to get your feet wet**
 
-- [ ] Google Dorking https://tryhackme.com/room/googledorking
+- [X] Google Dorking https://tryhackme.com/room/googledorking
 - [ ] OHsint https://tryhackme.com/room/ohsint
 - [ ] Shodan.io https://tryhackme.com/room/shodan
 
 ## Level 2 - Tooling
 
-- [ ] Tmux https://tryhackme.com/room/rptmux
+- [X] Tmux https://tryhackme.com/room/rptmux
 - [X] Nmap https://tryhackme.com/room/furthernmap
 - [ ] Web Scanning https://tryhackme.com/room/rpwebscanning
 - [ ] Sublist3r https://tryhackme.com/room/rpsublist3r

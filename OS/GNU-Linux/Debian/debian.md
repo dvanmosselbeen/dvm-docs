@@ -1,6 +1,8 @@
 # Debian GNU / Linux
 
-This document will list a few notes about the Debian GNU/Linux operating system. It is mainly a draft document containing some notes or links to resources concerning Debian. This document won't detail everything as there are already a lot of documentation available online.
+## About this document
+
+This document will list a few notes about the [Debian GNU/Linux](https://www.debian.org) operating system. It is mainly a draft document containing some notes or links to resources concerning Debian. This document won't detail everything as there are already a lot of documentation available online.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
@@ -17,6 +19,7 @@ This document will list a few notes about the Debian GNU/Linux operating system.
 - [Admin commands](#admin-commands)
 - [Interesting packages](#interesting-packages)
 - [Server tools](#server-tools)
+  - [SSH Server](#ssh-server) 
   - [Web Server & Database](#web-server--database)
     - [Apache](#apache)
       - [Installing Apache](#installing-apache)
@@ -48,14 +51,16 @@ These days, with a big internet line, it's common to use the `netinst` method. W
 
 ### Migrating from stable to testing release
 
-    cp /etc/apt/sources.list /etc/apt/sources.list_BACKUP
-    
-    # Now we are going to replace the release name "buster" by testing.
-    # It could be you need to adjust this.
-    sed -i "s/buster/testing/" /etc/apt/sources.list
-    
-    apt-get update
-    apt-get dist-upgrade
+```commandline
+cp /etc/apt/sources.list /etc/apt/sources.list_BACKUP
+
+# Now we are going to replace the release name "buster" by testing.
+# It could be you need to adjust this.
+sed -i "s/buster/testing/" /etc/apt/sources.list
+
+apt-get update
+apt-get dist-upgrade
+```
 
 ## The package manager
 
@@ -69,23 +74,30 @@ There's also `aptitude` which i strongly recommend but is not so user friendly a
 
 Before searching or installing anything with `apt-get`, we need to retrieve it's new list of packages:
 
-    apt-get update
+```commandline
+apt-get update
+```
 
 Searching for applications:
 
-    apt-get search gvim
+```commandline
+apt-get search gvim
+```
 
 Show more information about a package:
 
-    apt-cache show gvim-gtk3
+```commandline
+apt-cache show gvim-gtk3
+```
 
 Installing applications
 
-    apt-get install gvim-gtk3
+```commandline
+apt-get install gvim-gtk3
 
-
-    # Clear the cache (Clears the downloaded deb files).
-    apt-get clean
+# Clear the cache (Clears the downloaded deb files).
+apt-get clean
+```
 
 ### aptitude
 
@@ -108,7 +120,7 @@ Just by running the command `aptitude`, you will start the UI interface.
 | `apt-get clean`| Removed downloaded packages. Which are stored in `/var/cache/apt/archives` |
 | `adduser <username>` | To create a new user on your system. You|
 | `service fail2ban status` | To check if fail2ban service is been running. |
-| dmesg | Shows some logs on the console.|
+| `dmesg` | Shows some logs on the console.|
 
 ## Interesting packages
 
@@ -142,6 +154,10 @@ A few very interesting package which should be almost installed on every system
 
 Here's a few tips for server tools.
 
+### SSH Server
+
+...
+
 ### Web Server & Database
 
 There are various different web servers.
@@ -156,7 +172,9 @@ then you are probably looking for this Apache web server.
 
 To install Apache:
 
-    aptitude install apache
+```commandline
+aptitude install apache
+```
 
 #### MySQL
 
@@ -177,21 +195,25 @@ The trick on a GNU/Linux system is to find your way on how you should find infor
 
 You can try to look to what files are been installed with the concerned application:
 
-    dpkg -L <packagename>
+```commandline
+dpkg -L <packagename>
+```
 
 Before adding a new user, look on how you should do:
 
-    man adduser
+```commandline
+man adduser
+```
 
 ## Resources
 
 | Website | Description |
 |---|---|
-| www.debian.org | The official website of the Debian GNU/Linux operating system. |
-| https://wiki.debian.org | The official wiki of Debian. |
-| https://debian-handbook.info | The famous handbook for Debian. |
-| http://www.debianhelp.co.uk/ | Some website with a lot of tutorials. |
-| www.debiantutorials.com | Website with tons of how to's. |
-| www.debiantalk.wordpress.com | Some blog with topics about Debian. |
-| https://debian.chezrami.net | Some French website with articles in french. |
-|http://www.debianadmin.com/||
+| <https://www.debian.org> | The official website of the Debian GNU/Linux operating system. |
+| <https://wiki.debian.org> | The official wiki of Debian. |
+| <https://debian-handbook.info> | The famous handbook for Debian. |
+| <https://www.debianhelp.co.uk/> | Some website with a lot of tutorials. |
+| <https:www.debiantutorials.com> | Website with tons of how to's. |
+| <https:www.debiantalk.wordpress.com> | Some blog with topics about Debian. |
+| <https://debian.chezrami.net> | Some French website with articles in french. |
+|<https://www.debianadmin.com/>||

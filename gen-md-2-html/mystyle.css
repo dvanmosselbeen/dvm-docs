@@ -1,0 +1,55 @@
+body {
+    background-color: #2b2b2b;
+	color: #c2c2c2;
+	font-family: Roboto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: white;
+	background: #343434;
+	border-bottom: 1px solid orange;
+	font-family: Oswald;
+	padding-left: 10px;
+}
+
+p {
+	text-align: justify;
+}
+
+a {
+	color: grey;
+}
+
+a:hover {
+	color: orange;
+}
+
+/*
+// Font also get the same color as bullet point!
+ul {
+	color: orange;
+	text-color: #c2c2c2;
+}
+*/
+
+pre {
+    color:#a9b7c6;
+    background: #3c3d3e;
+	padding: 10px;
+	border-left: 5px solid orange;
+}
+
+code {
+	background: #3c3d3e;
+	padding: 3px;
+}
+
+th {
+	color: grey;
+	background: #3c3d3e;
+	border-bottom: solid 1px #515151;
+	font-style: bold;
+}
+td {
+	border-bottom: dashed 1px #515151;
+}

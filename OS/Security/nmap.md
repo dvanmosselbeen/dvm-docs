@@ -35,6 +35,10 @@ export IP=<SOME_IP>
 * `nmap -sV -sC -oA scans/initial-scan $IP` - Scan version number and common scripts and save scan output in the 3 diff formats. 
 * `nmap -p- -A $IP` - Scan ALL ports (above 1024 too) and get OS info
 
+Use:
+
+- `-Pn` if the machine seems down but is up (Firewall blocking)
+
 You can also store scan results into a file, which is cool:
 
 ```commandline

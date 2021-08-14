@@ -12,17 +12,16 @@
 
 ## Introduction
 
-Kali is a distribution made for penetration and security testing.
+`Kali` is a distribution based on the [GNU/Linux Debian distribution](https://www.debian.org), but made for penetration and security testing.
 
-See also all the documentation related to Debian GNU/Linux as Kali is based  on this distribution.
+See also all the documentation related to [Debian GNU/Linux](../Debian/debian.md) as Kali is based on this distribution. Therefore, this document page will only contain specific information regarding `Kali`. 
 
 ## Interesting tools
 
-Some are installed by default, other not, here is just a list of nice and interesting tools. Making an already installed and another not installed will be painful to maintain in the long run. So here's a mix up.
-
-* `steghide` - steganography hiding tool
+Here's a list of some programs that might be interesting to install on top of the base installation of `Kali`. Note that some apps, like the `sectlists` is very big; around `386MB` to download and whatever once extracted. Some other applications, like `fail2ban`, `htop`, `rlwrap`, `tmux`, `xclip`, `filezilla` etc. are in my opinion a must-have and should be available in a default install.
 
 ```
+fail2ban
 beef
 default-mysql-client
 dsniff
@@ -37,6 +36,8 @@ steghide
 tmux
 xclip
 zenmap-kbx
+filezilla
+monit
 ```
 
 ## Updating Kali
@@ -94,14 +95,13 @@ usermod -aG scanner itchy
 
 ### SSH server
 
-Eventually reconfigure the server
+Eventually start with reconfigure the server:
 
 ```commandline
 dpkg-reconfirgure openssh-server
 ```    
 
-
-By default, the openssh-server is installed but is not launched  automatically at boot time.
+By default, the `openssh-server` is installed but is not launched automatically at boot time. This has it is reason as this is about a penetration machine, and running services at boot time, means more open ports on the machine. So it is maybe wise to not let start the SSH Server at boot time.
 
 ```commandline
 # Start the server
@@ -111,7 +111,7 @@ systemctl start ssh.socket
 systemctl stop ssh.socket
 ```
 
-To instead permanently enable the SSH service to start whenever the system is booted use:
+To permanently enable the SSH service to start whenever the system is booted use:
 
     systemctl enable ssh.socket
 
@@ -119,14 +119,24 @@ To disable it again
 
     systemctl disable ssh.socket
 
+## Special Configuration
+
+### Happy Hacking Keyboard Lite 2
+
+In the start `menu > Settings > Keyboard`. In that new window set the settings as following: 
+
+![alt text](imgs/hhkb-lite2-config.png "Happy Hacking Keyboard Lite 2 layout configuration")
+
+As indicated too, switching / cycling between the different keyboard layouts, we can press both shift keys, followed by `CTRL`.
+
 ## Resources
 
-- https://www.kali.org
-- https://tools.kali.org
-- https://forums.kali.org
-- https://www.kali.org/docs/
-- https://www.kali.org/get-kali/#kali-mobile
-- https://www.offensive-security.com
-- https://www.offensive-security.com/metasploit-unleashed/
-- https://www.exploit-db.com
-- https://www.exploit-db.com/google-hacking-database
+- <https://www.kali.org>
+- <https://tools.kali.org>
+- <https://forums.kali.org>
+- <https://www.kali.org/docs/>
+- <https://www.kali.org/get-kali/#kali-mobile>
+- <https://www.offensive-security.com>
+- <https://www.offensive-security.com/metasploit-unleashed/>
+- <https://www.exploit-db.com>
+- <https://www.exploit-db.com/google-hacking-database>
