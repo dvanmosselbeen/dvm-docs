@@ -1,6 +1,8 @@
 # fail2ban
 
-https://www.youtube.com/watch?v=Z0cDqF6HAxs
+## Introduction
+
+fail2ban is an excelent tool if you want to have some monitoring system on your services you are running on your servers or simple workstation computers.
 
 ## Check the status
 
@@ -31,3 +33,9 @@ Status for the jail: sshd
    |- Total banned:     2
    `- Banned IP list:   192.168.0.54
 ```
+
+## Resources
+
+- https://edywerder.ch/fail2ban-email-notification/
+- https://www.youtube.com/watch?v=Z0cDqF6HAxs
+
