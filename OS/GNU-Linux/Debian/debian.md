@@ -94,9 +94,16 @@ Installing applications
 
 ```commandline
 apt-get install gvim-gtk3
+```
 
+Cleanup maintenance:
+
+```commandline
 # Clear the cache (Clears the downloaded deb files).
 apt-get clean
+
+# Clears up, remove packages that where installed by other packages but are not used anymore
+apt autoremove
 ```
 
 ### aptitude
@@ -119,7 +126,8 @@ Just by running the command `aptitude`, you will start the UI interface.
 | `apt autoremove` | Remove packages that where installed by other packages ant that aren't used anymore.|
 | `apt-get clean`| Removed downloaded packages. Which are stored in `/var/cache/apt/archives` |
 | `adduser <username>` | To create a new user on your system. You|
-| `service fail2ban status` | To check if fail2ban service is been running. |
+| `service fail2ban status` | To check if `fail2ban` service is been running. |
+| `systemctl fail2ban status` | To check if `fail2ban` service is been running. |
 | `dmesg` | Shows some logs on the console.|
 
 ## Interesting packages
