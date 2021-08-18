@@ -15,3 +15,9 @@ Enjoy,
 Peace & Love
 
 David
+
+## Markdown Sheet cheat
+
+Just a few notes to myself.
+
+- Use `-` (minus) for bullet lists, not `*` (asterisks).

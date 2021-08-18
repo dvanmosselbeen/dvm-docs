@@ -1,6 +1,6 @@
 # Generating HTML from Markdown
 
-To convert the Markdown files to HTML, `pandoc` can be used for example. `pandoc` is able to convert to and from a variety of formats.
+To convert the `Markdown` files to `HTML`, the application `pandoc` can be used to do so. `pandoc` is able to convert to and from a variety of formats. pandoc can be easily installed with `apt-get install pandoc`.
 
 There is no script here yet to automate the translation from `Markdown` to `HTML`.
 
@@ -9,6 +9,10 @@ The following will make use of a custom `css` file and `Google fonts`. On top of
 ```commandline
 pandoc --metadata title="Debian" -s --toc --css=mystyle.css --css="https://fonts.googleapis.com/css?family=Roboto|Oswald" debian.md -o debian.html
 ```
+
+## Make use of SASS
+
+Quick start here: <https://www.w3schools.com/sass/sass_intro.php> even if I have the basics. Just a not so that I will look into this to make css for these markdown files.
 
 ## Remarks
 

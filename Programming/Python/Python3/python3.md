@@ -133,7 +133,9 @@ created virtual environment CPython3.9.2.final.0-64 in 2422ms
 
 To activate the environment:
 
-    source myEnvPy3/bin/activate
+```commandline
+source myEnvPy3/bin/activate
+```
 
 The prompt will have another look:
 
@@ -159,20 +161,22 @@ To desactivate the environment (to get out of it):
 
 To be able to install additional libraries and modules, you need to check if you have python-pip (for Python 2.x) or python-pip3 (for Python 3.x) installed. If not installed, install it with:
 
-    sudo apt install python3-pip
+```commandline
+sudo apt install python3-pip
+```
 
 There are different methods to install additional modules. One of these methods is by making use of `pip`. For example, to install the ipython shell for Python version 2:
 
-    pip install ipython
-
+```commandline
+pip install ipython
+```
 
 For Python version 3 you need to make use of `pip3`.
 
 You can get more help with of pip, by just typing in pip, wich will return you some information:
 
 ```commandline
-┌──(myEnvPy3)(itchy㉿scratchy)-[~/pythonEnv]
-└─$ pip3
+$ pip3
 
 Usage:
   pip3 <command> [options]
@@ -233,8 +237,8 @@ We now need to search on the web interface: https://pypi.org/
 For example, listing the packages installed in the virtualenv:
 
 ```commandline
-┌──(myEnvPy3)(itchy㉿scratchy)-[~/pythonEnv]
-└─$ pip list
+$ pip list
+
 Package       Version
 ------------- -------
 pip           20.3.4
@@ -250,8 +254,8 @@ Install `pwntools` in the virtualenv:
 And if we look now to all what packages is installed:
 
 ```commandline
-┌──(myEnvPy3)(itchy㉿scratchy)-[~/pythonEnv]
-└─$ pip list
+$ pip list
+
 Package            Version
 ------------------ ---------
 bcrypt             3.2.0
@@ -309,7 +313,7 @@ Using pip we can also install requirement files that may be supplied when workin
 
 Python has some particular philosophy. Try this in `ipython`:
 
-```
+```python
 import this
 ```
 
@@ -341,7 +345,7 @@ A simple HTTP server which will start for localhost:
 
 You can bind it to another ip and port if needed:    
 
-    python -m http.server 8000 --bind 127.0.0.1
+    python3 -m http.server 8000 --bind 127.0.0.1
 
 See here the python documentation:
 
@@ -383,4 +387,4 @@ ipython is an enhanced shell for Python which has autocomplete features.
 
 ## Resources
 
-* https://www.askpython.com/
+- <https://www.askpython.com>

@@ -60,8 +60,8 @@ The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. 
 | `<prefix> x` | Close pane without confirmation. |
 | `<prefix> b` | Break-pane, to make a pane its own window. |
 | `<prefix> %` | Split the window vertically. |
-| `<prefix> {` | Move the current pane left. |
-| `<prefix> }` | Move the current pane right. |
+| `<prefix> {` | Move the current pane left or up. |
+| `<prefix> }` | Move the current pane right or down. |
 
 ## Additional tips for the tmux.conf file
 
