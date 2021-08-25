@@ -129,6 +129,7 @@ Just by running the command `aptitude`, you will start the UI interface.
 | `service fail2ban status` | To check if `fail2ban` service is been running. |
 | `systemctl fail2ban status` | To check if `fail2ban` service is been running. |
 | `dmesg` | Shows some logs on the console.|
+| `stats` | Gives information about a given file. Like the permissions but also the access, modify and creation time. |
 
 ## Interesting packages
 

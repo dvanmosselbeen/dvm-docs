@@ -4,10 +4,10 @@ Just a bunch of notes i have specific to Microsoft Windows 10.
 
 ## Table of Contents
 
-* [Useful command line tools](#useful-command-line-tools)
-* [Activating the hibernate item in the shutdown options](#activating-the-hibernate-item-in-the-shutdown-options)
-* [Apps i like for Windows](#apps-i-like-for-windows)
-* [Games](#games)
+- [Useful command line tools](#useful-command-line-tools)
+- [Activating the hibernate item in the shutdown options](#activating-the-hibernate-item-in-the-shutdown-options)
+- [Apps i like for Windows](#apps-i-like-for-windows)
+- [Games](#games)
 
 ## Useful command line tools
 
@@ -41,7 +41,9 @@ Just a bunch of notes i have specific to Microsoft Windows 10.
 | `assoc` | Returns a list with the curent file associations. For example, `assoc .txt` will show you to which type txt belongs too.  `assoc .txt=` will change the file association for text files to whatever program you enter after the equal sign. |
 | `clip` | The clipboard for command use. This program is very useful if you want to get the output of a program pasted in your clipboard. You need to pipe stuff to the `clip` program to be able to use it. For example: `systeminfo <PIPE_CHARACTER> clip`. Which will send the output of the command `systeminfo` in your clipboard. So now you can paste that somewhere else. The `PIPE_CHARACTER` character gets eaten by the Markdown markup language i use and the pipe character is the only character we can't escape with Markdown. Sorry for that. It's the character that you can get by pressing `alt+124`.|
 | `pkgmgr /iu:"TelnetClient"` | To install the `TelnetClient`. `pkgmgr` is deprecated on Windows 10, use `dism` instead.|
-| cipher | `cipher` is used to permanently delete files that where already deleted. So that they can't be recovered anymore with special recovery software. You should be aware that when you delete files, these files aren't deleted, but the reference is. The used space by the old files are then marked as being free space, and is then eventually allocated to future new data and thus the old data will then be eventually overwritten. As long as the system doesn't overwrite the old data, then the old data can be easily recovered. The `cipher` command wipes a directory by writing some random data to it, in the hope that the old data can't be recovered. It still can be recovered but way more harder and with another type of recovery tools. `cipher` doesn't delete files that "still exist" (which reference still exist in the FAT, File Allocation Table). For example, `cipher /w:c` will wipe free space on the `C:` drive, without deleting existing data.|
+| `cipher` | `cipher` is used to permanently delete files that where already deleted. So that they can't be recovered anymore with special recovery software. You should be aware that when you delete files, these files aren't deleted, but the reference is. The used space by the old files are then marked as being free space, and is then eventually allocated to future new data and thus the old data will then be eventually overwritten. As long as the system doesn't overwrite the old data, then the old data can be easily recovered. The `cipher` command wipes a directory by writing some random data to it, in the hope that the old data can't be recovered. It still can be recovered but way more harder and with another type of recovery tools. `cipher` doesn't delete files that "still exist" (which reference still exist in the FAT, File Allocation Table). For example, `cipher /w:c` will wipe free space on the `C:` drive, without deleting existing data. |
+| `sysdm.cpl` | On the cli, to pop up the System Properties GUI. |
+| `wevtutil.exe` | Enables you to retrieve information about event logs and publishers. You can also use this command to install and uninstall event manifests, to run queries, and to export, archive, and clear logs. We can also get more information about a command. Ex.: `wevtutil.exe eq /?` |
 
 ## Activating the hibernate option in the shutdown menu
 
@@ -85,7 +87,6 @@ Here's a list of applications i like to use on a Microsoft Windows operating sys
 | Adobe Creative Cloud ||
 | git ||
 | vlc ||
-| mp3tag ||
 | [Spybot Search & Destroy](https://www.safer-networking.org/download/) | Tool to scan the computer for malicious stuff.|
 | [Malwarebytes](https://malwarebytes.com) | Remove spyware. |
 | XAMPP | Webserver & database. |

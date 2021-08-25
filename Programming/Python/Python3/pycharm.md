@@ -1,5 +1,14 @@
 # Pycharm
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Like and dislike](#like-and-dislike)
+- [What I like about PyCharm](#what-i-like-about-pycharm)
+- [What I dislike about PyCharm](#what-i-dislike-about-pycharm)
+- [Quick usage and tips](#quick-usage-and-tips)
+- [Blender specific things](#blender-specific-things)
+
 ## Introduction
 
 PyCharm is an awesome powerfull IDE for writting Python code. PyCharm itself is written in Java. This IDE commes in 2 versions. A Community (free) version and a Professional (paid) version. The community version has all the features a general Python coder need. However, the Professional (paid) versions has some more features.

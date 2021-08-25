@@ -11,7 +11,7 @@
   - [Word lists](#word-lists)
 - [Basic usage](#basic-usage)
 - [Identifying the type of hash](#identifying-the-type-of-hash)
-- [Cracking Passwords](#cracking-passwors)
+- [Cracking Passwords](#cracking-passwords)
   - [Cracking basic hashes](#cracking-basic-hashes)
   - [Cracking Windows Authentication Hashes](#cracking-windows-authentication-hashes)
   - [Cracking /etc/shadow Hashes](#cracking-etcshadow-hashes)
@@ -44,11 +44,11 @@ The installation of this software is pretty easy.
 Probably your `GNU/Linux` distribution has packaged this for you. Search for `john` and install the required package. For example:
 
 ```commandline
-    # Only search for packages starting with the name of john
-    apt-cache search ^john
+# Only search for packages starting with the name of john
+apt-cache search ^john
 
-    # install the package
-    sudo apt-get install john
+# install the package
+sudo apt-get install john
 ```
 
 #### Johnny
@@ -79,21 +79,31 @@ Before you can start cracking, you need to know what you want to crack. You need
 
 See the dedicated document on how to [identify the type of hash](hash_types.md).
 
-## Cracking Passwors 
+## Cracking Passwords 
 
-    john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash1.txt
+```commandline
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash1.txt
+```
 
 ## Cracking basic hashes
 
 ```commandline
+echo "482c811da5d5b4bc6d497ffa98491e38" > hashfile.txt
+
 hashid -j hashfile.txt
 john --format=<format> --wordlist=/usr/share/wordlists/rockyou.txt hashfile.txt
 ```
 
 For example:
 
-```
+```commandline
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hashfile.txt
+```
+
+Mind the file `~/.john/john.pot` which contains previously cracked passwords. `John` does not show already created hashes/passwords. So bad and so strange. For this you need to use the show command and specify the hash or password file like following:
+
+```commandline
+john --show hashfile.txt
 ```
 
 # Cracking Windows Authentication Hashes
@@ -112,45 +122,52 @@ john --format=nt --wordlist=/usr/share/wordlists/rockyou.txt ntlm.txt
 
 John can be very particular about the formats it needs data in to be able to work with it, for this reason- in order to crack /etc/shadow passwords, you must combine it with the /etc/passwd file in order for John to understand the data it's being given. To do this, we use a tool built into the John suite of tools called unshadow. The basic syntax of unshadow is as follows:
 
-    unshadow [path to passwd] [path to shadow]
+```
+unshadow [path to passwd] [path to shadow]
+```
 
 **Let's break that down**:
 
-`unshadow` - Invokes the unshadow tool
-
-`[path to passwd]` - The file that contains the copy of the /etc/passwd file you've taken from the target machine
-
-`[path to shadow]` - The file that contains the copy of the /etc/shadow file you've taken from the target machine
+- `unshadow` - Invokes the unshadow tool
+- `[path to passwd]` - The file that contains the copy of the /etc/passwd file you've taken from the target machine
+- `[path to shadow]` - The file that contains the copy of the /etc/shadow file you've taken from the target machine
 
 Example Usage:
 
-    unshadow local_passwd local_shadow > unshadowed.txt
+```commandline
+unshadow local_passwd local_shadow > unshadowed.txt
+```
 
 Note on the files
 
 When using `unshadow`, you can either use the entire `/etc/passwd` and `/etc/shadow` file- if you have them available, or you can use the relevant line from each, for example:
 
-FILE 1 - local_passwd
+FILE 1 - `local_passwd`
 
 Contains the `/etc/passwd` line for the root user:
 
-    root:x:0:0::/root:/bin/bash
+```
+root:x:0:0::/root:/bin/bash
+```
 
-FILE 2 - local_shadow
+FILE 2 - `local_shadow`
 
 Contains the `/etc/shadow` line for the root user:
 
-    root:$6$2nwjN454g.dv4HN/$m9Z/r2xVfweYVkrr.v5Ft8Ws3/YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ldTeEL/OIhJZ4GMFMGA0:18576::::::
+```
+root:$6$2nwjN454g.dv4HN/$m9Z/r2xVfweYVkrr.v5Ft8Ws3/YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ldTeEL/OIhJZ4GMFMGA0:18576::::::
+```
 
 ## Cracking
 
 We're then able to feed the output from `unshadow`, in our example use case called `unshadowed.txt` directly into John. We should not need to specify a mode here as we have made the input specifically for John, however in some cases you will need to specify the format as we have done previously using: --format=sha512crypt
 
-    john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt
+```commandline
+john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt
 
-
-    echo > etchashes.txt
-    john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt etchashes.txt
+echo > etchashes.txt
+john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt etchashes.txt
+```
 
 ## Single Crack Mode
 
@@ -164,9 +181,9 @@ If we take the username: Markus
 
 Some possible passwords could be:
 
-* Markus1, Markus2, Markus3 (etc.)
-* MArkus, MARkus, MARKus (etc.)
-* Markus!, Markus$, Markus* (etc.)
+- Markus1, Markus2, Markus3 (etc.)
+- MArkus, MARkus, MARKus (etc.)
+- Markus!, Markus$, Markus* (etc.)
 
 This technique is called word mangling. John is building it's own dictionary based on the information that it has been fed and uses a set of rules called "mangling rules" which define how it can mutate the word it started with to generate a wordlist based off of relevant factors for the target you're trying to crack. This is exploiting how poor passwords can be based off of information about the username, or the service they're logging into.
 
@@ -178,13 +195,17 @@ John's implementation of word mangling also features compatibility with the Geco
 
 To use single crack mode, we use roughly the same syntax that we've used to so far, for example if we wanted to crack the password of the user named "Mike", using single mode, we'd use:
 
-    john --single --format=[format] [path to file]
+```commandline
+john --single --format=[format] [path to file]
+```
 
-`--single` - This flag lets john know you want to use the single hash cracking mode.
+- `--single` - This flag lets john know you want to use the single hash cracking mode.
 
 Example Usage:
 
-    john --single --format=raw-sha256 hashes.txt
+```commandline
+john --single --format=raw-sha256 hashes.txt
+```
 
 A Note on File Formats in Single Crack Mode:
 
@@ -206,7 +227,7 @@ echo joker:7bf6d9bb82bed1302f331fc6b816aada > joker_pass2.txt
 john --single --format=raw-md5 joker_pass.txt
 ```
 
-passwd: Jok3r
+passwd: `Jok3r`
 
 ## Custom Rules
 
@@ -246,45 +267,33 @@ The first line:
 
 We then use a regex style pattern match to define where in the word will be modified, again- we will only cover the basic and most common modifiers here:
 
-`Az` - Takes the word and appends it with the characters you define
-
-`A0 `- Takes the word and prepends it with the characters you define
-
-`c` - Capitalises the character positionally
+- `Az` - Takes the word and appends it with the characters you define
+- `A0 `- Takes the word and prepends it with the characters you define
+- `c` - Capitalises the character positionally
 
 These can be used in combination to define where and what in the word you want to modify.
 
 Lastly, we then need to define what characters should be appended, prepended or otherwise included, we do this by adding character sets in square brackets `[ ]` in the order they should be used. These directly follow the modifier patterns inside of double quotes `" "`. Here are some common examples:
 
-`[0-9]` - Will include numbers 0-9
-
-`[0]` - Will include only the number 0
-
-`[A-z]` - Will include both upper and lowercase
-
-`[A-Z]` - Will include only uppercase letters
-
-`[a-z]` - Will include only lowercase letters
-
-`[a]` - Will include only a
-
-`[!£$%@]` - Will include the symbols !£$%@
+- `[0-9]` - Will include numbers 0-9
+- `[0]` - Will include only the number 0
+- `[A-z]` - Will include both upper and lowercase
+- `[A-Z]` - Will include only uppercase letters
+- `[a-z]` - Will include only lowercase letters
+- `[a]` - Will include only a
+- `[!£$%@]` - Will include the symbols !£$%@
 
 Putting this all together, in order to generate a wordlist from the rules that would match the example password "Polopassword1!" (assuming the word polopassword was in our wordlist) we would create a rule entry that looks like this:
 
-`[List.Rules:PoloPassword]`
-
-`cAz"[0-9] [!£$%@]"`
+- `[List.Rules:PoloPassword]`
+- `cAz"[0-9] [!£$%@]"`
 
 In order to:
 
-Capitalise the first  letter - `c`
-
-Append to the end of the word - `Az`
-
-A number in the range 0-9 - `[0-9]`
-
-Followed by a symbol that is one of `[!£$%@]`
+- Capitalise the first  letter - `c`
+- Append to the end of the word - `Az`
+- A number in the range 0-9 - `[0-9]`
+- Followed by a symbol that is one of `[!£$%@]`
 
 ### Using Custom Rules
 
@@ -310,13 +319,10 @@ Similarly to the `unshadow` tool that we used previously, we're going to be usin
 zip2john [options] [zip file] > [output file]
 ```
 
-`[options]` - Allows you to pass specific checksum options to zip2john, this shouldn't often be necessary
-
-`[zip file]` - The path to the zip file you wish to get the hash of
-
-`>` - This is the output director, we're using this to send the output from this file to the...
-
-`[output file]` - This is the file that will store the output from
+- `[options]` - Allows you to pass specific checksum options to zip2john, this shouldn't often be necessary
+- `[zip file]` - The path to the zip file you wish to get the hash of
+- `>` - This is the output director, we're using this to send the output from this file to the...
+- `[output file]` - This is the file that will store the output from
 
 Example Usage
 
@@ -344,13 +350,10 @@ Almost identical to the `zip2john` tool that we just used, we're going to use th
 rar2john [rar file] > [output file]
 ```
 
-`rar2john` - Invokes the rar2john tool
-
-`[rar file]` - The path to the rar file you wish to get the hash of
-
-`>` - This is the output director, we're using this to send the output from this file to the...
-
-`[output file]` - This is the file that will store the output from
+- `rar2john` - Invokes the rar2john tool
+- `[rar file]` - The path to the rar file you wish to get the hash of
+- `>` - This is the output director, we're using this to send the output from this file to the...
+- `[output file]` - This is the file that will store the output from
 
 Example Usage
 
@@ -378,13 +381,10 @@ Who could have guessed it, another conversion tool? Well, that's what working wi
 ssh2john [id_rsa private key file] > [output file]
 ```
 
-`ssh2john` - Invokes the ssh2john tool
-
-`[id_rsa private key file]` - The path to the id_rsa file you wish to get the hash of
-
-`>` - This is the output director, we're using this to send the output from this file to the...
-
-`[output file]` - This is the file that will store the output from
+- `ssh2john` - Invokes the ssh2john tool
+- `[id_rsa private key file]` - The path to the id_rsa file you wish to get the hash of
+- `>` - This is the output director, we're using this to send the output from this file to the...
+- `[output file]` - This is the file that will store the output from
 
 ### Cracking id_rsa
 
@@ -419,4 +419,4 @@ Thank you for completing this room on John the Ripper! I hope you've learnt a lo
 
 ## Resources
 
-* https://www.openwall.com/john/doc/EXAMPLES.shtml
+* <https://www.openwall.com/john/doc/EXAMPLES.shtml>

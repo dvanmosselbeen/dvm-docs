@@ -71,6 +71,10 @@ sudo apg-get clean
 
 ## Services
 
+Instead of using the `systemctrl` command, we can also use the `service <service-name> <argument>` command. For example:
+
+    service ssh start
+
 ### SSH server
 
 Eventually start with reconfigure the server:

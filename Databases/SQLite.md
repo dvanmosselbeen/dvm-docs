@@ -547,10 +547,9 @@ There are some `Python` modules to access the content of a `sqlite` database. So
 
 ## Other commands to see for
 
--   `select * from sqlite_master;`
--   `cat ~/.sqlite_history`
--   `$ sqlite3 test.db ".dump"|sed -e s/t1/t2/|sqlite3 test2.db`
--   Join. Here\'s an example:
+- `select * from sqlite_master;`
+- `cat ~/.sqlite_history`
+- `$ sqlite3 test.db ".dump"|sed -e s/t1/t2/|sqlite3 test2.db`
 
 The following will be interesting to run some saved queries:
 
@@ -571,7 +570,7 @@ Put it in your `/usr/local/bin` dir and `chmod a+x sqlite3_analyzer-3.3.8.bin`it
 The usage is really easy and this tool is really interesting too. I not understand that it is not yet packaged for `Debian`. Maybe is there another tool for `sqlite`, but i dunno. Maybe could it be useful to package this tool for `Debian`.
 
 ```commandline
-    $ sqlite3_analyzer test.db
+$ sqlite3_analyzer test.db
 ```
 
 I not past the output like it's really big. But try it on the test database us have made. Also read the latest part of the report, it give you the `SQL`syntax to produce the same stats.

@@ -4,11 +4,35 @@ Some fancy command I forget time by time
 
 ## Table of Contents
 
+- [Get my IP](#get-my-ip)
+- [Copy from a certain line number until the end of the file](#copy-from-a-certain-line-number-until-the-end-of-the-file)
+- [Generate a linux password](#generate-a-linux-password)
+- [Count the number of accounts on a *nix box](#count-the-number-of-accounts-on-a-nix-box)
 - [Pick up some 5 random lines of a file](#pick-up-some-5-random-lines-of-a-file)
 - [Set SUID permission](#set-suid-permission)
 - [Sorting a text file](#sorting-a-text-file)
 - [Transfer a file with nc between 2 computers](#transfer-a-file-with-nc-between-2-computers)
 - [Other things not classified](#other-things-not-classified)
+
+## Get my IP
+
+````commandline
+hostname -I | awk '{print $1}'
+````
+
+## Copy from a certain line number until the end of the file
+
+````commandline
+sed -n '1792,$p' Hot_Babe.png > wordlist.txt
+````
+
+## Count the number of accounts on a *nix box
+
+```commandline
+gawk -F: '{ print $1 }' /etc/passwd | wc -l
+```
+
+N.B. User accounts are account with `uid` starting from `1000`.
 
 ## Pick up some 5 random lines of a file
 
@@ -58,4 +82,14 @@ Where `-w 3` is the time out in seconds. See `nc -h` for more info.
 ┌──(itchy㉿scratchy)-[~]
 └─$ ifconfig tun0 | grep -i 'inet ' | awk -F' ' '{print $2}'
 10.8.208.30
+```
+
+Find all the SUID/SGID executables:
+
+```commandline
+find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+```
+
+```commandline
+while read line; do echo $line; done < clue.txt
 ```

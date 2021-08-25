@@ -6,9 +6,16 @@ There is no script here yet to automate the translation from `Markdown` to `HTML
 
 The following will make use of a custom `css` file and `Google fonts`. On top of this, it will also create a `Table of Contents`:
 
+This works on Windows as well as *nix.
+
 ```commandline
-pandoc --metadata title="Debian" -s --toc --css=mystyle.css --css="https://fonts.googleapis.com/css?family=Roboto|Oswald" debian.md -o debian.html
+pandoc --metadata title="Debian" -s --toc --css=mystyle.css --css="https://fonts.googleapis.com/css?family=Roboto|Oswald|Exo" debian.md -o debian.html
 ```
+
+```commandline
+pandoc --metadata title="SQLite Short Ref" -s --toc --css=mystyle.css --css="https://fonts.googleapis.com/css?family=Roboto|Oswald|Exo" SQLite.md -o SQLite.html
+```
+
 
 ## Make use of SASS
 

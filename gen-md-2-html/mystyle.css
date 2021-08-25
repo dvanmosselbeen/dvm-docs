@@ -1,15 +1,35 @@
+/* 
+
+Would be nice to make use of SASS instead, 
+especially if planning to make different themes / styles
+See: https://www.w3schools.com/sass/default.php
+
+Nice fonts might be:
+- Body:			Roboto
+- Headings: 	Exo, Oswald
+
+Nice Colors might be:
+orange			Yes that's the reference
+#c2c2c2
+#2b2b2b			
+#343434			Dark grey maybe nice for Hx backgrounds
+*/
+
 body {
     background-color: #2b2b2b;
 	color: #c2c2c2;
 	font-family: Roboto;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
 	color: white;
-	background: #343434;
-	border-bottom: 1px solid orange;
-	font-family: Oswald;
+	//background: #343434;
+	border-bottom: 1px solid #a9b7c6;
+	font-family: Exo;
 	padding-left: 10px;
+	padding-top: 5px;
+	text-transform: uppercase;
 }
 
 p {
@@ -21,11 +41,10 @@ a {
 }
 
 a:hover {
-	color: orange;
+	color: #a9b7c6;
 }
 
-/*
-// Font also get the same color as bullet point!
+/* Font also get the same color as bullet point!
 ul {
 	color: orange;
 	text-color: #c2c2c2;
@@ -36,7 +55,8 @@ pre {
     color:#a9b7c6;
     background: #3c3d3e;
 	padding: 10px;
-	border-left: 5px solid orange;
+	//border-left: 5px solid #a9b7c6;
+	border-left: 5px solid grey;
 }
 
 code {
@@ -49,6 +69,7 @@ th {
 	background: #3c3d3e;
 	border-bottom: solid 1px #515151;
 	font-style: bold;
+		text-transform: capitalize;
 }
 td {
 	border-bottom: dashed 1px #515151;
