@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [First things to do after installing Kali](#first-things-to-do-after-installing-kali)
 - [Interesting tools](#interesting-tools)
 - [Updating Kali](#updating-kali)
 - [Services](#services)
@@ -20,31 +21,56 @@
 
 See also all the documentation related to [Debian GNU/Linux](../Debian/debian.md) as Kali is based on this distribution. Therefore, this document page will only contain specific information regarding `Kali`. 
 
+## First things to do after installing Kali
+
+- Change the `root` password (`toor` by default).
+- Change SSL certs
+- Update the packages list and the system.
+- Clean up the downloaded packages (`apt-get clean`)
+- Install a firewall (`gufw`)
+- Change the `mac` address.
+- Check the config for `tor` and `proxychains`.
+
 ## Interesting tools
 
 Here's a list of some programs that might be interesting to install on top of the base installation of `Kali`. Note that some apps, like the `sectlists` is very big; around `386MB` to download and whatever once extracted. Some other applications, like `fail2ban`, `htop`, `rlwrap`, `tmux`, `xclip`, `filezilla` etc. are in my opinion a must-have and should be available in a default install.
 
-- `fail2ban` - ban hosts that cause multiple authentication errors
-- `beef` - flexible Brainfuck interpreter
-- `default-mysql-client` - MySQL database client binaries (metapackage)
-- `dsniff` - Various tools to sniff network traffic for cleartext insecurities
-- `gobuster` - Directory/file & DNS busting tool written in Go
-- `gvim-gtk3` - Vi IMproved - enhanced vi editor - with GTK3 GUI
-- `hexedit` - viewer and editor in hexadecimal or ASCII for files or devices
-- `htop` - interactive processes viewer
-- `remmina` - GTK+ Remote Desktop Client
-- `rlwrap` - readline feature command line wrapper
-- `seclists` - Collection of multiple types of security lists
-- `steghide` - steganography hiding tool - documentation files
-- `tmux` - terminal multiplexer
-- `xclip` - command line interface to X selections
-- `zenmap-kbx` - The Network Mapper Front End
-- `filezilla` - Full-featured graphical FTP/FTPS/SFTP client
-- `tor` - anonymizing overlay network for TCP
-- `monit` - utility for monitoring and managing daemons or similar programs
-- `tree` - displays an indented directory tree, in color
+| Package name | Description |
+| --- | --- |
+| `airgeddon` | multi-use bash script for Linux systems to audit wireless networks |
+| `basez` | base 16/32/64 encode/decode data to standard output |
+| `beef` | flexible Brainfuck interpreter |
+| `binwalk` | tool library for analyzing binary blobs and executable code |
+| `default-mysql-client` | MySQL database client binaries (metapackage) |
+| `dsniff` | Various tools to sniff network traffic for cleartext insecurities |
+| `fail2ban` | ban hosts that cause multiple authentication errors |
+| `filezilla` | Full-featured graphical FTP/FTPS/SFTP client |
+| `foremost` | forensic program to recover lost files. NOTE: can also do steganography. |
+| `gobuster` | Directory/file & DNS busting tool written in Go |
+| `gufw` | graphical user interface for ufw |
+| `gvim-gtk3` | Vi IMproved - enhanced vi editor - with GTK3 GUI |
+| `hexedit` | viewer and editor in hexadecimal or ASCII for files or devices |
+| `htop` | interactive processes viewer |
+| [joomscan](https://wiki.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project) | OWASP Joomla Vulnerability Scanner Project |
+| `ltrace` | Tracks runtime library calls in dynamically linked programs |
+| `monit` | utility for monitoring and managing daemons or similar programs |
+| `remmina` | GTK+ Remote Desktop Client |
+| `rlwrap` | readline feature command line wrapper |
+| `seclists` | Collection of multiple types of security lists |
+| `steghide` | steganography hiding tool - documentation files |
+| `stegcracker` | steganography brute-force tool |
+| `tmux` | terminal multiplexer |
+| `tor` | anonymizing overlay network for TCP |
+| `torbrowser-launcher` | helps download and run the Tor Browser Bundle |
+| `tree` | displays an indented directory tree, in color |
+| `xclip` | command line interface to X selections |
+| `zenmap-kbx` | The Network Mapper Front End |
 
 _It could be interesting to create a `.deb` (meta-)package which will force the installation of these above packages_
+
+Other interesting meta-packages interesting to look at what they want to install exactly:
+
+- forensics-extra
 
 ## Updating Kali
 
@@ -66,7 +92,7 @@ Do not forget to time by time:
 
 ```commandline
 sudo apt autoremove
-sudo apg-get clean
+sudo apt-get clean
 ```
 
 ## Services

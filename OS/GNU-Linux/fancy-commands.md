@@ -4,6 +4,7 @@ Some fancy command I forget time by time
 
 ## Table of Contents
 
+- [Get a random line of a text file](#get-a-random-line-of-a-text-file)
 - [Get my IP](#get-my-ip)
 - [Copy from a certain line number until the end of the file](#copy-from-a-certain-line-number-until-the-end-of-the-file)
 - [Generate a linux password](#generate-a-linux-password)
@@ -13,6 +14,18 @@ Some fancy command I forget time by time
 - [Sorting a text file](#sorting-a-text-file)
 - [Transfer a file with nc between 2 computers](#transfer-a-file-with-nc-between-2-computers)
 - [Other things not classified](#other-things-not-classified)
+
+## Get a random line of a text file
+
+````commandline
+shuf -n 1 /usr/share/wordlists/rockyou.txt
+````
+
+For big files, like the rockyou, where you want only to get the first X lines:
+
+````commandline
+head /usr/share/wordlists/rockyou.txt -n 10000 | shuf -n 1 -
+````
 
 ## Get my IP
 

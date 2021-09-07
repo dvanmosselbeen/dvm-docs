@@ -158,6 +158,7 @@ A few very interesting package which should be almost installed on every system
 | `vim-gtk3` | Vi IMproved - enhanced vi editor - with GTK3 GUI |
 | `vim-python-jedi` | autocompletion tool for Python - VIM addon files |
 | `unp` | unpack (almost) everything with one command |
+| `unattended-upgrades` | automatic installation of security upgrades |
 
 ## Server tools
 

@@ -18,7 +18,7 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 **Introductory CTFs to get your feet wet**
 
 - [X] Google Dorking https://tryhackme.com/room/googledorking
-- [ ] OHsint https://tryhackme.com/room/ohsint
+- [X] OHsint https://tryhackme.com/room/ohsint
 - [ ] Shodan.io https://tryhackme.com/room/shodan
 
 ## Level 2 - Tooling
@@ -29,7 +29,7 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [ ] Sublist3r https://tryhackme.com/room/rpsublist3r
 - [X] Metasploit https://tryhackme.com/room/rpmetasploit
 - [X] Hydra https://tryhackme.com/room/hydra
-- [ ] Linux Privesc https://tryhackme.com/room/linuxprivesc
+- [X] Linux Privesc https://tryhackme.com/room/linuxprivesc
 - [ ] Web Scanning https://tryhackme.com/room/rpwebscanning
 - [ ] Shodan https://tryhackme.com/room/shodan
 - [ ] RustScan (I invented RustScan so excuse the self-promo) https://tryhackme.com/room/rustscan
@@ -38,8 +38,8 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [X] Vulnversity - https://tryhackme.com/room/vulnversity
 - [X] Blue - https://tryhackme.com/room/blue
 - [X] Simple CTF https://tryhackme.com/room/easyctf
-- [ ] Bounty Hacker https://tryhackme.com/room/cowboyhacker
-- [ ] Brute It https://tryhackme.com/room/bruteit
+- [X] Bounty Hacker https://tryhackme.com/room/cowboyhacker
+- [X] Brute It https://tryhackme.com/room/bruteit
 
 ## Level 3 - Crypto & Hashes with CTF practice
 
@@ -47,7 +47,7 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 - [X] Agent Sudo https://tryhackme.com/room/agentsudoctf
 - [ ] The Cod Caper https://tryhackme.com/room/thecodcaper
 - [X] Ice https://tryhackme.com/room/ice
-- [ ] Lazy Admin https://tryhackme.com/room/lazyadmin
+- [X] Lazy Admin https://tryhackme.com/room/lazyadmin
 - [X] Basic Pentesting https://tryhackme.com/room/basicpentestingjt
 
 ## Level 4 - Web
@@ -97,18 +97,18 @@ This TryHackMe Path is a Free path that you can try out on TryHackMe.com However
 ## Level 8 - CTF practice
 
 - [X] Post Exploitation Basics https://tryhackme.com/room/postexploit
-- [ ] Inclusion https://tryhackme.com/room/inclusion
+- [X] Inclusion https://tryhackme.com/room/inclusion
 - [ ] Dogcat https://tryhackme.com/room/dogcat
 - [ ] LFI basics https://tryhackme.com/room/lfibasics
 - [ ] Buffer Overflow Prep https://tryhackme.com/room/bufferoverflowprep
 - [ ] Overpass https://tryhackme.com/room/overpass
 - [ ] Break out the cage https://tryhackme.com/room/breakoutthecage1
-- [ ] Lian Yu https://tryhackme.com/room/lianyu
+- [X] Lian Yu https://tryhackme.com/room/lianyu
 
 ## Level 9 - Windows
 
 - [ ] Attacktive Directory https://tryhackme.com/room/attacktivedirectory
 - [X] Retro https://tryhackme.com/room/retro
-- [ ] Blue Print https://tryhackme.com/room/blueprint
-- [ ] Anthem https://tryhackme.com/room/anthem
+- [X] Blue Print https://tryhackme.com/room/blueprint
+- [X] Anthem https://tryhackme.com/room/anthem
 - [ ] Relevant https://tryhackme.com/room/relevant

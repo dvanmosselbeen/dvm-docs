@@ -2,11 +2,11 @@
 
 Learn about and exploit each of the OWASP Top 10 vulnerabilities; the 10 most critical web security risks.
 
-TryHackMe Room: https://tryhackme.com/room/owasptop10
-
-##  Introduction
+TryHackMe Room: <https://tryhackme.com/room/owasptop10>
 
 ![alt text](images/owasp-logo.png "Logo")
+
+##  Introduction
 
 This room breaks each OWASP topic down and includes details on what the vulnerability is, how it occurs and how you can exploit it. You will put the theory into practise by completing supporting challenges.
 

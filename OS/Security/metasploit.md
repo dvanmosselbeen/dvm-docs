@@ -1,12 +1,13 @@
 # Metasploit
 
-This part is based on info from TryHackMe: https://tryhackme.com/room/rpmetasploit
+This part is based on info from the [TryHackMe Metasploit room](https://tryhackme.com/room/rpmetasploit) with some additional information I have added.
 
 Metasploit is a framework for testing and abusing know vulnerabilities.
 
 ## Table of Contents
 
 - [Basics](#basics)
+- [More advanced search](#more-advanced-search)
 - [Using nmap in Metasploit](#using-nmap-in-metasploit)
 - [Background Information](#background-information)
 - [Simple Example](#simple-example)
@@ -329,7 +330,15 @@ These modules are very interesting, and I will not list them here as this is way
 
 Not every module is loaded in by default, but we can use the `load` command to load them.
 
-# Using nmap in metasploit
+## More advanced search
+
+We can also run `help search` to display the filters that can be used with search. For example, we can search by the `CVE year`, `platform name`, or `module type`.
+
+For example:
+
+    search cve:2009 type:exploit platform:-linux
+
+## Using nmap in metasploit
 
 And here is a good example of an auxiliary module like discussed in the previous section.
 
@@ -343,7 +352,7 @@ Once the scan is done, we can do a lot of neat things by typing it's appropriate
 * `services` - To see all the `services` the nmap scan detected
 * `vulns` - To keep track of the discovered vulnerabilities. This
 
-# Background information
+## Background information
 
 To test out Metasploit, you should better make use of very vulnerable 
 programs. For instance the Metasploitable Operating system is especially 
@@ -359,7 +368,7 @@ https://sourceforge.net/projects/metasploitable/files/Metasploitable2/
 Once downloaded you can easily configure a virtual machine, by making use 
 of `Vmware` or `Virtual box`.
 
-# Simple example
+## Simple example
 
 Based on a virtual host machine `Metasploitable 2.0.` which contains a lot 
 of known exploitable vulnerabilities.
@@ -414,7 +423,7 @@ your user rights with `id`.
 And you can verify on that host machine to check if the file `touch 
 /tmp/your-been-hacked` has been created.
 
-# Another example
+## Another example
 
 In this example we will look to the vulnerable version of Samba that is 
 installed on that remote computer.
