@@ -13,6 +13,7 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
   - [Releases (versions)](#releases-versions)
 - [Installing Debian](#installing-debian)
   - [Migrating from stable to testing release](#migrating-from-stable-to-testing-release)
+  - [Install VirtualBox Guest Additions](#install-virtualbox-guest-additions)
 - [The package manager](#the-package-manager)
   - [apt](#apt)
   - [aptitude](#aptitude)
@@ -61,6 +62,60 @@ sed -i "s/buster/testing/" /etc/apt/sources.list
 apt-get update
 apt-get dist-upgrade
 ```
+
+### Install VirtualBox Guest Additions
+
+Installing the VirtualBox guest addons allows a few extra features. Most important one is probably the ability to resize the virtual machine size which affect the resolution of the virtual machine. But not only limited to that.
+
+````commandline
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+````
+
+From the virtual machine menu, `click Devices` -> `Insert Guest Additions CD Image` as shown on the image below:
+
+![alt text](img/insert-guest-additions-cd-image.jpg "Debian Logo")
+
+If you get an error saying the guest system has no CD-ROM, stop the virtual machine, open the machine settings. Go to the `Storage` tab and add a new CD-ROM device by clicking on the plus sign (Adds optical device). Once done reboot the virtual machine.
+
+Open the Debian guest terminal, create a new directory , and mount the ISO file:
+
+````commandline
+sudo mkdir -p /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+````
+
+Navigate to the directory and execute the `VBoxLinuxAdditions.run` script to install the Guest Additions:
+
+````commandline
+cd /mnt/cdrom
+sudo sh ./VBoxLinuxAdditions.run --nox11
+````
+
+Reboot the Debian guest for changes to take effect:
+
+````commandline
+sudo shutdown -r now
+````
+
+Once the virtual machine is booted, log into it and verify that the installation was successful and the kernel module is loaded using the `lsmod` command:
+
+````commandline
+lsmod | grep vboxguest
+````
+
+The output will look something like this:
+
+````commandline
+vboxguest             348160  2 vboxsfCopy
+````
+
+If the command doesn’t return any output, it means that the VirtualBox kernel module is not loaded.
+
+That’s it. You have installed `VirtualBox Guest Additions` on your Debian guest machine.
+
+You can now enable Shared clipboard and Drag’n Drop support from the virtual machine settings `Storage` tab, enable 3D acceleration from the `Display` tab, create Shared folders, and more.
+
 
 ## The package manager
 
