@@ -21,6 +21,10 @@ Essentially borrowed from the zenmap graphical user interface.
 export IP=<SOME_IP>
 ```
 
+Command and Arguments | Description
+---|---
+`nmap -sn xxx.xxx.xxx.1-255` | Scan range of hosts without port scan.
+
 * `nmap -sV $IP` - 
 * `nmap -T4 -A -v $IP` - Intense Scan
 * `nmap -sS -sU -T4 -A -v $IP` - Intense Scan plus UDP

@@ -392,6 +392,7 @@ wifite -e Proximus-Home-46A8
 ## See also
 
 * `wifi-honey` - Wi-Fi honeypot
+* `nmtui` - A ncurse based tool to set up network, wifi included.
 
 ## Resources
 

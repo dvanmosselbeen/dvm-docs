@@ -54,11 +54,13 @@ Here's a list of some programs that might be interesting to install on top of th
 | [joomscan](https://wiki.owasp.org/index.php/Category:OWASP_Joomla_Vulnerability_Scanner_Project) | OWASP Joomla Vulnerability Scanner Project |
 | `ltrace` | Tracks runtime library calls in dynamically linked programs |
 | `monit` | utility for monitoring and managing daemons or similar programs |
+| `putty-tools` | command-line tools for SSH, SCP, and SFTP |
 | `remmina` | GTK+ Remote Desktop Client |
 | `rlwrap` | readline feature command line wrapper |
 | `seclists` | Collection of multiple types of security lists |
 | `steghide` | steganography hiding tool - documentation files |
 | `stegcracker` | steganography brute-force tool |
+| `sshuttle` | sshuttle - Transparent proxy server for VPN over SSH |
 | `tmux` | terminal multiplexer |
 | `tor` | anonymizing overlay network for TCP |
 | `torbrowser-launcher` | helps download and run the Tor Browser Bundle |

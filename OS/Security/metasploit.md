@@ -16,6 +16,8 @@ Metasploit is a framework for testing and abusing know vulnerabilities.
 - [Interesting modules and other things](#interesting-modules-and-other-things)
 - [Interesting Documentation](#interesting-documentation)
   - [On TryHackMe](#on-tryhackme)
+- [The metasploit database](#the-metasploit-database)
+- [Msfvenom](#msfvenom)
 
 ## Basics
 
@@ -473,6 +475,262 @@ Search for possible exploits after post exploitation. See the [Ice room on TryHa
 Now that we've made our way to full administrator permissions we'll set our sights on looting. Mimikatz is a rather infamous password dumping tool that is incredibly useful. Load it now using the command `load kiwi` (Kiwi is the updated version of Mimikatz). Loading kiwi into our meterpreter session will expand our help menu, take a look at the newly added section of the help menu now via the command `help`. 
 
     load kiwi
+
+## The metasploit database
+
+`Metasploit` has a database function to simplify project management and avoid possible confusion when setting up parameter values.
+
+`metasploit` use `postgresql` as database backend. However, this database does not start up automatically at boot time of the `Kali` machine. This is for security reasons. In the sense that if your `Kali` machine become a target, the attacker can see that you are running a `postgresql` database (mind nmap).
+
+To start the database (as `root` user):
+
+````commandline
+systemctl start postgresql
+````
+
+Then you will need to initialize the Metasploit Database using the `msfdb init` command.
+
+````commandline
+root@kali:~# msfdb init
+[i] Database already started
+[+] Creating database user 'msf'
+[+] Creating databases 'msf'
+[+] Creating databases 'msf_test'
+[+] Creating configuration file '/usr/share/metasploit-framework/config/database.yml'
+[+] Creating initial database schema
+root@kali:~# msfconsole
+````
+
+Checking the status of the database:
+
+````commandline
+msf5 > db_status
+[*] Connected to msf. Connection type: postgresql.
+````
+
+The database feature will allow you to create workspaces to isolate different projects. When first launched, you should be in the default workspace. You can list available `workspaces` using the workspace command. 
+
+````commandline
+msf5 > workspace -a tryhackme
+[*] Added workspace: tryhackme
+[*] Workspace: tryhackme
+msf5 > workspace
+  default
+* tryhackme
+msf5 > workspace default
+[*] Workspace: default
+msf5 > workspace
+  tryhackme
+* default
+msf5 > workspace tryhackme
+[*] Workspace: tryhackme
+msf5 > workspace -h
+
+Usage:
+
+    workspace                  List workspaces
+    workspace -v               List workspaces verbosely
+    workspace [name]           Switch workspace
+    workspace -a [name] ...    Add workspace(s)
+    workspace -d [name] ...    Delete workspace(s)
+    workspace -D               Delete all workspaces
+    workspace -r <old> <new>   Rename workspace
+    workspace -h               Show this help information
+
+msf5 > 
+````
+
+As we have initialised the `Metasploit` database, we have some more help information, but now related to the database, when running the `help` command in `msfconsole`:
+
+````commandline
+Database Backend Commands
+=========================
+
+    Command           Description
+    -------           -----------
+    analyze           Analyze database information about a specific address or address range
+    db_connect        Connect to an existing data service
+    db_disconnect     Disconnect from the current data service
+    db_export         Export a file containing the contents of the database
+    db_import         Import a scan result file (filetype will be auto-detected)
+    db_nmap           Executes nmap and records the output automatically
+    db_rebuild_cache  Rebuilds the database-stored module cache (deprecated)
+    db_remove         Remove the saved data service entry
+    db_save           Save the current data service connection as the default to reconnect on startup
+    db_status         Show the current data service status
+    hosts             List all hosts in the database
+    loot              List all loot in the database
+    notes             List all notes in the database
+    services          List all services in the database
+    vulns             List all vulnerabilities in the database
+    workspace         Switch between database workspaces
+````
+
+Now when using the `db_nmap` function in `msfconsole`, all this information will be stored into the database.
+
+````commandline
+msf5 > db_nmap -sV -p- 10.10.110.171
+[*] Nmap: Starting Nmap 7.80 ( https://nmap.org ) at 2021-09-29 16:24 UTC
+[*] Nmap: Nmap scan report for ip-10-10-110-171.eu-west-1.compute.internal (10.10.110.171)
+[*] Nmap: Host is up (0.00090s latency).
+[*] Nmap: Not shown: 65530 closed ports
+[*] Nmap: PORT     STATE SERVICE     VERSION
+[*] Nmap: 21/tcp   open  ftp         ProFTPD 1.3.5e
+[*] Nmap: 22/tcp   open  ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+[*] Nmap: 139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: ACME IT SUPPORT)
+[*] Nmap: 445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: ACME IT SUPPORT)
+[*] Nmap: 8000/tcp open  http        WebFS httpd 1.21
+[*] Nmap: MAC Address: 02:E5:B6:5A:26:4D (Unknown)
+[*] Nmap: Service Info: Host: IP-10-10-110-171; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+[*] Nmap: Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+[*] Nmap: Nmap done: 1 IP address (1 host up) scanned in 15.61 seconds
+msf5 >
+````
+
+We can now reach all this information with the `hosts` and `services` commands:
+
+````commandline
+msf5 > hosts
+
+Hosts
+=====
+
+address        mac                name                                         os_name  os_flavor  os_sp  purpose  info  comments
+-------        ---                ----                                         -------  ---------  -----  -------  ----  --------
+10.10.110.171  02:e5:b6:5a:26:4d  ip-10-10-110-171.eu-west-1.compute.internal  Unknown                    device         
+
+msf5 > services
+Services
+========
+
+host           port  proto  name         state  info
+----           ----  -----  ----         -----  ----
+10.10.110.171  21    tcp    ftp          open   ProFTPD 1.3.5e
+10.10.110.171  22    tcp    ssh          open   OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 Ubuntu Linux; protocol 2.0
+10.10.110.171  139   tcp    netbios-ssn  open   Samba smbd 3.X - 4.X workgroup: ACME IT SUPPORT
+10.10.110.171  445   tcp    netbios-ssn  open   Samba smbd 3.X - 4.X workgroup: ACME IT SUPPORT
+10.10.110.171  8000  tcp    http         open   WebFS httpd 1.21
+
+msf5 >
+````
+
+The `hosts -h` and `services -h` commands can help you become more familiar with available options. 
+Once the host information is stored in the database, you can use the `hosts -R` command to add this value to the `RHOSTS` parameter. 
+
+For example:
+
+````commandline
+msf5 auxiliary(scanner/smb/smb_ms17_010) > hosts -R
+
+Hosts
+=====
+
+address        mac                name                                         os_name  os_flavor  os_sp  purpose  info  comments
+-------        ---                ----                                         -------  ---------  -----  -------  ----  --------
+10.10.110.171  02:e5:b6:5a:26:4d  ip-10-10-110-171.eu-west-1.compute.internal  Unknown                    device         
+
+RHOSTS => 10.10.110.171
+
+msf5 auxiliary(scanner/smb/smb_ms17_010) > show options
+
+Module options (auxiliary/scanner/smb/smb_ms17_010):
+
+   Name         Current Setting                                                 Required  Description
+   ----         ---------------                                                 --------  -----------
+   CHECK_ARCH   true                                                            no        Check for architecture on vulnerable hosts
+   CHECK_DOPU   true                                                            no        Check for DOUBLEPULSAR on vulnerable hosts
+   CHECK_PIPE   false                                                           no        Check for named pipe on vulnerable hosts
+   NAMED_PIPES  /usr/share/metasploit-framework/data/wordlists/named_pipes.txt  yes       List of named pipes to check
+   RHOSTS       10.10.110.171                                                   yes       The target host(s), range CIDR identifier, or hosts file with syntax 'file:<path>'
+   RPORT        445                                                             yes       The SMB service port (TCP)
+   SMBDomain    .                                                               no        The Windows domain to use for authentication
+   SMBPass                                                                      no        The password for the specified username
+   SMBUser                                                                      no        The username to authenticate as
+   THREADS      1                                                               yes       The number of concurrent threads (max one per host)
+
+msf5 auxiliary(scanner/smb/smb_ms17_010) >
+````
+
+## Msfvenom
+
+`Msfvenom` will allow you to access all payloads available in the  Metasploit framework. `Msfvenom` allows you to create payloads in many different formats (PHP, exe, dll, elf, etc.) and for many different target systems (Apple, Windows, Android, Linux, etc.).
+
+List all payloads (produce a long list):
+
+````commandline
+msfvenom -l payloads
+````
+
+List all formats:
+
+````commandline
+# msfvenom --list formats
+
+Framework Executable Formats [--format <value>]
+===============================================
+
+    Name
+    ----
+    asp
+    aspx
+    aspx-exe
+    axis2
+    dll
+    elf
+    elf-so
+    exe
+    exe-only
+    exe-service
+    exe-small
+    hta-psh
+    jar
+    jsp
+    loop-vbs
+    macho
+    msi
+    msi-nouac
+    osx-app
+    psh
+    psh-cmd
+    psh-net
+    psh-reflection
+    python-reflection
+    vba
+    vba-exe
+    vba-psh
+    vbs
+    war
+
+Framework Transform Formats [--format <value>]
+==============================================
+
+    Name
+    ----
+    base32
+    base64
+    bash
+    c
+    csharp
+    dw
+    dword
+    hex
+    java
+    js_be
+    js_le
+    num
+    perl
+    pl
+    powershell
+    ps1
+    py
+    python
+    raw
+    rb
+    ruby
+    sh
+    vbapplication
+    vbscript
+````
 
 ## Interesting documentation
 

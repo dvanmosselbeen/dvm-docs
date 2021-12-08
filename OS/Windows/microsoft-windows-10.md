@@ -26,6 +26,7 @@ Just a bunch of notes i have specific to Microsoft Windows 10.
 | `nslookup <hostname>` | Used for checking DNS record entries. |
 | `nbtstat` | Diagnostic tool for troubleshooting NetBIOS issues.|
 | `net` | Used for managing users, services, shares etc. |
+| `net start <service-name>` | Start / stop a service. |
 | `route` | Manipulates network routing tables. |
 | `tasklist` | Used to list all processes. |
 | `taskkill` | Used to kill a process. |
@@ -47,7 +48,7 @@ Just a bunch of notes i have specific to Microsoft Windows 10.
 
 ## Activating the hibernate option in the shutdown menu
 
-By default, the hibernate feature is not activated on a Microsoft Windows Desktop computer. The hibernation feature was initially created for laptop computers to speed up in some way the startup and the shutdown process. At the same time it save the state of your current work space (profile / desktop). The hibernation feature is also way faster than a classic shutdown and start up. That's why the hibernation feature is also loved on desktop computers. 
+By default, the hibernate feature is not activated on a Microsoft Windows Desktop computer. The hibernation feature was initially created for laptop computers to speed up in some way the startup and the shutdown process. At the same time it save the state of your current work space (profile / desktop). The hibernation feature is also way faster than a classic shutdown and start up. That's why the hibernation feature is also loved on desktop computers.
 
 To activate the hibernation feature, the shortcut way is by going to  `Control Panel\Hardware and Sound\Power Options`. It's actually a path you can paste in the Windows File explore path bar (`ctrl+e` to start the file explorer).
 
@@ -71,7 +72,7 @@ Here's a list of applications i like to use on a Microsoft Windows operating sys
 | [Gimp](http://www.gimp.org) | Image manipulation program. |
 | [Inkscape](http://www.inkscape.org) | Vector creation program. |
 | [Python](http://www.python.org) | Programming language. |
-| vncviewer & vncserver | Tools for remote GUI control. | 
+| vncviewer & vncserver | Tools for remote GUI control. |
 | [Virtualbox](https://www.virtualbox.org/) | Virtualisation software |
 | [HexChat](https://hexchat.github.io/) | IRC client, a copy of XChat, but XChat Windows binaries aren't available anymore for free. |
 | [XAMP](https://www.apachefriends.org/fr/index.html) | Web server. |

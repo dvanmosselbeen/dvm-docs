@@ -1,10 +1,25 @@
 # tmux
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Cheat Sheet](#cheat-sheet)
+  - [Session Management](#session-management)
+  - [General Commands](#general-commands)
+  - [Window Management](#window-management)
+  - [Pane Management](#pane-management)
+- [Additional tips for the tmux.conf file](#additional-tips-for-the-tmuxconf-file)
+  - [Using multiples config files](#using-multiples-config-files)
+  - [Handy config options](#handy-config-options)
+- [Copy and paste](#copy-and-paste)
+- [Tools](#tools)
+- [Resources](#resources)
+
 ## Introduction
 
 `tmux` is a terminal multiplexer, like the [screen](screen.md) application, but `tmux` has more features and is a younger project.
 
-The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. It is better to talk about `<prefix>` instead of `ctrl+b` as you can bind whatever key as `<prefix>`. You can also have more than one `<prefix>` key assigned. Which is my case, i have the `screen` style binding too, which is `ctrl+a`. Personally, I find `ctrl+a` more practical. From what I have read, it ended up `ctrl+b` to not clash with the `screen` `<preffix>` keybind as tmux was developed inside `screen`.
+The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. It is better to talk about `<prefix>` instead of `ctrl+b` as you can bind whatever key as `<prefix>`. You can also have more than one `<prefix>` key assigned. Which is my case, i have the `screen` style binding too, which is `ctrl+a`. Personally, I find `ctrl+a` more practical. From what I have read, it ended up `ctrl+b` to not clash with the `screen` `<preffix>` keybinding as `tmux` was developed inside `screen`.
 
 ## Cheat Sheet
 
@@ -65,11 +80,27 @@ The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. 
 
 ## Additional tips for the tmux.conf file
 
+There is not a default system-wide config file for `tmux`. These default config options are built into `tmux` itself. `tmux` will look for a `/etc/tmux.conf`, if not found will look `~/.tmux.conf` and if found, it will load these in that order. If these config files are not found, or the config file is empty, then tmux will load its defaults.
+
+### Using multiples config files
+
+Sometimes it can be handy to have multiples config files. It can be also handy to load up another config file.
+
+A quick and easy way to load up `tmux` default config settings is by creating a blank `tmux` config file and load this one when starting `tmux`.
+
+````commandline
+touch 
+tmux -f ~/.tmux.conf.empty
+````
+
+### Handy config options
+
 ```
 # add to ~/.tmux.conf
 bind | split-window -h
 bind - split-window -v
 ```
+
 
 ## Copy and paste
 
@@ -86,10 +117,10 @@ See here for more information about copy & pasting: http://www.rushiagr.com/blog
 
 ## Resources
 
-- https://www.youtube.com/watch?v=BHhA_ZKjyxo
-- https://www.youtube.com/watch?v=Lqehvpe_djshttps://www.youtube.com/watch?v=Lqehvpe_djs
-- https://github.com/tmux/tmux/wiki
-- https://github.com/tmux/tmux/wiki/Getting-Started
-- https://github.com/gpakosz/.tmux - The must-have tmux config file !!!
-- See also this cheat sheet https://danielmiessler.com/study/tmux/
-- A dedicated room on TryHackMe - https://tryhackme.com/room/rptmux
+- <https://github.com/tmux/tmux/wiki>
+- <https://github.com/tmux/tmux/wiki/Getting-Started>
+- <https://www.youtube.com/watch?v=BHhA_ZKjyxo>
+- <https://www.youtube.com/watch?v=Lqehvpe_djshttps://www.youtube.com/watch?v=Lqehvpe_djs>
+- <https://github.com/gpakosz/.tmux> - The must-have tmux config file !!!
+- See also this cheat sheet <https://danielmiessler.com/study/tmux/>
+- A dedicated room on TryHackMe - <https://tryhackme.com/room/rptmux>

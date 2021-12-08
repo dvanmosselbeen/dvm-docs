@@ -9,6 +9,9 @@ Note to myself, clean up my writeups, remove passwords, flags or questions from 
 
 ## Table of contents
 
+- [Empline](#empline)
+- [Inclusion](#inclusion)
+- [Relevant](#relevant)
 - [Daily Bugle](#daily-bugle)
 - [Nax](#nax)
 - [blog](#blog)
@@ -22,10 +25,81 @@ Note to myself, clean up my writeups, remove passwords, flags or questions from 
 - [Hydra](#hydra)
 - [Brooklyn Nine Nine](#brooklyn-nine-nine)
 
+## Empline
+
+TryHackMe room: <https://tryhackme.com/room/empline>
+
+MySQL credentials:
+
+````commandline
+opencats/config.php:define('DATABASE_USER', 'james');
+opencats/config.php:define('DATABASE_PASS', 'ng6pUFvsGNtw');
+opencats/config.php:define('DATABASE_HOST', 'localhost');
+opencats/config.php:define('DATABASE_NAME', 'opencats');
+````
+
+````commandline
+MariaDB [opencats]> select user_name, email, password, access_level from user;
++----------------+----------------------+----------------------------------+--------------+
+| user_name      | email                | password                         | access_level |
++----------------+----------------------+----------------------------------+--------------+
+| admin          | admin@testdomain.com | b67b5ecc5d8902ba59c65596e4c053ec |          500 |
+| cats@rootadmin | 0                    | cantlogin                        |            0 |
+| george         |                      | 86d0dfda99dbebc424eb4407947356ac |          400 |
+| james          |                      | e53fbdb31890ff3bc129db0e27c473c9 |          200 |
++----------------+----------------------+----------------------------------+--------------+
+4 rows in set (0.00 sec)
+
+MariaDB [opencats]>
+````
+
+User credentials:
+
+````commandline
+george:pretonnevippasempre
+````
+
+````commandline
+george@empline:~$ cat user.txt 
+91cb89c70aa2e5ce0e0116dab099078e
+````
+
+````commandline
+root@empline:/home/george# cat /root/root.txt 
+74fea7cd0556e9c6f22e6f54bc68f5d5
+````
+
+## Inclusion
+
+TryHackMe room: <https://tryhackme.com/room/inclusion> 
+
+user.txt
+
+    60989655118397345799
+
+root.txt
+
+    42964104845495153909
+
+falconfeast:rootpassword
+
+## Relevant
+
+Room: <https://tryhackme.com/room/relevant>
+
+Penetration Testing Challenge
+
+User Flag:
+
+    THM{fdk4ka34vk346ksxfr21tg789ktf45}
+
+Root Flag:
+
+    THM{1fk5kf469devly1gl320zafgl345pv}
+
 ## Daily Bugle
 
 Room: <https://tryhackme.com/room/dailybugle>
-
 
 Access the web server, who robbed the bank?
 

@@ -1,6 +1,6 @@
 # Try Hack Me Writeup - Burp Suite
 
-TryHackMe Burp Suite Room is here: https://tryhackme.com/room/rpburpsuite
+TryHackMe Burp Suite Room is here: <https://tryhackme.com/room/rpburpsuite>
 
 This writeup of the Burp Suite room is fully detailed with screenshots, the questions and answers.
 

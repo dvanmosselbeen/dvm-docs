@@ -1,6 +1,6 @@
 # TryHackMe Path
 
-Got this TryHackMe Path from somewhere. Shame I didn't write down the source here. Who know there are updates...
+Got this TryHackMe Path from: <https://blog.tryhackme.com/free_path/>
 
 ## Introduction
 

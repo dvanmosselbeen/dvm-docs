@@ -1,5 +1,17 @@
 # Adobe Premiere Pro
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Workspaces & Panels](#workspaces--panels)
+- [Importing and organizing files](#importing-and-organizing-files)
+  - [Organisation methodology bins in the Project](#organisation-methodology-bins-in-the-project)
+- [Sync Video and Audio](#sync-video-and-audio)
+- [Multiples Cameras](#multiples-cameras)
+- [Interesting default Preset video transitions](#interesting-default-preset-video-transitions)
+- [Keyboard shortcuts](#keyboard-shortcuts)
+- [Resources](#resources)
+
 ## Introduction
 
 Adobe Premiere Pro is a video editing tool. It allows you to combine, edit video fragments.
@@ -8,13 +20,13 @@ Adobe Premiere Pro is a video editing tool. It allows you to combine, edit video
 
 Different pre-defined Workspaces according to the task you need to do.
 
-* Assembly
- * Editing
- * Color
- * Effects
- * Audio
- * Graphics
- * Libraries
+- Assembly
+- Editing
+- Color
+- Effects
+- Audio
+- Graphics
+- Libraries
 
 ## Importing and organizing files
 
