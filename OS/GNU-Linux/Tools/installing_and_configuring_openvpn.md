@@ -19,7 +19,7 @@ The client will be a Windows 10 laptop connected throught wifi network. However,
 
 ## Server Setup
 
-As server we will use a Raspberry Pi model 4 and it's default OS. The raspberry pi is connected to the onboard ethernet port. The wifi is not used.
+As server we will use a `Raspberry Pi model 4` and it's default OS. The `raspberry pi` is connected to the onboard ethernet port. The wifi is not used.
 
 ### Server Installation
 
@@ -55,9 +55,9 @@ To easy things up, we could use a little trick to group together the required fi
 
 #### Keys for the server
 
-    cp -r /usr/share/easy-rsa/ /etc/openvpn
 
-mkdir /etc/openvpn/easy-rsa/keys
+    cp -r /usr/share/easy-rsa/ /etc/openvpn
+    mkdir /etc/openvpn/easy-rsa/keys
 
 Edit:
 
@@ -110,6 +110,12 @@ Eventually copy the keys under the configuration folder, but in my configuration
     cp /etc/openvpn/easy-rsa/keys/server.crt /etc/openvpn
     cp /etc/openvpn/easy-rsa/keys/server.key /etc/openvpn
 
+New way:
+
+    cp /etc/openvpn/easy-rsa/pki/ca.crt /etc/openvpn
+    cp /etc/openvpn/easy-rsa/pki/issued/server.crt /etc/openvpn
+    cp /etc/openvpn/easy-rsa/pki/private/server.key /etc/openvpn
+
 Start (or restart) the service
 
     service openvpn start
@@ -143,7 +149,7 @@ Up to now we have one `client.ovpn` file which contains the configuration of the
 
 To make things more clear, i will copy the `client.ovpn` file to `client_unified.ovpn` and use that later one as unified file. So that i keep the original intact.
 
-We  need to re edit the `client_unified.ovpn` file and comment ou the crt and key files it refers to:
+We  need to re edit the `client_unified.ovpn` file and comment ou the `crt` and `key` files it refers to:
 
     ;ca ca.crt
     ;cert client1.crt
