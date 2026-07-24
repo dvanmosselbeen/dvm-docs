@@ -30,11 +30,11 @@ Inspired by:
 - <https://github.com/belikeParamjot/holmes-py/blob/master/README.md>
 
 [![LinkedIn](https://img.shields.io/static/v1?style=for-the-badge&logo=linkedin&label=LinkedIn&message=David%20Van%20Mosselbeen&color=blue)](https://linkedin.com/in/dvanmosselbeen)
-[![Gmail](https://img.shields.io/static/v1?style=for-the-badge&logo=gmail&label=Gmail&message=theparamjotsingh@gmail.com&color=red)](mailto:theparamjotsingh@gmail.com)
-[![Twitter](https://img.shields.io/static/v1?style=for-the-badge&logo=twitter&label=Twitter&message=belikeParamjot&color=blue)](https://twitter.com/belikeParamjot)
+[![Gmail](https://img.shields.io/static/v1?style=for-the-badge&logo=gmail&label=Gmail&message=david.van.mosselbeen@gmail.com&color=red)](mailto:david.van.mosselbeen@gmail.com)
+[![Twitter](https://img.shields.io/static/v1?style=for-the-badge&logo=twitter&label=Twitter&message=dvanmosselbeen&color=blue)](https://twitter.com/dvanmosselbeen)
 [![Website](https://img.shields.io/static/v1?style=for-the-badge&logo=circle&label=Website&message=davidvanmosselbeen.be&color=black)](https://www.davidvanmosselbeen.be)
-[![IG](https://img.shields.io/static/v1?style=for-the-badge&logo=instagram&label=Instagram&message=theparamjotsingh@gmail.com&color=orange)](mailto:theparamjotsingh@gmail.com)
-[![Gmail](https://img.shields.io/static/v1?style=for-the-badge&logo=instagram&label=Instagram&message=theparamjotsingh@gmail.com&color=red)](mailto:theparamjotsingh@gmail.com)
+[![IG](https://img.shields.io/static/v1?style=for-the-badge&logo=instagram&label=Instagram&message=david.van.mosselbeen@gmail.com&color=orange)](mailto:david.van.mosselbeen@gmail.com)
+[![Gmail](https://img.shields.io/static/v1?style=for-the-badge&logo=instagram&label=Instagram&message=david.van.mosselbeen@gmail.com&color=red)](mailto:david.van.mosselbeen@gmail.com)
 
 
 ## Github Stats
