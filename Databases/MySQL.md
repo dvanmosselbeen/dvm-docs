@@ -1,28 +1,50 @@
 # MySQL Reference
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Setting up the root password](#setting-up-the-root-password)
+- [Create a new user with full access rights](#create-a-new-user-with-full-access-rights)
+- [Connecting to the MySQL server](#connecting-to-the-mysql-server)
+- [See which database are available](#see-which-database-are-available)
+- [Exporting the data](#exporting-the-data)
+- [Importing the data](#importing-the-data)
+- [Delete a database](#delete-a-database)
+- [Create a database](#create-a-database)
+- [Using a database](#using-a-database)
+- [Create a table](#create-a-table)
+- [Show the tables inside a database](#show-the-tables-inside-a-database)
+- [Getting the description of a table](#getting-the-description-of-a-table)
+- [Delete a table](#delete-a-table)
+- [Insert data into the table](#insert-data-into-the-table)
+- [View the data of the table](#view-the-data-of-the-table)
+- [Count the numbers of rows in a table](#count-the-numbers-of-rows-in-a-table)
+- [Updating information in a table](#updating-information-in-a-table)
+- [Deleting fields in a table or the table in question](#deleting-fields-in-a-table-or-the-table-in-question)
+
 ## Introduction
 
 Some quick notes about `MySQL`.
 
-**Markup language has killed some syntax, tried to fix it as best I could. Could be some syntaxes here are still messed up.**
+**Markup language has killed some syntax, tried to fix it as best I could. Could be some syntax's here are still messed up.**
 
 ## Setting up the root password
 
 When we just installed `MySQL`, we need to define the `root` password! It's the first thing to do! If you not define a good password, someone could take one for you on your database and control it! So define a password that is not too easy to brute-force by others. We can define the password in different ways, I show two methods.
 
-Open a console and type the follow command :
+Open a console and type the follow command:
 
 ```commandline
 mysqladmin -u root password NEW_PASSWD;
 ```
 
-Enter now a password you want to define. If the password already exist use the`-p` switch otherwise you receive an error that the password already exist:
+Enter now a password you want to define. If the password already exist use the `-p` switch otherwise you receive an error that the password already exist:
 
 ```commandline
 mysqladmin -u root -p password NEW_PASSWD
 ```
 
-Give now a password you want to define for the root user.
+Give now a password you want to define for the `root` user.
 
 Or you can I do in another way, like this one:
 
@@ -30,7 +52,7 @@ Or you can I do in another way, like this one:
 mysql -u root mysql
 ```
 
-That identify you as root user and now go in the `mysql` table.
+That identify you as `root` user and now go in the `mysql` table.
 
 ```sql
 mysql>SET PASSWORD FOR root@localhost=PASSWORD("new_password_");
@@ -41,11 +63,11 @@ mysql>FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0.0.0 sec)
 ```
 
-**Replace new_password with the password you want to define.**
+**Replace `new_password` with the password you want to define.**
 
 ## Create a new user with full access rights
 
-This is meant to be a user with same level of user rights as the root user.
+This is meant to be a user with same level of user rights as the `root` user.
 
 ```sql
 CREATE USER 'foo'@'localhost' IDENTIFIED BY PASSWORD 'my_secure_password';
@@ -62,13 +84,13 @@ Now that you have an account on the `MySQL` server, it's a good thing now to try
 mysql -h <HOST> -u <USERNAME> -p
 ```
 
-After running the command, a password is asked to enter, enter it. The `-h` define on which host computer we want to access the `MySQL` Server. You can leave the`-h` option if it's on your local computer, or you can use `-h localhost` or`-h 127.0.0.0` or the right computer name where you want to access it. The `-p`prompt for the password for that user.
+After running the command, a password is asked to enter, enter it. The `-h` define on which host computer we want to access the `MySQL` Server. You can leave the `-h` option if it's on your local computer, or you can use `-h localhost` or `-h 127.0.0.0` or the right computer name where you want to access it. The `-p` prompt for the password for that user.
 
 Now you are connected to the `MySQL` server. You are not connected to a database! Actually you see something like:
 
-    mysql
+    mysql>
 
-Now we need to enter all the commando's of `MySQL` there after that `mysql>`prompt! The most commands you need to enter it in the mysql shell.
+Now we need to enter all the commando's of `MySQL` there after that `mysql>` prompt.
 
 ## See which database are available
 
@@ -78,7 +100,7 @@ We can see which existing database there are available with the command:
 SHOW DATABASE;
 ```
 
-You get a list of all the database there are available on you're`MySQL` server. Here's an example of the output it gives:
+You get a list of all the database there are available on you're `MySQL` server. Here's an example of the output it gives:
 
 ```sql
 +-------------+
@@ -90,21 +112,20 @@ You get a list of all the database there are available on you're`MySQL` server. 
 2 rows in set (0.00 sec)
 ```
 
-The `mysql` database contain all the users information and define what users are allowed to do. It's important to not mess up that database. So I recommend you to not play with that table as for long you really know what you're doing.
+The `mysql` database contain all the users information and define what users are allowed to do. It's important to not mess up that database. So I recommend you to not play with that database as for long you really know what you're doing.
 
 ## Exporting the data
 
-It's good to keep a copy of your data. Sometimes you want to keep the security, keeping a backup before change some things on the database. You can simply export the content of a database, to import it on another computer for example:
+It's good to keep a copy of your data. Sometimes you want to keep the security, keeping a backup before change some things on the database. You can simply export the content of a database, to import it on another computer for example or to restore it back:
 
 ```sql
 mysqldump -u DBUSER -p DBNAME > dbname.sql
 ```
 
 Choose a name what you want for the file `dbname.sql`. The file
-`dbname.sql`are created in the current directory you are actually in! So you can also specify a whole path, so that he not store that file in
-the current directory.
+`dbname.sql` is created in the current directory you are actually in! So you can also specify a whole path, so that it's not store that file in the current directory.
 
-If you need to import from version 4.1 to 4.0
+If you need to import from version `4.1` to `4.0`:
 
 ```sql
 mysqldump --compatible=mysql40 -u DBUSER -p DBNAME > dbname.sql
@@ -112,7 +133,7 @@ mysqldump --compatible=mysql40 -u DBUSER -p DBNAME > dbname.sql
 
 ## Importing the data
 
-You can easily import existing data, thinking to data that are stored on another `MySQL` server that you want to move to your production server.
+You can easily import existing data, thinking to data that are stored on another `MySQL` server that you want to move to your production server. Or like we did in previous example of exporting the data.
 
 ```sql
 mysql -u DBUSER -p dbname < dbname.sql
@@ -126,7 +147,7 @@ mysql -u DBUSER -p -h DBSERVER dbname < dbname.sql
 
 ## Delete a database
 
-Deleting a database, is a question of a command. Be sure you are deleting the correct database because you will be not asked for confirmation. If deleted, it's go one. Or if you have taken a backup of it, you can always restore the database you have just deleted.
+Deleting a database, is a question of a command. Be sure you are deleting the correct database because you will be not asked for confirmation. If deleted, it's gone. Or if you have taken a backup of it, you can always restore the database you have just deleted.
 
 ```sql
 DROP DATABASE database_name;
@@ -175,7 +196,7 @@ CREATE TABLE Guestbook (
 ```
 
 * The first line say that we want to create a database called `Guestbook`.
-* The second line tell that we want to create the field ID with the type of `INT` (integer). This field is not allowed to be empty, and it would be automatically auto increments his value. The primary key is also set to this field.
+* The second line tell that we want to create the field `ID` with the type of `INT` (integer). This field is not allowed to be empty, and it would be automatically auto increments his value. The primary key is also set to this field.
 * The third line tell that we want to create the field `GDate` with the type `DATE` and must also not are empty.
 * The fourth line to the seventh line are all the same type, just the fields name differ. We create a field a set it to the type `TEXT`.
 
@@ -212,7 +233,7 @@ Gurl = "http://some_sit.com",
 GMessage = "Hi, i find you're site great! Continue to develop it!",
 ```
 
-Method 2:
+### Method 2:
 
 ```sql
 INSERT INTO Guestbook
@@ -269,9 +290,9 @@ UPDATE Guestbook SET GDate="2006-06-09"
 
 ## Deleting fields in a table or the table in question
 
-You need to are very careful when you would like to delete some things. Because if you forget to enter something you delete the whole table!
+You need to be very careful when you would like to delete some things. Because if you forget to enter something you delete the whole table!
 
-The next command delete all the fields where the word \'good\' are find.
+The next command delete all the fields where the word `good` is found.
 
 ```sql
 DELETE FROM Guestbook WHERE GMessage LIKE '%good%'
