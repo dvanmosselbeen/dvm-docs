@@ -1,6 +1,6 @@
 # Screen
 
-`screen` is an utility, a program that most command line users would love. With `screen` you can attach and detach `screen` sessions. This means, after starting screen in a terminal or a shell, you can close that terminal / shell and later on reconnect on that session. This is especially useful for remote connections. For example clients that connect a server remotely. But screen is even more than that, you can have multiples windows in one screen. You can compare this with a additional tab in a graphical terminal console. But with screen, you can also split up your screen in sections.
+`screen` is an utility, a program that most command line users would love. With `screen` you can attach and detach `screen` sessions. This means, after starting screen in a terminal or a shell, you can close that terminal / shell and later on reconnect on that session. This is especially useful for remote connections. For example clients that connect a server remotely. But screen is even more than that, you can have multiples windows in one screen. You can compare this with an additional tab in a graphical terminal console. But with screen, you can also split up your screen in sections.
 
 Screen has a lot of features, here's a few of them:
 
@@ -9,6 +9,8 @@ Screen has a lot of features, here's a few of them:
     * Split screen
     * Log the session to a log file
     * It has it's own more performant window scroll feature
+
+Check also the [tmux](tmux.md) tool, which is a similar tool, but a younger project. Maybe you want to make use of the `tmux` tool.
 
 ## Quick guide
 
