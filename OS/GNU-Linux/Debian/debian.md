@@ -2,7 +2,7 @@
 
 ## About this document
 
-This document will list a few notes about the [Debian GNU/Linux](https://www.debian.org) operating system. It is mainly a draft document containing some notes or links to resources concerning Debian. This document won't detail everything as there are already a lot of documentation available online.
+This document will list a few notes about the [Debian GNU/Linux](https://www.debian.org) Operating System. It is mainly a draft document containing some notes or links to resources concerning `Debian`. This document won't detail everything as there are already a lot of documentation available online.
 
 ![alt text](https://www.debian.org/logos/openlogo-100.png "Debian Logo")
 
@@ -32,13 +32,13 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
 
 ## Introduction
 
-The Debian GNU/Linux operating system claims to be the universal operating system. And that's in fact true. Debian runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the Raspberry Pi, the Sony Playstation (3) and so on. I guess we could install Debian into our fridge, but people seems to lazy to do so.
+The `Debian GNU/Linux` Operating System claims to be the universal operating system. And that's in fact true. `Debian` runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the `Raspberry Pi`, the `Sony Playstation (3)` and so on. I guess we could install `Debian` into our fridge, but people seems to lazy to do so.
 
 ## General information
 
 ### Releases (versions)
 
-Debian is been know to be a very stable operating system. Debian is available in 3 different releases. A stable version, a testing version, and a unstable version (called sid).
+`Debian` has been know to be a very stable Operating System. `Debian` is available in 3 different releases. A stable version, a testing version, and a unstable version (called `Sid`). The names of the different releases come from the `Toy Story` animation movies.
 
 The stable version, like the name say it, is very stable, however, the packages (applications and libraries) are older than a normal user would expect. A stable version is release once in a while and the packages arent updated anymore. Except for security patches. But you won't never get new features on a stable version once it is release.
 
@@ -46,9 +46,9 @@ The testing version, like the name say it, is a testing version.
 
 ## Installing Debian
 
-You can install Debian on different ways. Starting from a CD, DVD, iso image, usb key, with PXE boots and so on.
+You can install `Debian` on different ways. Starting from a CD, DVD, iso image, usb key, with PXE boots and so on.
 
-These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little iso image. That iso image you can burn to a CD and from there boot up your computer. The particularity of the netinst method is that the iso image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
+These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little iso image. That iso image you can burn to a CD and from there boot up your computer. The particularity of the `netinst` method is that the iso image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
 
 ### Migrating from stable to testing release
 
@@ -65,7 +65,7 @@ apt-get dist-upgrade
 
 ### Install VirtualBox Guest Additions
 
-Installing the VirtualBox guest addons allows a few extra features. Most important one is probably the ability to resize the virtual machine size which affect the resolution of the virtual machine. But not only limited to that.
+Installing the `VirtualBox Guest Addons` is not mandatory but really a big nice additional and very recommended. It allows a few extra features. Most important one is probably the ability to resize the screen of the window of the virtual machine size which affect the resolution of the virtual machine. But not only limited to that, there are other additional addons.
 
 ````commandline
 sudo apt update
@@ -74,7 +74,9 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 From the virtual machine menu, `click Devices` -> `Insert Guest Additions CD Image` as shown on the image below:
 
-![alt text](img/insert-guest-additions-cd-image.jpg "Debian Logo")
+![alt text](imgs/insert-guest-additions-cd-image.png "Debian Logo")
+
+*The screenshot also shows the File Manager with the content of the CD ROM that got automatically mounted.*
 
 If you get an error saying the guest system has no CD-ROM, stop the virtual machine, open the machine settings. Go to the `Storage` tab and add a new CD-ROM device by clicking on the plus sign (Adds optical device). Once done reboot the virtual machine.
 
@@ -92,7 +94,7 @@ cd /mnt/cdrom
 sudo sh ./VBoxLinuxAdditions.run --nox11
 ````
 
-Reboot the Debian guest for changes to take effect:
+Normally with `Debian version 13` you do not need to reboot anymore. Otherwise reboot the `Debian` guest for changes to take effect:
 
 ````commandline
 sudo shutdown -r now
@@ -110,7 +112,7 @@ The output will look something like this:
 vboxguest             348160  2 vboxsfCopy
 ````
 
-If the command doesn’t return any output, it means that the VirtualBox kernel module is not loaded.
+If the command does not return any output, it means that the VirtualBox kernel module is not loaded.
 
 That’s it. You have installed `VirtualBox Guest Additions` on your Debian guest machine.
 
@@ -123,7 +125,7 @@ You can easily manage your package with the `apt` tools, which is a collection o
 
 There's also `aptitude` which i strongly recommend but is not so user friendly at all. If you don't want to bother, `apt` is just fine and you don' need `aptitude`. Beside apt and aptitude, theirs a un numerous number of other applications, command line or with a graphical interface.
 
-### apt
+### The apt tools
 
 `apt-get` is the default package manager on Debian. There are other package managers available such as `aptitude` etc but in this section we will try to show you how much `apt` rules!
 
@@ -145,7 +147,7 @@ Show more information about a package:
 apt-cache show gvim-gtk3
 ```
 
-Installing applications
+Installing applications:
 
 ```commandline
 apt-get install gvim-gtk3
@@ -190,30 +192,33 @@ Just by running the command `aptitude`, you will start the UI interface.
 
 A few very interesting package which should be almost installed on every system
 
-| Application | Description |
-|---|---|
-| `aptitude` | Package manager |
-| `apt-listchanges` | List the changes... |
-| `apt-listbugs` | tool which lists critical bugs before each APT installation |
-| `apt-reportbug` | reports bugs in the Debian distribution |
-| `screen` | See the dedicated [screen page](../Tools/screen.md).|
-| `htop` | interactive processes viewer |
-| `iftop` | Observe the flows on your network interfaces |
-| `mc` | Midnight Commander - a powerful file manager |
-| `tightvncserver` | virtual network computing server software |
-| `irssi` | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please!|
-| `fail2ban` | Some security tools that watch the (abusive) login attempts and take action. |
-| `xclip` | command line interface to X selections |
-| `rsnapshot` | local and remote filesystem snapshot utility |
-| `uptimed` | daemon to track uptimes, especially the high ones |
-| `mutt` | text-based mailreader supporting MIME, GPG, PGP and threading |
-| `mydumper` | High-performance MySQL backup tool |
-| `sqlitebrowser` | GUI editor for SQLite databases |
-| `vim` | Vi IMproved - enhanced vi editor |
-| `vim-gtk3` | Vi IMproved - enhanced vi editor - with GTK3 GUI |
-| `vim-python-jedi` | autocompletion tool for Python - VIM addon files |
-| `unp` | unpack (almost) everything with one command |
-| `unattended-upgrades` | automatic installation of security upgrades |
+| Application           | Description                                                                                                                                                                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `aptitude`            | Package manager                                                                                                                                                                                                                     |
+| `apt-listchanges`     | List the changes...                                                                                                                                                                                                                 |
+| `apt-listbugs`        | tool which lists critical bugs before each APT installation                                                                                                                                                                         |
+| `apt-reportbug`       | reports bugs in the Debian distribution                                                                                                                                                                                             |
+| `net-tools`           | Contains essential networking tools such as arp, ifconfig, netstat, route and more.                                                                                                                                                 |
+| `screen`              | See the dedicated [screen](../Tools/screen.md) page. But you probably want to look for the `tmux` tool                                                                                                                              |
+| `tmux`                | See the dedicated [tmux](../Tools/tmux.md) page.                                                                                                                                                                                    |
+| `htop`                | interactive processes viewer                                                                                                                                                                                                        |
+| `iftop`               | Observe the flows on your network interfaces                                                                                                                                                                                        |
+| `mc`                  | Midnight Commander - a powerful file manager                                                                                                                                                                                        |
+| `tightvncserver`      | virtual network computing server software                                                                                                                                                                                           |
+| `irssi`               | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please! See the dedicated [irssi](../Tools/irssi.md) page. |
+| `fail2ban`            | Some security tools that watch the (abusive) login attempts and take action. See the dedicated [fail2ban](../Tools/fail2ban.md) page.                                                                                               |
+| `xclip`               | command line interface to X selections                                                                                                                                                                                              |
+| `rsnapshot`           | local and remote filesystem snapshot utility. A backup system. See the dedicated [rsnapshot](../Tools/rsnapshot.md) page.                                                                                                           |
+| `uptimed`             | daemon to track uptimes, especially the high ones                                                                                                                                                                                   |
+| `mutt`                | text-based mailreader supporting MIME, GPG, PGP and threading                                                                                                                                                                       |
+| `mydumper`            | High-performance MySQL backup tool                                                                                                                                                                                                  |
+| `sqlitebrowser`       | GUI editor for SQLite databases                                                                                                                                                                                                     |
+| `vim`                 | Vi IMproved - enhanced vi editor. See the dedicated [vim](../Tools/vim.md) page.                                                                                                                                                    |
+| `vim-gtk3`            | Vi IMproved - enhanced vi editor - with GTK3 GUI                                                                                                                                                                                    |
+| `vim-python-jedi`     | autocompletion tool for Python - VIM addon files                                                                                                                                                                                    |
+| `unp`                 | unpack (almost) everything with one command                                                                                                                                                                                         |
+| `unattended-upgrades` | automatic installation of security upgrades                                                                                                                                                                                         |
+| `fastfetch`           | neofetch-like tool for fetching system information                                                                                                                                                                                  |
 
 ## Server tools
 
@@ -221,33 +226,25 @@ Here's a few tips for server tools.
 
 ### SSH Server
 
-...
+See the dedicated [ssh](../Tools/ssh.md) page for more information.
 
 ### Web Server & Database
 
 There are various different web servers.
 
-#### Apache
+#### Apache 2
 
-Apache is probably the most well know and used web server. It is very stable, very easy to use and to extend. There's
-also a lot of extra modules you can load to add some extra functionalities. In fact, if you need a good web server,
-then you are probably looking for this Apache web server.
+`Apache` is probably the most well know and used web server. It is very stable, very easy to use and to extend. There's also a lot of extra modules you can load to add some extra functionalities. In fact, if you need a good web server, then you are probably looking for this Apache web server.
 
-##### Installing Apache
-
-To install Apache:
-
-```commandline
-aptitude install apache
-```
+See the dedicated [apache 2](../Tools/apache2.md) page for more information.
 
 #### MySQL
 
-...
+See the dedicated [MySQL](../../../Databases/MySQL.md) page for more information.
 
-##### Installing MySQL
+#### PostgreSQL
 
-...
+See the dedicated [MySQL](../../../Databases/PostgreSQL.md) page for more information.
 
 #### PHPMyAdmin
 
@@ -256,7 +253,7 @@ PHPMyAdmin is a web interface to manage the MySQL databases. It's very handy and
 
 ## Getting more help
 
-The trick on a GNU/Linux system is to find your way on how you should find information.
+The trick on a `GNU/Linux` system is to find your way on how you should find information.
 
 You can try to look to what files are been installed with the concerned application:
 
