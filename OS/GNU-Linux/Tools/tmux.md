@@ -101,6 +101,7 @@ bind | split-window -h
 bind - split-window -v
 ```
 
+See my example [DOTtmux.conf](files/DOTtmux.conf) and [DOTtmux.conf.local](files/DOTtmux.conf.local) configuration files which can be used.
 
 ## Copy and paste
 
