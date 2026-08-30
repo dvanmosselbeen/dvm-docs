@@ -19,6 +19,7 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
   - [aptitude](#aptitude)
 - [Admin commands](#admin-commands)
 - [Interesting packages](#interesting-packages)
+- [Packages I install on each desktop](#packages-i-install-on-each-desktop)
 - [Server tools](#server-tools)
   - [SSH Server](#ssh-server) 
   - [Web Server & Database](#web-server--database)
@@ -52,13 +53,17 @@ These days, with a big internet line, it's common to use the `netinst` method. W
 
 ### Migrating from stable to testing release
 
+Firstly, need to adjust the `sources.list`. But we make a backup file of it first.
+
 ```commandline
 cp /etc/apt/sources.list /etc/apt/sources.list_BACKUP
 
-# Now we are going to replace the release name "buster" by testing.
-# It could be you need to adjust this.
-sed -i "s/buster/testing/" /etc/apt/sources.list
+sed -i "s/stable/testing/" /etc/apt/sources.list
+```
 
+Now we are ready to update the system:
+
+```commandline
 apt-get update
 apt-get dist-upgrade
 ```
@@ -219,6 +224,19 @@ A few very interesting package which should be almost installed on every system
 | `unp`                 | unpack (almost) everything with one command                                                                                                                                                                                         |
 | `unattended-upgrades` | automatic installation of security upgrades                                                                                                                                                                                         |
 | `fastfetch`           | neofetch-like tool for fetching system information                                                                                                                                      |
+
+## Packages I install on each desktop
+
+```
+tmux
+fail2ban
+xclip
+htop
+net-tools
+uptimed
+unp
+fastfetch
+```
 
 ## Server tools
 
