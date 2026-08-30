@@ -4,6 +4,7 @@
 
 - [Creating a new user](#creating-a-new-user)
 - [Deleting a user](#deleting-a-user)
+- [Change the password of a user](#change-the-password-of-a-user)
 - [Grant user sudo rights](#grant-user-sudo-rights)
 - [Resources](#resources)
 
@@ -51,6 +52,16 @@ If you want to delete his associated `/home` folder, then:
 ```commandline
 deluser --remove-home <USERNAME>
 ```
+
+## Change the password of a user
+
+You can change your own password of your account. Or `root` user can change the password of any accounts.
+
+```commandline
+passwd <username>
+```
+
+It will ask you to enter the password, then confirm again the new password. You can now use the new password.
 
 ## Grant user sudo rights
 
