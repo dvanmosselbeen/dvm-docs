@@ -83,7 +83,7 @@ From the virtual machine menu, `click Devices` -> `Insert Guest Additions CD Ima
 
 *The screenshot also shows the File Manager with the content of the CD ROM that got automatically mounted.*
 
-If you get an error saying the guest system has no CD-ROM, stop the virtual machine, open the machine settings. Go to the `Storage` tab and add a new CD-ROM device by clicking on the plus sign (Adds optical device). Once done reboot the virtual machine.
+If you get an error saying the guest system has no ``CD-ROM``, stop the virtual machine, open the machine settings. Go to the `Storage` tab and add a new ``CD-ROM`` device by clicking on the plus sign (Adds optical device). Once done reboot the virtual machine.
 
 Open the Debian guest terminal, create a new directory , and mount the ISO file:
 
@@ -228,6 +228,7 @@ A few very interesting package which should be almost installed on every system
 ## Packages I install on each desktop
 
 ```
+openssh-server
 tmux
 fail2ban
 xclip
