@@ -36,13 +36,13 @@ This allows to access a remote network. As well as for enterprises as for home u
 * A `GNU / Linux` computer
 * A client (could be a `Microsoft Windows` laptop, `Android` smartphone...)
 
-The server will be a `Raspberry PI` OS (`Debian GNU / Linux` based). 
+The server will be a `Raspberry Pi` OS (`Debian GNU / Linux` based). 
 
 The client will be a `Windows 10` laptop connected through Wi-Fi network. However, for the tests to work, I shared my internet with a hotspot through mobile data. 
 
 ## Server Setup
 
-As server, we will use a `Raspberry Pi model 4` and it's default OS. The `raspberry pi` is connected to the onboard ethernet port. The wifi is not used.
+As server, we will use a `Raspberry Pi model 4` and it's default OS. The `raspberry pi` is connected to the onboard ethernet port. The Wi-Fi is not used.
 
 ### Server Installation
 
@@ -52,10 +52,9 @@ Installing the required software is a matter of running the following command:
 sudo apt-get install openvpn
 ```
 
-
 ### Server Configuration
 
-Switch to root user as we have a lot of commands to do:
+Switch to `root` user as we have a lot of commands to do:
 
 ```commandline
 sudo su
@@ -67,7 +66,7 @@ From now on we can configure a few things. To start on, we need to copy the samp
 gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz > /etc/openvpn/server.conf
 ```
 
-Go to the configuration directory of openvpn:
+Go to the configuration directory of `openvpn`:
 
 ```commandline
 cd /etc/openvpn
@@ -81,7 +80,7 @@ We need to adjust a few things up to our needs in `/etc/openvpn/server.conf`.
 
 We need to prepare the client configuration file. But we also need to provide a few file to the client so that he is able to connect.
 
-To easy things up, we could use a little trick to group together the required files and create an compressed archive file. So that we only have to provide 1 file to the client, which needs to be unpacked on the host side. 
+To easy things up, we could use a little trick to group together the required files and create a compressed archive file. So that we only have to provide 1 file to the client, which needs to be unpacked on the host side. 
 
 ## Generating the keys
 
@@ -111,7 +110,7 @@ nano /etc/openvpn/easy-rsa/vars
 
     export KEY_NAME="server"
 
-We now need to generate the dh key. The following command will take a very long time (One hour one a Pi zero):
+We now need to generate the `dh` key. The following command will take a very long time (One hour one a `Raspberry Pi zero`):
 
     openssl dhparam -out /etc/openvpn/dh2048.pem 2048
 
@@ -130,7 +129,7 @@ Which result in:
     init-pki complete; you may now create a CA or requests.
     Your newly created PKI dir is: /etc/openvpn/easy-rsa/pki
     
-Build CA
+Build the `CA`:
     
     ./easyrsa build-ca
 
@@ -191,7 +190,7 @@ nano /var/log/openvpn/openvpn.log
 
 ### Keys for the clients
 
-In this example, we only generate one client, these keys and config files can be shared to multiples clients and they can connect all together, at least with this server configuration we have. This is more easier to manage than generating keys for each client (user or device). It is possible to make in sort that it is not possible to connect with the same key at the same time.   
+In this example, we only generate one client, these keys and config files can be shared to multiples clients, and they can connect all together, at least with this server configuration we have. This is easier to manage than generating keys for each client (user or device). It is possible to make in sort that it is not possible to connect with the same key at the same time.   
 
 ```commandline
 cd /etc/openvpn/easy-rsa/
@@ -226,7 +225,7 @@ See my `client.ovpn` file.
 
 ### Create a unified configuration file
 
-Up to now we have one `client.ovpn` file which contains the configuration of the vpn connection. But we have also some certification and key files. So we end up having 5 files to provide to the each client. But there's a nice trick to merge them somehow together in the `ovpn` configuration file so that we only need to provide 1 file to each client. This is very convenient especially for on smartphones and tables where handling files is not so convenient.
+Up to now we have one `client.ovpn` file which contains the configuration of the `VPN` connection. But we have also some certification and key files. So we end up having 5 files to provide to each client. But there's a nice trick to merge them somehow together in the `ovpn` configuration file so that we only need to provide 1 file to each client. This is very convenient especially for on smartphones and tables where handling files is not so convenient.
 
 To make things more clear, i will copy the `client.ovpn` file to `client_unified.ovpn` and use that later one as unified file. So that I keep the original intact.
 
@@ -268,7 +267,7 @@ echo '</key>' >> /etc/openvpn/easy-rsa/keys/client_unified.ovpn
 
 ###  Allow IP Forwarding
 
-We need to enable to allow IP forwarding as this isn't enabled by default.
+We need to enable to allow `IP forwarding` as this isn't enabled by default.
 This is required as the "server" (our Raspberry Pi) will be the router between the VPN clients and the local network.
 
 We can immediately enable it but this is not permanent yet:
@@ -287,19 +286,19 @@ Uncomment the line:
 
     net.ipv4.ip_forward=1
 
-Save and exit (CTRL+O, CTRL+X)
+Save and exit (`CTRL+O`, `CTRL+X`)
 
-Your Raspberry Pi can now act as a router
+Your `Raspberry Pi` can now act as a router.
 
 ### Port forwarding on your internet router
 
-This is very specific to your internet router. It's probably a wifi router you received with your Internet Service Provider. 
+This is very specific to your internet router. It's probably a Wi-Fi router you received with your Internet Service Provider. 
 
-For the moment i have one of Proximus and it's very straightforward to setup port forwarding. In a web browser i had to fill in the ip address of my wifi router, there in the interface i had to define to forward the port 1194 to an internal ip adress of the computer where the openvpn server is installed on.
+For the moment I have one of `Proximus`, and it's very straightforward to set up port forwarding. In a web browser I had to fill in the `ip` address of my Wi-Fi router, there in the interface I had to define to forward the port `1194` to an internal `ip` address of the computer where the `openvpn` server is installed on.
 
 ### Server NAT
 
-We need to enable NAT. This need to be done at firewall side, for this we will use iptables.
+We need to enable `NAT`. This need to be done at firewall side, for this we will use `iptables`.
 
 Check first the actual state:
 
@@ -319,7 +318,7 @@ iptables -A FORWARD -s $YOUR_OPENVPN_SUBNET -o $IF_MAIN -j ACCEPT
 iptables -t nat -A POSTROUTING -s $YOUR_OPENVPN_SUBNET -o $IF_MAIN -j MASQUERADE
 ```
 
-Change file mode so that we can exceccute this file as a script
+Change file mode so that we can execute this file as a script
 
 ```commandline
 chmod u+x nat_iptables_script.sh
@@ -375,7 +374,7 @@ Download the installer from <https://openvpn.net> and execute it.
 
 #### Windows 10 Client Configuration
 
-Depending on if you unified the `ovpn` file with the crt and key files. But the client need to get the configuration files of the server. Not all files are some needs to be keept secret on the server side.
+Depending on if you unified the `ovpn` file with the `crt` and `key` files. But the client need to get the configuration files of the server. Not all files are some needs to be kept secret on the server side.
 
 The client needs to have a few files all placed in a temp .
 
@@ -384,16 +383,16 @@ The client needs to have a few files all placed in a temp .
     client1.crt
     client1.key
     
-In the interface of the openvpn client, you need to import the `client1.ovpn` file. If everything went fine, then there's nothing else to do at all to get the vpn connection working. There's no need to specify the crt or key files if they are at the same location as the ovpn file. With the unified ovpn file there's even less worries.
+In the interface of the openvpn client, you need to import the `client1.ovpn` file. If everything went fine, then there's nothing else to do at all to get the vpn connection working. There's no need to specify the `crt` or `key` files if they are at the same location as the `ovpn` file. With the unified `ovpn` file there's even less worries.
 
 ### Android Clients
 
-We will install the client for Android on a Samsung Galaxy S8+.
+We will install the client for `Android` on a `Samsung Galaxy S8+`.
 
 ## Things left to do or improve
 
-* Generate and make use of a ta.crt file to improve security.
-* For security reasons, we could create certificatin and key file for each device that will use the vpn.
+* Generate and make use of a `ta.crt` file to improve security.
+* For security reasons, we could create certification and key file for each device that will use the vpn.
 
 ## Resources
 
