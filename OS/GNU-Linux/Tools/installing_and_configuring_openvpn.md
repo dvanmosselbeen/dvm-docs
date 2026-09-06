@@ -29,16 +29,16 @@ A `VPN`, more specifically, a `Virtual Private Network` is a direct connection t
 
 **_But what is this useful for?_**
 
-This allow to access a remote network. As well as for enterprises as for home use. 
+This allows to access a remote network. As well as for enterprises as for home use. 
 
 ## Requirements
 
-* A GNU / Linux computer
-* A client (could be a Microsoft Windows laptop, smartphone...)
+* A `GNU / Linux` computer
+* A client (could be a `Microsoft Windows` laptop, `Android` smartphone...)
 
-The server will be a Raspberry PI OS (Debian based). 
+The server will be a `Raspberry PI` OS (`Debian GNU / Linux` based). 
 
-The client will be a Windows 10 laptop connected through Wi-Fi network. However, for the tests to work, I shared my internet with a hotspot through mobile data. 
+The client will be a `Windows 10` laptop connected through Wi-Fi network. However, for the tests to work, I shared my internet with a hotspot through mobile data. 
 
 ## Server Setup
 
