@@ -11,7 +11,7 @@
 
 ## Introduction
 
-`fail2ban` is an excellent tool if you want to have some monitoring system on your services. It monitors in the sense that it is looking for unexpected behaviors, like failed login attempts. In my opinion, if you are for example running a `ssh` server, `fail2ban` is an absolutely must-have installed monitoring tool. And like running a `GNU / Linux` machine, a `ssh` server is also in my opinion a must have software / service that needs to run on every `GNU / Linux` machine. So to conclude, `fail2ban` is absolutely something to be installed by default.
+`fail2ban` is an excellent tool if you want to have some monitoring system on your services. It monitors in the sense that it is looking for unexpected behaviors, like failed login attempts. In my opinion, if you are for example running a `ssh` server, `fail2ban` is an absolutely must-have installed monitoring tool. And like running a `GNU / Linux` machine, a `ssh` server is also in my opinion a must-have software / service that needs to run on every `GNU / Linux` machine. So to conclude, `fail2ban` is absolutely something to be installed by default.
 
 Note that `fail2ban` is way more powerful than just looking for failed `ssh` logins. By default, it will look for failed login attempts for web (`apache`) services, `ftp` and so on.
 
@@ -37,15 +37,50 @@ Or make it start automatically at boot time which is probably something you abso
 
 ## Configuration of fail2ban
 
-The default configuration of `fail2ban` will protect your `ssh` and other servers straight out of the box. But it's wise to fine tune even more the configuration file. All configuration files are stored in `/etc/fail2ban/`.  The file `/etc/fail2ban/jail.conf` is probably what you are looking for, however, you should not modify this file itself as it can be overwritten when the package `fail2ban` get updated and thus overwriting your custom tweaks. Therefore, you should create a `/etc/fail2ban/jail.conf.local` file where there in you save your custom tweaks. `fail2ban` is looking for `/etc/fail2ban/jail.conf.local` and if this file exists, it will load it automatically. So there's no need to make any configuration changes to get the `/etc/fail2ban/jail.conf.local` config file loaded.
+The default configuration of `fail2ban` will protect your `ssh` server and other servers straight out of the box. But honestly said, if your computer is exposed directly to the internet, then the default configuration is not strict enough. Because yes, you will see that there is a huge amount of brute force attacks. So it's better to fine tune the configuration file and to be more strict.
 
-For example, the following configuration in `/etc/fail2ban/jail.conf.local` will send an email when someone gets banned from bad ssh login attemps:
+All configuration files are stored in `/etc/fail2ban/`. The file `/etc/fail2ban/jail.conf` is probably what you are looking for, however, you should not modify this file itself as it can be overwritten when the package `fail2ban` get updated and thus overwriting your custom tweaks. And when reading the file `/etc/fail2ban/jail.conf`, this appears on top of it:
+
+````commandline
+# WARNING: heavily refactored in 0.9.0 release.  Please review and
+#          customize settings for your setup.
+#
+# Changes:  in most of the cases you should not modify this
+#           file, but provide customizations in jail.local file,
+#           or separate .conf files under jail.d/ directory, e.g.:
+#
+# HOW TO ACTIVATE JAILS:
+#
+# YOU SHOULD NOT MODIFY THIS FILE.
+#
+# It will probably be overwritten or improved in a distribution update.
+#
+# Provide customizations in a jail.local file or a jail.d/customisation.local.
+# For example to change the default bantime for all jails and to enable the
+# ssh-iptables jail the following (uncommented) would appear in the .local file.
+# See man 5 jail.conf for details.
+#
+# [DEFAULT]
+# bantime = 1h
+#
+# [sshd]
+# enabled = true
+#
+# See jail.conf(5) man page for more information
+````
+
+Therefore, you should modify the file `/etc/fail2ban/jail.d/defaults-debian.conf` file where there you save your custom tweaks.
+
+For example, the following configuration will send an email when someone gets banned from bad `ssh` login attempts:
 
 ```commandline
 [DEFAULT]
+banaction = nftables
+banaction_allports = nftables[type=allports]
+
 ignoreip = 127.0.0.0
-bantime  = 10m
-findtime  = 10m
+bantime  = 2h
+findtime  = 2h
 destemail = root@localhost
 sender = root@localhost
 sendername = Fail2ban
@@ -53,32 +88,34 @@ mta = sendmail
 action = %(action_mwl)s
 
 [sshd]
+backend = systemd
+journalmatch = _SYSTEMD_UNIT=ssh.service + _COMM=sshd
 enabled = true
-port = 22
-filter = sshd
-logpath = /var/log/auth.log
-maxretry = 5
+
+maxretry = 3
+bantime.increment = true
 ```
 
 In this configuration example:
 
-- An IP will be banned for `10` minutes (`bantime`) after `5` failed attempts within `10` minutes (`findtime`), which is fine and should kick away all bots. If you still get annoyed, increase the ban time and all will be fine.
+- An IP will be banned for `2` hours (`bantime`) after `3` failed attempts within `2` hours (`findtime`), which is fine and should kick away all bots. If you still get annoyed, increase the ban time and all will be fine.
 - It is also wise to adjust the `ignoreip` to your needs. As I have physical access in this case, I will keep it this way. We never know if some hacker could pivot into our network and use one of our own systems to attack our servers.
+- The `bantime.increment = true`, will make in sort that next time, after the `ip` get unbanned, if bad attempts are made again from this `ip`, the ban time will be multiplied by 2 (default it's times 2)
 - An email will be sent to `root@localhost`.
 
-After any changes to configuration files, restart the `fail2ban` service:
+After any changes to configuration file, restart the `fail2ban` service:
 
     systemctl restart fail2ban
 
-_Note that restarting the `fail2ban` service, might also unlock banned IPs / computers. This is not always the case but the majority of the time this happens. I have no clue why this happens this way. Feels like some hole or some bug. Anyway, just check your logs on time. Checking logs / errors is something that should happen at very least, once a day!_
+_(As of today september 6, 2026, this seems to be fixed) Note that restarting the `fail2ban` service, might also unlock banned IPs / computers. This is not always the case but the majority of the time this happens. I have no clue why this happens this way. Feels like some hole or some bug. Anyway, just check your logs on time. Checking logs / errors is something that should happen at very least, once a day!_
 
 ### Send emails
 
-For this, unfortunately, you need to have a mail server running. We can make (basic) usage of the `sendmail` for example or `postfix` for local email exchange in this network. 
+Our current configuration will send an email when an `ip` get banned. For this, unfortunately, you need to have a mail server running. We can make (basic) usage of the `sendmail` for example or `postfix` for local email exchange in this network. 
 
 Setting up a whole email system is out of the scope of this document as this is really a complex subject. For this, check out the dedicated documentation of how to set up an email server. Setting up a mail  server on you network, especially a misconfigurated mail server on your network, can have a serious impact on the security level, but also make in sort that your mail system of your clients get broken and emails lost in space.
 
-Also note that in this example, this is all about local email in a local network. Which is probably not nice enough as you need to log locally on that computer and check the email. People tent to forget to log into their servers and check the local mail. However, if your shell is set up correctly, you should get a notification that you have new email. For example `You have new mail in /var/mail/root` when login in onto that computer. It's better to set up a decent email server, to at least send email out of the local network. But to get starter with the basics, here's a quick guide:
+Also note that in this example, this is all about local email in a local network. Which is probably not nice enough as you need to log locally on that computer and check the email. People tent to forget to log into their servers and check the local mail. However, if your shell is set up correctly, you should get a notification that you have new email. For example `You have new mail in /var/mail/root` when login in onto that computer. It's better to set up a decent email server, to at least send email out of the local network. But to get starter with the basics, here's a quick guide to install and setup `sendmail`:
 
     apt-get install sendmail
 
@@ -92,17 +129,20 @@ I also like to create an alias, that for example all mails send to `root` user g
 
     root:   root, <my-main-user-account>
 
+_That previous `/etc/aliases` files was probably empty._
+
 _Replace `<my-main-user-account>` with your main user account. You can also add more user accounts and separate them with a comma (`,`) like shown in the example above._
 
 Then you need to propagate this modification as `root` user with:
 
     newaliases
 
-Once that modified, restart the `sendmail` server. I like to use the following commands to have a better view on what is going on and to get information about each step:
+Once that modified, restart the `sendmail` server. I like to use the following commands to have a better view on what is going on and to get information about each step. We also need to be sure that the `sendmail` service start at boot time:
 
 ```commandline
 systemctl status sendmail
 systemctl stop sendmail
+systemctl enable sendmail
 systemctl status sendmail
 systemctl stop sendmail
 ```
@@ -167,7 +207,7 @@ You can also get more information / help with just running the command:
 
     fail2ban-client
 
-And as bonus dope for Python fanatics like me, there is also:
+And as bonus dope for `Python` fanatics like me, there is also:
 
     fail2ban-python
 
