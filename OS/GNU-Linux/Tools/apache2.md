@@ -1,6 +1,6 @@
 # Apache2
 
-Apache is probably the most used web server. It's rock solid, well documented and has a great user base and support. 
+`Apache` is probably the most used web server. It's rock solid, well documented and has a great user base and support. 
 
 ## Installing Apache2
 
@@ -13,11 +13,11 @@ Installing `php`:
 
     apt-get install php libapache2-mod-php
 
-Enabling `userdir` (This will allow all users to have their own website in `~/public_html`):
+Enabling `userdir` will allow all users to have their own website in `~/public_html`:
 
     /usr/sbin/a2enmod userdir
 
-By default now, PHP isn't enabled for `userdir`. If you want to allow `userdir` to allow to use PHP, change the followong: 
+By default, `PHP` is not enabled for `userdir`. If you want to allow `userdir` to allow using `PHP`, change the following:
 
     vim /etc/apache2/mods-enabled/php7.3.conf
 
@@ -35,9 +35,9 @@ Restart the `apache2` server:
 
 ## Tools
 
-| Application | Description |
-|---|---|
-| apachetop | Realtime Apache monitoring tool |
-| awffull | web server log analysis program |
-| awstats | powerful and featureful web server log analyzer |
-| webalizer | web server log analysis program |
+| Application | Description                                                                                                                                                                                  |
+|---|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| apachetop | Realtime Apache monitoring tool                                                                                                                                                              |
+| awffull | web server log analysis program forked from `Webalizer`. It adds a number of new features and improvements, such as extended frontpage history, resizable graphs, and a few more pie charts. |
+| awstats | powerful and featureful web server log analyzer                                                                                                                                              |
+| webalizer | web server log analysis program. (probably the oldes program, take a look to awffull or awstats.                                                                                             |
