@@ -1,32 +1,124 @@
 # Installing Raspberry Pi on an external HDD 
 
-Source from but adapted: https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/ to work with Raspberry Pi Model 4 with 4GB ram.
+## Table of Contents
 
-Also interesting information: https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/
+ - [Introduction](#introduction)
+ - [Install Process](#install-process)
+ - [Adjust the swap size](#adjust-the-swap-size)
+ - [Resources](#resources)
 
 ## Introduction
 
-So far, I have been able to do this setup successful on a Raspberry Pi Model 4B with an external HDD with his own power supply. Did not get it working yet on Model 3B as things seems to be slightly different and not sure Model 3B is able to boot without micro SD Card.
+**IMPORTANT NOTE**: As of today `september 2, 2026`, this document here is a bit useless. As with an up to date `Raspberry Pi model 4` or newer, with an up-to-date firmware, we do not need to do all these steps manually.
+
+We could just boot up `Raspberry Pi` without `Micro SD` card, with the `RJ45` network cable connected and an attached external HDD and start a `Netinst`. The installer is able to download everything from the internet and install it directly to the external HDD. No need for a `Micro SD` card or do any setup. Just keep `Shift` pressed while you boot up and start the `NetInstall` installer and follow the instructions on screen. I did this for my 2 different `Raspberry Pi Model 4` with a `4 GB RAM` and `8GB RAM` and installed the Debian GNU/Linux operating system as a server, and `Ubuntu` desktop version on the other one to use it as a compact desktop computer.
+
+Source from but adapted: <https://www.makeuseof.com/tag/make-raspberry-pi-3-boot-usb/> to work with `Raspberry Pi Model 4` with 8GB RAM.
+
+Also interesting information: <https://www.maketecheasier.com/boot-up-raspberry-pi-3-external-hard-disk/>
+
+So far, I have been able to do this setup successful on a `Raspberry Pi Model 4B` with an external HDD with its own power supply and with an HDD without extra power supply. Did not get it working yet on `Model 3B` as things seems to be slightly different and not sure `Model 3B` is able to boot without micro SD Card.
 
 ## Install Process
 
-See that you have a fresh and full installation of the Raspberry Pi. Not a Noobs installation.
+See that you have a fresh and full installation of the ``Raspberry Pi``. Not a ``Noobs`` installation.
 
 Start with:
 
     sudo apt-get update
     sudo apt-get upgrade   # very important as older version fail !
 
-Then:
+Then we will update the firmware of the ``Raspberry Pi``. **Note that it could be that we manually need to delete the firware files so that the firware files are also writen on the chipset of the Raspberry Pi. The rpi-update command give instructions and tells which files to delete to force a full firmware update**:
 
     sudo rpi-update
-    
-On my first Raspberry Pi 4 i had to use the next branch like the following command. However, as of today 06/11/2020 it feels if i use the next branch.
+
+This will output:
+
+````commandline
+root@raspberry2026a:/home/dvanmosselbeen# rpi-update
+ *** Raspberry Pi firmware updater by Hexxeh, enhanced by AndrewS and Dom
+ *** Performing self-update
+ *** Relaunching after update
+ *** Raspberry Pi firmware updater by Hexxeh, enhanced by AndrewS and Dom
+FW_REV:49615803a10fdcd4cea13121972630ca94edeb0a
+BOOTLOADER_REV:86759b04b22173e10186139ac3ae4debcd0d7252
+ *** We're running for the first time
+ *** Backing up files (this will take a few minutes)
+ *** Backing up firmware
+ *** Backing up modules 6.18.34+rpt-rpi-v8
+WANT_32BIT:0 WANT_64BIT:1 WANT_64BIT_RT:0 WANT_PI4:1 WANT_PI5:1
+
+Updating a system with initramfs configured is not supported by rpi-update.
+If your system relies on drivers provided by the initramfs (e.g. custom filesystem options)
+it may not boot without regenerating the initramfs.
+If you are unsure, test if your system boots with initramfs options disabled from config.txt
+
+Would you like to proceed? (y/N)
+````
+
+After pressing the ``y`` key to confirm to continue, this will output the following:
+
+````commandline
+Github API request failed with HTTP 422: https://api.github.com/repos/raspberrypi/rpi-firmware/commits/0
+##############################################################
+WARNING: This update bumps to rpi-6.18.y linux tree
+See discussions at:
+https://forums.raspberrypi.com/viewtopic.php?t=394580
+##############################################################
+Would you like to proceed? (y/N)
+````
+
+After pressing the ``y`` key to confirm to continue, this will output the following:
+
+````commandline
+Downloading bootloader tools
+Downloading bootloader images
+ *** Downloading specific firmware revision (this will take a few minutes)
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  167M  100  167M    0     0  27.8M      0  0:00:06  0:00:06 --:--:-- 27.9M
+*** PREPARING EEPROM UPDATES ***
+
+BOOTLOADER: update available
+   CURRENT: Sun 17 May 19:13:18 UTC 2026 (1779045198)
+    LATEST: Tue  4 Aug 12:38:13 UTC 2026 (1785847093)
+   RELEASE: latest (/usr/lib/firmware/raspberrypi/bootloader-2711/latest)
+            Use raspi-config to change the release.
+
+  VL805_FW: Using bootloader EEPROM
+     VL805: up to date
+   CURRENT: 000138c0
+    LATEST: 000138c0
+   CURRENT: Sun 17 May 19:13:18 UTC 2026 (1779045198)
+    UPDATE: Tue  4 Aug 12:38:13 UTC 2026 (1785847093)
+    BOOTFS: /boot/firmware
+'/tmp/tmp.Ps4gdCJA2z' -> '/boot/firmware/pieeprom.upd'
+Copying recovery.bin to /boot/firmware for EEPROM update
+
+EEPROM updates pending. Please reboot to apply the update.
+To cancel a pending update run "sudo rpi-eeprom-update -r".
+ *** Updating firmware
+ *** Updating kernel modules
+ *** depmod 6.18.46-v8-rt+
+ *** depmod 6.18.46-v8-16k+
+ *** depmod 6.18.46-v8+
+ *** Updating VideoCore libraries
+ *** Running ldconfig
+ *** Storing current firmware revision
+ *** Deleting downloaded files
+ *** Syncing changes to disk
+ *** If no errors appeared, your firmware was successfully updated to 49615803a10fdcd4cea13121972630ca94edeb0a
+ *** A reboot is needed to activate the new firmware
+````
+
+*On my first ``Raspberry Pi 4`` I had to use the next branch like the following command. However, as of today ``06/11/2020`` it feels if i use the next branch.*
     
     sudo BRANCH=next rpi-update
     
 This will show:
 
+````commandline
      *** Raspberry Pi firmware updater by Hexxeh, enhanced by AndrewS and Dom
      *** Performing self-update
      *** Relaunching after update
@@ -47,9 +139,11 @@ This will show:
     Would you like to proceed? (y/N)
 
 Confirm by pressing `Y`.
+````
 
 This will output:
 
+````commandline
      *** Downloading specific firmware revision (this will take a few minutes)
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
@@ -70,116 +164,173 @@ This will output:
      *** Syncing changes to disk
      *** If no errors appeared, your firmware was successfully updated to 8fc25f0ca423d50bdb33f332a6b6007f8a8b6ec4
      *** A reboot is needed to activate the new firmware
+````
 
 Then.
 
-    echo program_usb_boot_mode=1 | sudo tee -a /boot/config.txt
+    echo program_usb_boot_mode=1 | sudo tee -a /boot/firmware/config.txt
 
 Finally, reboot now:
 
     sudo reboot
     
-Once rebooted (the following command does not give me the expected results on Model 4B as i get `17:000008b0`):
+Once rebooted (the following command does not give me the expected results on ``Model 4B`` as I get `17:000008b0`):
 
     vcgencmd otp_dump | grep 17:
 
-Commend the last line we previously added:
+DEPRECATED (DO NOT DO): Comment out the last line we previously added:
 
-    sudo nano /boot/config.txt
+    sudo nano /boot/firmware/config.txt
     
-Prepare the external HDD drive. Note, we will delete everything on it. Be warned.
+Prepare the external HDD drive. We can now connect the external HDD. (For the moment, I Only tested with an external HDD with it's own power supply).
+
+Note, we will delete everything on it. Be warned!!!
 
     lsblk
 
 Which result in:
 
-    NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-    sda           8:0    0  2.7T  0 disk
-    ├─sda1        8:1    0   94M  0 part /media/pi/BOOT
-    └─sda2        8:2    0   93G  0 part /media/pi/c109ac91-38f0-46f1-b6b7-14cb7a656b8f
-    mmcblk0     179:0    0 28.9G  0 disk
-    ├─mmcblk0p1 179:1    0  256M  0 part /boot
-    └─mmcblk0p2 179:2    0 28.7G  0 part /
+````commandline
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0    2G  0 loop
+sda           8:0    0  2.7T  0 disk
+├─sda1        8:1    0   94M  0 part /media/dvanmosselbeen/BOOT
+└─sda2        8:2    0   93G  0 part
+mmcblk0     179:0    0 29.8G  0 disk
+├─mmcblk0p1 179:1    0  512M  0 part /boot/firmware
+└─mmcblk0p2 179:2    0 29.3G  0 part /
+zram0       254:0    0    2G  0 disk [SWAP]
+````
 
-We see that `sda1` and `sda2` is mounted, so we need to unmount it.
 
-    sudo umount /dev/sda1
-    sudo umount /dev/sda2
+We see that `sda1` is mounted, so we need to unmount it.
 
-Then again:
+    umount /media/dvanmosselbeen/BOOT
+
+Then again, just for verification:
 
     lsblk
 
 Which result in:
 
-    NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-    sda           8:0    0  2.7T  0 disk
-    ├─sda1        8:1    0   94M  0 part
-    └─sda2        8:2    0   93G  0 part
-    mmcblk0     179:0    0 28.9G  0 disk
-    ├─mmcblk0p1 179:1    0  256M  0 part /boot
-    └─mmcblk0p2 179:2    0 28.7G  0 part /
+````commandline
+NAME        MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+loop0         7:0    0    2G  0 loop
+sda           8:0    0  2.7T  0 disk
+├─sda1        8:1    0   94M  0 part
+└─sda2        8:2    0   93G  0 part
+mmcblk0     179:0    0 29.8G  0 disk
+├─mmcblk0p1 179:1    0  512M  0 part /boot/firmware
+└─mmcblk0p2 179:2    0 29.3G  0 part /
+zram0       254:0    0    2G  0 disk [SWAP]
+````
 
-Now:
+We can now create the needed partitions on the external HDD. So now executed the parted command on the external HDD. We will get into the parted command line:
 
-    sudo parted /dev/sda
+    parted /dev/sda
 
-Delete everything on the HDD:
+Delete everything on the HDD. This can not be undone, be sure what you are doing:
 
     mktable msdos
 
-Create the different partitions. Note that we don't use the full HDD capacity. This can be adjusted later on. (NOTE: Copy & paste of this in the console can fails) 
+We get the warning that the data will be destroyed on the external HDD. Enter ``Yes`` to continue:
 
-    mkpart primary fat32 0% 100M
-    mkpart primary ext4 100M 100G
+````commandline
+Warning: The existing disk label on /dev/sda will be destroyed and all data on this disk will be lost. Do you want to continue?
+Yes/No?
+````
+
+After entering ``Yes``, we do not have additional information, we get back on the parted command line interface:
+
+````commandline
+(parted)
+````
+
+Create the different partitions. Note that we don't use the full HDD capacity. This can be adjusted later on. (NOTE: Copy & paste of this in the console can fail). This is a ``3 TB Hard Disk Drive``, we use 500M for the boot partition and ``200GB`` for the second partition. Later on we can create more partitions if needed.
+
+    mkpart primary fat32 0% 500M
+    mkpart primary ext4 500M 200G
 
 Then show the information of our changes:  
     
     print
 
-Which result in:
+This will output:
 
-    Model: TOSHIBA External USB 3.0 (scsi)
-    Disk /dev/sda: 2000GB
-    Sector size (logical/physical): 512B/512B
-    Partition Table: msdos
-    Disk Flags:
-    
-    Number  Start   End     Size    Type     File system  Flags
-     1      1049kB  99.6MB  98.6MB  primary  fat32        lba
-     2      99.6MB  100GB   99.9GB  primary  ext4         lba
+````commandline
+Model: Seagate Expansion Desk (scsi)
+Disk /dev/sda: 3001GB
+Sector size (logical/physical): 512B/4096B
+Partition Table: msdos
+Disk Flags:
 
-Use `CTRL+C` to exit this or type in `quit`.
+Number  Start   End    Size   Type     File system  Flags
+ 1      1049kB  500MB  499MB  primary  fat32        lba
+ 2      500MB   200GB  199GB  primary  ext4
+
+(parted)
+````
+
+Use `CTRL+C` to exit this or type in `quit`. After we quit, we receive the following information:
+
+````commandline
+Information: You may need to update /etc/fstab.
+````
 
 Create the Filesystems:
 
-    sudo mkfs.vfat -n BOOT -F 32 /dev/sda1
-    sudo mkfs.ext4 /dev/sda2
+````commandline
+mkfs.vfat -n BOOT -F 32 /dev/sda1
+mkfs.ext4 /dev/sda2
+````
+
+This is the output of the previous 2 commands. Just for informational purposes:
+
+````commandline
+root@raspberry2026a:/home/dvanmosselbeen# mkfs.vfat -n BOOT -F 32 /dev/sda1
+mkfs.fat 4.2 (2021-01-31)
+root@raspberry2026a:/home/dvanmosselbeen# mkfs.ext4 /dev/sda2
+mke2fs 1.47.2 (1-Jan-2025)
+Creating filesystem with 48706048 4k blocks and 12181504 inodes
+Filesystem UUID: cc1fa709-ff5e-4210-a0f1-566f954e2a59
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424, 20480000, 23887872
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (262144 blocks): done
+Writing superblocks and filesystem accounting information: done
+````
 
 Now mount the new partitions and copy files of the micro SD card to the external HDD:
 
-    sudo mkdir /mnt/target
-    sudo mount /dev/sda2 /mnt/target/
-    sudo mkdir /mnt/target/boot
-    sudo mount /dev/sda1 /mnt/target/boot/
-    sudo apt-get update; sudo apt-get install rsync
-    sudo rsync -ax --progress / /boot /mnt/target
+````commandline
+mkdir /mnt/target
+mount /dev/sda2 /mnt/target/
+mkdir /mnt/target/boot
+mount /dev/sda1 /mnt/target/boot/
+# apt-get update; sudo apt-get install rsync
+rsync -ax --progress / /boot /mnt/target
+````
 
-Copying the files will take a few minutes. Not so long actually.
+Copying the files will take a few minutes. This will output a bunch of information to the terminal, as we used the ``--progress`` flag of ``rsync``. Just need to see that there's no error message on the end. I say this as of today, september 2, 2026 I originally created a 100MB boot partition, but this seemed to be too small. While a few years ago, ``100MB`` was more than enough.
 
-Then:
+All the data from the ``Micro SD`` card is now copied to our external HDD. But we need to delete the ssh keys of the ssh server and generate new host keys for the ``sshd`` server:
 
-    cd /mnt/target
-    sudo mount --bind /dev dev
-    sudo mount --bind /sys sys
-    sudo mount --bind /proc proc
-    sudo chroot /mnt/target
-    rm /etc/ssh/ssh_host*
-    dpkg-reconfigure openssh-server
-    exit
-    sudo umount dev
-    sudo umount sys
-    sudo umount proc
+````commandline
+cd /mnt/target
+mount --bind /dev dev
+mount --bind /sys sys
+mount --bind /proc proc
+chroot /mnt/target
+rm /etc/ssh/ssh_host*
+dpkg-reconfigure openssh-server
+exit
+umount dev
+umount sys
+umount proc
+````
 
 Now adjust the following file: `/mnt/target/boot/cmdline.txt`:
 
@@ -189,30 +340,34 @@ To something similar to this (note the `/dev/sda2`):
 
     console=serial0,115200 console=tty1 root=/dev/sda2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
 
+**REMARKS: The content of the file `/mnt/target/boot/cmdline.txt` says that this file moved to `/mnt/target/boot/firmware/cmdline.txt` , but that file does not exist there. So I did not do this previous step.**
+
 The same with: `/mnt/target/etc/fstab`. From this:
 
-    proc            /proc           proc    defaults          0       0
-    PARTUUID=d218e2cd-01  /boot           vfat    defaults          0       2
-    PARTUUID=d218e2cd-02  /               ext4    defaults,noatime  0       1
-    # a swapfile is not a swap partition, no line here
-    #   use  dphys-swapfile swap[on|off]  for that
+````commandline
+proc            /proc           proc    defaults          0       0
+PARTUUID=49011ac8-01  /boot/firmware  vfat    defaults          0       2
+PARTUUID=49011ac8-02  /               ext4    defaults,noatime  0       1
+````
 
-To somethings like this:
+To something like this:
 
-    proc            /proc           proc    defaults          0       0
-    /dev/sda1  /boot           vfat    defaults          0       2
-    /dev/sda2  /               ext4    defaults,noatime  0       1
-    # a swapfile is not a swap partition, no line here
-    #   use  dphys-swapfile swap[on|off]  for that
+````commandline
+proc            /proc           proc    defaults          0       0
+/dev/sda1  /boot/firmware  vfat    defaults          0       2
+/dev/sda2  /               ext4    defaults,noatime  0       1
+````
 
 The system should be now ready:
 
-    cd ~
-    sudo umount /mnt/target/boot
-    sudo umount /mnt/target
-    sudo poweroff
+````commandline
+cd ~
+umount /mnt/target/boot  # Got info that it was not mounted
+umount /mnt/target
+poweroff
+````
 
-Once turned of, first remove the power source before removing the micro SD card !!!
+Once turned off, first remove the power source before removing the micro SD card !!!
 
 After removed the micro SD card and trying to boot of the external HDD i get an error like this:
 
