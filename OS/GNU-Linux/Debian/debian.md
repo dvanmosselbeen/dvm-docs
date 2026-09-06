@@ -39,17 +39,17 @@ The `Debian GNU/Linux` Operating System claims to be the universal operating sys
 
 ### Releases (versions)
 
-`Debian` has been know to be a very stable Operating System. `Debian` is available in 3 different releases. A stable version, a testing version, and a unstable version (called `Sid`). The names of the different releases come from the `Toy Story` animation movies.
+`Debian` has been know to be a very stable Operating System. `Debian` is available in 3 different releases. A `stable` version, a `testing` version, and an `unstable` version (called `Sid`). The names of the different releases come from the `Toy Story` animation movies.
 
-The stable version, like the name say it, is very stable, however, the packages (applications and libraries) are older than a normal user would expect. A stable version is release once in a while and the packages arent updated anymore. Except for security patches. But you won't never get new features on a stable version once it is release.
+The `stable` version, like the name say it, is very stable, however, the packages (applications and libraries) are older than a normal user would expect. A stable version is release once in a while and the packages aren't updated anymore. Except for security patches. But you will never get new features on a stable version once it is release.
 
 The testing version, like the name say it, is a testing version.
 
 ## Installing Debian
 
-You can install `Debian` on different ways. Starting from a CD, DVD, iso image, usb key, with PXE boots and so on.
+You can install `Debian` on different ways. Starting from a `CD`, `DVD`, `iso image`, `usb` key, with `PXE` boots and so on.
 
-These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little iso image. That iso image you can burn to a CD and from there boot up your computer. The particularity of the `netinst` method is that the iso image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
+These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little `iso` image. That `iso` image you can burn to a CD and from there boot up your computer. The particularity of the `netinst` method is that the `iso` image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
 
 ### Migrating from stable to testing release
 
@@ -123,18 +123,17 @@ That’s it. You have installed `VirtualBox Guest Additions` on your Debian gues
 
 You can now enable Shared clipboard and Drag’n Drop support from the virtual machine settings `Storage` tab, enable 3D acceleration from the `Display` tab, create Shared folders, and more.
 
-
 ## The package manager
 
 You can easily manage your package with the `apt` tools, which is a collection of tools including `apt-get`, `apt-cache` etc.
 
-There's also `aptitude` which i strongly recommend but is not so user friendly at all. If you don't want to bother, `apt` is just fine and you don' need `aptitude`. Beside apt and aptitude, theirs a un numerous number of other applications, command line or with a graphical interface.
+There's also `aptitude` which I strongly recommend but is not so user-friendly at all. If you don't want to bother, `apt` is just fine, and you don't need `aptitude`. Beside `apt` and `aptitude`, theirs an un numerous number of other applications, command line or with a graphical interface like for example `synaptic`.
 
 ### The apt tools
 
-`apt-get` is the default package manager on Debian. There are other package managers available such as `aptitude` etc but in this section we will try to show you how much `apt` rules!
+`apt-get` is the default package manager on `Debian`. There are other package managers available such as `aptitude` etc. but in this section we will try to show you how much `apt` rules!
 
-Before searching or installing anything with `apt-get`, we need to retrieve it's new list of packages:
+Before searching or installing anything with `apt-get`, we need to retrieve its new list of packages:
 
 ```commandline
 apt-get update
@@ -170,28 +169,27 @@ apt autoremove
 
 ### aptitude
 
-Aptitude can be used in 2 different ways. Both ways are to do on the command line but one method has no UI and the other has one.
+`Aptitude` can be used in 2 different ways. Both ways are to do on the command line but one method has no `UI` and the other has one.
 
-Just by running the command `aptitude`, you will start the UI interface.
+Just by running the command `aptitude`, you will start the `UI` interface.
 
 ## Admin commands
 
-| Command | Description |
-|---|---|
-| `dpkg -l <package>` | List if package is installed. |
-| `dpkg -L <package>` | Show the content of a deb package. ||
-| `df -h` | Display disk space usage, in human readable. |
-| `which python` | Return the location of the file. |
-| `shutdown -h now` | Shutdown the computer.|
-| `reboot` | Reboot the computer.|
-| `apt-get -f install` | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
-| `apt autoremove` | Remove packages that where installed by other packages ant that aren't used anymore.|
-| `apt-get clean`| Removed downloaded packages. Which are stored in `/var/cache/apt/archives` |
-| `adduser <username>` | To create a new user on your system. You|
-| `service fail2ban status` | To check if `fail2ban` service is been running. |
-| `systemctl fail2ban status` | To check if `fail2ban` service is been running. |
-| `dmesg` | Shows some logs on the console.|
-| `stats` | Gives information about a given file. Like the permissions but also the access, modify and creation time. |
+| Command                     | Description                                                                                                                                                                                                                                           |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dpkg -l <package>`         | List if package is installed.                                                                                                                                                                                                                         |
+| `dpkg -L <package>`         | Show the content of a deb package.                                                                                                                                                                                                                    ||
+| `df -h`                     | Display disk space usage, in human readable.                                                                                                                                                                                                          |
+| `which python`              | Return the location of the file.                                                                                                                                                                                                                      |
+| `shutdown -h now`           | Shutdown the computer.                                                                                                                                                                                                                                |
+| `reboot`                    | Reboot the computer.                                                                                                                                                                                                                                  |
+| `apt-get -f install`        | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
+| `apt autoremove`            | Remove packages that where installed by other packages ant that aren't used anymore.                                                                                                                                                                  |
+| `apt-get clean`             | Removed downloaded packages. Which are stored in `/var/cache/apt/archives`                                                                                                                                                                            |
+| `adduser <username>`        | To create a new user on your system. You                                                                                                                                                                                                              |
+| `service fail2ban status`   | To check if `fail2ban` service is been running.                                                                                                                                                                                                       |
+| `dmesg`                     | Shows some logs on the console.                                                                                                                                                                                                                       |
+| `stats`                     | Gives information about a given file. Like the permissions but also the access, modify and creation time.                                                                                                                                             |
 
 ## Interesting packages
 
@@ -263,18 +261,17 @@ See the dedicated [MySQL](../../../Databases/MySQL.md) page for more information
 
 #### PostgreSQL
 
-See the dedicated [MySQL](../../../Databases/PostgreSQL.md) page for more information.
+See the dedicated [PostgreSQL](../../../Databases/PostgreSQL.md) page for more information.
 
 #### PHPMyAdmin
 
-PHPMyAdmin is a web interface to manage the MySQL databases. It's very handy and a must have if you use MySQL.
-
+`PHPMyAdmin` is a web interface to manage the `MySQL` databases. It's very handy and a must-have if you use MySQL.
 
 ## Getting more help
 
 The trick on a `GNU/Linux` system is to find your way on how you should find information.
 
-You can try to look to what files are been installed with the concerned application:
+You can try to look to what files have been installed with the concerned application:
 
 ```commandline
 dpkg -L <packagename>
