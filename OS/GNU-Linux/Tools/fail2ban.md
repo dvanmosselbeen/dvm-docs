@@ -216,5 +216,6 @@ Which is an interactive shell into the `fail2ban` system. This is grandiose!
 ## Resources
 
 - <https://www.fail2ban.org>
+- <https://raspberrytips.com/install-fail2ban-raspberry-pi/>
 - <https://edywerder.ch/fail2ban-email-notification/>
 - <https://www.youtube.com/watch?v=Z0cDqF6HAxs>
