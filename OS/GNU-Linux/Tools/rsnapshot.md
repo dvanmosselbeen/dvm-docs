@@ -7,15 +7,16 @@
  - [Configuration](#configuration)
  - [Issues](#issues)
  - [Restoring data](#restoring-data)
+ - [Observing](#observing)
  - [Links](#links)
 
 ## Introduction
 
-`rsnapshot` is an rsync-based filesystem snapshot utility. It can take incremental backups of local and remote filesystems for any number of machines. `rsnapshot` makes extensive use of hard links, so disk space is only used when absolutely necessary.
+`rsnapshot` is a `rsync`-based filesystem snapshot utility. It can take incremental backups of local and remote filesystems for any number of machines. `rsnapshot` makes extensive use of hard links, so disk space is only used when absolutely necessary.
 
 It is in my opinion an app that has to be installed on every `GNU / Linux` machine. Or to be installed on a `GNU / Linux` server who then will handle and take care to do remote backups of your other `GNU / Linux` clients on your network.
 
-You might think that you don't need backups, but it can be very handy even just to save your configuration files.1
+You might think that you don't need backups, but it can be very handy even just to save your configuration files. This backup system does only take like a very small amount of diskspace, so it's really worth to install and configure.
 
 ## Installation
 
@@ -175,7 +176,7 @@ Now we need to make sure that the backup is made at some specific points in time
 
 ````editorconfig
 ### My custom backup plan
-# Hourly, every 6 hours at 00:00, 06:00, 12/00, 18:00
+# Hourly, every 4 hours at 00:00, 04:00, 08:00, 12:00, 16:00, 20:00
 0 */4         * * *           root    /usr/bin/rsnapshot hourly
 # Daily at 3:30 in the morning
 30 3          * * *           root    /usr/bin/rsnapshot daily
@@ -211,6 +212,59 @@ Feels like this is a bug of the package. Need to check if there's an existing bu
 Created this log directory and this fixed the issue.
 
     mkdir   /var/log/rsnapshot
+
+## Observing
+
+After the `rsnapshot` backup system is up and running, after a few hours, better a few days, it's very wise to observe how things are going and if this all is working. A non-working backup system is just plain useless. But first, just observe, then try to look at the backed up files, try to restore them. Just make sure that everything is working like expected. Do not wait until there is a disaster to find out the backup system is not working or not how you would want it works.
+
+Check if the backup files have been created at expected hours of the day, and at the expected days, months:
+
+````commandline
+ls -lah /var/cache/rsnapshot/
+````
+
+Which return:
+
+````commandline
+total 48K
+drwx------ 12 root root 4.0K Sep  9 08:00 .
+drwxr-xr-x 16 root root 4.0K Sep  5 10:32 ..
+drwxr-xr-x  3 root root 4.0K Sep  8 04:00 daily.0
+drwxr-xr-x  3 root root 4.0K Sep  7 04:00 daily.1
+drwxr-xr-x  3 root root 4.0K Sep  6 04:00 daily.2
+drwxr-xr-x  3 root root 4.0K Sep  5 04:00 daily.3
+drwxr-xr-x  3 root root 4.0K Sep  9 08:00 hourly.0
+drwxr-xr-x  3 root root 4.0K Sep  9 04:00 hourly.1
+drwxr-xr-x  3 root root 4.0K Sep  9 00:00 hourly.2
+drwxr-xr-x  3 root root 4.0K Sep  8 20:00 hourly.3
+drwxr-xr-x  3 root root 4.0K Sep  8 16:00 hourly.4
+drwxr-xr-x  3 root root 4.0K Sep  8 12:00 hourly.5
+````
+
+Check how much disk space each backup is taking:
+
+````commandline
+du -a -c -d 1 -h /var/cache/rsnapshot/
+````
+
+Which return:
+
+````commandline
+201M    /var/cache/rsnapshot/daily.0
+3.3M    /var/cache/rsnapshot/daily.3
+3.3M    /var/cache/rsnapshot/hourly.0
+3.2M    /var/cache/rsnapshot/hourly.3
+3.2M    /var/cache/rsnapshot/daily.1
+3.2M    /var/cache/rsnapshot/hourly.5
+3.3M    /var/cache/rsnapshot/daily.2
+3.2M    /var/cache/rsnapshot/hourly.2
+3.2M    /var/cache/rsnapshot/hourly.1
+3.2M    /var/cache/rsnapshot/hourly.4
+230M    /var/cache/rsnapshot/
+230M    total
+````
+
+We can observe that the `daily.0` is the biggest backup, but that does not mean it contains the most recent changed data! Be careful! The size is only `201M` as this backup system heavily make use of hard links. So here the final size is about the size of the difference of the original files on that location. The `daily.0` backup has been made on `September 8 at 04:00`. But most recent backup is on `September 9 at 08:00`.
 
 ## Restoring data
 
