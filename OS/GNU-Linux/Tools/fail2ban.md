@@ -71,7 +71,7 @@ All configuration files are stored in `/etc/fail2ban/`. The file `/etc/fail2ban/
 
 Therefore, you should modify the file `/etc/fail2ban/jail.d/defaults-debian.conf` file where there you save your custom tweaks.
 
-For example, the following configuration will send an email when someone gets banned from bad `ssh` login attempts:
+For example, the following configuration will ban for `2 hours` after 3 failed attempts and email the `root` user when someone gets banned from bad `ssh` login attempts:
 
 ```commandline
 [DEFAULT]
@@ -143,31 +143,117 @@ Once that modified, restart the `sendmail` server. I like to use the following c
 systemctl status sendmail
 systemctl stop sendmail
 systemctl enable sendmail
+systemctl start sendmail
 systemctl status sendmail
-systemctl stop sendmail
 ```
 
-You can try out some failed `ssh` login attempts.
+You can try out some failed `ssh` login attempts. Or if this computer is directly connected to the internet, just wait that others start to brut force attack this machine. You will be surprised about the amounts of attacks.
 
-You can make use of `mutt` as mail client. But you probably need to install this package as it is not installed by default on the majority of `GNU / Linux` systems.
+We can make use of `mutt` as mail client. But we probably need to install this package as it is not installed by default on the majority of `GNU / Linux` systems.
+
+````commandline
+apt-get install mutt
+````
 
 Here's a mail example when someone gets banned:
 
 ```commandline
-Date: Sun, 15 Aug 2021 10:11:30 +0200
-From: Fail2Ban <root@btop.home>
-To: root@btop.home
-Subject: [Fail2Ban] sshd: banned 192.168.0.54 from btop
+Date: Tue, 08 Sep 2026 19:04:47 +0200
+From: Fail2Ban <root@raspberrypi-server-4gb.home>
+To: root@raspberrypi-server-4gb.home
+Subject: [Fail2Ban] sshd: banned 164.163.10.19 from raspberrypi-server-4gb
 
 Hi,
 
-The IP 192.168.0.54 has just been banned by Fail2Ban after
-10 attempts against sshd.
+The IP 164.163.10.19 has just been banned by Fail2Ban after
+3 attempts against sshd.
 
-...
+
+Here is more information about 164.163.10.19 :
+% IP Client: 2a02:a03f:6a7f:9501:cebd:22a0:6602:df90
+
+% Joint Whois - whois.lacnic.net
+%  This server accepts single ASN, IPv4 or IPv6 queries
+
+% LACNIC resource: whois.lacnic.net
+
+
+% Copyright LACNIC lacnic.net
+%  The data below is provided for information purposes
+%  and to assist persons in obtaining information about or
+%  related to AS and IP numbers registrations
+%  By submitting a whois query, you agree to use this data
+%  only for lawful purposes.
+%  2026-09-08 17:04:47 (Z Z)
+
+inetnum:     164.163.8.0/22
+status:      allocated
+aut-num:     AS265761
+owner:       IT EXPERTS S.A
+ownerid:     PA-IESA5-LACNIC
+responsible: Luciano Maiello
+address:     Area Bancaria, 301, Edificio PH. Torre Cosmos, oficina 301
+address:     0801 - Panama City - Panama
+country:     PA
+phone:       +1 11 32100018 [2001]
+owner-c:     LUM88
+tech-c:      LUM88
+abuse-c:     LUM88
+inetrev:     164.163.8.0/24
+nserver:     NS1.US1NET.COM
+nsstat:      20260906 AA
+nslastaa:    20260906
+nserver:     NS2.US1NET.COM
+nsstat:      20260906 AA
+nslastaa:    20260906
+inetrev:     164.163.9.0/24
+nserver:     NS1.US1NET.COM
+nsstat:      20260907 AA
+nslastaa:    20260907
+nserver:     NS2.US1NET.COM
+nsstat:      20260907 AA
+nslastaa:    20260907
+inetrev:     164.163.10.0/24
+nserver:     NS1.US1NET.COM
+
+nsstat:      20260906 AA
+nslastaa:    20260906
+nserver:     NS2.US1NET.COM
+nsstat:      20260906 AA
+nslastaa:    20260906
+inetrev:     164.163.11.0/24
+nserver:     NS1.US1NET.COM
+nsstat:      20260907 AA
+nslastaa:    20260907
+nserver:     NS2.US1NET.COM
+nsstat:      20260907 AA
+nslastaa:    20260907
+created:     20170705
+changed:     20170705
+nic-hdl:     LUM88
+person:      Luciano Maiello
+e-mail:      luciano@spin18.com.br
+address:     Intershore Chambers, 1, -
+address:     VG1110 - Tortola - Road Town
+country:     VG
+phone:       +1284  17862124811 [0000]
+created:     20170316
+changed:     20230706
+
+% whois.lacnic.net accepts only direct match queries.
+% Types of queries are: POCs, ownerid, CIDR blocks, IP
+% and AS numbers.
+
+
+Lines containing failures of 164.163.10.19 (max 1000)
+
+
+Regards,
+
+Fail2Ban
 ```
 
-I have stripped out the email a bit as this is a very long email with much more information.
+By observing the data you get into you mails, you will quickly understand that these automated attacks are very smart. Probably these attacks are driven by `AI` or at least with smart scripts. Because it feels like they can understand that they are attacking a machine who has protection software. In my case, most of these attacks stops after 3 times getting banned. Then they will eventually use another `IP`.
 
 ## Check the status
 
