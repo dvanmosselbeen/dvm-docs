@@ -63,20 +63,22 @@ The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. 
 
 ### Pane Management
 
-| Command | Description |
-| --- | --- |
-| `<prefix> %` | Split screen vertically. To Create a Pane |
-| `<prefix> "` | Split screen horizontally. To Create a Pane |
-| `<prefix> <direction-arrow>` | Go to the pane, the direction which you selected with the arrow key. |
-| `<prefix> <direction-arrow> (and keep ctrl pressed`) | To resize the pane, to the direction which you selected with the arrow key. |
-| `<prefix> z` | Zoom + maximalise a pane. Super super handy!!! `<prefix> z` back to un zoom like it was. |
-| `<prefix> q` | Show pane numbers, used to switch between panes. |
-| `<prefix> o` | Switch to the next pane. |
-| `<prefix> x` | Close pane without confirmation. |
-| `<prefix> b` | Break-pane, to make a pane its own window. |
-| `<prefix> %` | Split the window vertically. |
-| `<prefix> {` | Move the current pane left or up. |
-| `<prefix> }` | Move the current pane right or down. |
+| Command                                                  | Description                                                                              |
+|----------------------------------------------------------|------------------------------------------------------------------------------------------|
+| `<prefix> %`                                             | Split screen vertically. To Create a Pane                                                |
+| `<prefix> "`                                             | Split screen horizontally. To Create a Pane                                              |
+| `<prefix> <direction-arrow>`                             | Go to the pane, the direction which you selected with the arrow key.                     |
+| `<prefix> <direction-arrow> (and keep ctrl pressed`)     | To resize the pane, to the direction which you selected with the arrow key by 1 cell.    |
+| `<prefix> ALT <direction-arrow> (and keep ctrl pressed`) | To resize the pane, to the direction which you selected with the arrow key by 5 cell.    |
+| `<prefix> z`                                             | Zoom + maximalise a pane. Super super handy!!! `<prefix> z` back to un zoom like it was. |
+| `<prefix> q`                                             | Show pane numbers, used to switch between panes.                                         |
+| `<prefix> o`                                             | Switch to the next pane.                                                                 |
+| `<prefix> x`                                             | Close pane without confirmation.                                                         |
+| `<prefix> b`                                             | Break-pane, to make a pane its own window.                                               |
+| `<prefix> %`                                             | Split the window vertically.                                                             |
+| `<prefix> {`                                             | Move the current pane left or up.                                                        |
+| `<prefix> }`                                             | Move the current pane right or down.                                                     |
+| `<prefix> &`                                             | Kill the current window.                                                                 |
 
 ## Additional tips for the tmux.conf file
 
@@ -89,7 +91,6 @@ Sometimes it can be handy to have multiples config files. It can be also handy t
 A quick and easy way to load up `tmux` default config settings is by creating a blank `tmux` config file and load this one when starting `tmux`.
 
 ````commandline
-touch 
 tmux -f ~/.tmux.conf.empty
 ````
 
@@ -97,15 +98,32 @@ tmux -f ~/.tmux.conf.empty
 
 ```
 # add to ~/.tmux.conf
+
+set -g prefix2 C-a                        # GNU-Screen compatible prefix
+
 bind | split-window -h
 bind - split-window -v
+
+# pane navigation
+bind -r h select-pane -L  # move left
+bind -r j select-pane -D  # move down
+bind -r k select-pane -U  # move up
+bind -r l select-pane -R  # move right
+bind > swap-pane -D       # swap current pane with the next one
+bind < swap-pane -U       # swap current pane with the previous one
+
+# pane resizing
+bind -r H resize-pane -L 2
+bind -r J resize-pane -D 2
+bind -r K resize-pane -U 2
+bind -r L resize-pane -R 2
 ```
 
 See my example [DOTtmux.conf](files/DOTtmux.conf) and [DOTtmux.conf.local](files/DOTtmux.conf.local) configuration files which can be used.
 
 ## Copy and paste
 
-If you make use of the config file of: https://github.com/gpakosz/.tmux the `~/.tmux.conf` has already been set up and you only need to install `xclip` and also `powerline` to make use of the fancy font graphics:
+If you make use of the config file of: <https://github.com/gpakosz/.tmux> the `~/.tmux.conf` has already been set up, and you only need to install `xclip` and also `powerline` to make use of the fancy font graphics:
 
     sudo apt-get install xclip powerline
 
