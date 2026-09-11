@@ -25,7 +25,7 @@ I Installed `rsnapshot` on a `Raspberry Pi 4 with 4GB RAM`. My `Raspberry Pi` in
 Installing is as easy as:
 
 ````commandline
-sudo apt-get install rsnapshot
+apt-get install rsnapshot
 ````
 Once installed, test it:
 
@@ -69,7 +69,7 @@ The configuration file is pretty clear with all the comments. The backups will b
 
 The moment and the numbers of backups are defined with the following:
 
-````commandline
+````editorconfig
 retain alpha   6
 retain beta    7
 retain gamma   4
@@ -79,7 +79,7 @@ Maybe the `alpha`, `beta`, `gamma`, `delta` stuff isn't clear maybe at first ins
 
 I changed it to this:
 
-````commandline
+````editorconfig
 # WARNING: Use tabs and NOT spaces.
 retain  hourly   6
 retain  daily    7
@@ -87,20 +87,47 @@ retain  weekly   4
 retain monthly   3
 ````
 
-We now need to specify the backup points, what we want to back up. We can choose the local directories as well as on a remote computer. We will keep it simple for now in this document. We also make use of the `backup_dpkg.sh` script that is available in the examples of `rsnapshot`. This will make a list of all the installed applications.
+If we plan to make backups of remote computers, then we need to uncomment `cmd_ssh`.
 
-````commandline
+````editorconfig
+# Uncomment this to enable remote ssh backups over rsync.
+#
+cmd_ssh /usr/bin/ssh
+````
+
+We now need to specify the backup points, what we want to back up. We can choose the local directories as well as on a remote computer. We will keep it simple for now in this document. We also make use of the `backup_dpkg.sh` script that is available in the examples of `rsnapshot`. This will make a list of all the installed applications. But note that this only work locally, not on a remote computer, even if that script is available on that remote computer.
+
+````editorconfig
 ###############################
 ### BACKUP POINTS / SCRIPTS ###
 ###############################
 # WARNING: Use tabs and not spaces
 
-# LOCALHOST
+#################
+### LOCALHOST ###
+#################
 backup_script   /usr/share/doc/rsnapshot/examples/utils/backup_dpkg.sh  localhost/dpkg/
 backup          /home/          localhost/
 backup          /etc/           localhost/
 backup          /usr/local/     localhost/
+backup          /var/www/html/  localhost/
+#################
+                                                                    
+#####################################
+### REMOTE BACKUPS ARE BELOW HERE ###
+#####################################
+                                                                    
+#########################
+### rasppi-8gb-ubuntu ### 
+#########################
+#backup_script  root@rasppi-8gb-ubunntu:/usr/share/doc/rsnapshot/examples/utils/backup_dpkg.sh  rasppi-8gb-ubuntu/dpkg/
+backup  root@rasppi-8gb-ubuntu:/home/                   rasppi-8gb-ubuntu/
+backup  root@rasppi-8gb-ubuntu:/etc/                    rasppi-8gb-ubuntu/
+backup  root@rasppi-8gb-ubuntu:/usr/local/              rasppi-8gb-ubuntu/
+#########################
 ````
+
+Note that, if you want to make remote backups, you need a ssh server running on the remote host. Also, you need to be able to log in remotely with ssh keys and without password.
 
 You can get my full [/etc/rsnapshot.conf](files/rsnapshot.conf) here.
 
