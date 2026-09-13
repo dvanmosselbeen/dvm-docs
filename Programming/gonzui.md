@@ -1,14 +1,26 @@
 # Gonzui
 
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Setup](#setup)
+  - [Config](#config)
+  - [Creating the needed directories and files](#creating-the-needed-directories-and-files)
+- [Import stuff to the database](#import-stuff-to-the-database)
+- [Updating the info](#updating-the-info)
+- [Starting the server](#starting-the-server)
+- [Remove some stuff](#remove-some-stuff)
+- [Additional notes](#additional-notes)
+
 ## Introduction
 
-`gonzui` is useful for programmers. With a web browser you can easy see the source code of your projects, get some documentation of functions, classes or parts of codes. And also see where these functions are used. You can also do a search. It's also and a nice toy to show your code to people, each line have an anchor, so you can give any URL link that point to each line of code.
+`gonzui` is useful for programmers. With a web browser you can easily see the source code of your projects, get some documentation of functions, classes or parts of codes. And also see where these functions are used. You can also do a search. It's also a nice toy to show your code to people, each line have an anchor, so you can give any URL link that point to each line of code.
 
-You can easy import an `apt` source of a package or `cvs` or `svn`(`subversion`) reposition. `gonzui` is an ideal tool if you want to learn the code of someone or for big projects.
+You can easily import an `apt` source of a package or `cvs` or `svn`(`subversion`) reposition. `gonzui` is an ideal tool if you want to learn the code of someone or for big projects.
 
 ## Setup
 
-I have made a custom setup, like i not want to run the stuff as root user and that the stuff are located in the `/var/...`. So i have a bit modified the default config file and i have place the stuff in my home directory. My goal is to create a user account only for that task and let `gozui` running as that user account. With some `cron` job.
+I have made a custom setup, like I do not want to run the stuff as `root` user and that the stuff is located in the `/var/...`. So I have modified a bit the default config file, and I have placed the stuff in my home directory. My goal is to create a user account only for that task and let `gonzui` running as that user account. With some `cron` job.
 
 ### Config
 
@@ -16,7 +28,7 @@ We first need to copy the config example to his own home directory.
 
     cp /etc/gonzuirc.sample ~/.gonzuirc
 
-I have change the paths in the `~/.gonzuirc`, like i want to run it with an user that not have root privileges and also that the different stuff are logged in my home. I have also add some stuff to exclude in 'exclude_pattern'. Here my '~/.gonzuirc':
+I have changed the paths in the `~/.gonzuirc`, like I want to run it with a user that not have `root` privileges and also that the different stuff are logged in my home. I have also added some stuff to exclude in `exclude_pattern`. Here my `~/.gonzuirc`:
 
     {
       :access_log_file          => "/home/david/.gonzui/log/gonzui/access.log",
@@ -51,7 +63,7 @@ I have change the paths in the `~/.gonzuirc`, like i want to run it with an user
 
 ### Creating the needed directories and files
 
-We now need to create some directories and some files. Like i move the stuff to my home directory:
+We now need to create some directories and some files. Like I move the stuff to my home directory:
 
     mkdir -p ~/.gonzui/var/log/gonzui/
     touch ~/.gonzui/var/log/gonzui/gonzui.log
@@ -65,20 +77,20 @@ We now need to create some directories and some files. Like i move the stuff to 
 
 We now need to import some stuff we want. Usually we import the different directories that contains the different files of the project. Maybe some time we only want to import some specific files.
 
-I don't know why at this stage why i need to provide the database path. We only need to specify it the first time we use the 'gonzui-import'.
+I don't know why at this stage why I need to provide the database path. We only need to specify it the first time we use the `gonzui-import`.
 
     gonzui-import /home/david/python/abuse_reporter/ \
       -d /home/david/.gonzui/var/spool/gonzui/gonzui.db
 
-Note: The path /home/david/python/abuse_reporter/ contains some python files. The is to split the long line into two little lines.
+Note: The path `/home/david/python/abuse_reporter/` contains some python files. The is to split the long line into two little lines.
 
     gonzui-import /home/david/python/abuse_reporter/
 
-Importing from a svn repo:
+Importing from a `svn` repo:
 
     gonzui-import --svn file:///home/david/svn_files/pyguicms/ trunk
 
-While experimenting with 'gonzui', you probably want to import some stuff then remove it again, playing a bit with the new toy. Let's write a little script to import the diferent paths/files. Take for example: We fill a file that contain all the directories or files we want to import. Let's make a little script that will automate the import procedure:
+While experimenting with `gonzui`, you probably want to import some stuff then remove it again, playing a bit with the new toy. Let's write a little script to import the different paths/files. Take for example: We fill a file that contain all the directories or files we want to import. Let's make a little script that will automate the import procedure:
 
 ```python
 #!/usr/bin/env python
@@ -95,7 +107,7 @@ for line in open(importFile):
         os.popen('gonzui-import %s' % (line))
 ```
 
-Maybe put this script in your ~/bin to have it included in your path directory. So that you can execute this script from anywhere on your computer with your user. I have place this script in my '~/bin' and have call it gonzui_mass_importer. Without the '.py' extension.
+Maybe put this script in your `~/bin` to have it included in your path directory. So that you can execute this script from anywhere on your computer with your user. I have place this script in my `~/bin` and have called it `gonzui_mass_importer`. Without the `.py` extension.
 
 Make the script executable for everyone:
 
@@ -117,17 +129,17 @@ Here's an example of what my file `/home/david/to_import_gonzui`:
     -a foff
     -a cedar-backup2
 
-Then run it as following from where you are in the cli, the script should be are accessible with the tab autocompletion too:
+Then run it as following from where you are in the cli, the script should be being accessible with the tab autocompletion too:
 
     gonzui_mass_importer
 
-Most time, when i want to import some stuff to gonzui. I add it in the to_import_file. Especially for the apt, cvs, svn imports.
+Most of the time, when I want to import some stuff to `gonzui`. I add it in the `to_import_file`. Especially for the `apt`, `cvs`, `svn` imports.
 
-We can at any moment re run us self made script, after we have added a new import path. The stuff that are already imported will be skipped. So the next time you run us script, it will go many faster as the first time we have run it.
+We can at any moment re-run our self-made script, after we have added a new import path. The stuff that are already imported will be skipped. So the next time you run our script, it will go much faster as the first time we have run it.
 
 ## Updating the info
 
-If we modify some stuff in the source code, we need to update the gonzui database with 'gonzui-update'. Each time we the source code is modified, and want to see the changes in gonzui, we need to update the database. Maybe is it interesting to make a cron job to automate the task.
+If we modify some stuff in the source code, we need to update the `gonzui` database with `gonzui-update`. Each time when the source code is modified, and want to see the changes in `gonzui`, we need to update the database. Maybe is it interesting to make a cron job to automate the task.
 
     $ gonzui-update
     0 contents of 0 packages updated in 0.01 sec. (0.00 contents / sec.)
@@ -136,7 +148,7 @@ Note: It's just if we add some more source to the stuff.
 
 ## Starting the server
 
-Once everything is configured and some stuff is been imported, we can start the server. Not that it was needed to import some stuff before starting the server.
+Once everything is configured and some stuff has been imported, we can start the server. Not that it was needed to import some stuff before starting the server.
 
 You can still import some stuff, update your source code, update the database while the server is running.
 
@@ -154,4 +166,4 @@ We not need to execute `gonzui-update` after remove some stuff. It's directly ta
 
 ## Additional notes
 
-If we have some weird characters in us path, `gonzui` will crash. Better to avoid weird characters. If you look to your path and see a `?` character in it. Modify the directory of the file!
+If we have some weird characters in our path, `gonzui` will crash. Better to avoid weird characters. If you look to your path and see a `?` character in it. Modify the directory of the file!
