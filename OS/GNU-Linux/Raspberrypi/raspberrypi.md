@@ -13,6 +13,7 @@
 - [Using the Raspberry Pi Model 3 or 4 for the first time](#using-the-raspberry-model-3-or-4-for-the-first-time)
 - [Updating the Raspberry Pi Operating System](#updating-the-raspberry-pi-operating-system)
 - [Cleaning up stuff](#cleaning-up-stuff)
+- [Mounting external storage](#mounting-external-storage)
 - [Recommended software and setup](#recommended-software-and-setup)
 - [Recommended hardware for the Raspberry Pi](#recommended-hardware-for-the-raspberry-pi)
   - [Case and fan](#case-and-fan)
@@ -83,7 +84,7 @@ Note, depending on the speed of the `Micro SD` card, as well as the card reader,
 
 ## Differences between Raspberry Pi models
 
- - Note that there are different revisions of the `Raspberry Pi 4 Model B`. I have 2 different revisions of the `4th` generation, and the CPU speed is different. One is `BCM2711 (4) @ 1.50 GHz` (has `4GB RAM`) and the other `BCM2711 (4) @ 1.80 GHz` (has `8GB RAM`). The `8GB RAM` was released at a later time to the public. From what I understood, now all the newer `Raspberry Pi 4 Model B` are at `1.8GHz`.
+ - Note that there are different revisions of the `Raspberry Pi 4 Model B`. I have 2 different revisions of the `4th` generation, and the CPU speed is different. One is `BCM2711 (4) @ 1.50 GHz` (has `4GB RAM`) and the other `BCM2711 (4) @ 1.80 GHz` (has `8GB RAM`). The `8GB RAM` was released at a later time to the public. From what I understood, now all the newer `Raspberry Pi 4 Model B` are at `1.8GHz`. You can get more information about the `CPU` with the command `lscpu`.
  - The cases of the `Raspberry Pi 3` is not compatible with `Model 4` as well as the `Model 5` are all different. It's mainly due the ports not at the same places.
 
 `CPU` Specific information:
@@ -199,6 +200,10 @@ apt autoremove
 ````
 
 After a fresh installation on a `Raspberry Pi 4 Model B`, I passed from `8.6G` to `6.7G`.
+
+## Mounting external storage
+
+See <https://www.raspberrypi.com/documentation/computers/configuration.html#external-storage>
 
 ## Recommended software and setup
 
@@ -455,6 +460,7 @@ In my case, I use 1 `Raspberry Pi` box for the following things:
   - <https://github.com/ethanjli/picamera-mqtt>
 - Web server setup (Apache, PHP, MySQL, PHPMyAdmin) - <https://raspberrytips.com/web-server-setup-on-raspberry-pi/>
 - Installing MariaDB (the equivalent of MySQL) - <https://raspberrytips.com/install-mariadb-raspberry-pi/>
+- [Flask](https://flask.palletsprojects.com/en/stable/quickstart/#) Web projects.
 - Check to install a OpenVPN server - <https://raspberrytips.com/install-openvpn-raspberry-pi/>
 - Wireguard, the new modern, easier, more secure alternative of `OpenVPN` - <https://raspberrytips.com/install-wireguard-raspberry-pi/>
 - NAS server - <https://raspberrytips.com/nas-guide-raspberry-pi/>
@@ -494,6 +500,7 @@ In my case, I use 1 `Raspberry Pi` box for the following things:
 | Link                                  | Description                                                        |
 |---------------------------------------|--------------------------------------------------------------------|
 | <https://www.raspberrypi.org>         | The official website of the `Raspberry PI` project.                |
+| <https://www.raspberrypi.com/documentation/>         | The official documentation of Raspberry Pi.                        |
 | <https://www.raspberrypi.org/forums/> | The official forum.                                                |
-| <https://raspberrytips.com>           | Tons of articles with tips and trips for `Raspberry Pi`.             |
+| <https://raspberrytips.com>           | Tons of articles with tips and trips for `Raspberry Pi`.           |
 | <https://projects.raspberrypi.org>    | Various projects with their description and detailed instructions. |
