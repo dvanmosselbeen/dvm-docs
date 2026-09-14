@@ -127,7 +127,7 @@ backup  root@rasppi-8gb-ubuntu:/usr/local/              rasppi-8gb-ubuntu/
 #########################
 ````
 
-Note that, if you want to make remote backups, you need a ssh server running on the remote host. Also, you need to be able to log in remotely with ssh keys and without password.
+Note that, if you want to make remote backups, you need an ssh server running on the remote host. Also, you need to be able to log in remotely with ssh keys and without password.
 
 You can get my full [/etc/rsnapshot.conf](files/rsnapshot.conf) here.
 
@@ -147,10 +147,10 @@ Syntax OK
 We can now do a dry run with the command:
 
 ````commandline
-rsnapshot -t daily
+rsnapshot -t hourly
 ````
 
-Which return:
+It returns this:
 
 ````commandline
 echo 8553 > /var/run/rsnapshot.pid
@@ -337,7 +337,7 @@ Files /var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf and /var/cache/r
 
 The previous output is very confusing especially the mention of the `mtab` and `os-release` files not there.
 
-Finally check the difference of the file `/var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf`:
+Finally, check the difference of the file `/var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf`:
 
 ````commandline
 root@raspberrypi-server-4gb:/home/dvanmosselbeen# diff /var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf /var/cache/rsnapshot/alpha.1/localhost/etc/rsnapshot.conf
