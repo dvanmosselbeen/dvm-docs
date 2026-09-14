@@ -1,5 +1,12 @@
 # The find command
 
+## Table of Contents
+
+- [Start finding](#start-finding)
+- [Be more specific](#be-more-specific)
+- [Know exactly what you're looking for](#know-exactly-what-youre-looking-for)
+- [Have you found it?](#have-you-found-it)
+
 The data essentially come from the [thefindcommand](https://tryhackme.com/room/thefindcommand) of the TryHackMe room. With some additional and detailed info for the exercises.
 
 Source: <https://tryhackme.com/room/thefindcommand>
