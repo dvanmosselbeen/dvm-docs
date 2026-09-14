@@ -80,7 +80,7 @@ banaction_allports = nftables[type=allports]
 
 ignoreip = 127.0.0.0
 bantime  = 2h
-findtime  = 2h
+findtime  = 48h
 destemail = root@localhost
 sender = root@localhost
 sendername = Fail2ban
@@ -98,7 +98,8 @@ bantime.increment = true
 
 In this configuration example:
 
-- An IP will be banned for `2` hours (`bantime`) after `3` failed attempts within `2` hours (`findtime`), which is fine and should kick away all bots. If you still get annoyed, increase the ban time and all will be fine.
+- An `IP` will be banned for `2` hours (`bantime`) after `3` failed attempts within `48` hours (`findtime`), which is fine and should kick away a few automated bots. If you still get annoyed, increase the `bantime` and `findtime` value and all will be fine. For example, I dare to set `bantime = 6h` and `findtime = 7d` because I'm getting annoyed to receive as average of 60 mails about the script kiddies.
+- `findtime = 48h` - Time  interval  (in seconds or time abbreviation format) before the current time where failures will count towards a ban.
 - It is also wise to adjust the `ignoreip` to your needs. As I have physical access in this case, I will keep it this way. We never know if some hacker could pivot into our network and use one of our own systems to attack our servers.
 - The `bantime.increment = true`, will make in sort that next time, after the `ip` get unbanned, if bad attempts are made again from this `ip`, the ban time will be multiplied by 2 (default it's times 2)
 - An email will be sent to `root@localhost`.
