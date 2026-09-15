@@ -10,6 +10,8 @@
 
 Powerful and featureful web server log analyzer. With a web interface you can see all the statistics.
 
+This setup has been tested on: `Debian Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
+
 ## Installation and configuration
 
 Installing awstats is a matter of:
@@ -24,7 +26,7 @@ Now we need to edit the `/etc/awstats/awstats.conf` configuration file. At least
 SiteDomain="raspberrypi-servergb.home-"
 ````
 
-But after this all, still getting a mail send to `root` user with this information:
+But after this all, still getting a mail send to `root` user with this information as there is a problem:
 
 ````editorconfig
 Date: Sun, 13 Sep 2026 19:20:01 +0200
@@ -41,9 +43,7 @@ Setup ('/etc/awstats/awstats.conf' file, web server or permissions) may be wrong
 Check config file, permissions and AWStats documentation (in 'docs' directory).
 ````
 
-When we look to the logs of apache with `ls -lah /var/log/apache2/`, we can see that only `root` user can read these logs.
-
-When checking the `awstats` cron task `/etc/cron.d/awstats`, we can see that the tasks are executed as `www-data` user. So I changed this to `root` user and the configuration file now looks like this:
+When checking the `awstats` cron task in `/etc/cron.d/awstats`, we can see that the tasks are executed as `www-data` user. The cron task configuration file looks like this:
 
 ````editorconfig
 */10 * * * * www-data [ -x /usr/share/awstats/tools/update.sh ] && /usr/share/awstats/tools/update.sh
@@ -52,9 +52,21 @@ When checking the `awstats` cron task `/etc/cron.d/awstats`, we can see that the
 10 03 * * * www-data [ -x /usr/share/awstats/tools/buildstatic.sh ] && /usr/share/awstats/tools/buildstatic.sh
 ````
 
+When we look to the logs of apache with `ls -lah /var/log/apache2/`, we can see that only `root` user can read these logs. Users of the `adm` group can read only. But the `www-data` user is not part of the `adm` group so far.
+
+````commandline
+-rw-r----- 1 root adm 369K Sep 15 17:57 /var/log/apache2/access.log
+````
+
+We need to give `www-data` the `admin` rights to read that `apache2` log, so we can add `www-data` user to the `adm` group with the following command:
+
+````commandline
+adduser www-data adm
+````
+
 Now I'm not getting any email send to `root` user. So I guess it's okay, we need to wait until tomorrow to see if the files have been generated as apparently this will happen somewhere during the night.
 
-The files seem to be created here:
+The files seem to be created here. But note that it can take some time before they are generated:
 
 ````commandline
  /var/cache/awstats/awstats/
@@ -69,7 +81,6 @@ nano /etc/apache2/conf-available/awstats.conf
 And add the following content:
 
 ````commandline
-# create new
 Alias /awstats-icon/ /usr/share/awstats/icon/
 Alias /awstatsclasses/ /usr/share/java/awstats/
 
@@ -77,9 +88,11 @@ Alias /awstatsclasses/ /usr/share/java/awstats/
     Options FollowSymLinks
     AllowOverride None
     # access permission for your local network
-    Require ip 127.0.0.1 10.0.0.0/24
+    #Require ip 127.0.0.1 10.0.0.0/24
 </Directory>
 ````
+
+*The previous configuration has the `Require ip` commented, as you can specify to only allow the pictures to be loaded from that ip or ip range. But here in this context it does not make any sense as `awstats` is accessible to everyone anyway.* 
 
 We now need to enable this configuration:
 
@@ -115,7 +128,7 @@ Then restart the `apache 2` server:
 systemctl restart apache2
 ````
 
-Then we can visit `awstats` on the following address, (but the pictures are not loaded): <http://localhost/cgi-bin/awstats.pl>
+Then we can visit `awstats` on the following address: <http://localhost/cgi-bin/awstats.pl>
 
 ## Resources
 
