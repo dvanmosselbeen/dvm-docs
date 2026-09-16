@@ -23,7 +23,7 @@ apt-get install awstats libgeo-ipfree-perl
 Now we need to edit the `/etc/awstats/awstats.conf` configuration file. At least the `SiteDomain` is mandatory to set or `awstats` will fail when it does it's cron job and `root` user will receive a system email. The `cron job` is run every `10 minutes`.
 
 ````editorconfig
-SiteDomain="raspberrypi-servergb.home-"
+SiteDomain="raspberrypi-servergb.home"
 ````
 
 But after this all, still getting a mail send to `root` user with this information as there is a problem:
