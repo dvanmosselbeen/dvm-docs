@@ -17,6 +17,8 @@
 
 `Apache` is probably the most used web server. It's rock solid, well documented and has a great user base and support. 
 
+This setup has been tested on: `Debian 13 codename Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
+
 ## Installing and configuring Apache2
 
 ### Installing Apache2
@@ -52,10 +54,29 @@ Enabling `userdir` will allow all users to have their own website in `~/public_h
 a2enmod userdir
 ````
 
+We can check the userdir configuration file:
+
+````commandline
+nano /etc/apache2/mods-available/userdir.conf 
+````
+
+By default it will server `public_html` directory, we can change the directory name if we want:
+
+````editorconfig
+UserDir public_html
+UserDir disabled root
+
+<Directory /home/*/public_html>
+        AllowOverride FileInfo AuthConfig Limit Indexes
+        Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+        Require method GET POST OPTIONS
+</Directory>
+````
+
 By default, `PHP` is not enabled for `userdir`. If you want to allow `userdir` to allow using `PHP`, change the following:
 
 ````commandline
-nano /etc/apache2/mods-enabled/php7.3.conf
+nano /etc/apache2/mods-enabled/php8.4.conf
 ````
 
 *Note that the `PHP` version will be probably different.*
@@ -94,7 +115,44 @@ Restart the `apache2` server:
     
     systemctl restart apache2
 
-**NOTE: This still now work. I have created the directory `~/public_html/` and created a basic `index.html` file but no success. I keep getting the error `403: Forbidden`. I have tried just to turn on the `php_admin_flag engine On` but no success either. No idea what's happening. I have the same issues on a plain `Raspberry Debian` and `Ubuntu` version.**
+We can not create a test file:
+
+````commandline
+mkdir ~/public_html
+echo "UserDir test page" > ~/public_html/index.html
+````
+
+**NOTE: This still now work. I have created the directory `~/public_html/` and created a basic `index.html` file with read access on folder and file but still no success. I keep getting the error `403: Forbidden`. I have tried just to turn on the `php_admin_flag engine On` but no success either. No idea what's happening. I have the same issues on a plain `Raspberry Debian` and `Ubuntu` version.**
+
+Info from here: <https://jhx7.de/blog/set-up-apache-with-userdir-and-php/>
+
+If we set the execute mode on the home directory (not only the `~/public_html/`), then it works:
+
+````commandline
+sudo chmod +x /home/<USERNAME>/
+````
+
+Then it's working like expected!
+
+**Attention:** This might be a **security issue**!
+Think about this before blindly copy pasting the command*. You can always change the location and name of the userdir!
+
+**Need to check what exactly this has as impact by `chmod +x ~/<USERNAME>`. I believe that without the home being executable, nobody can enter the user directory, and thus not read all content underneath. By setting the home directory executable, everyone on the system can go inside that directory and read all other files recursively that are set as readable. By default, almost all files are readable by anyone under the home directory. So yes, this could be a serious security risk. Now we probably need to make in sort that all files underneath the home directory is not readable by normal users. Also, when creating new files in the home directory, we need to be sure it is not readable by the other users.**
+
+**As in this current situation, that the home directory is executable and all files underneath readable by other users, I suggest creating a specific and dedicated user for serving files under the `~/public_html`. Then eventually, you can add you main accond as member of the group of that dedicated created user account.**
+
+*In case you executed the `chmod +x /home/<USERNAME>/` and you want to revert it back like it was, then you probably want to execute `chmod go-x /home/<USERNAME>/` to remove the executable bit for group and the other users.*
+
+Now we can also test if `PHP` is working for the user with `userdir`. For this create a `PHP` test file with the following content in `~/test.php`.
+
+````commandline
+<?php
+
+phpinfo();
+?>
+````
+
+Go check a <http://localhost/~USERNAME/test.php> and it should work.
 
 ## Enable https
 
@@ -200,12 +258,12 @@ And like said, we still get the non trust warning. If we check the certification
 
 ## Tools
 
-| Application | Description |
-|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| apachetop | Realtime Apache monitoring tool |
-| awffull | web server log analysis program forked from `Webalizer`. It adds a number of new features and improvements, such as extended frontpage history, resizable graphs, and a few more pie charts. See the dedicated [awffull](awffull.md) page. |
-| awstats | powerful and featureful web server log analyzer. See the dedicated [awstats](awstats.md) page. |
-| webalizer | web server log analysis program. (probably the oldes program, take a look to awffull or awstats. |
+| Application | Description                                                                                                                                                                                                                                |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `apachetop` | Realtime Apache monitoring tool                                                                                                                                                                                                            |
+| `awffull` | web server log analysis program forked from `Webalizer`. It adds a number of new features and improvements, such as extended frontpage history, resizable graphs, and a few more pie charts. See the dedicated [awffull](awffull.md) page. |
+| `awstats` | powerful and featureful web server log analyzer. See the dedicated [awstats](awstats.md) page.                                                                                                                                             |
+| `webalizer` | web server log analysis program. (probably the oldest program, take a look to awffull or awstats.                                                                                                                                          |
 
 ## TODO 
 

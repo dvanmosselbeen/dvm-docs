@@ -18,6 +18,8 @@ It is in my opinion an app that has to be installed on every `GNU / Linux` machi
 
 You might think that you don't need backups, but it can be very handy even just to save your configuration files. This backup system does only take like a very small amount of diskspace, so it's really worth to install and configure.
 
+This setup has been tested on: `Debian 13 codename Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
+
 ## Installation
 
 I Installed `rsnapshot` on a `Raspberry Pi 4 with 4GB RAM`. My `Raspberry Pi` installation is a standard Operating System from `Raspberry` itself, so it's based on `Debian GNU / Linux`. The instructions here should apply for any `GNU / Linux` derivation based on `Debian`.

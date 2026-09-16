@@ -6,7 +6,7 @@ Set up aliases:
 
     /etc/aliases
 
-To be run when /etc/aliases has been modified:
+To be run as `root` user when `/etc/aliases` has been modified:
 
     newaliases
 

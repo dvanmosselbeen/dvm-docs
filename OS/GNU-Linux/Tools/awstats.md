@@ -10,7 +10,7 @@
 
 Powerful and featureful web server log analyzer. With a web interface you can see all the statistics.
 
-This setup has been tested on: `Debian Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
+This setup has been tested on: `Debian 13 codename Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
 
 ## Installation and configuration
 
@@ -135,3 +135,4 @@ Then we can visit `awstats` on the following address: <http://localhost/cgi-bin/
 - <https://www.server-world.info/en/note?os=Debian_13&p=httpd2&f=3>
 - <https://wiki.herzbube.ch/wiki/AWStats>
 - <https://kb.shells.com/tutorials/Debian_Latest/AWStats/>
+- <https://www.linuxtuto.com/how-to-install-awstats-with-apache-on-debian-12/>

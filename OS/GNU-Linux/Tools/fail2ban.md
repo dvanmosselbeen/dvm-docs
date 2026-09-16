@@ -15,6 +15,8 @@
 
 Note that `fail2ban` is way more powerful than just looking for failed `ssh` logins. By default, it will look for failed login attempts for web (`apache`) services, `ftp` and so on.
 
+This setup has been tested on: `Debian 13 codename Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
+
 ## Installation of fail2ban
 
 Installing `fail2ban` is very easy.

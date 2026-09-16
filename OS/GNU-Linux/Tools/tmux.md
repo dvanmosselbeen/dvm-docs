@@ -19,7 +19,9 @@
 
 `tmux` is a terminal multiplexer, like the [screen](screen.md) application, but `tmux` has more features and is a younger project.
 
-The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. It is better to talk about `<prefix>` instead of `ctrl+b` as you can bind whatever key as `<prefix>`. You can also have more than one `<prefix>` key assigned. Which is my case, i have the `screen` style binding too, which is `ctrl+a`. Personally, I find `ctrl+a` more practical. From what I have read, it ended up `ctrl+b` to not clash with the `screen` `<preffix>` keybinding as `tmux` was developed inside `screen`.
+The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. So when there is noted for example `<prefix> c`, this means to press `ctrl+b`, releasing these keys, followed by a `c` press. It is better to talk about `<prefix>` instead of `ctrl+b` as you can bind whatever key as `<prefix>`. You can also have more than one `<prefix>` key assigned. Which is my case, I have the `screen` style binding too, which is `ctrl+a`. Personally, I find `ctrl+a` more practical. From what I have read, it ended up `ctrl+b` to not clash with the `screen` `<preffix>` keybinding as `tmux` was developed inside `screen`.
+
+This setup has been tested on: `Debian 13 codename Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
 
 ## Cheat Sheet
 
@@ -59,7 +61,7 @@ The `<prefix>` key is the base command in `tmux`. By default, this is `ctrl+b`. 
 | `<prefix> p` | Go to previous window |
 | `<prefix> <digit-number>` | Where `<digit-number>` is the window (tab number) 0-9. |
 | `<prefix> d` | To detach the session. the session will stay alive and you can reconnect it |
-| `<prefix> &` | Kill (close) current winndow. |
+| `<prefix> &` | Kill (close) current window. |
 
 ### Pane Management
 

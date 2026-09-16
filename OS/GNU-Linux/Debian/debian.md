@@ -19,6 +19,8 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
   - [aptitude](#aptitude)
 - [Admin commands](#admin-commands)
 - [Interesting packages](#interesting-packages)
+  - [For Users](#for-users)
+  - [For Administrators](#for-administrators)
 - [Packages I install on each desktop](#packages-i-install-on-each-desktop)
 - [Server tools](#server-tools)
   - [SSH Server](#ssh-server) 
@@ -193,7 +195,27 @@ Just by running the command `aptitude`, you will start the `UI` interface.
 
 ## Interesting packages
 
-A few very interesting package which should be almost installed on every system
+A few very interesting package:
+
+### For users
+
+| Application           | Description                                                                                                                                                                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `screen`              | See the dedicated [screen](../Tools/screen.md) page. But you probably want to look for the `tmux` tool                                                                                                                              |
+| `tmux`                | See the dedicated [tmux](../Tools/tmux.md) page.                                                                                                                                                                                    |
+| `mc`                  | Midnight Commander - a powerful file manager                                                                                                                                                                                        |
+| `irssi`               | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please! See the dedicated [irssi](../Tools/irssi.md) page. |
+| `xclip`               | command line interface to X selections                                                                                                                                                                                              |
+| `mutt`                | text-based mailreader supporting MIME, GPG, PGP and threading                                                                                                                                                                       |
+| `sqlitebrowser`       | GUI editor for SQLite databases                                                                                                                                                                                                     |
+| `vim`                 | Vi IMproved - enhanced vi editor. See the dedicated [vim](../Tools/vim.md) page.                                                                                                                                                    |
+| `vim-gtk3`            | Vi IMproved - enhanced vi editor - with GTK3 GUI                                                                                                                                                                                    |
+| `vim-python-jedi`     | autocompletion tool for Python - VIM addon files                                                                                                                                                                                    |
+| `unp`                 | unpack (almost) everything with one command                                                                                                                                                                                         |
+| `fastfetch`           | neofetch-like tool for fetching system information                                                                                                                                      |
+
+
+### For Administrators
 
 | Application           | Description                                                                                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -202,39 +224,37 @@ A few very interesting package which should be almost installed on every system
 | `apt-listbugs`        | tool which lists critical bugs before each APT installation                                                                                                                                                                         |
 | `apt-reportbug`       | reports bugs in the Debian distribution                                                                                                                                                                                             |
 | `net-tools`           | Contains essential networking tools such as arp, ifconfig, netstat, route and more.                                                                                                                                                 |
-| `screen`              | See the dedicated [screen](../Tools/screen.md) page. But you probably want to look for the `tmux` tool                                                                                                                              |
-| `tmux`                | See the dedicated [tmux](../Tools/tmux.md) page.                                                                                                                                                                                    |
 | `htop`                | interactive processes viewer                                                                                                                                                                                                        |
 | `iftop`               | Observe the flows on your network interfaces                                                                                                                                                                                        |
-| `mc`                  | Midnight Commander - a powerful file manager                                                                                                                                                                                        |
 | `tightvncserver`      | virtual network computing server software                                                                                                                                                                                           |
-| `irssi`               | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please! See the dedicated [irssi](../Tools/irssi.md) page. |
 | `fail2ban`            | Some security tools that watch the (abusive) login attempts and take action. See the dedicated [fail2ban](../Tools/fail2ban.md) page.                                                                                               |
-| `xclip`               | command line interface to X selections                                                                                                                                                                                              |
 | `rsnapshot`           | local and remote filesystem snapshot utility. A backup system. See the dedicated [rsnapshot](../Tools/rsnapshot.md) page.                                                                                                           |
 | `uptimed`             | daemon to track uptimes, especially the high ones                                                                                                                                                                                   |
-| `mutt`                | text-based mailreader supporting MIME, GPG, PGP and threading                                                                                                                                                                       |
 | `mydumper`            | High-performance MySQL backup tool                                                                                                                                                                                                  |
 | `sqlitebrowser`       | GUI editor for SQLite databases                                                                                                                                                                                                     |
-| `vim`                 | Vi IMproved - enhanced vi editor. See the dedicated [vim](../Tools/vim.md) page.                                                                                                                                                    |
-| `vim-gtk3`            | Vi IMproved - enhanced vi editor - with GTK3 GUI                                                                                                                                                                                    |
-| `vim-python-jedi`     | autocompletion tool for Python - VIM addon files                                                                                                                                                                                    |
-| `unp`                 | unpack (almost) everything with one command                                                                                                                                                                                         |
 | `unattended-upgrades` | automatic installation of security upgrades                                                                                                                                                                                         |
 | `fastfetch`           | neofetch-like tool for fetching system information                                                                                                                                      |
+| `pyroman`           | Very fast firewall configuration tool                                                                                                                                      |
+| `shorewall`           | Shoreline Firewall, netfilter configurator                                                                                                                                      |
 
 ## Packages I install on each desktop
 
+Apps I install on almost all of my desktops.
+
 ```
-openssh-server
-tmux
 fail2ban
-xclip
-htop
-net-tools
-uptimed
-unp
 fastfetch
+htop
+irssi
+mc
+mutt
+net-tools
+openssh-server
+rsnapshot
+tmux
+unp
+uptimed
+xclip
 ```
 
 ## Server tools

@@ -46,7 +46,7 @@ But still, `Raspberry Pi` is awesome! It's so nice to play on such a little comp
 
 That said, if you are new to `GNU / Linux`, Welcome! But I really don't think that `Raspberry Pi` is the ideal step to take if you want to learn `GNU / Linux`. My personal opinion would say you to install `Virtual Box` (or any virtualization software) and play with virtual machines instead. You should realise that a `Raspberry Pi` is really tin in all aspects. So, to avoid that you blame that `GNU / Linux` is slow, it's better that you move on to something more serious before digging into complex stuff. However, if you are patient, realist and have a fever to learn, go go go!!! Actually, `Raspberry Pi` can be the reason to start digging very deep in the `GNU / Linux` world. It could be also the start of a new hobby and who know, later, lead to a professional carrier in the computer sector.
 
-As `Debian` is installed (on that `Micro SD` card), using `Raspberry Pi` is like using `Debian`. So in this document we will avoid to give general `Debian` information, rather point out that there's a [dedicated Debian documentation page](../Debian/Debian%20GNU%20Linux.md) for that. Here we will point out the things specific to the `Raspberry Pi` "computer".
+As `Debian` is installed (on that `Micro SD` card), using `Raspberry Pi` is like using `Debian`. So in this document we will avoid to give general `Debian` information, rather point out that there's a [dedicated Debian documentation page](../Debian/debian.md) for that. Here we will point out the things specific to the `Raspberry Pi` "computer".
 
 ## Installing an Operating System on Raspberry Pi
 
@@ -207,7 +207,7 @@ See <https://www.raspberrypi.com/documentation/computers/configuration.html#exte
 
 ## Recommended software and setup
 
-As `Raspberry Pi` OS is based on `Debian`, you will find all the classic programs. So you could also take a look to the dedicated [Debian](../Debian/Debian%20GNU%20Linux.md) page. But note that not all `Debian` packages are available for `Raspberry Pi`.
+As `Raspberry Pi` OS is based on `Debian`, you will find all the classic programs. So you could also take a look to the dedicated [Debian](../Debian/debian.md) page. But note that not all `Debian` packages are available for `Raspberry Pi`.
 
 | Application      | Description                                                                                                                                                                                                                         |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

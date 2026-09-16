@@ -5,10 +5,13 @@
 - [Introduction](#introduction)
 - [Installation and configuration](#installation-and-configuration)
 - [Enable https for awffull](#enable-https-for-awffull)
+- [TODO](#todo)
 
 ## Introduction
 
 Web server log analysis program forked from `Webalizer`. It adds a number of new features and improvements, such as extended frontpage history, resizable graphs, and a few more pie charts.
+
+This setup has been tested on: `Debian 13 codename Trixie`, `Debian Trixie for Raspberry Pi`, `Ubuntu for Raspberry Pi` around september 2026.
 
 ## Installation and configuration
 
@@ -16,6 +19,18 @@ To install `awffull` it's a matter to run:
 
 ````commandline
 apt-get install awffull
+````
+
+The configuration file is located at `/etc/awffull/awffull.conf`. We should change a few settings eventually. Here are the options I changed:
+
+````editorconfig
+Incremental    yes
+````
+
+If you want that `awffull` generate it's output in another location, then take a look to this:
+
+````editorconfig
+OutputDir /var/www/awffull
 ````
 
 The installation will create a `cron` file and the script is here: `/etc/cron.daily/awffull`.
@@ -65,8 +80,7 @@ By default, `awffull` does not work on the `https` protocol. We need to activate
 UseHTTPS       yes
 ````
 
-If you want that `awffull` generate it's output in another location, then take a look to this:
+## TODO
 
-````editorconfig
-OutputDir /var/www/awffull
-````
+- [ ] The cron script seems not to work, so the data is not updated.
+- 

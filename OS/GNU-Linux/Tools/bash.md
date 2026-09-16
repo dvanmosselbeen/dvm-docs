@@ -7,11 +7,14 @@ Source: <https://tryhackme.com/room/bashscripting>
 - [Introduction](#introduction)
 - [Configuring Bash](#configuring-bash)
   - [Adding some aliases](#adding-some-aliases)
+- [Additional must have bash tools](#additional-must-have-bash-tools)
+  - [bash-completion](#bash-completion)
 - [Our first simple bash scripts](#our-first-simple-bash-scripts)
 - [Variables](#variables)
 - [Parameters](#parameters)
 - [Arrays](#arrays)
 - [Conditionals](#conditionals)
+  - [Answer the questions below](#answer-the-questions-below)
 - [Ressources](#resources)
 
 ## Introduction
@@ -41,6 +44,16 @@ Here's mine: [files/DOTbashrc](files/DOTbashrc)
 ### Adding some aliases
 
 Here's mine: [files/DOTbash_aliases](files/DOTbash_aliases)
+
+## Additional must have bash tools
+
+### bash-completion
+
+The `bash-completion` package will add very nice autocompletion for many daily commands. It's a must-have to install. It's installed in many `GNU / Linux` distributions, but not always, like `Debian Trixie` does not have it installed by default.
+
+````commandline
+apt-get install bash-completion
+````
 
 ## Our first simple bash scripts
 
@@ -81,7 +94,7 @@ id
 
 Now from here on I am going to assume that you have a basic understanding of Linux and its commands, if you don't please go make sure to check out the Linux fundamentals 1 and then come back and try again. <https://tryhackme.com/room/linux1>
 
-I'm also not going to include the #!/bin/bash at the start of my code snippets otherwise it will take up a lot of room so be aware that you need it always at the start of your files!
+I'm also not going to include the `#!/bin/bash` at the start of my code snippets otherwise it will take up a lot of room so be aware that you need it always at the start of your files!
 
 Now to run our bash script we must first give it executable permissions
 
@@ -136,10 +149,10 @@ Jammy
 This would output `Jammy` to the screen.
 
 
-Variables make it much easier to store data and rather than typing out the same thing in multiple places we could simply insert our variable with $var and then declare that to a certain value making it easier to fall back on if you do something wrong and need to change it. So how can we debug our code?
+Variables make it much easier to store data and rather than typing out the same thing in multiple places we could simply insert our variable with `$var` and then declare that to a certain value making it easier to fall back on if you do something wrong and need to change it. So how can we debug our code?
 
 
-Debugging is a very important part of programming so we should get used to problem solving and fixing errors as early as possible. And bash has a few built in features that make our life simple.
+Debugging is a very important part of programming so we should get used to problem solving and fixing errors as early as possible. And `bash` has a few built in features that make our life simple.
 
 When running at the command line you can do:
 
@@ -147,7 +160,7 @@ When running at the command line you can do:
 bash -x ./file.sh
 ````
 
-You can make a simple bash script(now you know some basic syntax) and make something completely wrong. Then step through your program with debug mode and see what it looks like when it throws errors!
+You can make a simple bash script (now you know some basic syntax) and make something completely wrong. Then step through your program with debug mode and see what it looks like when it throws errors!
 
 This tells you which lines are working and which lines are not. If you want to debug at a certain point you can insert `set -x` into your script and `set +x` to end the section like the following:
 
@@ -547,3 +560,5 @@ What is the flag to check to see if it's a directory?
 - <https://devhints.io/bash>
 - <https://www.codewars.com>
 - <https://www.hackerrank.com>
+- <https://tryhackme.com/room/bashscripting>
+- If you install the `bash-doc` package, you find information at `/usr/share/doc/bash/`.
