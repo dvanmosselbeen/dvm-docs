@@ -12,7 +12,9 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
 - [General information](#general-information)
   - [Releases (versions)](#releases-versions)
 - [Installing Debian](#installing-debian)
+  - [Using Debian backports](#using-debian-backports)
   - [Migrating from stable to testing release](#migrating-from-stable-to-testing-release)
+  - [Installing the testing version from scratch](#installing-the-testing-version-from-scratch)
   - [Install VirtualBox Guest Additions](#install-virtualbox-guest-additions)
 - [The package manager](#the-package-manager)
   - [apt](#apt)
@@ -35,7 +37,7 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
 
 ## Introduction
 
-The `Debian GNU/Linux` Operating System claims to be the universal operating system. And that's in fact true. `Debian` runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tables, dedicated hardware such as the `Raspberry Pi`, the `Sony Playstation (3)` and so on. I guess we could install `Debian` into our fridge, but people seems to lazy to do so.
+The `Debian GNU/Linux` Operating System claims to be the universal operating system. And that is in fact true. `Debian` runs on older hardware as well as on modern hardware. It is able to run on a variety of different architectures. Up from computers, to tablets, dedicated hardware such as the `Raspberry Pi`, the `Sony Playstation 3` and so on. I guess we could install `Debian` into our fridge, but people seems to lazy to do so.
 
 ## General information
 
@@ -45,30 +47,104 @@ The `Debian GNU/Linux` Operating System claims to be the universal operating sys
 
 The `stable` version, like the name say it, is very stable, however, the packages (applications and libraries) are older than a normal user would expect. A stable version is release once in a while and the packages aren't updated anymore. Except for security patches. But you will never get new features on a stable version once it is release.
 
-The testing version, like the name say it, is a testing version.
+The `testing` version, like the name say it, is a testing version.
+
+The `unstable` version (codename `Sid`), like the name say it, is an unstable version with the latest packages. This is only recommended being used if you really know what you are doing.
 
 ## Installing Debian
 
 You can install `Debian` on different ways. Starting from a `CD`, `DVD`, `iso image`, `usb` key, with `PXE` boots and so on.
 
-These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little `iso` image. That `iso` image you can burn to a CD and from there boot up your computer. The particularity of the `netinst` method is that the `iso` image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
+These days, with a big internet line, it's common to use the `netinst` method. Which is by using a little `iso` image. That `iso` image you can burn to a `CD` or `USB` and from there boot up your computer. The particularity of the `netinst` method is that the `iso` image is very small. The iso image contains the bare minimum to install a system. The additional software, if selected during the installation, will be downloaded and then installed on your computer. 
+
+Go to the [official website of debian](https://www.debian.org/) to download the `ISO`.
+
+**Flash the ISO**
+
+Burn the downloaded `ISO` to a `USB` flash drive using a tool like `Etcher`, `Ventoy`, or the `dd` command line utility.
+
+**Boot and Run the Installer**
+
+1. Insert the `USB` into the target computer and boot into it via your system's `BIOS/UEFI` boot menu.
+2. Select either `Graphical Install` or `Install` from the boot menu. 
+3. Follow the on-screen prompts to configure your language, keyboard layout, and network settings. 
+4. Partition your hard drive as prompted.
+5. When the installer asks you to select a software mirror.
+6. Choose your preferred Desktop Environment (like `GNOME`, `KDE Plasma`, or `XFCE`) and complete the installation
+
+### Using Debian backports
+
+The advantage of the `Debian Stable` release is that the packages are very stable and well tested, and normally you should not have any problems. This is perfect for servers. But due to that, the packages (applications) are very old. If you are a desktop user, the applications might be probably too old for you. And maybe you do not want to risk using the `Debian Testing` release. Then, the `Debian Backports` is a solution for you.
+
+The `Debian Backports` simple offers more recent packages to the `Debian Stable` release, without breaking your system. So you can decide to install a specific, more recent package.
+
+See <https://backports.debian.org/Instructions/> for the up-to-date instructions.
 
 ### Migrating from stable to testing release
 
-Firstly, need to adjust the `sources.list`. But we make a backup file of it first.
+Firstly, need to adjust the `/etc/apt/sources.list`. But we make a backup file of it first.
 
 ```commandline
-cp /etc/apt/sources.list /etc/apt/sources.list_BACKUP
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.BAK
 
-sed -i "s/stable/testing/" /etc/apt/sources.list
+sudo sed -i "s/stable/testing/" /etc/apt/sources.list
 ```
 
-Now we are ready to update the system:
+*Note: If your file explicitly uses a codename like `trixie`, replace stable with that codename in the command above.*
+
+**Modify Security Repositories**
+
+Ensure your security lines in the same `/etc/apt/sources.list` file are updated to point to the testing security branch. They typically look like this:
+
+````editorconfig
+deb http://debian.org testing-security main contrib non-free non-free-firmware
+````
+
+**Remove Incompatible Repositories**
+
+Comment out or remove any repositories that are strictly tied to the `stable` release, such as `-backports` or `-updates`, by adding a `#` in front of them.
+
+**Refresh Repositories and Perform the Upgrade**
+
+Run the package update command to pull the new Testing catalog, then run a full system upgrade:
+
+Now we are ready to upgrade the system:
 
 ```commandline
-apt-get update
-apt-get dist-upgrade
+sudo apt-get update
+sudo apt-get full-upgrade
 ```
+
+*(Note: Use `full-upgrade` or `dist-upgrade` instead of a standard `upgrade` to ensure `apt` safely handles changing dependencies and removes obsolete packages).*
+
+**Restart the Machine**
+
+Once the download and installation complete, reboot your system to initialize the new kernel and system libraries:
+
+````commandline
+sudo reboot
+````
+
+### Installing the testing version from scratch
+
+If you do not want to install `Stable` first, you can use the installer built specifically for the development cycle.
+
+**Download the Installer**
+
+Go to the official [Debian-Installer Page](https://www.debian.org/devel/debian-installer/). Under the "Daily builds" section, download the `ISO` image appropriate for your system architecture (most modern PCs will use `amd64`). The `netinst` (network installer) image is ideal as it downloads the freshest packages directly during setup.
+
+**Flash the ISO**
+
+Burn the downloaded `ISO` to a `USB` flash drive using a tool like `Etcher`, `Ventoy`, or the `dd` command line utility.
+
+**Boot and Run the Installer**
+
+1. Insert the `USB` into the target computer and boot into it via your system's `BIOS/UEFI` boot menu.
+2. Select either `Graphical Install` or `Install` from the boot menu.
+3. Follow the on-screen prompts to configure your language, keyboard layout, and network settings.
+4. Partition your hard drive as prompted.
+5. When the installer asks you to select a software mirror, it will automatically default to pointing towards the Testing repositories.
+6. Choose your preferred Desktop Environment (like `GNOME`, `KDE Plasma`, or `XFCE`) and complete the installation
 
 ### Install VirtualBox Guest Additions
 
@@ -138,7 +214,7 @@ There's also `aptitude` which I strongly recommend but is not so user-friendly a
 Before searching or installing anything with `apt-get`, we need to retrieve its new list of packages:
 
 ```commandline
-apt-get update
+sudo apt-get update
 ```
 
 Searching for applications:
@@ -156,17 +232,17 @@ apt-cache show gvim-gtk3
 Installing applications:
 
 ```commandline
-apt-get install gvim-gtk3
+sudo apt-get install gvim-gtk3
 ```
 
 Cleanup maintenance:
 
 ```commandline
 # Clear the cache (Clears the downloaded deb files).
-apt-get clean
+sudo apt-get clean
 
 # Clears up, remove packages that where installed by other packages but are not used anymore
-apt autoremove
+sudo apt autoremove
 ```
 
 ### aptitude
@@ -183,7 +259,7 @@ Just by running the command `aptitude`, you will start the `UI` interface.
 | `dpkg -L <package>`         | Show the content of a deb package.                                                                                                                                                                                                                    ||
 | `df -h`                     | Display disk space usage, in human readable.                                                                                                                                                                                                          |
 | `which python`              | Return the location of the file.                                                                                                                                                                                                                      |
-| `shutdown -h now`           | Shutdown the computer.                                                                                                                                                                                                                                |
+| `shutdown -h now`           | Shutdown the computer now.                                                                                                                                                                                                                            |
 | `reboot`                    | Reboot the computer.                                                                                                                                                                                                                                  |
 | `apt-get -f install`        | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
 | `apt autoremove`            | Remove packages that where installed by other packages ant that aren't used anymore.                                                                                                                                                                  |
