@@ -6,7 +6,7 @@
 - [Installing and configuring Apache2](#installing-and-configuring-apache2)
 - [Configuring Apache](#configuring-apache2)
 - [Installing and configuring PHP](#installing-and-configuring-php)
-  - [Enabling userdir](#enabling-userdir) 
+  - [Enabling userdir](#enabling-userdir-public_html) 
 - [Enable https](#enable-https)
   - [Create custom ssl certificates](#create-custom-ssl-certificates)
 - [Tools](#tools)
@@ -46,21 +46,23 @@ Test if `PHP` is working, for this we will create the file `/var/www/html/phpinf
 
 Point your browser to,<http://localhost/phpinfo.php> and it should give you a bunch of `PHP` related information.
 
-### Enabling userdir
+### Enabling userdir (public_html)
 
-Enabling `userdir` will allow all users to have their own website in `~/public_html`:
+Enabling `userdir` will allow all users to have their own website in `~/public_html`. This is nice if you want to create a sandbox place to test out website related things. However, setting this up have serious security caveats. Read this whole section carefully and completely before executing anything. Also make sure you understand everything. 
+
+To enable the userdir `apache2` module as `root` user:
 
 ````editorconfig
 a2enmod userdir
 ````
 
-We can check the userdir configuration file:
+We can check the `userdir` configuration file:
 
 ````commandline
 nano /etc/apache2/mods-available/userdir.conf 
 ````
 
-By default it will server `public_html` directory, we can change the directory name if we want:
+By default, it will serve the `public_html` directory in the home directory of the users, we can change the directory name if we want:
 
 ````editorconfig
 UserDir public_html
@@ -122,11 +124,11 @@ mkdir ~/public_html
 echo "UserDir test page" > ~/public_html/index.html
 ````
 
-**NOTE: This still now work. I have created the directory `~/public_html/` and created a basic `index.html` file with read access on folder and file but still no success. I keep getting the error `403: Forbidden`. I have tried just to turn on the `php_admin_flag engine On` but no success either. No idea what's happening. I have the same issues on a plain `Raspberry Debian` and `Ubuntu` version.**
+**NOTE: This will probably not work yet. I have created the directory `~/public_html/` and created a basic `index.html` file with read access on folder and file but still no success. I keep getting the error `403: Forbidden`. I have the same issues on a plain `Debian`, Raspberry Debian` and the `Ubuntu` version.**
 
 Info from here: <https://jhx7.de/blog/set-up-apache-with-userdir-and-php/>
 
-If we set the execute mode on the home directory (not only the `~/public_html/`), then it works:
+If we set the `execute` bit on the home directory (not only the `~/public_html/`), then it works:
 
 ````commandline
 sudo chmod +x /home/<USERNAME>/
@@ -134,14 +136,42 @@ sudo chmod +x /home/<USERNAME>/
 
 Then it's working like expected!
 
-**Attention:** This might be a **security issue**!
+**ATTENTION:** This might be a **security issue**!
 Think about this before blindly copy pasting the command*. You can always change the location and name of the userdir!
 
-**Need to check what exactly this has as impact by `chmod +x ~/<USERNAME>`. I believe that without the home being executable, nobody can enter the user directory, and thus not read all content underneath. By setting the home directory executable, everyone on the system can go inside that directory and read all other files recursively that are set as readable. By default, almost all files are readable by anyone under the home directory. So yes, this could be a serious security risk. Now we probably need to make in sort that all files underneath the home directory is not readable by normal users. Also, when creating new files in the home directory, we need to be sure it is not readable by the other users.**
+**Need to check what exactly this has as impact by `chmod +x ~/<USERNAME>`. I believe that without the home being executable, nobody can enter the user directory, and thus not read all content underneath. By setting the home directory executable, everyone on the system can go inside that directory and read all other files recursively that are set as readable. By default, almost all files are readable by anyone under the home directory. But another user can for example not list all files under the home directory, but it can list and read all files under `public_html` of another user. So yes, this could be a serious security risk. Now we probably need to make in sort that all files underneath the home directory is not readable by normal users. Also, when creating new files in the home directory, we need to be sure it is not readable by the other users. So, from now on, when creating new files, we need to be sure it is not readable by others. Which is very annoying and sooner or later a security issue will happen. So this is not the optimal way. Also not optimal with using `umask`. Because we never know if we will forget to check the file permissions on newly created files. It's to complicated and dangerous to manage it this way.**
 
-**As in this current situation, that the home directory is executable and all files underneath readable by other users, I suggest creating a specific and dedicated user for serving files under the `~/public_html`. Then eventually, you can add you main accond as member of the group of that dedicated created user account.**
+**As in this current situation, that the home directory is executable and all files underneath readable by other users, I suggest creating a specific and dedicated user for serving files under the `~/public_html`. Then eventually, you can add you main account as member of the group of that dedicated created user account.**
 
-*In case you executed the `chmod +x /home/<USERNAME>/` and you want to revert it back like it was, then you probably want to execute `chmod go-x /home/<USERNAME>/` to remove the executable bit for group and the other users.*
+*In case you executed the `chmod +x /home/<USERNAME>/` and you want to revert it back like it was, then you probably want to execute `chmod go-x /home/<USERNAME>/` to remove the executable bit for group and the other users. This reduces the security risk, but still is not perfectly safe as all other users would be able to read the content of his `public_html`.*
+
+If you want to create a dedicated user account which will only serve the  `public_html` directory and its files. Start by creating a new user account:
+
+````commandline
+adduser <NEW_USER_NAME>
+````
+
+Follow then the instructions on screen. It will ask you to set up a password, enter a full name and little more.
+
+Make the home directory executable, thus it's content visible to everyone:
+
+````commandline
+chmod +x /home/<NEW_USER_NAME>/
+````
+
+Create the public_html in the new user account:
+
+````commandline
+mkdir /home/<NEW_USER_NAME>/public_html
+````
+
+Add your main account to that new user account group:
+
+````commandline
+adduser <MAIN_USER_ACCOUNT> <NEW_USER_NAME>
+````
+
+You should probably log out of the main user account and log back in to have the new group rights. Now you should be able to edit the `public_html` of the other account.
 
 Now we can also test if `PHP` is working for the user with `userdir`. For this create a `PHP` test file with the following content in `~/test.php`.
 
