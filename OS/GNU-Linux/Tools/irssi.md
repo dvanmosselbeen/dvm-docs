@@ -1,51 +1,162 @@
 # irssi (the ultimate cli chat client)
 
-This document is dedicated to the awesome console based IRC client `irssi`.
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Set up and configuring irssi](#set-up-and-configuring-irssi)
+- [Quick Shot](#quick-shot)
+- [My setup](#my-setup)
+- [Usage](#usage)
+- [Setting up a theme](#setting-up-a-theme)
+- [Scripts](#scripts)
+  - [Spell check](#spell-check)
+    - [(i)spell](#ispell)
+    - [(a)spell check](#aspell-check)
+  - [Other interesting scripts](#other-interesting-scripts)
+- [IRC bots](#irc-bots)
+- [Resources](#resources)
 
 ## Introduction
 
-`irssi` is probably the most powerful and the most amazing command line IRC client they might be available. It have a lot of good features, it's very easy to use and it's rock stable.
+`irssi` is probably the most powerful and the most amazing command line `IRC` client they might be available. It has a lot of good features, it's very easy to use, and it's rock stable.
+
+Note that longer time ago, one of the most famous network was `Freenode`. However, if I'm not wrong, and if I remember correctly, the author passed away several years ago. I believe the `Freenode` network is dead by now. It could be we still find information here and there about `Freenode`.
+
+The `Internet Relay Chat` was very popular till many years ago. Especially before `Facebook` came out (2007) in Europe. It was easy to get fast (free) support from anyone who was online and active in a topic related channel. These last years I find that the `IRC` has lost very much popularity. There are still many users connecting to the different channels, but it's very less active or not active at all. I remember times when chatting, getting and giving support on the `IRC` was so fast and so nice. I remember the good old times when I enjoyed so much passing my whole evening or night chatting and giving support to people. It was so exciting. I believe that the IRC got less popular now due to the other platforms, like forums or `Discord` alike tools. Back then, there were almost no social media apps or websites, so we had to keep ourselves busy with other things.
 
 ## Set up and configuring irssi
 
 Installing irssi is a matter of running the following command:
 
-    sudo apt-get install irssi
+````commandline
+sudo apt-get install irssi
+````
 
 As first, follow the startup guide on https://irssi.org/documentation/startup/ This should help you to set your basic configuration and should set you up and running.
 
+### Quick Shot
+
+To get a list of the different networks you can connect to:
+
+````commandline
+/network
+````
+
+Which will output:
+
+````commandline
+16:12:03 Networks:
+16:12:03 DALnet: max_kicks: 4, max_msgs: 20, max_whois: 30
+16:12:03 EFNet: max_kicks: 1, max_msgs: 4, max_whois: 1
+16:12:03 EsperNet: max_kicks: 1, max_msgs: 4, max_whois: 1
+16:12:03 liberachat: max_kicks: 1, max_msgs: 4, max_whois: 1
+16:12:03 GameSurge: max_kicks: 1, max_msgs: 1, max_whois: 1
+16:12:03 IRCnet: max_kicks: 1, max_msgs: 1, max_whois: 1
+16:12:03 IRCSource: max_kicks: 1, max_msgs: 4, max_whois: 1
+16:12:03 NetFuze: max_kicks: 1, max_msgs: 1, max_whois: 1
+16:12:03 OFTC: max_kicks: 1, max_msgs: 1, max_whois: 1
+16:12:03 QuakeNet: max_kicks: 1, max_msgs: 1, max_whois: 1
+16:12:03 Rizon: max_kicks: 1, max_msgs: 1, max_whois: 1
+16:12:03 Undernet: max_kicks: 1, max_msgs: 1, max_whois: 1
+````
+
+To connect to the `liberachat` network, set your nickname, get help and then join the `#irssi`, `#debian` and `#raspberry` channel:
+
+````editorconfig
+/connect liberachat
+/set nick <my_nick_name>
+/help
+/help <COMMAND_NAME>
+/join #irssi
+/j #debian
+/j #raspberrypi
+````
+
+*We can see we used the long and short form of the command `join`. Many commands have also a short form.*
+
+To leave a channel, without closing the app or completely disconnecting:
+
+````commandline
+/leave
+````
+
+Removing clutter you can for example hide the joins, parts and quites as this take a lot of lines for no valuable reason. Note that this has to be executed per channel:
+
+````commandline
+/window hidelevel +joins +parts +quits
+````
+
+To get them back:
+
+````commandline
+/window hidelevel -joins -parts -quits
+````
+
+If we want to hide them by default for all channels when we start up `irssi`:
+
+````commandline
+/set window_default_hidelevel hidden joins parts quits
+````
+
+To quit the `irssi` application:
+
+````commandline
+/quit
+````
+
+*Or `/exit`.*
+
 ### My setup
 
-For the FlightGear irc server=
+For the FlightGear irc server:
 
-    /NETWORK ADD FlightGear
-    /SERVER ADD -auto -network FlightGear irc.flightgear.org
-    /CHANNEL ADD -auto #flightgear FlightGear
-    /CHANNEL ADD -auto #flightgear-nl FlightGear
-    /CHANNEL ADD -auto #fg_cantene FlightGear
-    /NETWORK ADD -autosendcmd "/^msg nickserv identify YourPasswordHere;wait 2000" FlightGear
-    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password YourPasswordHere -sasl_mechanism PLAIN FlightGear
-    
-For all other:
+````editorconfig
+/NETWORK ADD FlightGear
+/SERVER ADD -auto -network FlightGear irc.flightgear.org
+/CHANNEL ADD -auto #flightgear FlightGear
+/CHANNEL ADD -auto #flightgear-nl FlightGear
+/CHANNEL ADD -auto #fg_cantene FlightGear
+/NETWORK ADD -autosendcmd "/^msg nickserv identify <YourPasswordHere>;wait 2000" FlightGear
+/NETWORK ADD -sasl_username <YourUserNameHere> -sasl_password <YourPasswordHere> -sasl_mechanism PLAIN FlightGear
+````
 
-    /CHANNEL ADD -auto #irssi Freenode
-    /CHANNEL ADD -auto #debian Freenode
-    /CHANNEL ADD -auto #python Freenode
-    
-    /NETWORK ADD -autosendcmd "/^msg nickserv identify YourPasswordHere;wait 2000" Freenode
-    
+For all others:
+
+For example here we will auto connect a few channels to the `liberachat` network. `liberachat` has much more users than the `OFTC` network and the users are much more active also.
+
+````editorconfig
+/CHANNEL ADD -auto #irssi liberachat
+/CHANNEL ADD -auto #debian liberachat
+/CHANNEL ADD -auto #python liberachat
+/CHANNEL ADD -auto #raspberrypi liberachat
+````
+
+Automatically identify to the server with your password:
+
+````editorconfig
+/NETWORK ADD -autosendcmd "/^msg nickserv identify <YourPasswordHere>;wait 2000" Freenode
+````
+
 Password:
-    
-    /NETWORK ADD -sasl_username dvanmosselbeen -sasl_password YourPasswordHere -sasl_mechanism PLAIN Freenode
 
-    /HILIGHT nick
-    /SET hilight_nick_matches_everywhere ON
+````editorconfig
+/NETWORK ADD -sasl_username dvanmosselbeen -sasl_password YourPasswordHere -sasl_mechanism PLAIN Freenode
+````
+
+Set up nickname settings:
+
+````editorconfig
+/HILIGHT nick
+/SET hilight_nick_matches_everywhere ON
+````
 
 ## Usage
 
-Once you have read that sort of irssi tutorial, you can eventually continue reading here. It's useless i copy paste information from the irssi.org website.
+Once you have read that sort of irssi tutorial, you can eventually continue reading here. It's useless I copy and paste information from the <https://www.irssi.org> website.
 
-    Meta key == Alt key
+````editorconfig
+Meta key == Alt key
+````
 
 Here's a list of common command:
 
@@ -64,11 +175,27 @@ You want probably to take a look to the other parameters. For this you can use t
 
 Will return a list of parameters that are set. You can also get only a particular item of the configuration file. For example:
 
-    /set nick
-    
-To change that variable, use:
+List all windows:
 
-    /set nick <my_nick_name>
+````commandline
+/window list
+````
+
+Go to a specific window number:
+
+````commandline
+/window goto 1
+````
+
+*You can also use the `ALT+<NUMBER>` to jump directly to a specific window. Or user `/3` to jump to window number `3`.*
+
+You can also move (position) the current window into another position:
+
+````commandline
+/window move left
+````
+
+*Where you can replace left with right, prev, next, first, last.*
 
 ## Setting up a theme
 
@@ -85,7 +212,7 @@ Which returns:
     11:38 [lookandfeel]
     11:38                            theme default
 
-I like using the `agon` theme and is the theme i have always used:
+I like using the `agon` theme and is the theme I have always used:
 
     # Go to the .irssi directory and store the downloaded theme there
     cd ~/.irssi
@@ -109,7 +236,7 @@ The irssi (Perl) scripts should be put into `~/.irssi/scripts`. If you want them
 
 #### (i)spell
 
-Source from: https://blog.schmichael.com/2008/11/05/spell-checking-in-irssi/
+Source from: <https://blog.schmichael.com/2008/11/05/spell-checking-in-irssi/>
 
 Firstly, install the required apps:
 
@@ -165,6 +292,13 @@ See also:  https://scripts.irssi.org/
 * [screen_away.pl](http://scripts.irssi.org/scripts/screen_away.pl) automatically detects if your Irssi session resides within an attached or detached screen session. If your screen session is detached, this plugin will set your status to away. When you reattach to the session, the plugin unsets the away status.
 * [highlite.pl](http://scripts.irssi.org/scripts/highlite.pl) collects in one window all channel events like joins, parts, and quits.
 
+## IRC bots
+
+Longer time ago, there was a famous Python IRC bot called `supybot`. Now it seems to be not maintained anymore and has been replaced by `limnoria` which is the maintained fork of `supybot`.
+
+If you have your own channel, it can be handy to have some IRC bot so that it can manage the channel but also so that people can make use of it. An IRC bot usually also has the feature that you can ask some things, and get answers back. It is for example handy to get quick support, for the most frequently asked questions. A good example is the `dpkg` IRC bot on the `#debian` channel.
+
+
 ## Resources
 
-* https://irssi.org/documentation/startup/
+- <https://irssi.org/documentation/startup/>
