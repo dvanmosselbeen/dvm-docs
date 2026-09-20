@@ -10,7 +10,7 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
 
 - [Introduction](#introduction)
 - [General information](#general-information)
-  - [Releases (versions)](#releases-versions)
+  - [Release (version)](#release-version)
 - [Installing Debian](#installing-debian)
   - [Using Debian backports](#using-debian-backports)
   - [Migrating from stable to testing release](#migrating-from-stable-to-testing-release)
@@ -20,6 +20,12 @@ This document will list a few notes about the [Debian GNU/Linux](https://www.deb
   - [apt](#apt)
   - [aptitude](#aptitude)
 - [Admin commands](#admin-commands)
+  - [System](#system)
+  - [Files](#files)
+  - [Packages](#packagesk)
+  - [Users and groups](#users-and-groups)
+  - [Networking](#networking)
+  - [LXD](#lxd)
 - [Interesting packages](#interesting-packages)
   - [For Users](#for-users)
   - [For Administrators](#for-administrators)
@@ -41,7 +47,7 @@ The `Debian GNU/Linux` Operating System claims to be the universal operating sys
 
 ## General information
 
-### Releases (versions)
+### Release (version)
 
 `Debian` has been know to be a very stable Operating System. `Debian` is available in 3 different releases. A `stable` version, a `testing` version, and an `unstable` version (called `Sid`). The names of the different releases come from the `Toy Story` animation movies.
 
@@ -253,21 +259,150 @@ Just by running the command `aptitude`, you will start the `UI` interface.
 
 ## Admin commands
 
-| Command                     | Description                                                                                                                                                                                                                                           |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `dpkg -l <package>`         | List if package is installed.                                                                                                                                                                                                                         |
-| `dpkg -L <package>`         | Show the content of a deb package.                                                                                                                                                                                                                    ||
-| `df -h`                     | Display disk space usage, in human readable.                                                                                                                                                                                                          |
-| `which python`              | Return the location of the file.                                                                                                                                                                                                                      |
-| `shutdown -h now`           | Shutdown the computer now.                                                                                                                                                                                                                            |
-| `reboot`                    | Reboot the computer.                                                                                                                                                                                                                                  |
-| `apt-get -f install`        | To be used when in the shit and when you need to force the installation to get you out of the shit. Anyway, if you got so far, then it's probably the console output that told you to run this command... Arf, you bastard, it will be a long night ! |
-| `apt autoremove`            | Remove packages that where installed by other packages ant that aren't used anymore.                                                                                                                                                                  |
-| `apt-get clean`             | Removed downloaded packages. Which are stored in `/var/cache/apt/archives`                                                                                                                                                                            |
-| `adduser <username>`        | To create a new user on your system. You                                                                                                                                                                                                              |
-| `service fail2ban status`   | To check if `fail2ban` service is been running.                                                                                                                                                                                                       |
-| `dmesg`                     | Shows some logs on the console.                                                                                                                                                                                                                       |
-| `stats`                     | Gives information about a given file. Like the permissions but also the access, modify and creation time.                                                                                                                                             |
+A few common system commands:
+
+### System
+
+| Command                           | Description                                                           |
+|-----------------------------------|-----------------------------------------------------------------------|
+| `uname - a`                       | Display all system information.                                       |
+| `hostnamectl`                     | Show current hostname and related details.                            |
+| `lscpu`                           | Lists CPU architecture information.                                   |
+| `timedatectl status`              | Shows system time.                                                    |
+| `top`                             | Displays real-time system processes.                                  |
+| `htop`                            | An interactive process viewer (needs installation).                   |
+| `df -h`                           | Show disk usage in a human-readable format.                           |
+| `free -m`                         | Displays free and used memory in MB.                                  |
+| `kill <process id>`               | Terminates a process.                                                 |
+| `[command] &`                     | Runs command in the background.                                       |
+| `jobs`                            | Displays background jobs.                                             |
+| `fg <command number>`             | Brings command to the foreground.                                     |
+| `sudo systemctl start <service>`  | Starts a service.                                                     |
+| `sudo systemctl stop <service>`   | Stop a service.                                                       |
+| `sudo systemctl status <service>` | Checks the status of a service.                                       |
+| `sudo systemctl reload <service>` | Reloads a service's configuration without interrupting its operation. |
+| `sudo service <service> status`   | To check if service is been running.                                  |
+| `sudo shutdown -h now`            | Shutdown the computer now.                                            |
+| `sudo reboot`                     | Reboot the computer now.                                              |
+| `journalctl -f`                   | Follows the journal, showing new log messages in real time.           |
+| `journalctl -u <unit_name>`       | Displays logs for a specific system unit.                             |
+| Shows some logs on the console.   | Shows some logs on the console.                                       |
+| `crontab -e`                      | Edits cron jobs for the current user.                                 |
+| `crontab -l`                      | List cron jobs for the current user.                                  |
+|                                   |                                                                       |
+
+### Files
+
+| Command                                                 | Description                                                                                               |
+|---------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `ls`                                                    | List files and directories.                                                                               |
+| `touch <filename>`                                      | Creates an empty file or updates the last accessed date.                                                  |
+| `cp <source> <destination>`                             | Copies files from source to destination.                                                                  |
+| `mv <sources> <destination>`                            | Moves files or renames them.                                                                              |
+| `rm <filename>`                                         | Deletes a file.                                                                                           |
+| `pwd`                                                   | Display the current directory path.                                                                       |
+| `cd <directory>`                                        | Changes the current directory.                                                                            |
+| `mkdir <dirname>`                                       | Creates a new directory.                                                                                  |
+| `chmod [who][+/-][permission] <file>`                   | Changes file permissions.                                                                                 |
+| `chmod u+x <file>`                                      | Makes a file executable by its owner.                                                                     |
+| `chmod [user]:[group] <file>`                           | Changes file owner and group.                                                                             |
+| `find [directory] -name <search_patter>`                | Finds files and directories.                                                                              |
+| `grep <search_patter> <file>`                           | Searches for a pattern in files.                                                                          |
+| `tar -czvf <name.tar.gz> [files]`                       | Compresses files into a tar.gz archive.                                                                   |
+| `tar -xvf <name.tar.[gz] or [bz] or [xz] [destination]` | Extract a compressed tar archive.                                                                         |
+| `nano [file]`                                           | Opens a file in the Nano text editor.                                                                     |
+| `cat <file>`                                            | Displays the contents of a file.                                                                          |
+| `less <file>`                                           | Displays the paginated content of a file.                                                                 |
+| `head <file>`                                           | Shows the first few lines of a file.                                                                      |
+| `tail <file>`                                           | Shows the last few lines of a file.                                                                       |
+| `awk ´{print}´ [file]`                                  | Prints every line in a file.                                                                              |
+| `wich <package>`                                        | Return the location of the file.                                                                          |
+| `stats`                                                 | Gives information about a given file. Like the permissions but also the access, modify and creation time. |
+
+### Packages
+
+| Command                                | Description                                                                           |
+|----------------------------------------|---------------------------------------------------------------------------------------|
+| `sudo apt install <package>`           | Install a package.                                                                    |
+| `sudo apt -f -reinstall <packagename>` | Reinstall a broken package.                                                           |
+| `sudo apt search <pakage>`             | Search for APT packages.                                                              |
+| `sudo apt-cache policy <pakage>`       | Lists available package versions.                                                     |
+| `sudo apt update`                      | Updates packages lists.                                                               |
+| `apt list --upgradable`                | List packages that can be upgraded.                                                   |
+| `sudo apt upgrade`                     | Upgrades all upgradable packages.                                                     |
+| `sudo apt dist-upgrade`                | Upgrades safely all upgradable packages.                                              |
+| `sudo apt remove <package>`            | Remove a package.                                                                     |
+| `sudo apt purge <package>`             | Removes a package and all its configuration files.                                    |
+| `apt-get -f install`                   | Force install a package.                                                              |
+| `sudo dpkg -l <package>`               | List if package is installed.                                                         |
+| `sudo dpkg -L <package>`               | Show the content of a deb package.                                                    |
+| `sudo apt clean`                       | Remove downloaded packages which are stored in `/var/cache/apt/archives`              |
+| `sudo apt autoremove`                  | Removes packages that where installed by other packages and that aren't used anymore. |
+| `snap find <package>`                  | Search for Snap packages.                                                             |
+| `sudo snap install <snap_name>`        | Installs a Snap package.                                                              |
+| `sudo snap remove <snap_name>`         | Removes a Snap package.                                                               |
+| `sudo snap refresh`                    | Updates all installed Sna packages.                                                   |
+| `snap list`                            | Lists all installed Snap packages.                                                    |
+| `snap info <snap_name>`                | Displays information about a Snap package.                                            |
+
+### Users and groups
+
+| Command                     | Description                                  |
+|-----------------------------|----------------------------------------------|
+| `w`                         | Shows which users are logged in.             |
+| `sudo adduser <username>`   | Creates a new user.                          |
+| `sudo deluser <username>`   | Deletes a user.                              |
+| `sudo passwd <username>`    | Sets or changes the password for a new user. |
+| `su <username>`             | Switches user.                               |
+| `sudo passwd -l <username>` | Locks a user account.                        |
+| `sudo passwd -u <username>` | Unlocks a user password.                     |
+| `sudo change <username>`    | Sets user password expiration date.          |
+| `id [username]`             | Displays user and group IDs.                 |
+| `groups [username]`         | Shows the groups a user belongs to.          |
+| `sudo addgroup <groupname>` | Creates a new group.                         |
+| `sudo delgroup <groupname>` | Delete a group.                              |
+
+### Networking
+
+| Command                                     | Description                                         |
+|---------------------------------------------|-----------------------------------------------------|
+| `ip addr show`                              | Displays network interfaces and IP addresses.       |
+| `ip -s link`                                | Shows network statistics.                           |
+| `ss -l`                                     | Shows listening sockets.                            |
+| `ping <host>`                               | Pings a host and outputs results.                   |
+| `cat /etc/netplan/*.yaml`                   | Displays the current Netplan Configuration.         |
+| `sudo netplan try`                          | Tests a new configuration for a set period of time. |
+| `sudo netplan apply`                        | Applies the current Netplan configuration.          |
+| `sudo ufw status`                           | Displays the status of the firewall.                |
+| `sudo ufw enable`                           | Enable the firewall.                                |
+| `sudo ufw disable`                          | Disable the firewall.                               |
+| `sudo ufw allow <port/service>`             | Allows traffic on a specific port or service.       |
+| `sudo ufw deny <port/service>`              | Denies traffic on a specific port or service.       |
+| `sudo ufw delete allow/deny <port/service>` | Deletes an existing rule.                           |
+| `ssh <user@host>`                           | Connects to a remote host via SSH.                  |
+| `scp <source> <user@host>:<destination>`    | Securely copies files between hosts.                |
+
+### LXD
+
+| Command                                                         | Description                                              | 
+|-----------------------------------------------------------------|----------------------------------------------------------|
+| `lxd init`                                                      | Initializes LXD before first use.                        |
+| `lxc init ubuntu:22.04 <container name>`                        | Creates a lxc system container (without starting it).    |
+| `lxc launcher ubuntu:22.04 <container name>`                    | Creates and starts a lxc system container.               |
+| `lxc launch ubuntu22.04 <vm name> --vm`                         | Creates and starts a virtual machine.                    |
+| `lxc list`                                                      | Lists instances.                                         |
+| `lxc info <instance>`                                           | Shows status information about an instance.              |
+| `lxc start <instance>`                                          | Starts an instance.                                      |
+| `lxc stop <instance> [--force]`                                 | Stops an instance.                                       |
+| `lxc delete <instance> [--force] [--interactive]`               | Deletes an instance.                                     |
+| `lxc exec <instance> -- <command>`                              | Runs a command inside an instance.                       |
+| `lxc exec <instance> -- bash`                                   | Gets shell access to an instance (if bash is installed). |
+| `lxc console <instance> [flags]`                                | Gets console access to an instance.                      |
+| `lxc file pull <instance>/<instance_filepath> <local_filepath>` | Pulls a file from an instance.                           |
+| `lsc file pull <local_filepath> <instance>/<instance_filepath>` | Pushes a file to an instance.                            |
+| `lxc project create <project> [--config <option>]`              | Create a project.                                        |
+| `lxc project set <project> <option>`                            | Configure a project.                                     |
+| `lxc project switch <project>`                                  | Switches to a project.                                   |
 
 ## Interesting packages
 
@@ -275,43 +410,43 @@ A few very interesting package:
 
 ### For users
 
-| Application           | Description                                                                                                                                                                                                                         |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `screen`              | See the dedicated [screen](../Tools/screen.md) page. But you probably want to look for the `tmux` tool                                                                                                                              |
-| `tmux`                | See the dedicated [tmux](../Tools/tmux.md) page.                                                                                                                                                                                    |
-| `mc`                  | Midnight Commander - a powerful file manager                                                                                                                                                                                        |
-| `irssi`               | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please! See the dedicated [irssi](../Tools/irssi.md) page. |
-| `xclip`               | command line interface to X selections                                                                                                                                                                                              |
-| `mutt`                | text-based mailreader supporting MIME, GPG, PGP and threading                                                                                                                                                                       |
-| `sqlitebrowser`       | GUI editor for SQLite databases                                                                                                                                                                                                     |
-| `vim`                 | Vi IMproved - enhanced vi editor. See the dedicated [vim](../Tools/vim.md) page.                                                                                                                                                    |
-| `vim-gtk3`            | Vi IMproved - enhanced vi editor - with GTK3 GUI                                                                                                                                                                                    |
-| `vim-python-jedi`     | autocompletion tool for Python - VIM addon files                                                                                                                                                                                    |
-| `unp`                 | unpack (almost) everything with one command                                                                                                                                                                                         |
-| `fastfetch`           | neofetch-like tool for fetching system information                                                                                                                                      |
+| Application       | Description                                                                                                                                                                                                                         |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `screen`          | See the dedicated [screen](../Tools/screen.md) page. But you probably want to look for the `tmux` tool                                                                                                                              |
+| `tmux`            | See the dedicated [tmux](../Tools/tmux.md) page. More newer and probably better than `screen`.                                                                                                                                      |
+| `mc`              | Midnight Commander - a powerful file manager                                                                                                                                                                                        |
+| `irssi`           | The ultimate irc chat client, of course command line only. But irssi is really some awesome IRC command line application. You won't find anything better. If so, mail me please! See the dedicated [irssi](../Tools/irssi.md) page. |
+| `xclip`           | command line interface to X selections                                                                                                                                                                                              |
+| `mutt`            | text-based mailreader supporting MIME, GPG, PGP and threading                                                                                                                                                                       |
+| `sqlitebrowser`   | GUI editor for SQLite databases                                                                                                                                                                                                     |
+| `vim`             | Vi IMproved - enhanced vi editor. See the dedicated [vim](../Tools/vim.md) page.                                                                                                                                                    |
+| `vim-gtk3`        | Vi IMproved - enhanced vi editor - with GTK3 GUI                                                                                                                                                                                    |
+| `vim-python-jedi` | autocompletion tool for Python - VIM addon files                                                                                                                                                                                    |
+| `unp`             | unpack (almost) everything with one command                                                                                                                                                                                         |
+| `fastfetch`       | neofetch-like tool for fetching system information                                                                                                                                                                                  |
 
 
 ### For Administrators
 
-| Application           | Description                                                                                                                                                                                                                         |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `aptitude`            | Package manager                                                                                                                                                                                                                     |
-| `apt-listchanges`     | List the changes...                                                                                                                                                                                                                 |
-| `apt-listbugs`        | tool which lists critical bugs before each APT installation                                                                                                                                                                         |
-| `apt-reportbug`       | reports bugs in the Debian distribution                                                                                                                                                                                             |
-| `net-tools`           | Contains essential networking tools such as arp, ifconfig, netstat, route and more.                                                                                                                                                 |
-| `htop`                | interactive processes viewer                                                                                                                                                                                                        |
-| `iftop`               | Observe the flows on your network interfaces                                                                                                                                                                                        |
-| `tightvncserver`      | virtual network computing server software                                                                                                                                                                                           |
-| `fail2ban`            | Some security tools that watch the (abusive) login attempts and take action. See the dedicated [fail2ban](../Tools/fail2ban.md) page.                                                                                               |
-| `rsnapshot`           | local and remote filesystem snapshot utility. A backup system. See the dedicated [rsnapshot](../Tools/rsnapshot.md) page.                                                                                                           |
-| `uptimed`             | daemon to track uptimes, especially the high ones                                                                                                                                                                                   |
-| `mydumper`            | High-performance MySQL backup tool                                                                                                                                                                                                  |
-| `sqlitebrowser`       | GUI editor for SQLite databases                                                                                                                                                                                                     |
-| `unattended-upgrades` | automatic installation of security upgrades                                                                                                                                                                                         |
-| `fastfetch`           | neofetch-like tool for fetching system information                                                                                                                                      |
-| `pyroman`           | Very fast firewall configuration tool                                                                                                                                      |
-| `shorewall`           | Shoreline Firewall, netfilter configurator                                                                                                                                      |
+| Application           | Description                                                                                                                           |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| `aptitude`            | Package manager                                                                                                                       |
+| `apt-listchanges`     | List the changes...                                                                                                                   |
+| `apt-listbugs`        | tool which lists critical bugs before each APT installation                                                                           |
+| `apt-reportbug`       | reports bugs in the Debian distribution                                                                                               |
+| `net-tools`           | Contains essential networking tools such as arp, ifconfig, netstat, route and more.                                                   |
+| `htop`                | interactive processes viewer                                                                                                          |
+| `iftop`               | Observe the flows on your network interfaces                                                                                          |
+| `tightvncserver`      | virtual network computing server software                                                                                             |
+| `fail2ban`            | Some security tools that watch the (abusive) login attempts and take action. See the dedicated [fail2ban](../Tools/fail2ban.md) page. |
+| `rsnapshot`           | local and remote filesystem snapshot utility. A backup system. See the dedicated [rsnapshot](../Tools/rsnapshot.md) page.             |
+| `uptimed`             | daemon to track uptimes, especially the high ones                                                                                     |
+| `mydumper`            | High-performance MySQL backup tool                                                                                                    |
+| `sqlitebrowser`       | GUI editor for SQLite databases                                                                                                       |
+| `unattended-upgrades` | automatic installation of security upgrades                                                                                           |
+| `fastfetch`           | neofetch-like tool for fetching system information                                                                                    |
+| `pyroman`             | Very fast firewall configuration tool                                                                                                 |
+| `shorewall`           | Shoreline Firewall, netfilter configurator                                                                                            |
 
 ## Packages I install on each desktop
 
@@ -381,14 +516,14 @@ man adduser
 
 ## Resources
 
-| Website | Description |
-|---|---|
-| <https://www.debian.org> | The official website of the Debian GNU/Linux operating system. |
-| <https://wiki.debian.org> | The official wiki of Debian. |
-| <https://debian-handbook.info> | The famous handbook for Debian. |
-| <https://www.debianhelp.co.uk/> | Some website with a lot of tutorials. |
-| <https:www.debiantutorials.com> | Website with tons of how to's. |
-| <https:www.debiantalk.wordpress.com> | Some blog with topics about Debian. |
-| <https://debian.chezrami.net> | Some French website with articles in french. |
-|<https://www.debianadmin.com/>||
+| Website                              | Description                                                    |
+|--------------------------------------|----------------------------------------------------------------|
+| <https://www.debian.org>             | The official website of the Debian GNU/Linux operating system. |
+| <https://wiki.debian.org>            | The official wiki of Debian.                                   |
+| <https://debian-handbook.info>       | The famous handbook for Debian.                                |
+| <https://www.debianhelp.co.uk/>      | Some website with a lot of tutorials.                          |
+| <https:www.debiantutorials.com>      | Website with tons of how to's.                                 |
+| <https:www.debiantalk.wordpress.com> | Some blog with topics about Debian.                            |
+| <https://debian.chezrami.net>        | Some French website with articles in french.                   |
+| <https://www.debianadmin.com/>       ||
 
