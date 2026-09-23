@@ -45,11 +45,13 @@ Inspired by:
 ## Featured Repos
 
 ![3L3Y3 Port Scanner](https://github-readme-stats.vercel.app/api/pin/?username=dvanmosselbeen&theme=vue-dark&repo=dvm-docs)
-![WriteUps](https://github-readme-stats.vercel.app/api/pin/?username=dvanmosselbeen&repo=TryHackMe_writeups&theme=vue-dark)
+
+- [Security Cheat Sheet](https://github.com/dvanmosselbeen/security-cheat-sheet)
+- [TryHackME WriteUps](https://github.com/dvanmosselbeen/TryHackMe_writeups)
 
 
 [![Twitter Badge](https://img.shields.io/badge/dvanmosselbeen-blue?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/dvanmosselbeen)](https://twitter.com/dvanmosselbeen)
-[![Linkedin Badge](https://img.shields.io/badge/David_Van_Mosselbeen-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/hardeep-singh-/)](https://www.linkedin.com/in/hardeep-singh-/)
-[![Instagram Badge](https://img.shields.io/badge/David_Van_Mosselbeen-purple?style=for-the-badge&logo=instagram&logoColor=white&link=https://www.instagram.com/__MrHolmes)](https://www.instagram.com/__MrHolmes)
+[![Linkedin Badge](https://img.shields.io/badge/David_Van_Mosselbeen-blue?style=for-the-badge&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/dvanmosselbeen/)](https://www.linkedin.com/in/dvanmosselbeen/)
+[![Instagram Badge](https://img.shields.io/badge/David_Van_Mosselbeen-purple?style=for-the-badge&logo=instagram&logoColor=white&link=https://www.instagram.com/david.van.mosselbeen)](https://www.instagram.com/david.van.mosselbeen)
 [![Gmail Badge](https://img.shields.io/badge/david.van.mosselbeen@gmail.com-c14438?style=for-the-badge&logo=Gmail&logoColor=white&link=mailto:david.van.mosselbeen)](mailto:david.van.mosselbeen@gmail.com)  
 <hr>
