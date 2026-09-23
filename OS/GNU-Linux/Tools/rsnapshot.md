@@ -120,12 +120,12 @@ backup          /var/www/html/  localhost/
 #####################################
                                                                     
 #########################
-### rasppi-8gb-ubuntu ### 
+### rpi-srv-8gb       ### 
 #########################
-#backup_script  root@rasppi-8gb-ubunntu:/usr/share/doc/rsnapshot/examples/utils/backup_dpkg.sh  rasppi-8gb-ubuntu/dpkg/
-backup  root@rasppi-8gb-ubuntu:/home/                   rasppi-8gb-ubuntu/
-backup  root@rasppi-8gb-ubuntu:/etc/                    rasppi-8gb-ubuntu/
-backup  root@rasppi-8gb-ubuntu:/usr/local/              rasppi-8gb-ubuntu/
+#backup_script  root@rpi-srv-8gb:/usr/share/doc/rsnapshot/examples/utils/backup_dpkg.sh  rpi-srv-8gb/dpkg/
+backup  root@rpi-srv-8gb:/home/                   rpi-srv-8gb/
+backup  root@pi-srv-8gb:/etc/                    rpi-srv-8gb/
+backup  root@rpi-srv-8gb:/usr/local/              rpi-srv-8gb/
 #########################
 ````
 
@@ -222,7 +222,7 @@ As of today, on `September 4, 2026` on a `Raspberry Pi OS` with `rsnapshot` pack
 After setting up everything, I still did not get any backups made by `rsnapshot`. So I tried to run the task manually, and I found the issue. (Did not find any errors in logs or anything) except on the console as shown here:
 
 ````commandline
-root@raspberrypi-server-4gb:/home/dvanmosselbeen# /usr/bin/rsnapshot alpha
+root@rpi-srv-4gb:# /usr/bin/rsnapshot alpha
 ----------------------------------------------------------------------------
 rsnapshot encountered an error! The program was invoked with these options:
 /usr/bin/rsnapshot alpha
@@ -328,7 +328,7 @@ diff -q -r /var/cache/rsnapshot/alpha.0/localhost/ /var/cache/rsnapshot/alpha.1/
 Which output:
 
 ````commandline
-root@raspberrypi-server-4gb:/home/dvanmosselbeen# diff -q -r /var/cache/rsnapshot/alpha.0/localhost/ /var/cache/rsnapshot/alpha.1/localhost/
+root@rpi-srv-4gb:/home/dvanmosselbeen# diff -q -r /var/cache/rsnapshot/alpha.0/localhost/ /var/cache/rsnapshot/alpha.1/localhost/
 Only in /var/cache/rsnapshot/alpha.0/localhost/: dpkg
 diff: /var/cache/rsnapshot/alpha.0/localhost/etc/mtab: No such file or directory
 diff: /var/cache/rsnapshot/alpha.1/localhost/etc/mtab: No such file or directory
@@ -342,7 +342,7 @@ The previous output is very confusing especially the mention of the `mtab` and `
 Finally, check the difference of the file `/var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf`:
 
 ````commandline
-root@raspberrypi-server-4gb:/home/dvanmosselbeen# diff /var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf /var/cache/rsnapshot/alpha.1/localhost/etc/rsnapshot.conf
+root@rpi-srv-4gb:# diff /var/cache/rsnapshot/alpha.0/localhost/etc/rsnapshot.conf /var/cache/rsnapshot/alpha.1/localhost/etc/rsnapshot.conf
 
 240d239
 < backup_script /usr/share/doc/rsnapshot/examples/utils/backup_dpkg.sh  localhost/dpkg/
