@@ -162,8 +162,8 @@ Here's a mail example when someone gets banned:
 
 ```commandline
 Date: Tue, 08 Sep 2026 19:04:47 +0200
-From: Fail2Ban <root@raspberrypi-server-4gb.home>
-To: root@raspberrypi-server-4gb.home
+From: Fail2Ban <root@rpi-srv-4gb.home>
+To: root@rpi-srv-4gb.home
 Subject: [Fail2Ban] sshd: banned 164.163.10.19 from raspberrypi-server-4gb
 
 Hi,
