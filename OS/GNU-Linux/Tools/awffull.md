@@ -5,7 +5,6 @@
 - [Introduction](#introduction)
 - [Installation and configuration](#installation-and-configuration)
 - [Enable https for awffull](#enable-https-for-awffull)
-- [TODO](#todo)
 
 ## Introduction
 
@@ -27,6 +26,12 @@ The configuration file is located at `/etc/awffull/awffull.conf`. We should chan
 Incremental    yes
 ````
 
+Check if the hostname is correctly set:
+
+````commandline
+HostName rpi-srv-4gb
+````
+
 If you want that `awffull` generate it's output in another location, then take a look to this:
 
 ````editorconfig
@@ -40,7 +45,7 @@ But so far, we can not access the generated `awffull` data on the webserver as t
 Create the file:
 
 ````commandline
-/etc/apache2/conf-available/awffull.conf
+sudo nano /etc/apache2/conf-available/awffull.conf
 ````
 
 Add the following content:
@@ -79,8 +84,3 @@ By default, `awffull` does not work on the `https` protocol. We need to activate
 ````editorconfig
 UseHTTPS       yes
 ````
-
-## TODO
-
-- [ ] The cron script seems not to work, so the data is not updated.
-- 
