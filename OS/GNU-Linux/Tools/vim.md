@@ -21,27 +21,27 @@
 
 ## Introduction
 
-`vim` is a very powerful text editor. It can be used on the command line as well with a graphical interface. `vim` is very complicated to use and can be really confusing. Mastering `vim` will take you months, years ! `vim` is so powerful that you will never know and master all it's features.
+`vim` is a very powerful text editor. It can be used on the command line as well with a graphical interface. `vim` is very complicated to use and can be really confusing. Mastering `vim` will take you months, years! `vim` is so powerful that you will probably never know and master all it's features.
 
 ## Installation
 
-To install the GVim, the Graphical Vim:
+To install the `GVim`, the Graphical Vim:
 
     apt-get install vim-gtk3
 
 ## Quick tutorial with vim-tutor
 
-vim has a build in tutor system called `vim-tutor`.
+`vim` has a build in tutor system called `vim-tutor`.
 
 ## Getting help
 
-The easiest way to ask for help is to start with executing `:help` during a Vim session. This will drop us into the main help file which has an overview of the basics.
+The easiest way to ask for help is to start with executing `:help` during a `Vim` session. This will drop us into the main help file which has an overview of the basics.
 
 To get help with a specific command, we can provide that command as an argument to the `:help` command. By invoking `:help gg`, we learn more details about `gg` including that `<C-home>` does the same thing and that by providing a `[count]`, we can use `gg` to jump anywhere in a file.
 
 ## Configuration
 
-Config files are saved at different levels. You have the application level and user level. At application level, the config file lies at the tree of the system files. While at user level, the config file is somewhere stored in your home directory (`~/.vimrc`).
+Config files are saved at different levels. You have the application level and user level. At application level, the config file lies at the tree of the system files. While at user level, the config file is somewhere stored in your home directory in `~/.vimrc`.
 
 See my example [DOTvimrc file](files/DOTvimrc) and the [DOTVM folder](files/DOTvim).
 
@@ -113,7 +113,7 @@ To go in edit mode, press the `i` key.
 
 ### Visual mode
 
-To go in visual mode, press the "v" key. Then you can do some actions, for example selecting text with the arrow keys of your keyboard, so that you can apply commands on the selected text.
+To go in visual mode, press the `v` key. Then you can do some actions, for example selecting text with the arrow keys of your keyboard, so that you can apply commands on the selected text.
 
 ### Common usages
 
@@ -128,7 +128,7 @@ There are different methods:
 
 #### Reformatting some text to some width
 
-It is very common on a GNU/Linux system or in programming language the need to reformat a paragraph to some width.
+It is very common on a `GNU/Linux` system or in programming language the need to reformat a paragraph to some width.
 
 ## Addons
 
