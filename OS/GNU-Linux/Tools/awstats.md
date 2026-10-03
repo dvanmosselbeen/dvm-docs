@@ -130,6 +130,15 @@ systemctl restart apache2
 
 Then we can visit `awstats` on the following address: <http://localhost/cgi-bin/awstats.pl>
 
+After all these modifications, I'm still getting an error send by email to `root` user every night. An error that some file could not be created in `/var/cache/awstats/`. This is due wrong permission and should be adjusted.
+
+````commandline
+chown www-data /var/cache/awstats/awstats/
+chown www-data /var/cache/awstats/awstats/
+````
+
+*Need to investigate why there is some redundancy in directory name.*
+
 ## Resources
 
 - <https://www.server-world.info/en/note?os=Debian_13&p=httpd2&f=3>
