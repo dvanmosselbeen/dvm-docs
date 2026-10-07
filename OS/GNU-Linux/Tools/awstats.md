@@ -135,6 +135,7 @@ After all these modifications, I'm still getting an error send by email to `root
 ````commandline
 chown www-data /var/cache/awstats/awstats/
 chown www-data /var/cache/awstats/awstats/
+chmod g+w /var/cache/awstats/awstats/
 ````
 
 *Need to investigate why there is some redundancy in directory name.*
