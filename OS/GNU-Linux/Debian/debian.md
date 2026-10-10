@@ -361,6 +361,7 @@ A few common system commands:
 | `groups [username]`         | Shows the groups a user belongs to.          |
 | `sudo addgroup <groupname>` | Creates a new group.                         |
 | `sudo delgroup <groupname>` | Delete a group.                              |
+| `usermod -aG <GROUPNAME> <USERNAME>` | Add user to the soecified group. |
 
 ### Networking
 
